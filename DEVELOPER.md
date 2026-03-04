@@ -2,17 +2,29 @@
 
 An open-source knowledge graph and mastery engine for mathematics. The map, not the territory.
 
+**This is a public good.** The structure of mathematical knowledge — what depends on what, what to learn next — belongs to everyone. Not behind a paywall. Not locked in proprietary software. Open, versioned, forkable, and free.
+
 ## What This Is
 
-A public good: a machine-readable DAG (directed acyclic graph) of math topics from 4th grade through university, paired with a traversal engine that answers one question — **"what should this student learn next?"**
+A machine-readable DAG (directed acyclic graph) of math topics from 4th grade through university, paired with a traversal engine that answers one question — **"what should this student learn next?"**
 
 The graph encodes what every math textbook knows implicitly: which concepts depend on which. Open Mastery makes that structure explicit, versioned, and forkable.
 
 An LLM (Claude, GPT, whatever) handles the teaching and assessment. This project provides the **structure** — the optimal path through the material, the mastery gates, the spaced repetition. The system enforces one rule: you must demonstrate mastery before you advance. No shortcuts, no pace limits.
 
+## Inspiration
+
+On March 1, 2026, a parent posted that her third-grader — a kid who had "hated math" just a year earlier — casually finished Calc BC. A visualization of a full math knowledge graph followed: ~3,000 topics, 17 courses, from 4th grade to university. The tweet hit 1.8M views.
+
+Someone replied: **"can I see the data for this graph?"**
+
+They can't. It's proprietary.
+
+That's the problem this project solves. The structure of how math builds on itself is not secret knowledge — it's the consensus of every textbook ever written. It should be open.
+
 ## Why This Needs to Exist
 
-Math Academy (mathacademy.com) proved the architecture works at extreme scale:
+The architecture has been proven at scale:
 
 - 3rd graders completing grades 6–12 + Calc BC in a single year
 - 11-year-olds earning perfect 5s on AP Calc BC
@@ -21,19 +33,18 @@ Math Academy (mathacademy.com) proved the architecture works at extreme scale:
 
 The architecture is simple: DAG of prerequisites + strict mastery gates + unlimited velocity. Remove the classroom-speed bottleneck, keep the competence constraint, let talent explode. This is deliberate practice (Ericsson-style) engineered at scale.
 
-But Math Academy's knowledge graph (~3,000 topics, 17 courses, dense prerequisite edges) is proprietary — core IP, $49/mo paywall. Khan Academy made content free but the mastery system is weak and the graph is implicit, not explicit. Nothing else comes close:
+But every existing knowledge graph of this kind is proprietary. Khan Academy made content free but the mastery system is weak and the graph is implicit, not explicit. Nothing else comes close:
 
 - **OSSU/math** — just curated links to free courses, no mastery enforcement or graph
 - **Metacademy** — ML concepts only, abandoned
 - **Common Core standards** — topic lists but NOT a dependency graph
 - **OpenStax** — textbooks, no graph
-- **Random Anki/FSRS experiments** — reference Math Academy but don't replicate it
 
 The field is wide open. No public 3,000-node JSON dump. No reference engine. No GitHub org with community PRs. This is the biggest untapped education unlock since Khan Academy.
 
 ## The Key Insight: The Graph Is Reconstructable
 
-Math Academy's graph is not secret knowledge. It's the consensus of how math builds on itself — every textbook encodes it implicitly in chapter ordering. Their work was making it explicit and granular. We can reconstruct it:
+The graph is not secret knowledge. It's the consensus of how math builds on itself — every textbook encodes it implicitly in chapter ordering. The work is making it explicit and granular. We can construct it:
 
 1. **Bootstrap with LLMs** — "List every topic in Algebra 1. For each, list prerequisites." Do this for all 17 courses. Get 80% of the graph in a day.
 2. **Refine the 20%** — Cross-course edges, granularity tuning, encompassing relationships. This is the curriculum expertise work.
@@ -51,7 +62,7 @@ Strict. You demonstrate mastery or you don't advance. No partial credit at the g
 
 ### Encompassing Relationships
 
-Advanced topics implicitly practice simpler sub-skills. A calculus problem exercises algebra. The engine uses these weights to compress reviews — one advanced problem can knock out multiple simpler reviews. This is how Math Academy achieves review efficiency.
+Advanced topics implicitly practice simpler sub-skills. A calculus problem exercises algebra. The engine uses these weights to compress reviews — one advanced problem can knock out multiple simpler reviews.
 
 ### Spaced Repetition with Decay
 
@@ -130,4 +141,4 @@ cli/            CLI interface. Pick a student, get the next topic, record master
 
 ## License
 
-TBD — intended to be a public good. Open source license to be selected before going public.
+AGPL-3.0. This is a public good. If you use it or improve it, your improvements stay open too. The knowledge graph of mathematics belongs to everyone — no one gets to lock it back up behind a paywall.
