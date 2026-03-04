@@ -141,4 +141,4 @@ cli/            CLI interface. Pick a student, get the next topic, record master
 
 ## License
 
-AGPL-3.0. This is a public good. If you use it or improve it, your improvements stay open too. The knowledge graph of mathematics belongs to everyone — no one gets to lock it back up behind a paywall.
+MIT. This is a public good. Use it, fork it, build on it — for your kids, your classroom, your app. No restrictions. See [LICENSE](LICENSE) for details.
