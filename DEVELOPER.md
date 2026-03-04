@@ -1,4 +1,4 @@
-# Graphademy
+# Open Mastery
 
 An open-source knowledge graph and mastery engine for mathematics. The map, not the territory.
 
@@ -6,7 +6,7 @@ An open-source knowledge graph and mastery engine for mathematics. The map, not 
 
 A public good: a machine-readable DAG (directed acyclic graph) of math topics from 4th grade through university, paired with a traversal engine that answers one question — **"what should this student learn next?"**
 
-The graph encodes what every math textbook knows implicitly: which concepts depend on which. Graphademy makes that structure explicit, versioned, and forkable.
+The graph encodes what every math textbook knows implicitly: which concepts depend on which. Open Mastery makes that structure explicit, versioned, and forkable.
 
 An LLM (Claude, GPT, whatever) handles the teaching and assessment. This project provides the **structure** — the optimal path through the material, the mastery gates, the spaced repetition. The system enforces one rule: you must demonstrate mastery before you advance. No shortcuts, no pace limits.
 
