@@ -10,11 +10,52 @@ The graph encodes what every math textbook knows implicitly: which concepts depe
 
 An LLM (Claude, GPT, whatever) handles the teaching and assessment. This project provides the **structure** — the optimal path through the material, the mastery gates, the spaced repetition. The system enforces one rule: you must demonstrate mastery before you advance. No shortcuts, no pace limits.
 
-## Why
+## Why This Needs to Exist
 
-Math Academy proved the architecture works — kids going from pre-algebra to Calc BC in 18 months. But the knowledge graph is proprietary. Khan Academy made content free but the mastery system is weak. The missing piece is an open, rigorous prerequisite graph that anyone can use, fork, and improve.
+Math Academy (mathacademy.com) proved the architecture works at extreme scale:
 
-This is that graph, plus the engine to traverse it.
+- 3rd graders completing grades 6–12 + Calc BC in a single year
+- 11-year-olds earning perfect 5s on AP Calc BC
+- Groups of 11–13-year-olds going from basic pre-algebra to acing BC in ~18 months (~6–7 years of normal schooling)
+- Kids who "hated math" falling in love with the subject
+
+The architecture is simple: DAG of prerequisites + strict mastery gates + unlimited velocity. Remove the classroom-speed bottleneck, keep the competence constraint, let talent explode. This is deliberate practice (Ericsson-style) engineered at scale.
+
+But Math Academy's knowledge graph (~3,000 topics, 17 courses, dense prerequisite edges) is proprietary — core IP, $49/mo paywall. Khan Academy made content free but the mastery system is weak and the graph is implicit, not explicit. Nothing else comes close:
+
+- **OSSU/math** — just curated links to free courses, no mastery enforcement or graph
+- **Metacademy** — ML concepts only, abandoned
+- **Common Core standards** — topic lists but NOT a dependency graph
+- **OpenStax** — textbooks, no graph
+- **Random Anki/FSRS experiments** — reference Math Academy but don't replicate it
+
+The field is wide open. No public 3,000-node JSON dump. No reference engine. No GitHub org with community PRs. This is the biggest untapped education unlock since Khan Academy.
+
+## The Key Insight: The Graph Is Reconstructable
+
+Math Academy's graph is not secret knowledge. It's the consensus of how math builds on itself — every textbook encodes it implicitly in chapter ordering. Their work was making it explicit and granular. We can reconstruct it:
+
+1. **Bootstrap with LLMs** — "List every topic in Algebra 1. For each, list prerequisites." Do this for all 17 courses. Get 80% of the graph in a day.
+2. **Refine the 20%** — Cross-course edges, granularity tuning, encompassing relationships. This is the curriculum expertise work.
+3. **Community improves it** — Like Wikipedia. Doesn't need to be perfect on day one. Needs to be open and improvable.
+
+## Core Concepts
+
+### Knowledge Frontier
+
+A student's position on the DAG — not a single "current topic" but the full boundary of what they've mastered. The engine computes the optimal next task from this frontier for maximum learning velocity.
+
+### Mastery Gates
+
+Strict. You demonstrate mastery or you don't advance. No partial credit at the gate level. No skipping. This is the constraint that makes unlimited velocity safe.
+
+### Encompassing Relationships
+
+Advanced topics implicitly practice simpler sub-skills. A calculus problem exercises algebra. The engine uses these weights to compress reviews — one advanced problem can knock out multiple simpler reviews. This is how Math Academy achieves review efficiency.
+
+### Spaced Repetition with Decay
+
+Mastery isn't binary forever. Confidence decays over time. The student model tracks last-assessed timestamps and schedules reviews before mastery drops below threshold. Hierarchical — reviewing an advanced topic refreshes its prerequisites.
 
 ## Architecture
 
@@ -24,13 +65,13 @@ engine/         Rust crate. Traversal, student model, spaced repetition.
 cli/            CLI interface. Pick a student, get the next topic, record mastery.
 ```
 
-**The Graph** — Each node: topic name, course, difficulty, prerequisite edges, assessment criteria. Community-editable, versioned like Wikipedia.
+**The Graph** — Each node: topic name, course, difficulty, prerequisite edges, encompassing weights, assessment criteria. Community-editable, versioned like Wikipedia.
 
-**The Engine** — Given a student's mastery state and the graph, computes the optimal next topic. Topological sort + mastery gates + spaced repetition with decay.
+**The Engine** — Given a student's mastery state and the graph, computes the knowledge frontier and selects the optimal next task. Topological sort + mastery gates + spaced repetition with decay + review compression via encompassing relationships.
 
-**Student State** — Per-student, per-node: mastered or not, last assessed, confidence decay. JSON to start.
+**Student State** — Per-student, per-node: mastery level, last assessed, confidence decay curve. JSON to start.
 
-**The Tutor** — Not in this repo. That's whatever LLM you point at it. The engine says "teach this topic" and "assess with these problem types."
+**The Tutor** — Not in this repo. That's whatever LLM you point at it. The engine says "teach this topic" and "assess with these problem types." The tutor is already built — Claude can explain any math topic, generate problems at any difficulty, check work, and adapt.
 
 ## Core Philosophy
 
