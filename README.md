@@ -52,13 +52,15 @@ Pull back further. Four hundred thousand active learners connected to the Open M
 
 They all share the same structure underneath. When the micro-school in Austin marks a student as having mastered the quadratic formula, that means the same thing as when Dev's closet server marks it, because the node definition is the same, the prerequisites are the same, the assessment criteria are the same. A child can move from one system to another and their mastery travels with them — not as a transcript, not as a grade, but as a precise map of what they know and what they're ready for.
 
-This is what it looks like when curriculum becomes infrastructure. Not a product. Not a platform. A substrate. The way TCP/IP is a substrate for the internet — invisible, shared, maintained by a community, used by everyone building on top.
+That's the bet: curriculum as shared infrastructure. Open, forkable, improvable. We'll see if it works.
 
 > *Full narrative: [`docs/STORY.md`](docs/STORY.md)*
 
 ## The Math Graph
 
-131 nodes. 9 domains. One YAML file per topic. Cross-domain edges because math doesn't care about your folder structure.
+131 nodes. 9 domains. A start, not a finish — the real work is scaling to thousands of nodes while maintaining graph integrity. That's where every curriculum project dies: not at architecture, at curation. We're building in the open so others can help.
+
+One YAML file per topic. Cross-domain edges because math doesn't care about your folder structure.
 
 ```
 graph/math/
@@ -134,7 +136,9 @@ frontier(student) = {
 
 Seven lines of pseudocode. That's the entire algorithm. Everything else is plumbing.
 
-The frontier is everything you've unlocked but haven't learned yet. Pick something. Prove you know it. New stuff unlocks. Repeat until calculus.
+The frontier is everything you've unlocked but haven't learned yet. Pick something. Demonstrate understanding. New stuff unlocks.
+
+**The hard problem isn't the graph — it's verification.** Generating curriculum is cheap. Knowing whether a student *actually* understands completing the square, not just producing the right tokens? That's the moat. The `assess` types help (`explain`, `derive`, and `generate` are harder to fake than `solve`), and the mastery model uses Bayesian updates across multiple evidence points rather than single-shot assessment. But LLM-as-assessor is fundamentally an unsolved problem. We're building the scaffolding and working on it in the open.
 
 ## Why This Exists
 
