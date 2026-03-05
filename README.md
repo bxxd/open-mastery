@@ -138,6 +138,14 @@ Seven lines of pseudocode. That's the entire algorithm. Everything else is plumb
 
 The frontier is everything you've unlocked but haven't learned yet. Pick something. Demonstrate understanding. New stuff unlocks.
 
+### Why This Works (When It Works)
+
+The frontier isn't just an algorithm — it's Csikszentmihalyi's flow channel, computed from a graph. Flow state requires challenge matched to skill: too easy and you're bored, too hard and you're anxious. The frontier guarantees every available task is *achievable* (all prereqs mastered) but *novel* (the topic itself is new). That's the flow zone.
+
+The drive to operate at the edge of your competence is one of the deepest human motivations. Kids don't need to be bribed into learning when every problem is at exactly the right difficulty. They don't need gamification. They need the thing games accidentally get right: a well-tuned difficulty curve. The DAG *is* the difficulty curve, personalized to each learner.
+
+This is why mastery gates matter even though they slow things down. Without them, you get Khan Academy — students clicking through videos at 1.5x, "completing" topics they can't do. With them, velocity is real. A student moving fast through the graph actually knows the material, because the graph made them prove it at every step.
+
 **The hard problem isn't the graph — it's verification.** Generating curriculum is cheap. Knowing whether a student *actually* understands completing the square, not just producing the right tokens? That's the moat. The `assess` types help (`explain`, `derive`, and `generate` are harder to fake than `solve`), and the mastery model uses Bayesian updates across multiple evidence points rather than single-shot assessment. But LLM-as-assessor is fundamentally an unsolved problem. We're building the scaffolding and working on it in the open.
 
 ## Why This Exists

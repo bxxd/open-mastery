@@ -55,6 +55,12 @@ A learner's position on the DAG — not a single "current topic" but the full bo
 
 Strict. You demonstrate mastery or you don't advance. No partial credit at the gate level. No skipping. This is the constraint that makes unlimited velocity safe.
 
+### The Flow Channel
+
+The frontier is Csikszentmihalyi's flow state, computed from a graph. Flow requires challenge matched to skill — too easy and you're bored, too hard and you're anxious. The frontier guarantees every available task is achievable (all prereqs mastered) but novel (the topic itself is new). That's the flow zone, personalized to each learner, continuously.
+
+The drive to operate at the edge of competence is one of the deepest human motivations. The DAG is a personalized difficulty curve. Kids don't need gamification — they need the thing games accidentally get right: a well-tuned challenge ramp. Mastery gates ensure velocity is real, not illusory.
+
 ### Deliberate Practice at the Two-Sigma Level
 
 The graph enables Ericsson-style deliberate practice at Bloom's two-sigma level. Every task is at the edge of ability (frontier computation). Every assessment requires deep engagement (explain, derive, generate — not just recall). The prompt cascade provides expert tutoring direction calibrated to each topic. The result: one-on-one tutoring outcomes at zero marginal cost.
