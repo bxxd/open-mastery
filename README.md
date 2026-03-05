@@ -138,18 +138,13 @@ The frontier is everything you've unlocked but haven't learned yet. Pick somethi
 
 ## Why This Exists
 
-Because a 3rd grader finished Calc BC in a year using a proprietary version of this, and when someone asked "can I see the graph?" the answer was no.
+Because someone asked "can I see the data for this graph?" and the answer was no.
 
-The architecture is proven:
-- 3rd graders completing Calc BC in a single year
-- 11-year-olds getting perfect 5s on AP exams
-- Kids who "hated math" falling in love with it
+The architecture — DAG of prerequisites + mastery gates + unlimited velocity — has been proven by proprietary platforms. The structure of what depends on what isn't secret. It's the consensus of every textbook ever written. The hard part was never the knowledge — it was making it explicit, machine-readable, and open.
 
-The secret? There is no secret. It's just: DAG + mastery gates + unlimited velocity. Remove the pace limit, keep the competence constraint. Ericsson's deliberate practice, Bloom's two-sigma effect, delivered by an LLM at zero marginal cost.
+Khan Academy made content free but the graph is implicit and their mastery system is... generous. Every other prerequisite graph is locked behind a paywall. Every homeschool parent with an LLM is rebuilding the same curriculum structure from scratch.
 
-Every other implementation is locked behind a paywall. Khan Academy's graph is implicit and their mastery system is... generous. Nothing else even tries.
-
-So here we are. An open YAML dump, a Rust engine, and a GitHub repo. Unsexy, effective, and free.
+So here we are. An open YAML dump, a Rust engine, and a GitHub repo. Early, incomplete, and free.
 
 ## Quickstart
 

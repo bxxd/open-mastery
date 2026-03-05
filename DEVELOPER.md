@@ -24,16 +24,9 @@ That's the problem this project solves. The structure of how knowledge builds on
 
 ## Why This Needs to Exist
 
-The architecture has been proven at scale:
+The architecture — DAG of prerequisites + strict mastery gates + unlimited velocity — has been proven by proprietary platforms at scale. Remove the classroom-speed bottleneck, keep the competence constraint, let talent explode. Deliberate practice (Ericsson-style) engineered as infrastructure.
 
-- 3rd graders completing grades 6–12 + Calc BC in a single year
-- 11-year-olds earning perfect 5s on AP Calc BC
-- Groups of 11–13-year-olds going from basic pre-algebra to acing BC in ~18 months (~6–7 years of normal schooling)
-- Kids who "hated math" falling in love with the subject
-
-The architecture is simple: DAG of prerequisites + strict mastery gates + unlimited velocity. Remove the classroom-speed bottleneck, keep the competence constraint, let talent explode. This is deliberate practice (Ericsson-style) engineered at scale.
-
-Math proved the concept. But the engine is subject-agnostic — any domain with prerequisite dependencies works. Programming (variables → loops → functions → recursion). Music theory (intervals → scales → chords → progressions). Chemistry (atoms → bonding → reactions → equilibrium). The DAG structure is universal.
+The engine is subject-agnostic. Math is the beachhead because it has the cleanest dependency structure (you literally can't do calculus without algebra). But any domain with prerequisite dependencies works. Programming (variables → loops → functions → recursion). Music theory (intervals → scales → chords → progressions). Chemistry (atoms → bonding → reactions → equilibrium). The DAG structure is universal.
 
 Every existing knowledge graph like this is proprietary. Khan Academy made content free but the mastery system is weak and the graph is implicit, not explicit. Nothing else comes close:
 
