@@ -1,11 +1,19 @@
 {
   "mcpServers": {
-    "open-mastery": {
-      "command": "/path/to/open-mastery-mcp",
+    "open-mastery-student": {
+      "command": "/path/to/open-mastery-student",
       "args": ["--stdio"],
       "env": {
         "GRAPH_DIR": "/path/to/open-mastery/graph/math",
         "PROGRESS_DIR": "/path/to/open-mastery/progress"
+      }
+    },
+    "open-mastery-teacher": {
+      "command": "/path/to/open-mastery-teacher",
+      "args": ["--stdio"],
+      "env": {
+        "GRAPH_DIR": "/path/to/open-mastery/graph/math",
+        "REPO_DIR": "/path/to/open-mastery"
       }
     }
   }

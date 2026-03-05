@@ -1,4 +1,4 @@
-.PHONY: build release test mcp-server run run-sse clean
+.PHONY: build release test run-student run-student-sse run-teacher run-teacher-sse clean
 
 build:
 	cd engine && cargo build
@@ -9,17 +9,21 @@ release:
 test:
 	cd engine && cargo test
 
-mcp-server: release
+run-student: release
 	GRAPH_DIR=./graph/math PROGRESS_DIR=./progress \
-		./engine/target/release/open-mastery-mcp
+		./engine/target/release/open-mastery-student --stdio
 
-run: release
+run-student-sse: release
 	GRAPH_DIR=./graph/math PROGRESS_DIR=./progress \
-		./engine/target/release/open-mastery-mcp --stdio
+		./engine/target/release/open-mastery-student
 
-run-sse: release
-	GRAPH_DIR=./graph/math PROGRESS_DIR=./progress \
-		./engine/target/release/open-mastery-mcp
+run-teacher: release
+	GRAPH_DIR=./graph/math REPO_DIR=. \
+		./engine/target/release/open-mastery-teacher --stdio
+
+run-teacher-sse: release
+	GRAPH_DIR=./graph/math REPO_DIR=. \
+		./engine/target/release/open-mastery-teacher
 
 clean:
 	cd engine && cargo clean
