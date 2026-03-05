@@ -1,0 +1,14 @@
+id: alg.rat.multiply_divide
+prereqs:
+  - alg.rat.simplifying
+bloom: apply
+assess:
+  - solve
+  - explain
+  - word_problem
+typical_grade: 9
+context: >
+  Multiply: factor everything, cancel, then multiply across. Divide:
+  flip the second fraction and multiply. Same rules as numeric fractions
+  but with polynomials. Always state domain restrictions. Factor
+  completely before canceling.

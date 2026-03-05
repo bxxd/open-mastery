@@ -1,0 +1,13 @@
+id: ops.add.multi_digit
+prereqs:
+  - ops.add.within_1000
+  - ns.pv.millions
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Add numbers with sums beyond 1,000 — up to millions. Multiple
+  regroupings across place values. Align digits by place value.
+  Estimation as a check.

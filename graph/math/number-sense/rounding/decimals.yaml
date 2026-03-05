@@ -1,0 +1,14 @@
+id: ns.round.decimals
+prereqs:
+  - ns.pv.decimals_to_thousandths
+  - ns.round.whole_numbers
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Round decimals to any place — nearest whole, nearest tenth,
+  nearest hundredth. Use number lines. Apply to money (nearest
+  cent), measurement (nearest tenth of a cm). Estimate decimal
+  computations by rounding first.

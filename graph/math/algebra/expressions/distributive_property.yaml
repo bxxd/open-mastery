@@ -1,0 +1,15 @@
+id: alg.exp.distributive
+prereqs:
+  - alg.exp.combining
+  - ops.mul.2d_by_1d
+bloom: apply
+assess:
+  - solve
+  - generate
+  - explain
+typical_grade: 6
+context: >
+  a(b + c) = ab + ac. Connect to area model from multiplication.
+  Expand: 3(x + 4) = 3x + 12. Factor: 6x + 12 = 6(x + 2).
+  This is the bridge between arithmetic and algebra. Use both
+  directions: expand when solving, factor when simplifying.

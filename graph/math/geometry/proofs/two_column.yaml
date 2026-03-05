@@ -1,0 +1,15 @@
+id: geo.prf.two_column
+prereqs:
+  - geo.prf.logic
+  - geo.ang.measurement
+bloom: analyze
+assess:
+  - derive
+  - explain
+typical_grade: 9
+context: >
+  Two-column proofs: statements on the left, reasons on the right.
+  Reasons are definitions, postulates, or previously proven theorems.
+  Start with given information, end with what you're proving. Each
+  step follows logically from previous steps. Start with simple
+  angle proofs before triangle proofs.

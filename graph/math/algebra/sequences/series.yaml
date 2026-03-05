@@ -1,0 +1,15 @@
+id: alg.seq.series
+prereqs:
+  - alg.seq.geometric
+bloom: apply
+assess:
+  - solve
+  - explain
+  - derive
+typical_grade: 10
+context: >
+  A series is the sum of a sequence. Sigma notation: compact way to
+  write sums. Evaluate finite arithmetic and geometric series using
+  formulas. Infinite geometric series converge when |r| < 1. Diverge
+  otherwise. Connect to calculus: series are the bridge. Telescoping
+  series as a special case.

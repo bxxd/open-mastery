@@ -1,0 +1,14 @@
+id: geo.tri.angle_sum
+prereqs:
+  - geo.ang.parallel_lines
+bloom: analyze
+assess:
+  - solve
+  - explain
+  - derive
+typical_grade: 8
+context: >
+  Interior angles of a triangle sum to 180 degrees. Prove using
+  parallel lines. Exterior angle = sum of two non-adjacent interior
+  angles. Find missing angles. Extend to polygons: sum of interior
+  angles = (n-2) x 180. Classify triangles by angles.

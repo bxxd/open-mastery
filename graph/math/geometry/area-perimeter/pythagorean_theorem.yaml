@@ -1,0 +1,16 @@
+id: geo.ap.pythagorean
+prereqs:
+  - alg.eq.square_roots
+  - geo.ap.triangles_parallelograms
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 8
+context: >
+  a^2 + b^2 = c^2 for right triangles. c is the hypotenuse
+  (longest side, opposite right angle). Find missing sides.
+  Determine if a triangle is right. Distance between two points
+  on the coordinate plane. Real-world: ladders against walls,
+  diagonal of a rectangle, shortest distance.

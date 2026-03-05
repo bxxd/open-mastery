@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "nodes": [
+    {
+      "id": "4g.place_value_thousands",
+      "name": "Place Value to Thousands",
+      "course": "4th-grade",
+      "prerequisites": [],
+      "assessment_types": ["identify", "compare"],
+      "bloom_level": "apply",
+      "tags": ["number_sense", "place_value"]
+    },
+    {
+      "id": "4g.place_value_millions",
+      "name": "Place Value to Millions",
+      "course": "4th-grade",
+      "prerequisites": ["4g.place_value_thousands"],
+      "assessment_types": ["identify", "compare", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["number_sense", "place_value"]
+    },
+    {
+      "id": "4g.rounding_whole_numbers",
+      "name": "Rounding Whole Numbers",
+      "course": "4th-grade",
+      "prerequisites": ["4g.place_value_millions"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["number_sense", "rounding"]
+    },
+    {
+      "id": "4g.addition_within_1000",
+      "name": "Addition Within 1,000",
+      "course": "4th-grade",
+      "prerequisites": ["4g.place_value_thousands"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["operations", "addition"]
+    },
+    {
+      "id": "4g.subtraction_within_1000",
+      "name": "Subtraction Within 1,000",
+      "course": "4th-grade",
+      "prerequisites": ["4g.place_value_thousands"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["operations", "subtraction"]
+    },
+    {
+      "id": "4g.multi_digit_addition",
+      "name": "Multi-Digit Addition",
+      "course": "4th-grade",
+      "prerequisites": ["4g.addition_within_1000", "4g.place_value_millions"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["operations", "addition"]
+    },
+    {
+      "id": "4g.multi_digit_subtraction",
+      "name": "Multi-Digit Subtraction",
+      "course": "4th-grade",
+      "prerequisites": ["4g.subtraction_within_1000", "4g.place_value_millions"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["operations", "subtraction"]
+    },
+    {
+      "id": "4g.multiplication_facts",
+      "name": "Multiplication Facts to 12",
+      "course": "4th-grade",
+      "prerequisites": ["4g.addition_within_1000"],
+      "assessment_types": ["recall", "solve"],
+      "bloom_level": "apply",
+      "tags": ["operations", "multiplication"]
+    },
+    {
+      "id": "4g.multiply_by_10_100_1000",
+      "name": "Multiplying by 10, 100, and 1,000",
+      "course": "4th-grade",
+      "prerequisites": ["4g.multiplication_facts", "4g.place_value_millions"],
+      "assessment_types": ["solve", "explain_pattern"],
+      "bloom_level": "understand",
+      "tags": ["operations", "multiplication", "place_value"]
+    },
+    {
+      "id": "4g.multiply_two_digit_by_one_digit",
+      "name": "Multiplying Two-Digit by One-Digit Numbers",
+      "course": "4th-grade",
+      "prerequisites": ["4g.multiplication_facts"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["operations", "multiplication"]
+    },
+    {
+      "id": "4g.multiply_two_digit_by_two_digit",
+      "name": "Multiplying Two-Digit by Two-Digit Numbers",
+      "course": "4th-grade",
+      "prerequisites": ["4g.multiply_two_digit_by_one_digit", "4g.multi_digit_addition"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["operations", "multiplication"]
+    },
+    {
+      "id": "4g.division_facts",
+      "name": "Division Facts to 12",
+      "course": "4th-grade",
+      "prerequisites": ["4g.multiplication_facts"],
+      "assessment_types": ["recall", "solve"],
+      "bloom_level": "apply",
+      "tags": ["operations", "division"]
+    },
+    {
+      "id": "4g.long_division_one_digit",
+      "name": "Long Division by One-Digit Divisors",
+      "course": "4th-grade",
+      "prerequisites": ["4g.division_facts", "4g.multi_digit_subtraction"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["operations", "division"]
+    },
+    {
+      "id": "4g.factors_and_multiples",
+      "name": "Factors and Multiples",
+      "course": "4th-grade",
+      "prerequisites": ["4g.multiplication_facts", "4g.division_facts"],
+      "assessment_types": ["identify", "solve", "explain"],
+      "bloom_level": "understand",
+      "tags": ["number_theory"]
+    },
+    {
+      "id": "4g.fraction_concepts",
+      "name": "Fraction Concepts (Parts of a Whole)",
+      "course": "4th-grade",
+      "prerequisites": ["4g.division_facts"],
+      "assessment_types": ["identify", "represent", "explain"],
+      "bloom_level": "understand",
+      "tags": ["fractions"]
+    },
+    {
+      "id": "4g.equivalent_fractions",
+      "name": "Equivalent Fractions",
+      "course": "4th-grade",
+      "prerequisites": ["4g.fraction_concepts", "4g.factors_and_multiples"],
+      "assessment_types": ["identify", "generate", "explain"],
+      "bloom_level": "apply",
+      "tags": ["fractions"]
+    },
+    {
+      "id": "4g.comparing_fractions",
+      "name": "Comparing Fractions",
+      "course": "4th-grade",
+      "prerequisites": ["4g.equivalent_fractions"],
+      "assessment_types": ["compare", "order", "explain"],
+      "bloom_level": "apply",
+      "tags": ["fractions"]
+    },
+    {
+      "id": "4g.adding_fractions_like_denom",
+      "name": "Adding Fractions with Like Denominators",
+      "course": "4th-grade",
+      "prerequisites": ["4g.fraction_concepts"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["fractions", "addition"]
+    },
+    {
+      "id": "4g.subtracting_fractions_like_denom",
+      "name": "Subtracting Fractions with Like Denominators",
+      "course": "4th-grade",
+      "prerequisites": ["4g.fraction_concepts"],
+      "assessment_types": ["solve", "word_problem"],
+      "bloom_level": "apply",
+      "tags": ["fractions", "subtraction"]
+    },
+    {
+      "id": "4g.decimal_notation_tenths_hundredths",
+      "name": "Decimal Notation (Tenths and Hundredths)",
+      "course": "4th-grade",
+      "prerequisites": ["4g.fraction_concepts", "4g.place_value_millions"],
+      "assessment_types": ["identify", "convert", "compare"],
+      "bloom_level": "apply",
+      "tags": ["decimals", "place_value"]
+    }
+  ]
+}

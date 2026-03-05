@@ -1,0 +1,15 @@
+id: geo.xform.dilations
+prereqs:
+  - geo.xform.rigid
+  - rat.prop.solving
+bloom: apply
+assess:
+  - identify
+  - solve
+  - represent
+typical_grade: 9
+context: >
+  Dilation = scaling from a center point. Scale factor k: enlargement
+  if k > 1, reduction if 0 < k < 1. (x,y) → (kx, ky) for center
+  at origin. Preserves shape but not size — creates similar figures.
+  Combine with rigid motions for full similarity transformations.

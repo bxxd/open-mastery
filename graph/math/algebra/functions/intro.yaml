@@ -1,0 +1,15 @@
+id: alg.fn.intro
+prereqs:
+  - alg.exp.variables
+  - geo.cp.all_quadrants
+bloom: understand
+assess:
+  - identify
+  - explain
+  - represent
+typical_grade: 8
+context: >
+  A function assigns exactly one output to each input. Input-output
+  tables, mappings, graphs. Vertical line test. Function notation:
+  f(x) = 2x + 3 means "the rule is double and add 3." Domain and
+  range as sets of inputs and outputs. Not every graph is a function.

@@ -1,0 +1,16 @@
+id: geo.xform.rigid
+prereqs:
+  - geo.cp.all_quadrants
+  - geo.ls.classifying_2d
+bloom: apply
+assess:
+  - identify
+  - represent
+  - explain
+typical_grade: 8
+context: >
+  Rigid motions preserve size and shape: translations (slide),
+  reflections (flip), rotations (turn). Describe using coordinates.
+  Translation: (x,y) → (x+a, y+b). Reflection over x-axis:
+  (x,y) → (x,-y). Rotation 90° CCW: (x,y) → (-y,x). Composition
+  of transformations. Congruent figures are related by rigid motions.

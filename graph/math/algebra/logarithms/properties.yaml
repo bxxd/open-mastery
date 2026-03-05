@@ -1,0 +1,15 @@
+id: alg.log.properties
+prereqs:
+  - alg.log.basics
+bloom: apply
+assess:
+  - solve
+  - explain
+  - convert
+typical_grade: 10
+context: >
+  Product rule: log(ab) = log(a) + log(b). Quotient rule:
+  log(a/b) = log(a) - log(b). Power rule: log(a^n) = n*log(a).
+  These follow directly from exponent rules — derive them, don't
+  just memorize. Expand and condense logarithmic expressions.
+  Use properties to evaluate without a calculator.

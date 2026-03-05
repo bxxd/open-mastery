@@ -1,0 +1,15 @@
+id: alg.eq.square_roots
+prereqs:
+  - alg.exp.exponents_basics
+bloom: apply
+assess:
+  - solve
+  - explain
+  - compare
+typical_grade: 8
+context: >
+  Square root undoes squaring. sqrt(25) = 5 because 5^2 = 25.
+  Perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100.
+  Irrational numbers: sqrt(2) is not a fraction, it's approximately
+  1.414. Place irrational numbers on a number line. Simplify:
+  sqrt(50) = 5*sqrt(2). Pythagorean theorem connection.

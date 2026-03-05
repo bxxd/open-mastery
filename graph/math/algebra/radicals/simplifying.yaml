@@ -1,0 +1,15 @@
+id: alg.rad.simplifying
+prereqs:
+  - alg.eq.square_roots
+  - alg.exp.exponent_rules
+bloom: apply
+assess:
+  - solve
+  - explain
+  - generate
+typical_grade: 9
+context: >
+  Simplify radicals: sqrt(72) = 6*sqrt(2). Product rule:
+  sqrt(ab) = sqrt(a)*sqrt(b). Quotient rule. Rationalize
+  denominators. Add/subtract like radicals: 3*sqrt(5) + 2*sqrt(5)
+  = 5*sqrt(5). Connect to fractional exponents: sqrt(x) = x^(1/2).

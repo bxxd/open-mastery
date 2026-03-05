@@ -1,0 +1,13 @@
+id: ns.pv.millions
+prereqs:
+  - ns.pv.thousands
+bloom: apply
+assess:
+  - identify
+  - compare
+  - word_problem
+typical_grade: 4
+context: >
+  Extend place value to ten-thousands, hundred-thousands, millions.
+  Read and write multi-digit numbers. Each place is 10x the place
+  to its right. Use commas to read large numbers.

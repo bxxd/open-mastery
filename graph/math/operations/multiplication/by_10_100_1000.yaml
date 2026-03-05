@@ -1,0 +1,13 @@
+id: ops.mul.by_10_100_1000
+prereqs:
+  - ops.mul.facts
+  - ns.pv.millions
+bloom: understand
+assess:
+  - solve
+  - explain_pattern
+typical_grade: 4
+context: >
+  Multiplying by 10, 100, 1000 shifts digits left. This is a
+  place value concept, not "add zeros." Connect to the 10x
+  relationship between places. Explain WHY the pattern works.

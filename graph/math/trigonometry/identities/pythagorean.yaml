@@ -1,0 +1,16 @@
+id: trig.id.pythagorean
+prereqs:
+  - trig.uc.unit_circle
+  - geo.ap.pythagorean
+bloom: apply
+assess:
+  - derive
+  - solve
+  - explain
+typical_grade: 11
+context: >
+  sin²θ + cos²θ = 1. Derived from Pythagorean theorem on the unit
+  circle: x² + y² = 1 where x = cos θ, y = sin θ. Divide by cos²θ:
+  tan²θ + 1 = sec²θ. Divide by sin²θ: 1 + cot²θ = csc²θ. Use to
+  simplify expressions and verify identities. The foundation for
+  all other trig identities.

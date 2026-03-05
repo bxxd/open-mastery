@@ -1,0 +1,15 @@
+id: alg.quad.solve_factoring
+prereqs:
+  - alg.quad.factoring_completely
+  - alg.eq.quadratic_intro
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 9
+context: >
+  Zero product property: if ab = 0, then a = 0 or b = 0.
+  Set quadratic = 0, factor, solve each factor. x^2 - 5x + 6 = 0
+  → (x-2)(x-3) = 0 → x = 2 or x = 3. Solutions are x-intercepts
+  of the parabola. Some quadratics have 0, 1, or 2 real solutions.

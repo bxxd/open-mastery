@@ -1,0 +1,13 @@
+id: ops.mul.2d_by_2d
+prereqs:
+  - ops.mul.2d_by_1d
+  - ops.add.multi_digit
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Multiply two two-digit numbers. Area model (box method) shows
+  four partial products. Standard algorithm as shorthand. Estimate
+  to check: 23 x 47 is roughly 20 x 50 = 1,000.

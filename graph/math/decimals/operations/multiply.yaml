@@ -1,0 +1,16 @@
+id: dec.ops.multiply
+prereqs:
+  - dec.ops.add_subtract
+  - ops.mul.multi_digit
+  - ns.pv.powers_of_10
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 5
+context: >
+  Multiply decimals using place value reasoning. Multiply as
+  whole numbers, then place decimal using total decimal places.
+  Or: 0.3 x 0.4 = 3/10 x 4/10 = 12/100 = 0.12. Estimation
+  catches decimal point errors.

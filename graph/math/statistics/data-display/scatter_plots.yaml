@@ -1,0 +1,17 @@
+id: stat.dd.scatter_plots
+prereqs:
+  - geo.cp.first_quadrant
+  - stat.dd.dot_plots_histograms
+bloom: apply
+assess:
+  - represent
+  - identify
+  - explain
+  - word_problem
+typical_grade: 8
+context: >
+  Scatter plots show relationships between two quantitative variables.
+  Plot ordered pairs. Describe association: positive, negative, none.
+  Strength: strong, moderate, weak. Linear vs nonlinear. Identify
+  clusters and outliers. Sketch trend lines informally. "Does more
+  study time predict higher scores?"

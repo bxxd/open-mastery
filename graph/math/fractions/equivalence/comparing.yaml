@@ -1,0 +1,13 @@
+id: frac.eq.comparing
+prereqs:
+  - frac.eq.equivalent
+bloom: apply
+assess:
+  - compare
+  - order
+  - explain
+typical_grade: 4
+context: >
+  Compare fractions using common denominators, common numerators,
+  or benchmark fractions (0, 1/2, 1). Order fractions on a number
+  line. Use >, <, = symbols. Justify comparisons with reasoning.

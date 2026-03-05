@@ -1,0 +1,14 @@
+id: geo.ap.surface_area
+prereqs:
+  - geo.ap.triangles_parallelograms
+  - geo.vol.rectangular_prism
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 7
+context: >
+  Surface area = total area of all faces. Prisms: 2 x base area +
+  lateral area. Cylinders: 2*pi*r^2 + 2*pi*r*h. Unfold 3D shapes
+  into nets to visualize. Wrapping paper, painting walls, covering
+  boxes. Units are squared (cm^2, ft^2).

@@ -1,0 +1,15 @@
+id: stat.prob.basic
+prereqs:
+  - frac.con.basics
+  - rat.rat.understanding
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 7
+context: >
+  Probability as a number between 0 and 1. P(event) = favorable
+  outcomes / total outcomes. Certain = 1, impossible = 0, equally
+  likely = 0.5. Experimental vs theoretical probability. Coin flips,
+  dice, spinners, card draws. Express as fraction, decimal, or percent.

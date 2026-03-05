@@ -1,0 +1,14 @@
+id: geo.meas.unit_conversion
+prereqs:
+  - ops.mul.by_10_100_1000
+bloom: apply
+assess:
+  - solve
+  - convert
+  - word_problem
+typical_grade: 4
+context: >
+  Convert between units within the same system. Metric: km, m,
+  cm, mm (multiply/divide by 10, 100, 1000). Customary: feet to
+  inches, pounds to ounces, gallons to quarts. Use tables and
+  multiplication.

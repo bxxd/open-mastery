@@ -1,0 +1,13 @@
+id: alg.rat.add_subtract
+prereqs:
+  - alg.rat.simplifying
+bloom: apply
+assess:
+  - solve
+  - explain
+typical_grade: 10
+context: >
+  Find LCD of polynomial denominators by factoring. Build equivalent
+  fractions with the LCD. Combine numerators, simplify. Same logic
+  as numeric fraction addition — LCD, convert, combine. Complex
+  fractions: simplify by multiplying numerator and denominator by LCD.

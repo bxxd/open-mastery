@@ -1,0 +1,15 @@
+id: alg.quad.formula
+prereqs:
+  - alg.quad.completing_square
+bloom: analyze
+assess:
+  - solve
+  - derive
+  - word_problem
+typical_grade: 9
+context: >
+  x = (-b ± sqrt(b^2 - 4ac)) / 2a. Derived by completing the
+  square on ax^2 + bx + c = 0. Works for ANY quadratic. Discriminant
+  b^2 - 4ac tells you how many real solutions: positive = 2,
+  zero = 1, negative = 0 (complex). Student should derive it once,
+  then use it fluently.

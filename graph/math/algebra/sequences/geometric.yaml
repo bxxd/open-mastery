@@ -1,0 +1,17 @@
+id: alg.seq.geometric
+prereqs:
+  - alg.seq.arithmetic
+  - alg.exp.exponent_rules
+bloom: apply
+assess:
+  - solve
+  - generate
+  - explain
+  - word_problem
+typical_grade: 9
+context: >
+  Constant common ratio r. a_n = a_1 * r^(n-1). A geometric sequence
+  IS an exponential function (discrete). Given two terms, find r and
+  a_1. Finite sum: S_n = a_1(1 - r^n)/(1 - r). Infinite sum when
+  |r| < 1: S = a_1/(1 - r). Real-world: compound interest, population
+  growth, bouncing ball heights.

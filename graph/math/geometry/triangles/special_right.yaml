@@ -1,0 +1,16 @@
+id: geo.tri.special_right
+prereqs:
+  - geo.ap.pythagorean
+  - alg.rad.simplifying
+bloom: apply
+assess:
+  - solve
+  - derive
+  - word_problem
+typical_grade: 9
+context: >
+  45-45-90 triangle: legs equal, hypotenuse = leg x sqrt(2).
+  30-60-90 triangle: short leg, long leg = short x sqrt(3),
+  hypotenuse = 2 x short. Derive from equilateral triangle and
+  square diagonal. These ratios appear everywhere in trig and
+  physics. Memorize the patterns, understand where they come from.

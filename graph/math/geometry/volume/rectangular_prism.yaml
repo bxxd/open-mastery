@@ -1,0 +1,15 @@
+id: geo.vol.rectangular_prism
+prereqs:
+  - geo.ap.rectangle
+  - ops.mul.multi_digit
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 5
+context: >
+  Volume = length x width x height. Count unit cubes to build
+  intuition. V = l x w x h for rectangular prisms. Volume is
+  area of base times height. Cubic units (cubic cm, cubic in).
+  Pack boxes, fill aquariums.

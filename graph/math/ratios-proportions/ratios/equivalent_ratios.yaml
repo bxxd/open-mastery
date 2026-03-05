@@ -1,0 +1,14 @@
+id: rat.rat.equivalent
+prereqs:
+  - rat.rat.understanding
+bloom: apply
+assess:
+  - solve
+  - generate
+  - word_problem
+typical_grade: 6
+context: >
+  Equivalent ratios: multiply or divide both quantities by the
+  same number. Tables of equivalent ratios. Double number lines.
+  "If the recipe uses 2 cups flour for 3 cups sugar, how much
+  flour for 9 cups sugar?" Scale up and down.

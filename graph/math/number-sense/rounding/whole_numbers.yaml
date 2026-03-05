@@ -1,0 +1,12 @@
+id: ns.round.whole_numbers
+prereqs:
+  - ns.pv.millions
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Round whole numbers to any place (nearest 10, 100, 1000, etc.).
+  Use number lines to visualize. Apply to estimation in real-world
+  contexts (about how many people, approximately how far).

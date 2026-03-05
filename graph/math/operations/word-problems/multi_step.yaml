@@ -1,0 +1,15 @@
+id: ops.wp.multi_step
+prereqs:
+  - ops.add.multi_digit
+  - ops.sub.multi_digit
+  - ops.mul.2d_by_1d
+  - ops.div.long_1digit
+bloom: apply
+assess:
+  - word_problem
+  - explain
+typical_grade: 4
+context: >
+  Solve problems requiring two or more steps with mixed operations.
+  Identify which operations and in what order. Represent with
+  equations using a letter for the unknown. Assess reasonableness.

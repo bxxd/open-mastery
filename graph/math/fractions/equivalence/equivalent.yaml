@@ -1,0 +1,15 @@
+id: frac.eq.equivalent
+prereqs:
+  - frac.con.basics
+  - ops.mul.factors_and_multiples
+bloom: apply
+assess:
+  - identify
+  - generate
+  - explain
+typical_grade: 4
+context: >
+  Equivalent fractions name the same amount. Multiply or divide
+  numerator and denominator by the same number. Visual proof:
+  same shaded area, different number of pieces. Simplify using
+  common factors.

@@ -1,0 +1,14 @@
+id: alg.exp.variables
+prereqs:
+  - ops.oo.numerical_expressions
+bloom: understand
+assess:
+  - identify
+  - solve
+  - explain
+typical_grade: 6
+context: >
+  Variables represent unknown or changing quantities. Evaluate
+  expressions by substituting values. "If x = 3, what is 2x + 5?"
+  Write expressions from words: "5 more than a number" = n + 5.
+  Variables aren't scary — they're just blanks to fill in.

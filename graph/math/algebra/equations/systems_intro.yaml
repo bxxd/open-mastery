@@ -1,0 +1,15 @@
+id: alg.eq.systems_intro
+prereqs:
+  - alg.fn.linear
+  - alg.eq.multi_step
+bloom: apply
+assess:
+  - solve
+  - represent
+  - word_problem
+typical_grade: 8
+context: >
+  Two equations, two unknowns. Solution is the point where lines
+  intersect. Solve by graphing (visual), substitution (algebraic),
+  or elimination (algebraic). One solution, no solution (parallel),
+  infinite solutions (same line). Real-world: break-even problems.

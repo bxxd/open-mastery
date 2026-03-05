@@ -1,0 +1,14 @@
+id: stat.dd.dot_plots_histograms
+prereqs:
+  - ops.add.multi_digit
+bloom: understand
+assess:
+  - represent
+  - identify
+  - explain
+typical_grade: 6
+context: >
+  Dot plots show individual data points. Histograms group data
+  into bins. Read, create, and interpret both. Describe shape:
+  symmetric, skewed, clusters, gaps, outliers. Choose appropriate
+  display for the data.

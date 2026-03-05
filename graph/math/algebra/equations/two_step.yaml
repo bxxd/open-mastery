@@ -1,0 +1,15 @@
+id: alg.eq.two_step
+prereqs:
+  - alg.eq.one_step
+  - alg.exp.combining
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 7
+context: >
+  Solve equations requiring two operations. 2x + 5 = 13. Undo
+  addition/subtraction first, then multiplication/division.
+  Include fractions and decimals as coefficients. Variables on
+  one side only (for now). Always check the solution.

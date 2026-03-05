@@ -1,0 +1,15 @@
+id: geo.ap.circles_intro
+prereqs:
+  - geo.ap.triangles_parallelograms
+  - dec.ops.multiply
+bloom: apply
+assess:
+  - solve
+  - explain
+  - word_problem
+typical_grade: 7
+context: >
+  Circumference = pi x diameter = 2 x pi x radius. Area = pi x r^2.
+  Pi is the ratio of circumference to diameter — approximately 3.14.
+  Measure circular objects to discover pi empirically. Radius,
+  diameter, chord, arc vocabulary. Use 3.14 or pi button.

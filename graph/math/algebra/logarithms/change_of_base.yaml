@@ -1,0 +1,14 @@
+id: alg.log.change_of_base
+prereqs:
+  - alg.log.properties
+bloom: apply
+assess:
+  - solve
+  - explain
+  - convert
+typical_grade: 10
+context: >
+  log_b(x) = log(x) / log(b) = ln(x) / ln(b). Derive it from
+  the definition. Use it to evaluate logs with any base on a
+  calculator (which only has log and ln). Useful for comparing
+  quantities on different logarithmic scales.

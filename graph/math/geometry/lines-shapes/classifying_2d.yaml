@@ -1,0 +1,14 @@
+id: geo.ls.classifying_2d
+prereqs:
+  - geo.ls.lines_and_symmetry
+bloom: understand
+assess:
+  - identify
+  - compare
+  - explain
+typical_grade: 5
+context: >
+  Classify 2D shapes by properties: parallel sides, perpendicular
+  sides, angle types, side lengths. Hierarchy of quadrilaterals:
+  squares are rectangles are parallelograms. Triangles by sides
+  (equilateral, isosceles, scalene) and angles.

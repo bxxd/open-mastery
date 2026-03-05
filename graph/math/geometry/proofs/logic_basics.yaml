@@ -1,0 +1,14 @@
+id: geo.prf.logic
+prereqs:
+  - alg.eq.two_step
+bloom: understand
+assess:
+  - identify
+  - explain
+  - generate
+typical_grade: 9
+context: >
+  Conditional statements: if P then Q. Converse, inverse,
+  contrapositive. Counterexamples disprove a statement. Inductive
+  vs deductive reasoning. This is the foundation of mathematical
+  proof — you need to PROVE things, not just observe patterns.

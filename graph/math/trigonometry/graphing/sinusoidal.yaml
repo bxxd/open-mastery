@@ -1,0 +1,17 @@
+id: trig.gr.sinusoidal
+prereqs:
+  - trig.uc.radians
+  - alg.fn.linear
+bloom: apply
+assess:
+  - represent
+  - solve
+  - explain
+  - word_problem
+typical_grade: 11
+context: >
+  y = A sin(Bx + C) + D. Amplitude |A|, period 2π/B, phase shift -C/B,
+  vertical shift D. Graph by plotting key points: start, quarter, half,
+  three-quarter, end of one period. Cosine is shifted sine. Real-world:
+  tides, sound waves, Ferris wheels, temperature cycles. Transformations
+  of the parent function y = sin(x).

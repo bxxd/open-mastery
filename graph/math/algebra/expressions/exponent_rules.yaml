@@ -1,0 +1,15 @@
+id: alg.exp.exponent_rules
+prereqs:
+  - alg.exp.exponents_basics
+  - alg.exp.integers
+bloom: apply
+assess:
+  - solve
+  - explain
+  - generate
+typical_grade: 8
+context: >
+  Product rule: a^m x a^n = a^(m+n). Quotient rule: a^m / a^n =
+  a^(m-n). Power rule: (a^m)^n = a^(mn). Negative exponents:
+  a^(-n) = 1/a^n. Zero exponent: a^0 = 1. Scientific notation
+  as an application: 3.2 x 10^5 = 320,000.

@@ -1,0 +1,11 @@
+id: ns.pv.thousands
+prereqs: []
+bloom: understand
+assess:
+  - identify
+  - compare
+typical_grade: 4
+context: >
+  Ones, tens, hundreds, thousands. Read and write numbers to
+  9,999. Identify the value of each digit by its position.
+  Compare numbers using place value reasoning.

@@ -1,0 +1,15 @@
+id: geo.ap.triangles_parallelograms
+prereqs:
+  - geo.ap.rectangle
+  - frac.md.multiply
+bloom: apply
+assess:
+  - solve
+  - explain
+  - word_problem
+typical_grade: 6
+context: >
+  Area of parallelogram = base x height. Area of triangle =
+  1/2 x base x height. Derive from rectangles: a parallelogram
+  rearranges into a rectangle, a triangle is half a parallelogram.
+  Height is perpendicular to base — not always a side of the shape.

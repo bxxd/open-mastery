@@ -1,0 +1,15 @@
+id: frac.con.as_division
+prereqs:
+  - frac.con.basics
+  - ops.div.long_1digit
+bloom: understand
+assess:
+  - explain
+  - solve
+  - represent
+typical_grade: 5
+context: >
+  A fraction IS division. 3/4 = 3 divided by 4. Share 3 sandwiches
+  among 4 people — each gets 3/4. This connects fractions to
+  division permanently. Interpret remainders as fractions:
+  13 / 4 = 3 1/4 (not "3 remainder 1").

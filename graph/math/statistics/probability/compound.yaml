@@ -1,0 +1,17 @@
+id: stat.prob.compound
+prereqs:
+  - stat.prob.basic
+  - frac.md.multiply
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+  - represent
+typical_grade: 7
+context: >
+  Compound events: P(A and B), P(A or B). Independent events: P(A and B)
+  = P(A) x P(B). Dependent events: P(A and B) = P(A) x P(B|A). Tree
+  diagrams and organized lists to enumerate outcomes. Coin flip then
+  die roll. Drawing without replacement. Addition rule for mutually
+  exclusive events.

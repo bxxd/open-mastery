@@ -1,0 +1,13 @@
+id: frac.as.like_add
+prereqs:
+  - frac.con.basics
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Add fractions with the same denominator. The denominator stays —
+  you're combining pieces of the same size. Include sums greater
+  than 1 (improper fractions and mixed numbers). Visual: combining
+  shaded parts on the same model.

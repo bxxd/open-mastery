@@ -1,0 +1,16 @@
+id: geo.cp.all_quadrants
+prereqs:
+  - geo.cp.first_quadrant
+  - alg.exp.integers
+bloom: apply
+assess:
+  - identify
+  - solve
+  - represent
+typical_grade: 6
+context: >
+  Extend coordinate plane to all four quadrants. Negative x and y.
+  Plot and read points in any quadrant. Reflect points across axes.
+  Distance between points with same x or same y coordinate
+  (absolute value of difference). Real-world: maps with latitude
+  and longitude.

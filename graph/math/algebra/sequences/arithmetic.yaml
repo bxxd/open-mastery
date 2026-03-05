@@ -1,0 +1,17 @@
+id: alg.seq.arithmetic
+prereqs:
+  - alg.fn.linear
+  - ns.pat.sequences
+bloom: apply
+assess:
+  - solve
+  - generate
+  - explain
+  - word_problem
+typical_grade: 9
+context: >
+  Constant common difference d. a_n = a_1 + (n-1)d. An arithmetic
+  sequence IS a linear function (discrete). Given any two terms,
+  find d and a_1. Sum of first n terms: S_n = n(a_1 + a_n)/2.
+  Gauss's trick: pair first and last, second and second-to-last.
+  Real-world: salary increases, stacking objects, seating in rows.

@@ -1,0 +1,15 @@
+id: stat.dd.box_plots
+prereqs:
+  - stat.meas.center_spread
+bloom: apply
+assess:
+  - represent
+  - identify
+  - compare
+  - explain
+typical_grade: 6
+context: >
+  Box-and-whisker plots: minimum, Q1, median, Q3, maximum. The box
+  shows the middle 50% (IQR). Whiskers extend to min/max (or 1.5xIQR
+  for modified). Compare distributions side by side. Identify outliers.
+  Connect to median and IQR from measures of center and spread.

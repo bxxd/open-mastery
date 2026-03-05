@@ -1,0 +1,16 @@
+id: rat.prop.solving
+prereqs:
+  - rat.rate.unit
+  - rat.pct.basics
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 7
+context: >
+  A proportion is two equal ratios. Cross-multiply to solve,
+  but understand WHY: equivalent fractions. Scale factor reasoning.
+  "If 3 shirts cost $45, how much for 7 shirts?" Set up the
+  proportion, solve for the unknown. Maps, scale drawings, similar
+  figures are proportional.

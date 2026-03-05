@@ -1,0 +1,15 @@
+id: rat.pct.increase_decrease
+prereqs:
+  - rat.prop.solving
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 7
+context: >
+  Percent increase and decrease. Original x (1 + rate) for increase,
+  original x (1 - rate) for decrease. Markup, markdown, tax, tip,
+  commission, simple interest. Find the percent change given before
+  and after. Common trap: 50% increase then 50% decrease does NOT
+  return to the original.

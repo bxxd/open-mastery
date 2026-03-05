@@ -1,0 +1,16 @@
+id: frac.md.multiply
+prereqs:
+  - frac.md.fraction_times_whole
+  - frac.eq.equivalent
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - represent
+typical_grade: 5
+context: >
+  Multiply fraction by fraction. Area model: 2/3 x 3/4 is the
+  overlap of shading 2/3 of one side and 3/4 of the other.
+  Algorithm: multiply numerators, multiply denominators, simplify.
+  Key insight: multiplying by a fraction less than 1 makes the
+  result SMALLER. "Of" means multiply.

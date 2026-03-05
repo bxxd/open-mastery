@@ -1,0 +1,16 @@
+id: geo.ang.parallel_lines
+prereqs:
+  - geo.ang.measurement
+  - geo.ls.lines_and_symmetry
+bloom: apply
+assess:
+  - identify
+  - solve
+  - explain
+typical_grade: 8
+context: >
+  When a transversal crosses parallel lines: corresponding angles
+  are equal, alternate interior angles are equal, alternate exterior
+  angles are equal, co-interior (same-side) angles are supplementary.
+  Use these relationships to find unknown angles. Prove lines are
+  parallel using angle relationships.

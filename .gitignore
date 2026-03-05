@@ -1,0 +1,12 @@
+# Build artifacts
+engine/target/
+
+# Environment files (contain local paths)
+.env
+
+# Student progress data
+progress/
+
+# OS files
+.DS_Store
+Thumbs.db

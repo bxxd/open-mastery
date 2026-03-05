@@ -1,0 +1,14 @@
+id: frac.con.basics
+prereqs:
+  - ops.div.facts
+bloom: understand
+assess:
+  - identify
+  - represent
+  - explain
+typical_grade: 4
+context: >
+  What a fraction is: equal parts of a whole. Numerator counts
+  pieces, denominator tells how many equal pieces total. Read
+  and write fractions. Represent on number lines and area models.
+  Connect to division: 3/4 means 3 divided by 4.

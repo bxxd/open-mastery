@@ -1,0 +1,12 @@
+id: ops.sub.within_1000
+prereqs:
+  - ns.pv.thousands
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Subtract numbers within 1,000. Standard algorithm with
+  regrouping (borrowing). Zeros in the minuend are a common
+  trouble spot. Estimate to check reasonableness.

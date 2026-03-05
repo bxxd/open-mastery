@@ -1,0 +1,12 @@
+id: ops.mul.facts
+prereqs:
+  - ops.add.within_1000
+bloom: apply
+assess:
+  - recall
+  - solve
+typical_grade: 4
+context: >
+  Fluency with multiplication facts through 12x12. Build from
+  patterns (2s, 5s, 10s) to harder facts (7s, 8s). Use arrays
+  and area models to give meaning. Connect to repeated addition.

@@ -1,0 +1,12 @@
+id: ops.mul.multi_digit
+prereqs:
+  - ops.mul.2d_by_2d
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Multiply multi-digit whole numbers fluently using the standard
+  algorithm. Up to 4-digit by 2-digit. Estimate products to check
+  reasonableness. The algorithm should feel like a tool, not a mystery.

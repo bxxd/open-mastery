@@ -1,0 +1,15 @@
+id: alg.eq.one_step
+prereqs:
+  - alg.exp.variables
+  - alg.exp.integers
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 6
+context: >
+  Solve equations with one operation. x + 5 = 12. 3x = 21.
+  x/4 = 7. Use inverse operations. Balance model: what you do
+  to one side, you must do to the other. Check by substituting
+  back. Write equations from word problems.

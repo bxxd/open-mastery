@@ -1,0 +1,14 @@
+id: dec.ops.divide
+prereqs:
+  - dec.ops.multiply
+  - ops.div.long_2digit
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Divide decimals by whole numbers and whole numbers by decimals.
+  Relate to fractions: 4.5 / 0.9 = 45/9 = 5. Use powers of 10
+  to eliminate decimals in divisor. Long division with decimal
+  quotients. Money division problems.

@@ -1,0 +1,15 @@
+id: alg.exp.combining
+prereqs:
+  - alg.exp.variables
+  - alg.exp.integers
+bloom: apply
+assess:
+  - solve
+  - generate
+  - explain
+typical_grade: 6
+context: >
+  Like terms have the same variable part. 3x + 5x = 8x.
+  2a + 3b + a = 3a + 3b. Use the distributive property to
+  explain: 3x + 5x = (3+5)x = 8x. Simplify expressions by
+  combining. Constants are like terms with each other.

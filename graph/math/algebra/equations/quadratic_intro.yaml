@@ -1,0 +1,16 @@
+id: alg.eq.quadratic_intro
+prereqs:
+  - alg.exp.polynomials
+  - alg.fn.linear
+bloom: understand
+assess:
+  - identify
+  - represent
+  - explain
+typical_grade: 8
+context: >
+  Quadratic functions: y = ax^2 + bx + c. Parabola shape. Opens up
+  if a > 0, down if a < 0. Vertex is the maximum or minimum. Axis
+  of symmetry. Compare to linear: quadratic has non-constant rate
+  of change (second differences are constant). Graph by plotting
+  points or using vertex.

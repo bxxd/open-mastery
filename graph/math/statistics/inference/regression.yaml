@@ -1,0 +1,17 @@
+id: stat.inf.regression
+prereqs:
+  - stat.dd.scatter_plots
+  - alg.fn.linear
+bloom: apply
+assess:
+  - solve
+  - explain
+  - word_problem
+  - represent
+typical_grade: 9
+context: >
+  Line of best fit minimizes residuals (vertical distances from points
+  to line). Use slope and y-intercept to interpret: "For each additional
+  hour of study, the model predicts X more points." Residuals show how
+  well the line fits. Correlation coefficient r: strength and direction.
+  Correlation is not causation.

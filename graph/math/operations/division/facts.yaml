@@ -1,0 +1,12 @@
+id: ops.div.facts
+prereqs:
+  - ops.mul.facts
+bloom: apply
+assess:
+  - recall
+  - solve
+typical_grade: 4
+context: >
+  Division as the inverse of multiplication. "72 / 8 = ? means
+  ? x 8 = 72." Fluency with division facts through 144/12.
+  Relate to fair sharing and grouping.

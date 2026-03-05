@@ -1,0 +1,15 @@
+id: alg.exp.polynomials
+prereqs:
+  - alg.exp.combining
+  - alg.exp.exponent_rules
+bloom: apply
+assess:
+  - identify
+  - solve
+  - generate
+typical_grade: 8
+context: >
+  Polynomials: sums of terms with whole-number exponents. Monomial,
+  binomial, trinomial. Degree of a polynomial. Add and subtract
+  polynomials by combining like terms. Standard form (descending
+  powers). Evaluate polynomials for given values.

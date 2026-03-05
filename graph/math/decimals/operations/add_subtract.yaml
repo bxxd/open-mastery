@@ -1,0 +1,15 @@
+id: dec.ops.add_subtract
+prereqs:
+  - ns.pv.decimals_to_thousandths
+  - ops.add.multi_digit
+  - ops.sub.multi_digit
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Add and subtract decimals to hundredths. Line up decimal points
+  (which is lining up place values). Trailing zeros to make same
+  number of decimal places. Money problems are natural practice.
+  Estimate first to catch decimal point errors.

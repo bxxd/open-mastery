@@ -1,0 +1,12 @@
+id: ops.mul.2d_by_1d
+prereqs:
+  - ops.mul.facts
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Multiply a two-digit number by a one-digit number. Area model
+  and partial products before standard algorithm. 34 x 7 =
+  (30 x 7) + (4 x 7). Builds toward multi-digit multiplication.

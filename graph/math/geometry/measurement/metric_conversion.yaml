@@ -1,0 +1,15 @@
+id: geo.meas.metric_conversion
+prereqs:
+  - geo.meas.unit_conversion
+  - dec.ops.multiply
+bloom: apply
+assess:
+  - solve
+  - convert
+  - word_problem
+typical_grade: 5
+context: >
+  Convert within the metric system using powers of 10 and decimals.
+  km <-> m <-> cm <-> mm. kg <-> g <-> mg. L <-> mL. Moving the
+  decimal point. Multi-step: "3.5 kg of flour shared into 250g
+  bags — how many bags?"

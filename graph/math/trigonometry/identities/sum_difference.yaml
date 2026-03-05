@@ -1,0 +1,15 @@
+id: trig.id.sum_difference
+prereqs:
+  - trig.id.pythagorean
+bloom: analyze
+assess:
+  - derive
+  - solve
+  - explain
+typical_grade: 11
+context: >
+  sin(A ± B) = sinA cosB ± cosA sinB. cos(A ± B) = cosA cosB ∓ sinA sinB.
+  tan(A ± B) = (tanA ± tanB)/(1 ∓ tanA tanB). Derive sin(A+B) from unit
+  circle rotation. Double angle formulas follow: let A = B. Half angle
+  formulas from cos(2θ) = 1 - 2sin²θ. These are tools, not things to
+  memorize — derive when needed.

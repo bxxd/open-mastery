@@ -1,0 +1,14 @@
+id: ops.div.long_2digit
+prereqs:
+  - ops.div.long_1digit
+  - ops.mul.multi_digit
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Long division with two-digit divisors. Estimate quotients
+  using compatible numbers. Dividends up to 4 digits. Interpret
+  remainders as whole numbers, fractions, or decimals depending
+  on context.

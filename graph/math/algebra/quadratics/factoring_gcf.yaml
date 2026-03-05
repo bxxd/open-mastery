@@ -1,0 +1,15 @@
+id: alg.quad.factoring_gcf
+prereqs:
+  - alg.exp.distributive
+  - ops.mul.factors_and_multiples
+bloom: apply
+assess:
+  - solve
+  - identify
+  - explain
+typical_grade: 8
+context: >
+  Factor out the greatest common factor first — always. GCF of
+  coefficients times GCF of variable parts. 6x^2 + 9x = 3x(2x + 3).
+  This is reverse distribution. Every factoring problem starts here.
+  If there's a common factor, pull it out before trying anything else.

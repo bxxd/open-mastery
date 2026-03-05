@@ -1,0 +1,14 @@
+id: frac.as.unlike_add
+prereqs:
+  - frac.as.like_add
+  - frac.eq.equivalent
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Add fractions with unlike denominators. Find a common denominator
+  using equivalent fractions. LCD is efficient but any common
+  denominator works. Visual: same-sized pieces on a number line.
+  Include mixed numbers.

@@ -1,0 +1,16 @@
+id: trig.rat.basics
+prereqs:
+  - geo.tri.special_right
+  - frac.md.divide
+bloom: understand
+assess:
+  - identify
+  - solve
+  - explain
+typical_grade: 10
+context: >
+  sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan =
+  opposite/adjacent. SOH-CAH-TOA. The ratios depend on the angle,
+  not the triangle size (similar triangles). Find trig ratios given
+  a right triangle with labeled sides. Use special right triangles
+  (30-60-90, 45-45-90) to find exact values.

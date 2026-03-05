@@ -1,0 +1,16 @@
+id: geo.circ.properties
+prereqs:
+  - geo.ap.circles_intro
+  - geo.ang.parallel_lines
+bloom: apply
+assess:
+  - identify
+  - solve
+  - explain
+typical_grade: 10
+context: >
+  Central angles, inscribed angles, arcs. Inscribed angle = half
+  the central angle (same arc). Tangent is perpendicular to radius
+  at point of tangency. Chord properties: perpendicular from center
+  bisects chord. Secant-tangent relationships. Arc length =
+  (angle/360) x circumference.

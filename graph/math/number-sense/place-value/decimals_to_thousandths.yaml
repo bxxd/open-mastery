@@ -1,0 +1,13 @@
+id: ns.pv.decimals_to_thousandths
+prereqs:
+  - dec.pv.tenths_hundredths
+bloom: apply
+assess:
+  - identify
+  - compare
+  - order
+typical_grade: 5
+context: >
+  Extend decimal place value through thousandths. Read, write,
+  compare decimals to thousandths. 0.400 = 0.40 = 0.4. Use
+  place value to reason about relative size.

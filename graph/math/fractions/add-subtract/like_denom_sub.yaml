@@ -1,0 +1,12 @@
+id: frac.as.like_sub
+prereqs:
+  - frac.con.basics
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Subtract fractions with the same denominator. Remove pieces of
+  the same size. Include subtracting from whole numbers and mixed
+  numbers. Real-world: ate 2/5 of a pizza, how much is left?

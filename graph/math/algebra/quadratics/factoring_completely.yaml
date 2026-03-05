@@ -1,0 +1,17 @@
+id: alg.quad.factoring_completely
+prereqs:
+  - alg.quad.diff_squares
+  - alg.quad.factoring_trinomials
+bloom: apply
+assess:
+  - solve
+  - explain
+  - word_problem
+typical_grade: 9
+context: >
+  Multi-step factoring strategy: (1) GCF first, always. (2) Count
+  terms — 2 terms: check difference of squares. 3 terms: trinomial
+  methods. 4 terms: grouping. (3) Check if any factor can be factored
+  further. Advanced patterns: a^2 + b^2 - 2ab - 25 = (a-b)^2 - 25
+  = (a-b+5)(a-b-5). Substitution: let u = (expression), factor in u,
+  then substitute back. Factor until every factor is prime.

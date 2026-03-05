@@ -40,14 +40,14 @@ But every existing knowledge graph of this kind is proprietary. Khan Academy mad
 - **Common Core standards** — topic lists but NOT a dependency graph
 - **OpenStax** — textbooks, no graph
 
-The field is wide open. No public 3,000-node JSON dump. No reference engine. No GitHub org with community PRs. This is the biggest untapped education unlock since Khan Academy.
+The field is wide open. No public 3,000-node YAML dump. No reference engine. No GitHub org with community PRs. This is the biggest untapped education unlock since Khan Academy.
 
 ## The Key Insight: The Graph Is Reconstructable
 
 The graph is not secret knowledge. It's the consensus of how math builds on itself — every textbook encodes it implicitly in chapter ordering. The work is making it explicit and granular. We can construct it:
 
-1. **Bootstrap with LLMs** — "List every topic in Algebra 1. For each, list prerequisites." Do this for all 17 courses. Get 80% of the graph in a day.
-2. **Refine the 20%** — Cross-course edges, granularity tuning, encompassing relationships. This is the curriculum expertise work.
+1. **Bootstrap with LLMs** — "List every topic in Algebra 1. For each, list prerequisites." Do this for all domains. Get 80% of the graph in a day.
+2. **Refine the 20%** — Cross-domain edges, granularity tuning, encompassing relationships. This is the curriculum expertise work.
 3. **Community improves it** — Like Wikipedia. Doesn't need to be perfect on day one. Needs to be open and improvable.
 
 ## Core Concepts
@@ -60,29 +60,141 @@ A student's position on the DAG — not a single "current topic" but the full bo
 
 Strict. You demonstrate mastery or you don't advance. No partial credit at the gate level. No skipping. This is the constraint that makes unlimited velocity safe.
 
-### Encompassing Relationships
+### Deliberate Practice at the Two-Sigma Level
 
-Advanced topics implicitly practice simpler sub-skills. A calculus problem exercises algebra. The engine uses these weights to compress reviews — one advanced problem can knock out multiple simpler reviews.
+The graph enables Ericsson-style deliberate practice at Bloom's two-sigma level. Every task is at the edge of ability (frontier computation). Every assessment requires deep engagement (explain, derive, generate — not just recall). The prompt cascade provides expert tutoring direction calibrated to each topic. The result: one-on-one tutoring outcomes at zero marginal cost.
 
-### Spaced Repetition with Decay
+### Encompassing Relationships (Future)
 
-Mastery isn't binary forever. Confidence decays over time. The student model tracks last-assessed timestamps and schedules reviews before mastery drops below threshold. Hierarchical — reviewing an advanced topic refreshes its prerequisites.
+Advanced topics implicitly practice simpler sub-skills. A calculus problem exercises algebra. The graph will encode these weights so the engine can compress reviews — one advanced problem can knock out multiple simpler reviews. This prevents review overload as the graph grows.
+
+### Spaced Repetition with Decay (Future)
+
+Mastery isn't binary forever. Confidence decays over time. The student model will track last-assessed timestamps and schedule reviews before mastery drops below threshold. Encompassing relationships make this efficient — reviewing an advanced topic refreshes its prerequisites.
 
 ## Architecture
 
+Two **MCP servers** share the same core engine. Any LLM client that speaks MCP — Claude Desktop, Claude Code, custom apps — connects and becomes either a tutor or a curriculum editor.
+
 ```
-graph/          Knowledge graph data (JSON). Nodes are topics, edges are prerequisites.
-engine/         Rust crate. Traversal, student model, spaced repetition.
-cli/            CLI interface. Pick a student, get the next topic, record mastery.
+graph/math/                 Knowledge graph (YAML). One file per node, organized by domain.
+  number-sense/             Domain directories
+  operations/
+  fractions/
+  ...
+plans/                      Curated paths through the graph (YAML).
+engine/
+├── crates/
+│   ├── core/               Domain logic. Graph loading, traversal, mutations, mastery state.
+│   ├── mcp-student/        Student MCP. Lean tutoring: frontier, teach, assess, master.
+│   ├── mcp-teacher/        Teacher MCP. Full authoring: browse, CRUD, validate, git, artifacts.
+│   ├── cli/                CLI adapter. Scripting, batch ops, graph validation. (planned)
+│   └── web-server/         HTTP adapter. Graph explorer, progress dashboard. (planned)
+└── Cargo.toml              Workspace root.
 ```
 
-**The Graph** — Each node: topic name, course, difficulty, prerequisite edges, encompassing weights, assessment criteria. Community-editable, versioned like Wikipedia.
+### The Graph
 
-**The Engine** — Given a student's mastery state and the graph, computes the knowledge frontier and selects the optimal next task. Topological sort + mastery gates + spaced repetition with decay + review compression via encompassing relationships.
+YAML files organized by mathematical domain (not grade level). One file per node. See `docs/GRAPH_FORMAT.md` for the full specification.
 
-**Student State** — Per-student, per-node: mastery level, last assessed, confidence decay curve. JSON to start.
+Each node: three-part ID (`domain.unit.topic`), prerequisite edges, assessment criteria, Bloom level, pedagogical context. `_prompt.yaml` files at each directory level provide cascading system prompts that control HOW the LLM teaches.
 
-**The Tutor** — Not in this repo. That's whatever LLM you point at it. The engine says "teach this topic" and "assess with these problem types." The tutor is already built — Claude can explain any math topic, generate problems at any difficulty, check work, and adapt.
+Grades are metadata (`typical_grade`), not the organizing principle. The graph is open to any learner regardless of age.
+
+### Two MCP Servers
+
+**Student MCP** (`open-mastery-student`) — lean tutoring engine:
+
+```
+Tools:
+  get_frontier(student_id)                      → unlocked nodes ready to learn
+  get_node(node_id)                             → node details + prompt cascade
+  record_mastery(student_id, node_id, level)    → update state, return newly unlocked
+  get_progress(student_id)                      → full mastery state
+```
+
+**Teacher MCP** (`open-mastery-teacher`) — full curriculum authoring toolkit:
+
+```
+Browse:     list_domains, list_nodes, search_nodes, get_node, validate_graph
+CRUD:       create_node, update_node, delete_node, add_prerequisite, remove_prerequisite
+Prompts:    get_prompt_cascade, set_prompt
+Git:        git_status, git_commit, git_log
+Artifacts:  save_artifact, get_artifact, list_artifacts
+```
+
+Teachers connect Claude to the teacher MCP and build curriculum through conversation. Every mutation writes YAML to disk. Git tracks versions.
+
+### Student State
+
+Per-student, per-node: mastery level, last assessed. JSON files. Separate from the graph — the graph is static and public, student state is dynamic and private.
+
+### Plans
+
+Curated paths through the graph. A plan filters the frontier — "only show nodes in this plan." Teachers create plans for grade levels, remediation, or acceleration. The DAG enforces prerequisites regardless.
+
+### The Tutor
+
+Not in this repo. That's whatever LLM client you point at the student MCP server. Claude Desktop connects, calls `get_frontier` to know what to teach, `get_node` to understand the concept and get teaching guidance (prompt cascade), teaches and assesses, then calls `record_mastery` when the student demonstrates it.
+
+### Quickstart
+
+```bash
+cp .env.example .env        # configure graph/progress paths
+make test                    # run all tests
+make run                     # start student MCP (stdio)
+make run-sse                 # start student MCP (HTTP/SSE on port 3001)
+```
+
+Copy `mcp.json.example` to your `.mcp.json` and update paths to connect Claude Desktop or Claude Code.
+
+### How It Works
+
+**For students:**
+1. Connect Claude to the student MCP via `.mcp.json`
+2. Kid opens Claude and starts learning
+3. Claude calls `get_frontier` → "Here's what you can learn next"
+4. Kid picks a topic (or Claude recommends one)
+5. Claude calls `get_node` → gets teaching guidance from prompt cascade
+6. Claude teaches, generates problems, assesses
+7. Claude calls `record_mastery` → new nodes unlock
+8. Repeat
+
+**For teachers:**
+1. Connect Claude to the teacher MCP via `.mcp.json`
+2. Teacher says "show me the fractions domain"
+3. Claude calls `list_nodes` → browseable list
+4. Teacher says "add a node for mixed number addition"
+5. Claude calls `create_node` → YAML file written to disk
+6. Teacher says "commit these changes"
+7. Claude calls `git_commit` → versioned
+
+### Hexagonal Architecture
+
+The engine is the core — pure domain logic with no opinion about how you interact with it. Ports and adapters:
+
+```
+                  ┌─────────────────────┐
+  Claude Desktop ─┤                     ├─ graph/ (YAML files)
+  Claude Code ────┤                     ├─ progress/ (JSON files)
+  Codex / OpenAI ─┤    Engine Core      ├─ plans/ (YAML files)
+  Web Frontend ───┤  (domain logic)     │
+  Custom apps ────┤                     │
+                  └─────────────────────┘
+                  Student  Teacher  CLI  HTTP
+                    MCP     MCP     ▲     ▲
+                    ▲        ▲
+                    adapters (ports)
+```
+
+Each adapter is its own crate, depending only on `core`:
+
+- **`mcp-student`**: Lean tutoring. Connect Claude Desktop, kid starts learning immediately.
+- **`mcp-teacher`**: Full authoring toolkit. Browse, create, edit, validate, git, artifacts.
+- **`web-server`**: (planned) Graph visualization, progress dashboard, embedded chat, graph editor.
+- **`cli`**: (planned) Scripting, batch operations, graph validation.
+
+The engine doesn't know or care which adapter is calling it. Build one, build all, swap them out — the core never changes.
 
 ## Core Philosophy
 
@@ -134,11 +246,11 @@ cli/            CLI interface. Pick a student, get the next topic, record master
 ## Tech Stack
 
 - **Language**: Rust
-- **Graph format**: JSON (serde)
+- **Graph format**: YAML (one file per node, organized by domain)
 - **Student state**: JSON (file-based to start)
-- **CLI**: clap
-- **Tutor integration**: LLM API calls (Claude/OpenAI) — separate concern
+- **Interface**: MCP servers (Model Context Protocol) — student + teacher
+- **Tutor**: Any MCP client — Claude Desktop, Claude Code, Codex, or any custom app
 
 ## License
 
-MIT. This is a public good. Use it, fork it, build on it — for your kids, your classroom, your app. No restrictions. See [LICENSE](LICENSE) for details.
+Dual licensed. The graph data (`graph/`) is **CC-BY-SA 4.0** — fork it, extend it, but keep derivatives open. The engine code (`engine/`) is **MIT** — use it however you want. See [LICENSE](LICENSE) for details.

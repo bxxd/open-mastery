@@ -1,0 +1,15 @@
+id: stat.inf.sampling
+prereqs:
+  - stat.meas.center_spread
+bloom: understand
+assess:
+  - identify
+  - compare
+  - explain
+typical_grade: 7
+context: >
+  A sample represents a population. Random sampling reduces bias.
+  Types: simple random, stratified, cluster, systematic. Convenience
+  samples are biased — the lunch table isn't the whole school.
+  Larger samples give better estimates. Compare sample statistics
+  to make informal inferences about populations.

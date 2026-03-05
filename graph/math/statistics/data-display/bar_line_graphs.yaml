@@ -1,0 +1,15 @@
+id: stat.dd.bar_line_graphs
+prereqs:
+  - ops.add.within_1000
+bloom: understand
+assess:
+  - represent
+  - identify
+  - explain
+  - compare
+typical_grade: 4
+context: >
+  Bar graphs for categorical data, line graphs for change over time.
+  Read and create both. Scales matter — misleading graphs use broken
+  axes or exaggerated scales. Title, labels, units. "What does this
+  graph tell you?" before "Make this graph."

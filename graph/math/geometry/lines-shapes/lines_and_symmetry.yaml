@@ -1,0 +1,12 @@
+id: geo.ls.lines_and_symmetry
+prereqs:
+  - geo.ang.basics
+bloom: understand
+assess:
+  - identify
+  - explain
+typical_grade: 4
+context: >
+  Points, lines, rays, segments. Parallel and perpendicular lines.
+  Lines of symmetry in 2D figures. Classify triangles by angles
+  (right, acute, obtuse). Identify these in the real world.

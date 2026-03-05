@@ -1,0 +1,16 @@
+id: trig.rat.solving
+prereqs:
+  - trig.rat.basics
+  - alg.eq.multi_step
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 10
+context: >
+  Given an angle and one side, find the other sides using trig ratios.
+  Given two sides, find the angle using inverse trig (arcsin, arccos,
+  arctan). Angles of elevation and depression. Navigation, surveying,
+  indirect measurement. "How tall is the building if the shadow is
+  50 feet and the sun angle is 35 degrees?"

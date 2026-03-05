@@ -1,0 +1,14 @@
+id: alg.rat.simplifying
+prereqs:
+  - alg.quad.factoring_gcf
+bloom: apply
+assess:
+  - solve
+  - explain
+  - identify
+typical_grade: 9
+context: >
+  Factor numerator and denominator, cancel common factors. Domain
+  restrictions: denominator cannot be zero. Simplify before multiplying.
+  Connect to fraction simplification — same principle, polynomial
+  expressions instead of numbers.

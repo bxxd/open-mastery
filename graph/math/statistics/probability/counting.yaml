@@ -1,0 +1,16 @@
+id: stat.prob.counting
+prereqs:
+  - stat.prob.compound
+  - ops.mul.facts
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 8
+context: >
+  Fundamental counting principle: if event A has m outcomes and event B
+  has n outcomes, then A followed by B has m x n outcomes. Permutations:
+  order matters, n!/(n-r)!. Combinations: order doesn't matter,
+  n!/[r!(n-r)!]. "How many ways can you arrange 3 books from 5?" vs
+  "How many ways can you choose 3 books from 5?"

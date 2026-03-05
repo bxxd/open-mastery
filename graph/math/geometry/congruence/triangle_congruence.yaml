@@ -1,0 +1,16 @@
+id: geo.cong.triangles
+prereqs:
+  - geo.tri.angle_sum
+  - geo.prf.two_column
+bloom: apply
+assess:
+  - identify
+  - derive
+  - explain
+typical_grade: 9
+context: >
+  Congruent triangles: same shape and size. Criteria: SSS, SAS,
+  ASA, AAS (not SSA — ambiguous case). Corresponding parts of
+  congruent triangles are congruent (CPCTC). Use congruence to
+  prove segment or angle relationships. Mark diagrams with tick
+  marks and arcs.

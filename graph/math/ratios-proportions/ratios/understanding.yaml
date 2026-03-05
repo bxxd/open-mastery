@@ -1,0 +1,15 @@
+id: rat.rat.understanding
+prereqs:
+  - frac.eq.equivalent
+  - ops.mul.facts
+bloom: understand
+assess:
+  - identify
+  - represent
+  - explain
+typical_grade: 6
+context: >
+  A ratio compares two quantities multiplicatively. 3:5 means
+  "for every 3 of this, there are 5 of that." Not a fraction
+  (though related). Notation: 3:5, 3 to 5, 3/5. Use tape
+  diagrams and tables to represent. Real-world: recipes, mixtures.

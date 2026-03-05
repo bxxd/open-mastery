@@ -1,0 +1,14 @@
+id: ns.pat.sequences
+prereqs:
+  - ops.mul.facts
+bloom: understand
+assess:
+  - identify
+  - generate
+  - explain_pattern
+typical_grade: 4
+context: >
+  Identify and extend number patterns. Generate a pattern given
+  a rule (add 3, multiply by 2). Recognize features of patterns
+  (always odd, always increases). Input-output tables. Early
+  algebraic thinking.

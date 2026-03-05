@@ -1,0 +1,12 @@
+id: ops.add.within_1000
+prereqs:
+  - ns.pv.thousands
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Add numbers with sums up to 1,000. Standard algorithm with
+  regrouping (carrying). Estimate first, then compute. Check
+  with inverse (subtraction).

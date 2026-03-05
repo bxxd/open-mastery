@@ -1,0 +1,14 @@
+id: ops.div.long_1digit
+prereqs:
+  - ops.div.facts
+  - ops.sub.multi_digit
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Long division with one-digit divisors. Divide, multiply,
+  subtract, bring down. Interpret remainders in context
+  (leftover, round up, express as fraction). Dividends up
+  to 4 digits.

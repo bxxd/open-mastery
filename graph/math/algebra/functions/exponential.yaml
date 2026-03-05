@@ -1,0 +1,16 @@
+id: alg.fn.exponential
+prereqs:
+  - alg.exp.exponent_rules
+  - alg.fn.linear
+bloom: apply
+assess:
+  - solve
+  - represent
+  - word_problem
+typical_grade: 9
+context: >
+  y = a * b^x. Growth (b > 1) and decay (0 < b < 1). Compare to
+  linear: linear adds, exponential multiplies. Population growth,
+  compound interest, radioactive decay. The curve gets steeper
+  (growth) or flatter (decay) — never crosses zero. Recognize
+  from tables: constant ratio between consecutive y-values.

@@ -1,0 +1,16 @@
+id: alg.exp.integers
+prereqs:
+  - ops.add.multi_digit
+  - ops.sub.multi_digit
+bloom: apply
+assess:
+  - solve
+  - compare
+  - word_problem
+typical_grade: 6
+context: >
+  Negative numbers. Number line extends left of zero. Opposite
+  of 5 is -5. Absolute value = distance from zero. Add, subtract
+  integers: same sign = add magnitudes, keep sign. Different signs
+  = subtract magnitudes, keep sign of larger. Temperature, debt,
+  elevation.

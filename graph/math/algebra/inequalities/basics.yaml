@@ -1,0 +1,14 @@
+id: alg.ineq.basics
+prereqs:
+  - alg.eq.two_step
+bloom: apply
+assess:
+  - solve
+  - represent
+  - word_problem
+typical_grade: 7
+context: >
+  Inequalities: <, >, <=, >=. Solve like equations but flip the
+  sign when multiplying/dividing by a negative. Graph solutions
+  on a number line (open vs closed circle). Write inequalities
+  from context: "at least 5" means >= 5.

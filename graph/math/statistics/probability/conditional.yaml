@@ -1,0 +1,15 @@
+id: stat.prob.conditional
+prereqs:
+  - stat.prob.compound
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 9
+context: >
+  P(A|B) = P(A and B) / P(B). "Given that it's raining, what's the
+  probability of a traffic jam?" Two-way frequency tables are the
+  key tool. Distinguish P(A|B) from P(B|A) — common confusion.
+  Independent events: P(A|B) = P(A). Real-world: medical tests,
+  false positives, base rate fallacy.

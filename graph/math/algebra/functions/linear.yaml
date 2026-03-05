@@ -1,0 +1,16 @@
+id: alg.fn.linear
+prereqs:
+  - alg.fn.intro
+  - rat.rate.unit
+bloom: apply
+assess:
+  - solve
+  - represent
+  - word_problem
+typical_grade: 8
+context: >
+  Linear functions: y = mx + b. Constant rate of change = slope.
+  m = rise/run = (y2-y1)/(x2-x1). b = y-intercept (where line
+  crosses y-axis). Graph from slope and intercept. Identify linear
+  relationships in tables (constant first differences). Real-world:
+  phone plans, distance over time.

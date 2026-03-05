@@ -1,0 +1,15 @@
+id: geo.ap.rectangle
+prereqs:
+  - ops.mul.facts
+  - ops.add.within_1000
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 4
+context: >
+  Perimeter = distance around. Area = space inside. Formulas for
+  rectangles: P = 2l + 2w, A = l x w. Distinguish between the
+  two — perimeter is linear (fence), area is square (carpet).
+  Given area, find possible dimensions. Units matter.

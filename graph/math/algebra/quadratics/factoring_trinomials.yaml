@@ -1,0 +1,16 @@
+id: alg.quad.factoring_trinomials
+prereqs:
+  - alg.quad.factoring_gcf
+  - alg.exp.polynomials
+bloom: apply
+assess:
+  - solve
+  - generate
+  - explain
+typical_grade: 9
+context: >
+  Factor x^2 + bx + c: find two numbers that multiply to c and add
+  to b. Factor ax^2 + bx + c (a != 1): AC method or grouping.
+  Perfect square trinomials: a^2 + 2ab + b^2 = (a + b)^2. Recognize
+  patterns — is the first term a perfect square? Last term? Middle
+  term = 2 x product of roots? Check by multiplying back (FOIL).

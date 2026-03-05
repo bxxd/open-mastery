@@ -1,0 +1,17 @@
+id: stat.meas.center_spread
+prereqs:
+  - stat.dd.dot_plots_histograms
+  - dec.ops.add_subtract
+  - dec.ops.divide
+bloom: apply
+assess:
+  - solve
+  - compare
+  - explain
+typical_grade: 6
+context: >
+  Mean, median, mode — three ways to describe center. Mean =
+  add all, divide by count. Median = middle value when sorted.
+  Mode = most frequent. When to use which: mean for symmetric,
+  median for skewed or outliers. Range, IQR as measures of spread.
+  MAD (mean absolute deviation) for variability.

@@ -1,0 +1,12 @@
+id: geo.ang.measurement
+prereqs:
+  - geo.ang.basics
+bloom: apply
+assess:
+  - solve
+  - identify
+typical_grade: 4
+context: >
+  Measure angles in degrees with a protractor. Draw angles of a
+  given measure. Additive property: two angles sharing a side can
+  be added. Find unknown angles when you know the total and one part.

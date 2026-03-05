@@ -1,0 +1,15 @@
+id: alg.log.basics
+prereqs:
+  - alg.exp.exponent_rules
+bloom: understand
+assess:
+  - identify
+  - convert
+  - explain
+typical_grade: 10
+context: >
+  log_b(x) = y means b^y = x. Logarithm is the inverse of
+  exponentiation. "What power of b gives x?" log_10 is common log,
+  ln is natural log (base e). Convert between exponential and log
+  form fluently. log_b(b) = 1, log_b(1) = 0. Evaluate simple logs
+  mentally: log_2(8) = 3 because 2^3 = 8.

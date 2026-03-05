@@ -1,0 +1,15 @@
+id: rat.rate.unit
+prereqs:
+  - rat.rat.equivalent
+  - dec.ops.divide
+bloom: apply
+assess:
+  - solve
+  - compare
+  - word_problem
+typical_grade: 6
+context: >
+  A unit rate has denominator 1. "60 miles per hour" = 60 miles
+  per 1 hour. Compute unit rates by dividing. Compare rates:
+  which is the better deal? $3.50 for 4 apples vs $5.00 for 6?
+  Speed, price per unit, miles per gallon.

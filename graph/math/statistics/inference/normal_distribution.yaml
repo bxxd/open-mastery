@@ -1,0 +1,16 @@
+id: stat.inf.normal
+prereqs:
+  - stat.dd.box_plots
+  - alg.fn.intro
+bloom: understand
+assess:
+  - identify
+  - explain
+  - solve
+typical_grade: 9
+context: >
+  Bell curve: symmetric, mean = median = mode. 68-95-99.7 rule for
+  standard deviations. Z-scores: how many SDs from the mean.
+  z = (x - mean) / SD. Compare values from different distributions
+  using z-scores. "A score of 85 on Test A vs 72 on Test B — which
+  is better relative to the class?" Real-world: heights, test scores.

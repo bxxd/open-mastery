@@ -1,0 +1,15 @@
+id: trig.rat.inverse
+prereqs:
+  - trig.rat.solving
+bloom: apply
+assess:
+  - solve
+  - explain
+  - identify
+typical_grade: 10
+context: >
+  arcsin, arccos, arctan — find the angle given a ratio. Restricted
+  domains: arcsin and arctan return angles in [-90, 90], arccos in
+  [0, 180]. Why restrictions are needed: sin(30) = sin(150) = 0.5,
+  so we need a convention. Calculator vs exact values. Notation:
+  sin^(-1) is NOT 1/sin.

@@ -1,0 +1,14 @@
+id: ops.oo.basics
+prereqs:
+  - ops.sub.within_1000
+  - ops.div.facts
+bloom: apply
+assess:
+  - solve
+  - explain
+typical_grade: 5
+context: >
+  Parentheses, exponents, multiply/divide (left to right),
+  add/subtract (left to right). PEMDAS as memory aid but
+  emphasize the logic: grouping first, then strongest operations.
+  Evaluate expressions with nested parentheses and brackets.

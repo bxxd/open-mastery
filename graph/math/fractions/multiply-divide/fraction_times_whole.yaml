@@ -1,0 +1,15 @@
+id: frac.md.fraction_times_whole
+prereqs:
+  - frac.con.basics
+  - ops.mul.facts
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - represent
+typical_grade: 4
+context: >
+  Multiply a fraction by a whole number. 3 x 2/5 = 6/5.
+  Understand as repeated addition: 2/5 + 2/5 + 2/5. Visual:
+  three groups of 2/5 on a number line. Word problems: "each
+  person gets 3/4 cup, 5 people."

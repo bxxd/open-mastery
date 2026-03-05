@@ -1,0 +1,13 @@
+id: ops.sub.multi_digit
+prereqs:
+  - ops.sub.within_1000
+  - ns.pv.millions
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 4
+context: >
+  Subtract large multi-digit numbers. Multiple regroupings
+  including across zeros. Real-world contexts: distances,
+  populations, money amounts.

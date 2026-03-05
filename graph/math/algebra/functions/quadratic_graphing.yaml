@@ -1,0 +1,15 @@
+id: alg.fn.quadratic_graphing
+prereqs:
+  - alg.eq.quadratic_intro
+  - alg.quad.completing_square
+bloom: apply
+assess:
+  - represent
+  - solve
+  - explain
+typical_grade: 9
+context: >
+  Graph quadratics using vertex form, standard form, and intercept
+  form. Find vertex, axis of symmetry, x-intercepts, y-intercept.
+  Transform from parent function y = x^2: shifts, stretches,
+  reflections. Connect algebraic solutions to graphical features.

@@ -1,0 +1,13 @@
+id: ops.mul.factors_and_multiples
+prereqs:
+  - ops.div.facts
+bloom: understand
+assess:
+  - identify
+  - solve
+  - explain
+typical_grade: 4
+context: >
+  Factor = divides evenly. Multiple = in the times table. Find
+  all factor pairs. Determine if a number is prime or composite.
+  1 is a factor of everything. Every number is a multiple of itself.

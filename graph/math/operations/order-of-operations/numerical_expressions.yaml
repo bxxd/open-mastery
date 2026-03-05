@@ -1,0 +1,14 @@
+id: ops.oo.numerical_expressions
+prereqs:
+  - ops.oo.basics
+bloom: apply
+assess:
+  - solve
+  - generate
+  - explain
+typical_grade: 5
+context: >
+  Write and interpret numerical expressions. Translate words to
+  expressions: "add 8 and 7 then multiply by 2" = (8 + 7) x 2.
+  Compare expressions without evaluating: "3 x (12 + 5) is three
+  times as large as (12 + 5)."

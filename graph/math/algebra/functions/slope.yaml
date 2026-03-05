@@ -1,0 +1,16 @@
+id: alg.fn.slope
+prereqs:
+  - alg.fn.linear
+  - frac.md.divide
+bloom: apply
+assess:
+  - solve
+  - explain
+  - compare
+typical_grade: 8
+context: >
+  Slope = rate of change. Positive slope = increasing, negative =
+  decreasing, zero = horizontal, undefined = vertical. Calculate
+  from two points, from a graph, from an equation, from a table.
+  Parallel lines have equal slopes. Perpendicular lines have
+  negative reciprocal slopes.

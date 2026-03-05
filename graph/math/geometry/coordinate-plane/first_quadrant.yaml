@@ -1,0 +1,14 @@
+id: geo.cp.first_quadrant
+prereqs:
+  - ns.pat.sequences
+bloom: apply
+assess:
+  - identify
+  - solve
+  - represent
+typical_grade: 5
+context: >
+  First quadrant only (positive x and y). Ordered pairs (x, y).
+  x-axis horizontal, y-axis vertical. Plot points, read coordinates.
+  Graph patterns from tables. Describe relationships between
+  coordinates. Bridge to algebra and functions.

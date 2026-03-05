@@ -1,0 +1,16 @@
+id: geo.sim.triangles
+prereqs:
+  - geo.cong.triangles
+  - rat.prop.solving
+bloom: apply
+assess:
+  - identify
+  - solve
+  - derive
+typical_grade: 9
+context: >
+  Similar triangles: same shape, different size. Criteria: AA, SAS~,
+  SSS~. Corresponding sides are proportional. Set up and solve
+  proportions to find missing sides. Scale factor. Real-world:
+  shadows, indirect measurement, maps. Similar figures extend
+  beyond triangles.

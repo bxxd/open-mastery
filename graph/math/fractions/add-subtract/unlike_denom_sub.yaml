@@ -1,0 +1,14 @@
+id: frac.as.unlike_sub
+prereqs:
+  - frac.as.like_sub
+  - frac.eq.equivalent
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Subtract fractions with unlike denominators. Same strategy as
+  addition: find common denominator first. Include mixed numbers
+  with regrouping. Estimation using benchmarks (close to 1/2?
+  close to 1?).

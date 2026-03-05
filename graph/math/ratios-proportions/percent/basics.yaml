@@ -1,0 +1,15 @@
+id: rat.pct.basics
+prereqs:
+  - rat.rat.equivalent
+  - dec.conv.fraction_decimal
+bloom: apply
+assess:
+  - convert
+  - solve
+  - word_problem
+typical_grade: 6
+context: >
+  Percent = per 100. A ratio with second term 100. Convert
+  between fractions, decimals, and percents: 3/4 = 0.75 = 75%.
+  Find percent of a number: 25% of 80 = 20. Common benchmarks:
+  50% = half, 25% = quarter, 10% = tenth. Tax, tip, discount.

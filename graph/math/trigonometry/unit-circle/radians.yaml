@@ -1,0 +1,16 @@
+id: trig.uc.radians
+prereqs:
+  - trig.uc.unit_circle
+  - rat.prop.solving
+bloom: apply
+assess:
+  - convert
+  - solve
+  - explain
+typical_grade: 10
+context: >
+  Radians measure angles by arc length on the unit circle. Full circle
+  = 2π radians = 360°. Convert: multiply by π/180 or 180/π.
+  π/6 = 30°, π/4 = 45°, π/3 = 60°, π/2 = 90°. Radians are
+  dimensionless — just a ratio (arc/radius). Calculus uses radians
+  exclusively because derivative of sin(x) = cos(x) only in radians.

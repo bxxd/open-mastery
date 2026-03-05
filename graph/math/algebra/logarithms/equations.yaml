@@ -1,0 +1,16 @@
+id: alg.log.equations
+prereqs:
+  - alg.log.properties
+  - alg.eq.multi_step
+bloom: apply
+assess:
+  - solve
+  - explain
+  - word_problem
+typical_grade: 10
+context: >
+  Solve by converting to exponential form or using log properties
+  to condense. Check for extraneous solutions — argument of log
+  must be positive. Exponential equations: take log of both sides.
+  Applications: compound interest A = P(1+r/n)^(nt), half-life,
+  pH scale, Richter scale, decibels.

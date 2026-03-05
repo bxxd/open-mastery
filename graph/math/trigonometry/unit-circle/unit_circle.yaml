@@ -1,0 +1,17 @@
+id: trig.uc.unit_circle
+prereqs:
+  - trig.rat.basics
+  - geo.circ.properties
+bloom: understand
+assess:
+  - identify
+  - explain
+  - represent
+typical_grade: 10
+context: >
+  Circle of radius 1 centered at origin. Any point on the circle is
+  (cos θ, sin θ). Extends trig beyond right triangles to any angle.
+  Reference angles: relate any angle to a first-quadrant angle. Signs
+  by quadrant: All Students Take Calculus (ASTC). Key angles: 0, 30,
+  45, 60, 90, and their multiples. Memorize the unit circle or
+  derive it from special triangles.

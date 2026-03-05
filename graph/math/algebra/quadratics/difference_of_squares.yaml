@@ -1,0 +1,15 @@
+id: alg.quad.diff_squares
+prereqs:
+  - alg.quad.factoring_gcf
+  - alg.exp.polynomials
+bloom: apply
+assess:
+  - solve
+  - identify
+  - derive
+typical_grade: 8
+context: >
+  a^2 - b^2 = (a + b)(a - b). Recognize the pattern: two perfect
+  squares separated by subtraction. 9p^2 - 9 = 9(p^2 - 1) = 9(p+1)(p-1).
+  x^4 - 16 = (x^2+4)(x^2-4) = (x^2+4)(x+2)(x-2). Sum of squares
+  does NOT factor over the reals. Derive from (a+b)(a-b) by FOIL.

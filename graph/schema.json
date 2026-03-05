@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Mastery Course Graph",
+  "description": "A course file containing math topic nodes with prerequisite edges.",
+  "type": "object",
+  "required": ["schema_version", "nodes"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": ["id", "name", "course", "prerequisites", "assessment_types", "bloom_level"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Globally unique ID: {course_prefix}.{topic_snake_case}",
+          "pattern": "^[a-z0-9]+\\.[a-z0-9_]+$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable topic name."
+        },
+        "course": {
+          "type": "string",
+          "description": "Course this node belongs to.",
+          "enum": [
+            "4th-grade", "5th-grade", "prealgebra", "algebra-1", "geometry",
+            "algebra-2", "precalculus", "trigonometry", "calculus-1", "calculus-2",
+            "linear-algebra", "multivariable-calculus", "probability-statistics",
+            "discrete-math", "methods-of-proof", "differential-equations", "math-for-ml"
+          ]
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Direct prerequisite node IDs. No transitive edges."
+        },
+        "assessment_types": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "What mastery looks like: identify, solve, derive, explain, apply_word_problem, etc."
+        },
+        "bloom_level": {
+          "type": "string",
+          "enum": ["know", "understand", "apply", "analyze"],
+          "description": "Minimum Bloom level for mastery. Most nodes are 'apply'."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional freeform tags for filtering/grouping."
+        }
+      }
+    }
+  }
+}

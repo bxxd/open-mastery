@@ -1,0 +1,15 @@
+id: alg.exp.exponents_basics
+prereqs:
+  - ops.mul.facts
+  - ns.pv.powers_of_10
+bloom: apply
+assess:
+  - solve
+  - explain
+  - convert
+typical_grade: 6
+context: >
+  Exponents as repeated multiplication. 2^3 = 2 x 2 x 2 = 8.
+  Base and exponent. Any number to the 0th power = 1 (explain why).
+  Any number to the 1st power = itself. Square numbers, cube
+  numbers. Evaluate expressions with exponents using order of ops.

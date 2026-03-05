@@ -1,0 +1,15 @@
+id: dec.pv.tenths_hundredths
+prereqs:
+  - frac.con.basics
+  - ns.pv.millions
+bloom: apply
+assess:
+  - identify
+  - convert
+  - compare
+typical_grade: 4
+context: >
+  Decimals as another way to write fractions with denominators
+  of 10 or 100. Tenths place, hundredths place. Use money as
+  anchor: $0.25 = 25/100. Place value chart extends right of the
+  decimal point. Compare decimals using place value.

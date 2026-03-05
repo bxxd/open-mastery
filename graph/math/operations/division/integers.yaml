@@ -1,0 +1,13 @@
+id: ops.div.integers
+prereqs:
+  - ops.div.long_2digit
+  - alg.exp.integers
+bloom: apply
+assess:
+  - solve
+  - explain
+typical_grade: 7
+context: >
+  Division with negative integers. Rules follow from multiplication:
+  positive / positive = positive, negative / negative = positive,
+  mixed signs = negative. Division by zero is undefined — explain why.

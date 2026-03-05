@@ -1,0 +1,15 @@
+id: alg.quad.completing_square
+prereqs:
+  - alg.quad.solve_factoring
+  - alg.eq.square_roots
+bloom: apply
+assess:
+  - solve
+  - derive
+  - explain
+typical_grade: 9
+context: >
+  Rewrite ax^2 + bx + c in vertex form a(x-h)^2 + k. Take half
+  of b, square it, add and subtract. This reveals the vertex (h,k).
+  Use to solve equations that don't factor nicely. Geometric meaning:
+  literally completing a square with algebra tiles.

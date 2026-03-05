@@ -1,0 +1,15 @@
+id: alg.eq.multi_step
+prereqs:
+  - alg.eq.two_step
+  - alg.exp.distributive
+bloom: apply
+assess:
+  - solve
+  - word_problem
+  - explain
+typical_grade: 7
+context: >
+  Equations with variables on both sides. Distribute first if
+  needed. Collect variables on one side, constants on the other.
+  3(x + 2) = 2x + 10. Special cases: no solution (0 = 5) and
+  infinite solutions (0 = 0). Recognize these.

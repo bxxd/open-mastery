@@ -1,0 +1,13 @@
+id: geo.vol.composite
+prereqs:
+  - geo.vol.rectangular_prism
+bloom: apply
+assess:
+  - solve
+  - word_problem
+typical_grade: 5
+context: >
+  Find volume of composite 3D figures by decomposing into
+  non-overlapping rectangular prisms. Add the volumes. L-shaped
+  rooms, stacked boxes, buildings with additions. Builds spatial
+  reasoning.

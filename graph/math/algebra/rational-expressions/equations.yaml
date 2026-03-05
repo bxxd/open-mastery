@@ -1,0 +1,15 @@
+id: alg.rat.equations
+prereqs:
+  - alg.rat.add_subtract
+  - alg.eq.multi_step
+bloom: apply
+assess:
+  - solve
+  - explain
+  - word_problem
+typical_grade: 10
+context: >
+  Multiply both sides by LCD to clear denominators. Solve the resulting
+  polynomial equation. CHECK for extraneous solutions — values that
+  make the original denominator zero. Rate/work problems: "Pipe A fills
+  in 3 hours, Pipe B in 5 hours, together?" Use 1/a + 1/b = 1/t.
