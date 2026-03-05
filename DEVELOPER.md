@@ -1,14 +1,14 @@
 # Open Mastery
 
-An open-source knowledge graph and mastery engine for mathematics. The map, not the territory.
+An open-source knowledge graph and mastery engine for learning. The map, not the territory.
 
-**This is a public good.** The structure of mathematical knowledge — what depends on what, what to learn next — belongs to everyone. Not behind a paywall. Not locked in proprietary software. Open, versioned, forkable, and free.
+**This is a public good.** The structure of knowledge — what depends on what, what to learn next — belongs to everyone. Not behind a paywall. Not locked in proprietary software. Open, versioned, forkable, and free.
 
 ## What This Is
 
-A machine-readable DAG (directed acyclic graph) of math topics from 4th grade through university, paired with a traversal engine that answers one question — **"what should this student learn next?"**
+A machine-readable DAG (directed acyclic graph) of topics paired with a traversal engine that answers one question — **"what should this student learn next?"**
 
-The graph encodes what every math textbook knows implicitly: which concepts depend on which. Open Mastery makes that structure explicit, versioned, and forkable.
+The graph encodes what every textbook knows implicitly: which concepts depend on which. Open Mastery makes that structure explicit, versioned, and forkable. Mathematics is the first graph. The engine works for any subject — programming, music theory, chemistry, languages — anything with prerequisite dependencies.
 
 An LLM (Claude, GPT, whatever) handles the teaching and assessment. This project provides the **structure** — the optimal path through the material, the mastery gates, the spaced repetition. The system enforces one rule: you must demonstrate mastery before you advance. No shortcuts, no pace limits.
 
@@ -20,7 +20,7 @@ Someone replied: **"can I see the data for this graph?"**
 
 They can't. It's proprietary.
 
-That's the problem this project solves. The structure of how math builds on itself is not secret knowledge — it's the consensus of every textbook ever written. It should be open.
+That's the problem this project solves. The structure of how knowledge builds on itself is not secret — it's the consensus of every textbook ever written. It should be open.
 
 ## Why This Needs to Exist
 
@@ -33,7 +33,9 @@ The architecture has been proven at scale:
 
 The architecture is simple: DAG of prerequisites + strict mastery gates + unlimited velocity. Remove the classroom-speed bottleneck, keep the competence constraint, let talent explode. This is deliberate practice (Ericsson-style) engineered at scale.
 
-But every existing knowledge graph of this kind is proprietary. Khan Academy made content free but the mastery system is weak and the graph is implicit, not explicit. Nothing else comes close:
+Math proved the concept. But the engine is subject-agnostic — any domain with prerequisite dependencies works. Programming (variables → loops → functions → recursion). Music theory (intervals → scales → chords → progressions). Chemistry (atoms → bonding → reactions → equilibrium). The DAG structure is universal.
+
+Every existing knowledge graph like this is proprietary. Khan Academy made content free but the mastery system is weak and the graph is implicit, not explicit. Nothing else comes close:
 
 - **OSSU/math** — just curated links to free courses, no mastery enforcement or graph
 - **Metacademy** — ML concepts only, abandoned
@@ -44,17 +46,17 @@ The field is wide open. No public 3,000-node YAML dump. No reference engine. No 
 
 ## The Key Insight: The Graph Is Reconstructable
 
-The graph is not secret knowledge. It's the consensus of how math builds on itself — every textbook encodes it implicitly in chapter ordering. The work is making it explicit and granular. We can construct it:
+The graph is not secret knowledge. It's the consensus of how knowledge builds on itself — every textbook encodes it implicitly in chapter ordering. The work is making it explicit and granular. We can construct it:
 
-1. **Bootstrap with LLMs** — "List every topic in Algebra 1. For each, list prerequisites." Do this for all domains. Get 80% of the graph in a day.
-2. **Refine the 20%** — Cross-domain edges, granularity tuning, encompassing relationships. This is the curriculum expertise work.
+1. **Bootstrap with LLMs** — "List every topic in Algebra 1. For each, list prerequisites." Do this for any domain. Get 80% of the graph in a day.
+2. **Refine the 20%** — Cross-domain edges, granularity tuning, encompassing relationships. This is the domain expertise work.
 3. **Community improves it** — Like Wikipedia. Doesn't need to be perfect on day one. Needs to be open and improvable.
 
 ## Core Concepts
 
 ### Knowledge Frontier
 
-A student's position on the DAG — not a single "current topic" but the full boundary of what they've mastered. The engine computes the optimal next task from this frontier for maximum learning velocity.
+A learner's position on the DAG — not a single "current topic" but the full boundary of what they've mastered. The engine computes the optimal next task from this frontier for maximum learning velocity.
 
 ### Mastery Gates
 

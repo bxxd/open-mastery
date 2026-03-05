@@ -1,33 +1,79 @@
 # Open Mastery
 
-An open-source knowledge graph and mastery engine for mathematics.
+The open-source knowledge graph that every ed-tech company charges you $50/month to not give you access to.
 
-**The structure of mathematical knowledge — what depends on what, what to learn next — belongs to everyone.** Not behind a paywall. Not locked in proprietary software. Open, versioned, forkable, and free.
+**The structure of knowledge — what depends on what, what to learn next — is not proprietary.** It's the consensus of every textbook ever written. We just made it a YAML file you can fork.
 
 ## What This Is
 
-A machine-readable DAG of math topics from 4th grade through pre-calculus, paired with a Rust engine that answers one question: **"what should this student learn next?"**
+A DAG of topics + a Rust engine that answers one question: **"what should this learner do next?"**
 
-An LLM handles the teaching. This project provides the **structure** — the prerequisite graph, mastery gates, and pedagogical guidance. You demonstrate mastery before you advance. No shortcuts, no pace limits.
+That's it. That's the product. Turns out that's also the hard part that nobody open-sources.
 
-### The Graph
+An LLM does the actual teaching (we're not reinventing that wheel). This project provides the **structure** — prerequisite graph, mastery gates, pedagogical guidance. You prove you know it, or you don't move on. No hand-waving. No "close enough." No participation trophies.
 
-131 nodes across 9 mathematical domains. One YAML file per topic. Cross-domain prerequisite edges.
+The engine is subject-agnostic. Math is the first graph (131 nodes, 4th grade through trig). But anything with prerequisite dependencies works — programming, music theory, chemistry, whatever. If knowledge builds on knowledge, this is your engine.
+
+## The Story
+
+Elena pours coffee and sits at the kitchen table. Her daughter Margot, seven, is already cross-legged on the couch with a tablet, talking to her AI tutor — a patient, slightly goofy character she named "Bix" months ago and has refused to rename since.
+
+Bix is Claude underneath. But Bix doesn't decide what to teach. That comes from somewhere else.
+
+Beneath the conversation, invisible to Margot, a single protocol connection hums. Bix is hooked into the Open Mastery graph — a sprawling lattice of human knowledge, open-source, versioned like software, maintained by thousands of contributors. Bix queries it dozens of times per session. *What has this child demonstrated? What's adjacent? What's the gentlest bridge from where she is to where the graph says she could go?*
+
+Right now, Margot is multiplying single digits. The graph knows this not because someone told it but because Bix has been reporting micro-assessments upstream — little checkpoints woven into conversation so naturally Margot thinks she's just chatting. The graph's node for single-digit multiplication is green. Mastered. The six prerequisite nodes beneath it — addition fluency, skip-counting, commutative property — are green too, a little constellation of things Margot knows cold.
+
+The graph also knows what's next. Not a single track, not a rigid sequence, but a *frontier* — the full set of nodes whose prerequisites Margot has met. Right now her frontier includes two-digit multiplication, intro to division, and — interestingly — area of rectangles, because that node depends on multiplication and spatial reasoning, and she's been doing both.
+
+Bix picks area. Not randomly. The agent noticed Margot spent yesterday drawing floor plans of an imaginary bakery, so spatial concepts have high engagement probability. The graph doesn't choose *for* the agent. It tells the agent what's *available*. The agent chooses.
+
+"Hey Margot," Bix says. "You know your bakery? What if we figured out how much floor space the kitchen takes up?"
+
+Margot lights up.
+
+---
+
+Across town, Dev is fourteen and teaches himself. His AI agent is a custom rig he built on top of an open-weight model running on a machine in his closet. He calls it "Coach." Coach is blunt, fast, slightly sarcastic. Dev likes it that way.
+
+Coach is connected to the same graph. Same protocol. Different endpoint — Dev's family runs the self-hosted version, because his mother is a software engineer and doesn't want her son's learning data on anyone else's servers. The graph data itself is just a cloned repo on a local drive.
+
+Dev is deep into the graph. His math frontier is in eigenvalues and partial derivatives. His programming frontier is in memory management and graph traversal. His music frontier — because the graph has music now, a beautiful lattice donated by a retired theory professor in Vienna — is in secondary dominants.
+
+He's working on eigenvalues this morning. Coach walks him through it, but Coach also knows, because the graph says so, that eigenvalues depends on matrix multiplication and determinants and geometric intuition for linear transformations, and that Dev's mastery of geometric intuition is borderline. So Coach weaves in re-anchoring. "Before we go further — when you apply this matrix to a vector, what happens *spatially*? Show me with a sketch."
+
+Dev groans. Draws the sketch. Gets it. Moves forward.
+
+This is the thing no static curriculum could do. The graph provides structure. The agent provides responsiveness. Together they create something that feels like a private tutor who has read every textbook and also knows exactly what *you* specifically are shaky on.
+
+---
+
+Pull back further. Four hundred thousand active learners connected to the Open Mastery graph. Some through the hosted endpoint. Some through self-hosted instances. Some through third-party apps — a micro-school platform in Austin, a language-learning startup in Seoul, an after-school program in Lagos that contributed the Yoruba literacy branch.
+
+They all share the same structure underneath. When the micro-school in Austin marks a student as having mastered the quadratic formula, that means the same thing as when Dev's closet server marks it, because the node definition is the same, the prerequisites are the same, the assessment criteria are the same. A child can move from one system to another and their mastery travels with them — not as a transcript, not as a grade, but as a precise map of what they know and what they're ready for.
+
+This is what it looks like when curriculum becomes infrastructure. Not a product. Not a platform. A substrate. The way TCP/IP is a substrate for the internet — invisible, shared, maintained by a community, used by everyone building on top.
+
+> *Full narrative: [`docs/STORY.md`](docs/STORY.md)*
+
+## The Math Graph
+
+131 nodes. 9 domains. One YAML file per topic. Cross-domain edges because math doesn't care about your folder structure.
 
 ```
 graph/math/
-├── number-sense/          7 nodes    (place value, rounding, patterns)
-├── operations/           17 nodes    (add, subtract, multiply, divide, order of ops)
-├── fractions/            12 nodes    (concepts, equivalence, arithmetic)
-├── decimals/              5 nodes    (place value, operations, conversion)
-├── geometry/             26 nodes    (angles, shapes, area, volume, coordinate plane, proofs)
-├── ratios-proportions/    6 nodes    (ratios, rates, percent)
-├── statistics/           12 nodes    (data display, probability, inference)
-├── algebra/              38 nodes    (expressions, equations, functions, quadratics, logs)
-└── trigonometry/          8 nodes    (ratios, unit circle, identities, graphing)
+├── number-sense/          7 nodes     place value, rounding, patterns
+├── operations/           17 nodes     the fundamentals you think you remember
+├── fractions/            12 nodes     where most students' confidence goes to die
+├── decimals/              5 nodes     fractions in a trench coat
+├── geometry/             26 nodes     angles, shapes, area, volume, proofs
+├── ratios-proportions/    6 nodes     the bridge to algebra
+├── statistics/           12 nodes     making sense of data (and lying with it)
+├── algebra/              38 nodes     expressions → equations → functions → quadratics → logs
+└── trigonometry/          8 nodes     sin, cos, and "why do I need this"
 ```
 
-Each node:
+Each node is a YAML file:
 
 ```yaml
 id: frac.con.basics
@@ -45,22 +91,26 @@ context: >
   Numerator = pieces selected, denominator = total equal pieces.
 ```
 
-`_prompt.yaml` files at each directory level cascade into teaching instructions. A Montessori school forks the prompts; the DAG stays the same.
+The `context` field tells the LLM *how* to teach. Not a script — direction. "Visual models before notation" not "Show the student a picture of a pizza." The LLM is smart enough to take it from there.
 
-### The Engine
+`_prompt.yaml` files cascade from subject → domain → unit → node. Want Montessori vibes? Fork the prompts. The DAG doesn't change.
 
-Rust. Two MCP servers share a core crate.
+## The Engine
 
-**Student MCP** — connect Claude (or any LLM) and start learning:
+Rust. Because when you have 3,000 nodes you don't want to wait for Python to think about it.
+
+Two MCP servers share a core crate:
+
+**Student MCP** — connect any LLM and start learning:
 
 ```
-get_frontier(student_id)                    → what to learn next
-get_node(node_id)                           → topic details + teaching guidance
-record_mastery(student_id, node_id, level)  → unlock new topics
+get_frontier(student_id)                    → "here's what you're ready for"
+get_node(node_id)                           → topic details + how to teach it
+record_mastery(student_id, node_id, level)  → new topics unlock
 get_progress(student_id)                    → full mastery state
 ```
 
-**Teacher MCP** — build curriculum through conversation:
+**Teacher MCP** — build curriculum by talking to Claude:
 
 ```
 Browse:     list_domains, list_nodes, search_nodes, get_node, validate_graph
@@ -70,26 +120,46 @@ Git:        git_status, git_commit, git_log
 Artifacts:  save_artifact, get_artifact, list_artifacts
 ```
 
+Teachers literally just *talk* to build curriculum. "Add a node for completing the square." "It should require factoring trinomials." "Commit." Done. YAML on disk, git-versioned, no UI needed.
+
+## How It Works
+
+```
+frontier(student) = {
+  node for node in all_nodes
+  if node not mastered by student
+  AND all node.prereqs mastered by student
+}
+```
+
+Seven lines of pseudocode. That's the entire algorithm. Everything else is plumbing.
+
+The frontier is everything you've unlocked but haven't learned yet. Pick something. Prove you know it. New stuff unlocks. Repeat until calculus.
+
+## Why This Exists
+
+Because a 3rd grader finished Calc BC in a year using a proprietary version of this, and when someone asked "can I see the graph?" the answer was no.
+
+The architecture is proven:
+- 3rd graders completing Calc BC in a single year
+- 11-year-olds getting perfect 5s on AP exams
+- Kids who "hated math" falling in love with it
+
+The secret? There is no secret. It's just: DAG + mastery gates + unlimited velocity. Remove the pace limit, keep the competence constraint. Ericsson's deliberate practice, Bloom's two-sigma effect, delivered by an LLM at zero marginal cost.
+
+Every other implementation is locked behind a paywall. Khan Academy's graph is implicit and their mastery system is... generous. Nothing else even tries.
+
+So here we are. An open YAML dump, a Rust engine, and a GitHub repo. Unsexy, effective, and free.
+
 ## Quickstart
-
-### Prerequisites
-
-- [Rust](https://rustup.rs/) (stable)
-- An MCP client (Claude Desktop, Claude Code, or any MCP-compatible app)
-
-### Build
 
 ```bash
 git clone https://github.com/bxxd/open-mastery.git
 cd open-mastery
-make build          # debug build
-make release        # optimized build
-make test           # run tests
+make release && make test    # build + verify
 ```
 
-### Connect to Claude Desktop or Claude Code
-
-Copy `mcp.json.example` to your MCP config and update paths:
+Add to your Claude config (`~/.claude/mcp.json` or `.mcp.json`):
 
 ```json
 {
@@ -114,60 +184,14 @@ Copy `mcp.json.example` to your MCP config and update paths:
 }
 ```
 
-For Claude Desktop: `~/.claude/mcp.json`
-For Claude Code: `.mcp.json` in your workspace root
+Open Claude. Say "let's learn." That's it.
 
-### Start Learning
-
-1. Open Claude with the student MCP connected
-2. Say "let's do math" — Claude calls `get_frontier` and shows available topics
-3. Pick a topic — Claude calls `get_node` for teaching guidance
-4. Work through problems — Claude assesses using the node's `assess` types
-5. Demonstrate mastery — Claude calls `record_mastery`, new topics unlock
-
-### Build Curriculum
-
-1. Open Claude with the teacher MCP connected
-2. "Show me the algebra domain" → `list_nodes`
-3. "Add a node for completing the square" → `create_node`
-4. "This should require factoring trinomials" → `add_prerequisite`
-5. "Validate the graph" → `validate_graph`
-6. "Commit" → `git_commit`
-
-### HTTP/SSE Mode
-
-For web clients or multi-user setups:
+For HTTP/SSE (web clients, multi-user):
 
 ```bash
-make run-student-sse    # student MCP on port 3001
-make run-teacher-sse    # teacher MCP on port 3002
+make run-student-sse    # port 3001
+make run-teacher-sse    # port 3002
 ```
-
-## How It Works
-
-The core algorithm:
-
-```
-frontier(student) = {
-  node for node in all_nodes
-  if node not mastered by student
-  AND all node.prereqs mastered by student
-}
-```
-
-That's it. The frontier is everything unlocked but not yet learned. The student picks from the frontier. The DAG enforces prerequisites. Mastery gates ensure no gaps.
-
-## Why
-
-The architecture has been proven:
-
-- 3rd graders completing Calc BC in a single year
-- 11-year-olds earning perfect 5s on AP Calc BC
-- Kids who "hated math" falling in love with the subject
-
-The formula: DAG of prerequisites + strict mastery gates + unlimited velocity. Remove the pace limit, keep the competence constraint.
-
-But every existing knowledge graph like this is proprietary. Khan Academy's graph is implicit. Nothing else has an open, forkable, machine-readable prerequisite graph with mastery enforcement.
 
 ## Architecture
 
@@ -183,25 +207,21 @@ But every existing knowledge graph like this is proprietary. Khan Academy's grap
                            adapters (ports)
 ```
 
-Hexagonal architecture. The core is pure domain logic. Each adapter is its own crate. Build one, build all, swap them — the core never changes.
+Hexagonal. Core is pure domain logic. Adapters are swappable crates. The engine doesn't know or care what's talking to it.
 
 ## Contributing
 
-The graph is a hypothesis. Ship at 80% correct. Real students hitting real walls reveal missing edges. Real students breezing through reveal unnecessary edges.
+The graph is a hypothesis shipped at 80%. Students hitting walls = missing edges. Students breezing through = unnecessary edges. Real usage makes it better.
 
-Ways to contribute:
+- **Add nodes** — new topics, new domains, deeper coverage
+- **Fix edges** — the prerequisite relationships are the product
+- **Improve context** — better teaching guidance for the LLM
+- **Build new graphs** — programming, science, music, anything
+- **Build adapters** — web frontend, CLI, mobile
 
-- **Add nodes** — missing topics, new domains, deeper coverage
-- **Fix edges** — missing prerequisites, unnecessary prerequisites
-- **Improve context** — better pedagogical guidance for the LLM
-- **Add prompt files** — teaching philosophy at domain/unit level
-- **Build adapters** — web frontend, CLI tools, new MCP features
-
-See `docs/GRAPH_FORMAT.md` for the full graph specification and `DEVELOPER.md` for architecture details.
+See [`docs/GRAPH_FORMAT.md`](docs/GRAPH_FORMAT.md) for the graph spec. See [`DEVELOPER.md`](DEVELOPER.md) for architecture and philosophy.
 
 ## License
 
-Dual licensed:
-
 - **Graph data** (`graph/`) — [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Fork it, extend it, keep derivatives open.
-- **Engine code** (`engine/`) — [MIT](https://opensource.org/licenses/MIT). Use it however you want.
+- **Engine code** (`engine/`) — [MIT](https://opensource.org/licenses/MIT). Do whatever you want.
