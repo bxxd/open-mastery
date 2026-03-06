@@ -141,10 +141,14 @@ Not in this repo. That's whatever LLM client you point at the student MCP server
 ### Quickstart
 
 ```bash
-cp .env.example .env        # configure graph/progress paths
+make install                 # build release binaries
 make test                    # run all tests
-make run                     # start student MCP (stdio)
-make run-sse                 # start student MCP (HTTP/SSE on port 3001)
+make validate                # verify graph loads cleanly
+
+make run-student             # start student MCP (stdio)
+make run-student-sse         # start student MCP (HTTP/SSE, port 3001)
+make run-teacher             # start teacher MCP (stdio)
+make run-teacher-sse         # start teacher MCP (HTTP/SSE, port 3002)
 ```
 
 Copy `mcp.json.example` to your `.mcp.json` and update paths to connect Claude Desktop or Claude Code.
