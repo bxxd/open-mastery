@@ -65,9 +65,9 @@ The drive to operate at the edge of competence is one of the deepest human motiv
 
 The graph enables Ericsson-style deliberate practice at Bloom's two-sigma level. Every task is at the edge of ability (frontier computation). Every assessment requires deep engagement (explain, derive, generate — not just recall). The prompt cascade provides expert tutoring direction calibrated to each topic. The result: one-on-one tutoring outcomes at zero marginal cost.
 
-### Encompassing Relationships (Future)
+### Encompassing Relationships
 
-Advanced topics implicitly practice simpler sub-skills. A calculus problem exercises algebra. The graph will encode these weights so the engine can compress reviews — one advanced problem can knock out multiple simpler reviews. This prevents review overload as the graph grows.
+Advanced topics implicitly practice simpler sub-skills. A calculus problem exercises algebra. The graph encodes these as weighted references (`encompasses: { node_id: weight }`, weight 0–1). The engine builds a reverse index (`encompassed_by`) so it can compress reviews — one advanced problem can knock out multiple simpler reviews. 10 nodes annotated as proof of concept, 21 encompasses edges total.
 
 ### Spaced Repetition with Decay (Future)
 

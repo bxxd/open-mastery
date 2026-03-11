@@ -7,6 +7,10 @@ assess:
   - derive
   - word_problem
 typical_grade: 9
+encompasses:
+  alg.eq.square_roots: 0.8
+  ops.oo.basics: 0.6
+  alg.exp.exponents_basics: 0.5
 context: >
   x = (-b ± sqrt(b^2 - 4ac)) / 2a. Derived by completing the
   square on ax^2 + bx + c = 0. Works for ANY quadratic. Discriminant

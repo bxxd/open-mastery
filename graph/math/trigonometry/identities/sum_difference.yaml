@@ -7,6 +7,9 @@ assess:
   - solve
   - explain
 typical_grade: 11
+encompasses:
+  trig.id.pythagorean: 0.8
+  alg.exp.distributive: 0.5
 context: >
   sin(A ± B) = sinA cosB ± cosA sinB. cos(A ± B) = cosA cosB ∓ sinA sinB.
   tan(A ± B) = (tanA ± tanB)/(1 ∓ tanA tanB). Derive sin(A+B) from unit

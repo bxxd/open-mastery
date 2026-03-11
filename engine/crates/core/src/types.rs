@@ -16,6 +16,8 @@ pub struct NodeFile {
     pub tags: Vec<String>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub typical_grade: Option<u8>,
+    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
+    pub encompasses: HashMap<String, f32>,
 }
 
 /// A node in the graph (includes derived fields from filesystem path).
@@ -28,6 +30,7 @@ pub struct Node {
     pub context: Option<String>,
     pub tags: Vec<String>,
     pub typical_grade: Option<u8>,
+    pub encompasses: HashMap<String, f32>,
     // Derived from filesystem path:
     pub domain: String,
     pub unit: String,
@@ -53,6 +56,7 @@ pub struct NodeUpdate {
     pub context: Option<Option<String>>,
     pub tags: Option<Vec<String>>,
     pub typical_grade: Option<Option<u8>>,
+    pub encompasses: Option<HashMap<String, f32>>,
 }
 
 /// A _prompt.yaml entry.

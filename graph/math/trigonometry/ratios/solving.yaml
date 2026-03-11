@@ -8,6 +8,9 @@ assess:
   - word_problem
   - explain
 typical_grade: 10
+encompasses:
+  alg.eq.two_step: 0.7
+  rat.prop.solving: 0.6
 context: >
   Given an angle and one side, find the other sides using trig ratios.
   Given two sides, find the angle using inverse trig (arcsin, arccos,

@@ -8,6 +8,9 @@ assess:
   - explain
   - word_problem
 typical_grade: 10
+encompasses:
+  frac.as.unlike_add: 0.6
+  alg.eq.multi_step: 0.7
 context: >
   Multiply both sides by LCD to clear denominators. Solve the resulting
   polynomial equation. CHECK for extraneous solutions — values that

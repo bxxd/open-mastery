@@ -8,6 +8,8 @@ pub struct Graph {
     pub nodes: HashMap<String, Node>,
     pub topo_order: Vec<String>,
     pub children: HashMap<String, Vec<String>>,
+    /// Reverse index: node_id → vec of (encompassing_node_id, weight).
+    pub encompassed_by: HashMap<String, Vec<(String, f32)>>,
     /// Prompt files keyed by their directory path relative to graph root.
     pub prompts: HashMap<PathBuf, String>,
     /// The root directory the graph was loaded from.
@@ -54,6 +56,7 @@ pub struct ValidationReport {
     pub root_nodes: Vec<String>,
     pub leaf_nodes: Vec<String>,
     pub orphan_nodes: Vec<String>,
+    pub encompasses_count: usize,
 }
 
 impl Graph {
@@ -68,6 +71,7 @@ impl Graph {
             nodes,
             topo_order: Vec::new(),
             children: HashMap::new(),
+            encompassed_by: HashMap::new(),
             prompts,
             graph_dir: dir.to_path_buf(),
         };
@@ -97,6 +101,23 @@ impl Graph {
                     .entry(prereq.clone())
                     .or_default()
                     .push(node.id.clone());
+            }
+        }
+
+        // Build encompassed_by reverse index and validate encompasses references
+        self.encompassed_by.clear();
+        for node in self.nodes.values() {
+            for (target_id, weight) in &node.encompasses {
+                if !self.nodes.contains_key(target_id) {
+                    return Err(GraphError::UnknownPrerequisite {
+                        node: node.id.clone(),
+                        prereq: target_id.clone(),
+                    });
+                }
+                self.encompassed_by
+                    .entry(target_id.clone())
+                    .or_default()
+                    .push((node.id.clone(), *weight));
             }
         }
 
@@ -253,6 +274,8 @@ impl Graph {
             .map(|n| n.id.clone())
             .collect();
 
+        let encompasses_count: usize = self.nodes.values().map(|n| n.encompasses.len()).sum();
+
         ValidationReport {
             node_count,
             edge_count,
@@ -260,6 +283,7 @@ impl Graph {
             root_nodes,
             leaf_nodes,
             orphan_nodes,
+            encompasses_count,
         }
     }
 
@@ -299,6 +323,10 @@ impl Graph {
         }
         if let Some(typical_grade) = update.typical_grade {
             node.typical_grade = typical_grade;
+        }
+
+        if let Some(encompasses) = update.encompasses {
+            node.encompasses = encompasses;
         }
 
         let needs_rebuild = update.prereqs.is_some();
@@ -389,6 +417,7 @@ impl Graph {
             context: node.context.clone(),
             tags: node.tags.clone(),
             typical_grade: node.typical_grade,
+            encompasses: node.encompasses.clone(),
         };
         let yaml = serde_yaml::to_string(&node_file).map_err(|e| GraphError::Yaml {
             file: node.file_path.display().to_string(),
@@ -485,6 +514,7 @@ fn load_dir_recursive(
                     context: node_file.context,
                     tags: node_file.tags,
                     typical_grade: node_file.typical_grade,
+                    encompasses: node_file.encompasses,
                     domain,
                     unit,
                     file_path: path.to_path_buf(),
@@ -628,5 +658,138 @@ mod tests {
         let report = graph.validate();
         assert_eq!(report.node_count, graph.nodes.len());
         assert!(!report.root_nodes.is_empty());
+    }
+
+    #[test]
+    fn encompasses_loaded() {
+        let graph = Graph::load(&test_graph_dir()).unwrap();
+        // We annotated 10 nodes with encompasses
+        let nodes_with_encompasses: Vec<&str> = graph
+            .nodes
+            .values()
+            .filter(|n| !n.encompasses.is_empty())
+            .map(|n| n.id.as_str())
+            .collect();
+        assert!(
+            nodes_with_encompasses.len() >= 10,
+            "Expected at least 10 nodes with encompasses, got {}",
+            nodes_with_encompasses.len()
+        );
+    }
+
+    #[test]
+    fn encompasses_reverse_index() {
+        let graph = Graph::load(&test_graph_dir()).unwrap();
+        // ops.mul.facts is encompassed by multiple nodes
+        let encompassed = graph.encompassed_by.get("ops.mul.facts");
+        assert!(
+            encompassed.is_some() && !encompassed.unwrap().is_empty(),
+            "ops.mul.facts should be encompassed by at least one node"
+        );
+    }
+
+    #[test]
+    fn encompasses_weights_valid() {
+        let graph = Graph::load(&test_graph_dir()).unwrap();
+        for node in graph.nodes.values() {
+            for (target, weight) in &node.encompasses {
+                assert!(
+                    *weight > 0.0 && *weight <= 1.0,
+                    "{} encompasses {} with invalid weight {}",
+                    node.id, target, weight
+                );
+                assert!(
+                    graph.nodes.contains_key(target),
+                    "{} encompasses unknown node {}",
+                    node.id, target
+                );
+            }
+        }
+    }
+
+    #[test]
+    fn encompasses_in_validation_report() {
+        let graph = Graph::load(&test_graph_dir()).unwrap();
+        let report = graph.validate();
+        assert!(
+            report.encompasses_count >= 20,
+            "Expected at least 20 encompasses edges, got {}",
+            report.encompasses_count
+        );
+    }
+
+    #[test]
+    fn create_and_delete_node() {
+        let dir = tempfile::tempdir().unwrap();
+        // Create a minimal graph with one root node
+        let root_dir = dir.path().join("test-domain").join("test-unit");
+        std::fs::create_dir_all(&root_dir).unwrap();
+        std::fs::write(
+            root_dir.join("root.yaml"),
+            "id: td.tu.root\nprereqs: []\nbloom: know\nassess: [solve]\n",
+        )
+        .unwrap();
+
+        let mut graph = Graph::load(dir.path()).unwrap();
+        assert_eq!(graph.nodes.len(), 1);
+
+        // Create a child node
+        let child = Node {
+            id: "td.tu.child".to_string(),
+            prereqs: vec!["td.tu.root".to_string()],
+            bloom: crate::types::BloomLevel::Apply,
+            assess: vec!["solve".to_string()],
+            context: None,
+            tags: vec![],
+            typical_grade: None,
+            encompasses: HashMap::from([("td.tu.root".to_string(), 0.8)]),
+            domain: "test-domain".to_string(),
+            unit: "test-unit".to_string(),
+            file_path: root_dir.join("child.yaml"),
+        };
+        graph.create_node(child).unwrap();
+        assert_eq!(graph.nodes.len(), 2);
+        assert!(graph.encompassed_by.contains_key("td.tu.root"));
+
+        // Delete the child
+        graph.delete_node("td.tu.child").unwrap();
+        assert_eq!(graph.nodes.len(), 1);
+    }
+
+    #[test]
+    fn update_node_encompasses() {
+        let dir = tempfile::tempdir().unwrap();
+        let root_dir = dir.path().join("d").join("u");
+        std::fs::create_dir_all(&root_dir).unwrap();
+        std::fs::write(
+            root_dir.join("a.yaml"),
+            "id: d.u.a\nprereqs: []\nbloom: know\nassess: [solve]\n",
+        )
+        .unwrap();
+        std::fs::write(
+            root_dir.join("b.yaml"),
+            "id: d.u.b\nprereqs: [d.u.a]\nbloom: apply\nassess: [solve]\n",
+        )
+        .unwrap();
+
+        let mut graph = Graph::load(dir.path()).unwrap();
+        assert!(graph.nodes["d.u.b"].encompasses.is_empty());
+
+        let update = NodeUpdate {
+            prereqs: None,
+            bloom: None,
+            assess: None,
+            context: None,
+            tags: None,
+            typical_grade: None,
+            encompasses: Some(HashMap::from([("d.u.a".to_string(), 0.7)])),
+        };
+        graph.update_node("d.u.b", update).unwrap();
+        assert_eq!(graph.nodes["d.u.b"].encompasses.len(), 1);
+        assert_eq!(graph.nodes["d.u.b"].encompasses["d.u.a"], 0.7);
+
+        // Verify it persists on disk
+        let reloaded = Graph::load(dir.path()).unwrap();
+        assert_eq!(reloaded.nodes["d.u.b"].encompasses["d.u.a"], 0.7);
     }
 }

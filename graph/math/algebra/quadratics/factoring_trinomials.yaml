@@ -8,6 +8,9 @@ assess:
   - generate
   - explain
 typical_grade: 9
+encompasses:
+  ops.mul.facts: 0.7
+  alg.exp.combining: 0.6
 context: >
   Factor x^2 + bx + c: find two numbers that multiply to c and add
   to b. Factor ax^2 + bx + c (a != 1): AC method or grouping.

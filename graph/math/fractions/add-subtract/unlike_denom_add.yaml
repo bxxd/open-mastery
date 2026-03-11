@@ -7,6 +7,9 @@ assess:
   - solve
   - word_problem
 typical_grade: 5
+encompasses:
+  frac.eq.equivalent: 0.8
+  ops.mul.facts: 0.4
 context: >
   Add fractions with unlike denominators. Find a common denominator
   using equivalent fractions. LCD is efficient but any common

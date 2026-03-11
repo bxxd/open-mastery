@@ -9,6 +9,9 @@ assess:
   - explain
   - word_problem
 typical_grade: 9
+encompasses:
+  alg.exp.exponents_basics: 0.7
+  ops.mul.facts: 0.4
 context: >
   Constant common ratio r. a_n = a_1 * r^(n-1). A geometric sequence
   IS an exponential function (discrete). Given two terms, find r and

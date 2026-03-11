@@ -8,6 +8,9 @@ assess:
   - word_problem
   - explain
 typical_grade: 7
+encompasses:
+  ops.mul.facts: 0.6
+  ops.add.multi_digit: 0.5
 context: >
   Solve equations requiring two operations. 2x + 5 = 13. Undo
   addition/subtraction first, then multiplication/division.

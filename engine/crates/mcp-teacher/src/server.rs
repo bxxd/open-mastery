@@ -2,6 +2,7 @@ use anyhow::{Context, Result};
 use open_mastery_core::graph::Graph;
 use open_mastery_core::types::{BloomLevel, Node, NodeUpdate};
 use serde_json::{json, Value};
+use std::collections::HashMap;
 use std::path::PathBuf;
 use std::sync::Mutex;
 
@@ -85,7 +86,8 @@ impl Server {
                         "assess": { "type": "array", "items": { "type": "string" }, "description": "Assessment types" },
                         "context": { "type": "string", "description": "Pedagogical guidance for the LLM tutor" },
                         "tags": { "type": "array", "items": { "type": "string" } },
-                        "typical_grade": { "type": "integer", "description": "Grade level (4-12+)" }
+                        "typical_grade": { "type": "integer", "description": "Grade level (4-12+)" },
+                        "encompasses": { "type": "object", "additionalProperties": { "type": "number" }, "description": "Map of node_id → weight (0-1). Advanced topics that implicitly exercise this sub-skill." }
                     }
                 }
             },
@@ -102,7 +104,8 @@ impl Server {
                         "assess": { "type": "array", "items": { "type": "string" } },
                         "context": { "type": "string", "description": "Set to null to clear" },
                         "tags": { "type": "array", "items": { "type": "string" } },
-                        "typical_grade": { "type": "integer" }
+                        "typical_grade": { "type": "integer" },
+                        "encompasses": { "type": "object", "additionalProperties": { "type": "number" }, "description": "Map of node_id → weight (0-1)" }
                     }
                 }
             },
@@ -340,6 +343,21 @@ impl Server {
 
                 let prompt_cascade = graph.get_prompt_cascade(node_id);
 
+                let encompasses: Value = node.encompasses.iter()
+                    .map(|(id, w)| (id.clone(), json!(w)))
+                    .collect::<serde_json::Map<String, Value>>()
+                    .into();
+
+                let encompassed_by: Vec<Value> = graph
+                    .encompassed_by
+                    .get(node_id)
+                    .map(|entries| {
+                        entries.iter()
+                            .map(|(id, w)| json!({ "id": id, "weight": w }))
+                            .collect()
+                    })
+                    .unwrap_or_default();
+
                 Ok(serde_json::to_string_pretty(&json!({
                     "id": node.id,
                     "name": node.display_name(),
@@ -352,6 +370,8 @@ impl Server {
                     "tags": node.tags,
                     "typical_grade": node.typical_grade,
                     "context": node.context,
+                    "encompasses": encompasses,
+                    "encompassed_by": encompassed_by,
                     "prompt_cascade": prompt_cascade,
                     "prereq_depth": graph.prereq_depth(node_id),
                 }))?)
@@ -369,6 +389,7 @@ impl Server {
                 Ok(serde_json::to_string_pretty(&json!({
                     "node_count": report.node_count,
                     "edge_count": report.edge_count,
+                    "encompasses_count": report.encompasses_count,
                     "domains": domains,
                     "root_nodes": report.root_nodes,
                     "leaf_nodes": report.leaf_nodes,
@@ -403,6 +424,15 @@ impl Server {
                     .get("typical_grade")
                     .and_then(|v| v.as_u64())
                     .map(|g| g as u8);
+                let encompasses: HashMap<String, f32> = args
+                    .get("encompasses")
+                    .and_then(|v| v.as_object())
+                    .map(|obj| {
+                        obj.iter()
+                            .filter_map(|(k, v)| v.as_f64().map(|w| (k.clone(), w as f32)))
+                            .collect()
+                    })
+                    .unwrap_or_default();
 
                 // Derive path from ID: domain.unit.topic → domain/unit/topic.yaml
                 let (domain, unit, file_path) = id_to_path(id, &self.graph_dir)?;
@@ -415,6 +445,7 @@ impl Server {
                     context,
                     tags,
                     typical_grade,
+                    encompasses,
                     domain,
                     unit,
                     file_path,
@@ -471,6 +502,14 @@ impl Server {
                         .map(|g| Some(g as u8))
                 };
 
+                let encompasses = args.get("encompasses").and_then(|v| {
+                    v.as_object().map(|obj| {
+                        obj.iter()
+                            .filter_map(|(k, v)| v.as_f64().map(|w| (k.clone(), w as f32)))
+                            .collect()
+                    })
+                });
+
                 let update = NodeUpdate {
                     prereqs,
                     bloom,
@@ -478,6 +517,7 @@ impl Server {
                     context,
                     tags,
                     typical_grade,
+                    encompasses,
                 };
 
                 let mut graph = self.graph.lock().unwrap();

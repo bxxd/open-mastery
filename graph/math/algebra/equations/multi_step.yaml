@@ -8,6 +8,9 @@ assess:
   - word_problem
   - explain
 typical_grade: 7
+encompasses:
+  alg.eq.two_step: 0.8
+  alg.exp.distributive: 0.7
 context: >
   Equations with variables on both sides. Distribute first if
   needed. Collect variables on one side, constants on the other.

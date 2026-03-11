@@ -8,6 +8,9 @@ assess:
   - explain
   - word_problem
 typical_grade: 10
+encompasses:
+  alg.exp.exponent_rules: 0.7
+  alg.eq.multi_step: 0.6
 context: >
   Solve by converting to exponential form or using log properties
   to condense. Check for extraneous solutions — argument of log
