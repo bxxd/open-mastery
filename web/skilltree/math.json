@@ -1,0 +1,1268 @@
+{
+ "nodes": [
+  {
+   "id": "trig.rat.basics",
+   "name": "basics",
+   "region": "trigonometry",
+   "prereqs": [
+    "geo.tri.special_right",
+    "frac.md.divide"
+   ],
+   "context": "sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent. SOH-CAH-TOA. The ratios depend on the angle, not the triangle size (similar triangles). Find trig ratios given a right triangle with labeled sides. Use special right triangles (30-60-90, 45-45-90) to find exact values."
+  },
+  {
+   "id": "trig.rat.inverse",
+   "name": "inverse",
+   "region": "trigonometry",
+   "prereqs": [
+    "trig.rat.solving"
+   ],
+   "context": "arcsin, arccos, arctan — find the angle given a ratio. Restricted domains: arcsin and arctan return angles in [-90, 90], arccos in [0, 180]. Why restrictions are needed: sin(30) = sin(150) = 0.5, so we need a convention. Calculator vs exact values. Notation: sin^(-1) is NOT 1/sin."
+  },
+  {
+   "id": "trig.rat.solving",
+   "name": "solving",
+   "region": "trigonometry",
+   "prereqs": [
+    "trig.rat.basics",
+    "alg.eq.multi_step"
+   ],
+   "context": "Given an angle and one side, find the other sides using trig ratios. Given two sides, find the angle using inverse trig (arcsin, arccos, arctan). Angles of elevation and depression. Navigation, surveying, indirect measurement. \"How tall is the building if the shadow is 50 feet and the sun angle is 35 degrees?\""
+  },
+  {
+   "id": "trig.uc.radians",
+   "name": "radians",
+   "region": "trigonometry",
+   "prereqs": [
+    "trig.uc.unit_circle",
+    "rat.prop.solving"
+   ],
+   "context": "Radians measure angles by arc length on the unit circle. Full circle = 2π radians = 360°. Convert: multiply by π/180 or 180/π. π/6 = 30°, π/4 = 45°, π/3 = 60°, π/2 = 90°. Radians are dimensionless — just a ratio (arc/radius). Calculus uses radians exclusively because derivative of sin(x) = cos(x) only in radians."
+  },
+  {
+   "id": "trig.uc.unit_circle",
+   "name": "unit circle",
+   "region": "trigonometry",
+   "prereqs": [
+    "trig.rat.basics",
+    "geo.circ.properties"
+   ],
+   "context": "Circle of radius 1 centered at origin. Any point on the circle is (cos θ, sin θ). Extends trig beyond right triangles to any angle. Reference angles: relate any angle to a first-quadrant angle. Signs by quadrant: All Students Take Calculus (ASTC). Key angles: 0, 30, 45, 60, 90, and their multiples. Memorize the unit circle or derive it from special triangles."
+  },
+  {
+   "id": "trig.gr.sinusoidal",
+   "name": "sinusoidal",
+   "region": "trigonometry",
+   "prereqs": [
+    "trig.uc.radians",
+    "alg.fn.linear"
+   ],
+   "context": "y = A sin(Bx + C) + D. Amplitude |A|, period 2π/B, phase shift -C/B, vertical shift D. Graph by plotting key points: start, quarter, half, three-quarter, end of one period. Cosine is shifted sine. Real-world: tides, sound waves, Ferris wheels, temperature cycles. Transformations of the parent function y = sin(x)."
+  },
+  {
+   "id": "trig.id.pythagorean",
+   "name": "pythagorean",
+   "region": "trigonometry",
+   "prereqs": [
+    "trig.uc.unit_circle",
+    "geo.ap.pythagorean"
+   ],
+   "context": "sin²θ + cos²θ = 1. Derived from Pythagorean theorem on the unit circle: x² + y² = 1 where x = cos θ, y = sin θ. Divide by cos²θ: tan²θ + 1 = sec²θ. Divide by sin²θ: 1 + cot²θ = csc²θ. Use to simplify expressions and verify identities. The foundation for all other trig identities."
+  },
+  {
+   "id": "trig.id.sum_difference",
+   "name": "sum difference",
+   "region": "trigonometry",
+   "prereqs": [
+    "trig.id.pythagorean"
+   ],
+   "context": "sin(A ± B) = sinA cosB ± cosA sinB. cos(A ± B) = cosA cosB ∓ sinA sinB. tan(A ± B) = (tanA ± tanB)/(1 ∓ tanA tanB). Derive sin(A+B) from unit circle rotation. Double angle formulas follow: let A = B. Half angle formulas from cos(2θ) = 1 - 2sin²θ. These are tools, not things to memorize — derive when needed."
+  },
+  {
+   "id": "ns.round.decimals",
+   "name": "decimals",
+   "region": "number-sense",
+   "prereqs": [
+    "ns.pv.decimals_to_thousandths",
+    "ns.round.whole_numbers"
+   ],
+   "context": "Round decimals to any place — nearest whole, nearest tenth, nearest hundredth. Use number lines. Apply to money (nearest cent), measurement (nearest tenth of a cm). Estimate decimal computations by rounding first."
+  },
+  {
+   "id": "ns.round.whole_numbers",
+   "name": "whole numbers",
+   "region": "number-sense",
+   "prereqs": [
+    "ns.pv.millions"
+   ],
+   "context": "Round whole numbers to any place (nearest 10, 100, 1000, etc.). Use number lines to visualize. Apply to estimation in real-world contexts (about how many people, approximately how far)."
+  },
+  {
+   "id": "ns.pv.decimals_to_thousandths",
+   "name": "decimals to thousandths",
+   "region": "number-sense",
+   "prereqs": [
+    "dec.pv.tenths_hundredths"
+   ],
+   "context": "Extend decimal place value through thousandths. Read, write, compare decimals to thousandths. 0.400 = 0.40 = 0.4. Use place value to reason about relative size."
+  },
+  {
+   "id": "ns.pv.millions",
+   "name": "millions",
+   "region": "number-sense",
+   "prereqs": [
+    "ns.pv.thousands"
+   ],
+   "context": "Extend place value to ten-thousands, hundred-thousands, millions. Read and write multi-digit numbers. Each place is 10x the place to its right. Use commas to read large numbers."
+  },
+  {
+   "id": "ns.pv.powers_of_10",
+   "name": "powers of 10",
+   "region": "number-sense",
+   "prereqs": [
+    "ops.mul.by_10_100_1000",
+    "ns.pv.decimals_to_thousandths"
+   ],
+   "context": "Powers of 10 unify multiplication and division by 10, 100, 1000. 10^1 = 10, 10^2 = 100, 10^3 = 1000. Multiplying shifts decimal right; dividing shifts left. Exponent notation as shorthand."
+  },
+  {
+   "id": "ns.pv.thousands",
+   "name": "thousands",
+   "region": "number-sense",
+   "prereqs": [],
+   "context": "Ones, tens, hundreds, thousands. Read and write numbers to 9,999. Identify the value of each digit by its position. Compare numbers using place value reasoning."
+  },
+  {
+   "id": "ns.pat.sequences",
+   "name": "sequences",
+   "region": "number-sense",
+   "prereqs": [
+    "ops.mul.facts"
+   ],
+   "context": "Identify and extend number patterns. Generate a pattern given a rule (add 3, multiply by 2). Recognize features of patterns (always odd, always increases). Input-output tables. Early algebraic thinking."
+  },
+  {
+   "id": "ops.oo.basics",
+   "name": "basics",
+   "region": "operations",
+   "prereqs": [
+    "ops.sub.within_1000",
+    "ops.div.facts"
+   ],
+   "context": "Parentheses, exponents, multiply/divide (left to right), add/subtract (left to right). PEMDAS as memory aid but emphasize the logic: grouping first, then strongest operations. Evaluate expressions with nested parentheses and brackets."
+  },
+  {
+   "id": "ops.oo.numerical_expressions",
+   "name": "numerical expressions",
+   "region": "operations",
+   "prereqs": [
+    "ops.oo.basics"
+   ],
+   "context": "Write and interpret numerical expressions. Translate words to expressions: \"add 8 and 7 then multiply by 2\" = (8 + 7) x 2. Compare expressions without evaluating: \"3 x (12 + 5) is three times as large as (12 + 5).\""
+  },
+  {
+   "id": "ops.add.multi_digit",
+   "name": "multi digit",
+   "region": "operations",
+   "prereqs": [
+    "ops.add.within_1000",
+    "ns.pv.millions"
+   ],
+   "context": "Add numbers with sums beyond 1,000 — up to millions. Multiple regroupings across place values. Align digits by place value. Estimation as a check."
+  },
+  {
+   "id": "ops.add.within_1000",
+   "name": "within 1000",
+   "region": "operations",
+   "prereqs": [
+    "ns.pv.thousands"
+   ],
+   "context": "Add numbers with sums up to 1,000. Standard algorithm with regrouping (carrying). Estimate first, then compute. Check with inverse (subtraction)."
+  },
+  {
+   "id": "ops.wp.multi_step",
+   "name": "multi step",
+   "region": "operations",
+   "prereqs": [
+    "ops.add.multi_digit",
+    "ops.sub.multi_digit",
+    "ops.mul.2d_by_1d",
+    "ops.div.long_1digit"
+   ],
+   "context": "Solve problems requiring two or more steps with mixed operations. Identify which operations and in what order. Represent with equations using a letter for the unknown. Assess reasonableness."
+  },
+  {
+   "id": "ops.sub.multi_digit",
+   "name": "multi digit",
+   "region": "operations",
+   "prereqs": [
+    "ops.sub.within_1000",
+    "ns.pv.millions"
+   ],
+   "context": "Subtract large multi-digit numbers. Multiple regroupings including across zeros. Real-world contexts: distances, populations, money amounts."
+  },
+  {
+   "id": "ops.sub.within_1000",
+   "name": "within 1000",
+   "region": "operations",
+   "prereqs": [
+    "ns.pv.thousands"
+   ],
+   "context": "Subtract numbers within 1,000. Standard algorithm with regrouping (borrowing). Zeros in the minuend are a common trouble spot. Estimate to check reasonableness."
+  },
+  {
+   "id": "ops.mul.2d_by_1d",
+   "name": "2d by 1d",
+   "region": "operations",
+   "prereqs": [
+    "ops.mul.facts"
+   ],
+   "context": "Multiply a two-digit number by a one-digit number. Area model and partial products before standard algorithm. 34 x 7 = (30 x 7) + (4 x 7). Builds toward multi-digit multiplication."
+  },
+  {
+   "id": "ops.mul.2d_by_2d",
+   "name": "2d by 2d",
+   "region": "operations",
+   "prereqs": [
+    "ops.mul.2d_by_1d",
+    "ops.add.multi_digit"
+   ],
+   "context": "Multiply two two-digit numbers. Area model (box method) shows four partial products. Standard algorithm as shorthand. Estimate to check: 23 x 47 is roughly 20 x 50 = 1,000."
+  },
+  {
+   "id": "ops.mul.by_10_100_1000",
+   "name": "by 10 100 1000",
+   "region": "operations",
+   "prereqs": [
+    "ops.mul.facts",
+    "ns.pv.millions"
+   ],
+   "context": "Multiplying by 10, 100, 1000 shifts digits left. This is a place value concept, not \"add zeros.\" Connect to the 10x relationship between places. Explain WHY the pattern works."
+  },
+  {
+   "id": "ops.mul.factors_and_multiples",
+   "name": "factors and multiples",
+   "region": "operations",
+   "prereqs": [
+    "ops.div.facts"
+   ],
+   "context": "Factor = divides evenly. Multiple = in the times table. Find all factor pairs. Determine if a number is prime or composite. 1 is a factor of everything. Every number is a multiple of itself."
+  },
+  {
+   "id": "ops.mul.facts",
+   "name": "facts",
+   "region": "operations",
+   "prereqs": [
+    "ops.add.within_1000"
+   ],
+   "context": "Fluency with multiplication facts through 12x12. Build from patterns (2s, 5s, 10s) to harder facts (7s, 8s). Use arrays and area models to give meaning. Connect to repeated addition."
+  },
+  {
+   "id": "ops.mul.multi_digit",
+   "name": "multi digit",
+   "region": "operations",
+   "prereqs": [
+    "ops.mul.2d_by_2d"
+   ],
+   "context": "Multiply multi-digit whole numbers fluently using the standard algorithm. Up to 4-digit by 2-digit. Estimate products to check reasonableness. The algorithm should feel like a tool, not a mystery."
+  },
+  {
+   "id": "ops.div.facts",
+   "name": "facts",
+   "region": "operations",
+   "prereqs": [
+    "ops.mul.facts"
+   ],
+   "context": "Division as the inverse of multiplication. \"72 / 8 = ? means ? x 8 = 72.\" Fluency with division facts through 144/12. Relate to fair sharing and grouping."
+  },
+  {
+   "id": "ops.div.integers",
+   "name": "integers",
+   "region": "operations",
+   "prereqs": [
+    "ops.div.long_2digit",
+    "alg.exp.integers"
+   ],
+   "context": "Division with negative integers. Rules follow from multiplication: positive / positive = positive, negative / negative = positive, mixed signs = negative. Division by zero is undefined — explain why."
+  },
+  {
+   "id": "ops.div.long_1digit",
+   "name": "long 1digit",
+   "region": "operations",
+   "prereqs": [
+    "ops.div.facts",
+    "ops.sub.multi_digit"
+   ],
+   "context": "Long division with one-digit divisors. Divide, multiply, subtract, bring down. Interpret remainders in context (leftover, round up, express as fraction). Dividends up to 4 digits."
+  },
+  {
+   "id": "ops.div.long_2digit",
+   "name": "long 2digit",
+   "region": "operations",
+   "prereqs": [
+    "ops.div.long_1digit",
+    "ops.mul.multi_digit"
+   ],
+   "context": "Long division with two-digit divisors. Estimate quotients using compatible numbers. Dividends up to 4 digits. Interpret remainders as whole numbers, fractions, or decimals depending on context."
+  },
+  {
+   "id": "dec.pv.tenths_hundredths",
+   "name": "tenths hundredths",
+   "region": "decimals",
+   "prereqs": [
+    "frac.con.basics",
+    "ns.pv.millions"
+   ],
+   "context": "Decimals as another way to write fractions with denominators of 10 or 100. Tenths place, hundredths place. Use money as anchor: $0.25 = 25/100. Place value chart extends right of the decimal point. Compare decimals using place value."
+  },
+  {
+   "id": "dec.conv.fraction_decimal",
+   "name": "fraction decimal",
+   "region": "decimals",
+   "prereqs": [
+    "ns.pv.decimals_to_thousandths",
+    "frac.con.as_division"
+   ],
+   "context": "Convert between fractions and decimals. Divide numerator by denominator. Common equivalents: 1/2 = 0.5, 1/4 = 0.25, 1/5 = 0.2, 3/4 = 0.75. Compare a fraction and a decimal by converting to same form. Some fractions produce repeating decimals (1/3 = 0.333...)."
+  },
+  {
+   "id": "dec.ops.add_subtract",
+   "name": "add subtract",
+   "region": "decimals",
+   "prereqs": [
+    "ns.pv.decimals_to_thousandths",
+    "ops.add.multi_digit",
+    "ops.sub.multi_digit"
+   ],
+   "context": "Add and subtract decimals to hundredths. Line up decimal points (which is lining up place values). Trailing zeros to make same number of decimal places. Money problems are natural practice. Estimate first to catch decimal point errors."
+  },
+  {
+   "id": "dec.ops.divide",
+   "name": "divide",
+   "region": "decimals",
+   "prereqs": [
+    "dec.ops.multiply",
+    "ops.div.long_2digit"
+   ],
+   "context": "Divide decimals by whole numbers and whole numbers by decimals. Relate to fractions: 4.5 / 0.9 = 45/9 = 5. Use powers of 10 to eliminate decimals in divisor. Long division with decimal quotients. Money division problems."
+  },
+  {
+   "id": "dec.ops.multiply",
+   "name": "multiply",
+   "region": "decimals",
+   "prereqs": [
+    "dec.ops.add_subtract",
+    "ops.mul.multi_digit",
+    "ns.pv.powers_of_10"
+   ],
+   "context": "Multiply decimals using place value reasoning. Multiply as whole numbers, then place decimal using total decimal places. Or: 0.3 x 0.4 = 3/10 x 4/10 = 12/100 = 0.12. Estimation catches decimal point errors."
+  },
+  {
+   "id": "frac.as.like_add",
+   "name": "like add",
+   "region": "fractions",
+   "prereqs": [
+    "frac.con.basics"
+   ],
+   "context": "Add fractions with the same denominator. The denominator stays — you're combining pieces of the same size. Include sums greater than 1 (improper fractions and mixed numbers). Visual: combining shaded parts on the same model."
+  },
+  {
+   "id": "frac.as.like_sub",
+   "name": "like sub",
+   "region": "fractions",
+   "prereqs": [
+    "frac.con.basics"
+   ],
+   "context": "Subtract fractions with the same denominator. Remove pieces of the same size. Include subtracting from whole numbers and mixed numbers. Real-world: ate 2/5 of a pizza, how much is left?"
+  },
+  {
+   "id": "frac.as.unlike_add",
+   "name": "unlike add",
+   "region": "fractions",
+   "prereqs": [
+    "frac.as.like_add",
+    "frac.eq.equivalent"
+   ],
+   "context": "Add fractions with unlike denominators. Find a common denominator using equivalent fractions. LCD is efficient but any common denominator works. Visual: same-sized pieces on a number line. Include mixed numbers."
+  },
+  {
+   "id": "frac.as.unlike_sub",
+   "name": "unlike sub",
+   "region": "fractions",
+   "prereqs": [
+    "frac.as.like_sub",
+    "frac.eq.equivalent"
+   ],
+   "context": "Subtract fractions with unlike denominators. Same strategy as addition: find common denominator first. Include mixed numbers with regrouping. Estimation using benchmarks (close to 1/2? close to 1?)."
+  },
+  {
+   "id": "frac.md.divide",
+   "name": "divide",
+   "region": "fractions",
+   "prereqs": [
+    "frac.md.multiply"
+   ],
+   "context": "Divide unit fractions by whole numbers and whole numbers by unit fractions. \"How many 1/3s are in 4?\" = 4 / (1/3) = 12. Visual models essential. Invert-and-multiply as shortcut AFTER understanding why it works."
+  },
+  {
+   "id": "frac.md.fraction_times_whole",
+   "name": "fraction times whole",
+   "region": "fractions",
+   "prereqs": [
+    "frac.con.basics",
+    "ops.mul.facts"
+   ],
+   "context": "Multiply a fraction by a whole number. 3 x 2/5 = 6/5. Understand as repeated addition: 2/5 + 2/5 + 2/5. Visual: three groups of 2/5 on a number line. Word problems: \"each person gets 3/4 cup, 5 people.\""
+  },
+  {
+   "id": "frac.md.multiply",
+   "name": "multiply",
+   "region": "fractions",
+   "prereqs": [
+    "frac.md.fraction_times_whole",
+    "frac.eq.equivalent"
+   ],
+   "context": "Multiply fraction by fraction. Area model: 2/3 x 3/4 is the overlap of shading 2/3 of one side and 3/4 of the other. Algorithm: multiply numerators, multiply denominators, simplify. Key insight: multiplying by a fraction less than 1 makes the result SMALLER. \"Of\" means multiply."
+  },
+  {
+   "id": "frac.eq.comparing",
+   "name": "comparing",
+   "region": "fractions",
+   "prereqs": [
+    "frac.eq.equivalent"
+   ],
+   "context": "Compare fractions using common denominators, common numerators, or benchmark fractions (0, 1/2, 1). Order fractions on a number line. Use >, <, = symbols. Justify comparisons with reasoning."
+  },
+  {
+   "id": "frac.eq.equivalent",
+   "name": "equivalent",
+   "region": "fractions",
+   "prereqs": [
+    "frac.con.basics",
+    "ops.mul.factors_and_multiples"
+   ],
+   "context": "Equivalent fractions name the same amount. Multiply or divide numerator and denominator by the same number. Visual proof: same shaded area, different number of pieces. Simplify using common factors."
+  },
+  {
+   "id": "frac.con.as_division",
+   "name": "as division",
+   "region": "fractions",
+   "prereqs": [
+    "frac.con.basics",
+    "ops.div.long_1digit"
+   ],
+   "context": "A fraction IS division. 3/4 = 3 divided by 4. Share 3 sandwiches among 4 people — each gets 3/4. This connects fractions to division permanently. Interpret remainders as fractions: 13 / 4 = 3 1/4 (not \"3 remainder 1\")."
+  },
+  {
+   "id": "frac.con.basics",
+   "name": "basics",
+   "region": "fractions",
+   "prereqs": [
+    "ops.div.facts"
+   ],
+   "context": "What a fraction is: equal parts of a whole. Numerator counts pieces, denominator tells how many equal pieces total. Read and write fractions. Represent on number lines and area models. Connect to division: 3/4 means 3 divided by 4."
+  },
+  {
+   "id": "frac.mx.conversion",
+   "name": "conversion",
+   "region": "fractions",
+   "prereqs": [
+    "frac.as.like_add",
+    "frac.eq.equivalent"
+   ],
+   "context": "Convert between improper fractions and mixed numbers. 7/4 = 1 3/4. Add and subtract mixed numbers with like denominators. Regrouping with mixed numbers (borrowing a whole to create fractions)."
+  },
+  {
+   "id": "stat.inf.normal",
+   "name": "normal",
+   "region": "statistics",
+   "prereqs": [
+    "stat.dd.box_plots",
+    "alg.fn.intro"
+   ],
+   "context": "Bell curve: symmetric, mean = median = mode. 68-95-99.7 rule for standard deviations. Z-scores: how many SDs from the mean. z = (x - mean) / SD. Compare values from different distributions using z-scores. \"A score of 85 on Test A vs 72 on Test B — which is better relative to the class?\" Real-world: heights, test scores."
+  },
+  {
+   "id": "stat.inf.regression",
+   "name": "regression",
+   "region": "statistics",
+   "prereqs": [
+    "stat.dd.scatter_plots",
+    "alg.fn.linear"
+   ],
+   "context": "Line of best fit minimizes residuals (vertical distances from points to line). Use slope and y-intercept to interpret: \"For each additional hour of study, the model predicts X more points.\" Residuals show how well the line fits. Correlation coefficient r: strength and direction. Correlation is not causation."
+  },
+  {
+   "id": "stat.inf.sampling",
+   "name": "sampling",
+   "region": "statistics",
+   "prereqs": [
+    "stat.meas.center_spread"
+   ],
+   "context": "A sample represents a population. Random sampling reduces bias. Types: simple random, stratified, cluster, systematic. Convenience samples are biased — the lunch table isn't the whole school. Larger samples give better estimates. Compare sample statistics to make informal inferences about populations."
+  },
+  {
+   "id": "stat.dd.bar_line_graphs",
+   "name": "bar line graphs",
+   "region": "statistics",
+   "prereqs": [
+    "ops.add.within_1000"
+   ],
+   "context": "Bar graphs for categorical data, line graphs for change over time. Read and create both. Scales matter — misleading graphs use broken axes or exaggerated scales. Title, labels, units. \"What does this graph tell you?\" before \"Make this graph.\""
+  },
+  {
+   "id": "stat.dd.box_plots",
+   "name": "box plots",
+   "region": "statistics",
+   "prereqs": [
+    "stat.meas.center_spread"
+   ],
+   "context": "Box-and-whisker plots: minimum, Q1, median, Q3, maximum. The box shows the middle 50% (IQR). Whiskers extend to min/max (or 1.5xIQR for modified). Compare distributions side by side. Identify outliers. Connect to median and IQR from measures of center and spread."
+  },
+  {
+   "id": "stat.dd.dot_plots_histograms",
+   "name": "dot plots histograms",
+   "region": "statistics",
+   "prereqs": [
+    "ops.add.multi_digit"
+   ],
+   "context": "Dot plots show individual data points. Histograms group data into bins. Read, create, and interpret both. Describe shape: symmetric, skewed, clusters, gaps, outliers. Choose appropriate display for the data."
+  },
+  {
+   "id": "stat.dd.scatter_plots",
+   "name": "scatter plots",
+   "region": "statistics",
+   "prereqs": [
+    "geo.cp.first_quadrant",
+    "stat.dd.dot_plots_histograms"
+   ],
+   "context": "Scatter plots show relationships between two quantitative variables. Plot ordered pairs. Describe association: positive, negative, none. Strength: strong, moderate, weak. Linear vs nonlinear. Identify clusters and outliers. Sketch trend lines informally. \"Does more study time predict higher scores?\""
+  },
+  {
+   "id": "stat.meas.center_spread",
+   "name": "center spread",
+   "region": "statistics",
+   "prereqs": [
+    "stat.dd.dot_plots_histograms",
+    "dec.ops.add_subtract",
+    "dec.ops.divide"
+   ],
+   "context": "Mean, median, mode — three ways to describe center. Mean = add all, divide by count. Median = middle value when sorted. Mode = most frequent. When to use which: mean for symmetric, median for skewed or outliers. Range, IQR as measures of spread. MAD (mean absolute deviation) for variability."
+  },
+  {
+   "id": "stat.prob.basic",
+   "name": "basic",
+   "region": "statistics",
+   "prereqs": [
+    "frac.con.basics",
+    "rat.rat.understanding"
+   ],
+   "context": "Probability as a number between 0 and 1. P(event) = favorable outcomes / total outcomes. Certain = 1, impossible = 0, equally likely = 0.5. Experimental vs theoretical probability. Coin flips, dice, spinners, card draws. Express as fraction, decimal, or percent."
+  },
+  {
+   "id": "stat.prob.compound",
+   "name": "compound",
+   "region": "statistics",
+   "prereqs": [
+    "stat.prob.basic",
+    "frac.md.multiply"
+   ],
+   "context": "Compound events: P(A and B), P(A or B). Independent events: P(A and B) = P(A) x P(B). Dependent events: P(A and B) = P(A) x P(B|A). Tree diagrams and organized lists to enumerate outcomes. Coin flip then die roll. Drawing without replacement. Addition rule for mutually exclusive events."
+  },
+  {
+   "id": "stat.prob.conditional",
+   "name": "conditional",
+   "region": "statistics",
+   "prereqs": [
+    "stat.prob.compound"
+   ],
+   "context": "P(A|B) = P(A and B) / P(B). \"Given that it's raining, what's the probability of a traffic jam?\" Two-way frequency tables are the key tool. Distinguish P(A|B) from P(B|A) — common confusion. Independent events: P(A|B) = P(A). Real-world: medical tests, false positives, base rate fallacy."
+  },
+  {
+   "id": "stat.prob.counting",
+   "name": "counting",
+   "region": "statistics",
+   "prereqs": [
+    "stat.prob.compound",
+    "ops.mul.facts"
+   ],
+   "context": "Fundamental counting principle: if event A has m outcomes and event B has n outcomes, then A followed by B has m x n outcomes. Permutations: order matters, n!/(n-r)!. Combinations: order doesn't matter, n!/[r!(n-r)!]. \"How many ways can you arrange 3 books from 5?\" vs \"How many ways can you choose 3 books from 5?\""
+  },
+  {
+   "id": "rat.rat.equivalent",
+   "name": "equivalent",
+   "region": "ratios-proportions",
+   "prereqs": [
+    "rat.rat.understanding"
+   ],
+   "context": "Equivalent ratios: multiply or divide both quantities by the same number. Tables of equivalent ratios. Double number lines. \"If the recipe uses 2 cups flour for 3 cups sugar, how much flour for 9 cups sugar?\" Scale up and down."
+  },
+  {
+   "id": "rat.rat.understanding",
+   "name": "understanding",
+   "region": "ratios-proportions",
+   "prereqs": [
+    "frac.eq.equivalent",
+    "ops.mul.facts"
+   ],
+   "context": "A ratio compares two quantities multiplicatively. 3:5 means \"for every 3 of this, there are 5 of that.\" Not a fraction (though related). Notation: 3:5, 3 to 5, 3/5. Use tape diagrams and tables to represent. Real-world: recipes, mixtures."
+  },
+  {
+   "id": "rat.pct.basics",
+   "name": "basics",
+   "region": "ratios-proportions",
+   "prereqs": [
+    "rat.rat.equivalent",
+    "dec.conv.fraction_decimal"
+   ],
+   "context": "Percent = per 100. A ratio with second term 100. Convert between fractions, decimals, and percents: 3/4 = 0.75 = 75%. Find percent of a number: 25% of 80 = 20. Common benchmarks: 50% = half, 25% = quarter, 10% = tenth. Tax, tip, discount."
+  },
+  {
+   "id": "rat.pct.increase_decrease",
+   "name": "increase decrease",
+   "region": "ratios-proportions",
+   "prereqs": [
+    "rat.prop.solving"
+   ],
+   "context": "Percent increase and decrease. Original x (1 + rate) for increase, original x (1 - rate) for decrease. Markup, markdown, tax, tip, commission, simple interest. Find the percent change given before and after. Common trap: 50% increase then 50% decrease does NOT return to the original."
+  },
+  {
+   "id": "rat.prop.solving",
+   "name": "solving",
+   "region": "ratios-proportions",
+   "prereqs": [
+    "rat.rate.unit",
+    "rat.pct.basics"
+   ],
+   "context": "A proportion is two equal ratios. Cross-multiply to solve, but understand WHY: equivalent fractions. Scale factor reasoning. \"If 3 shirts cost $45, how much for 7 shirts?\" Set up the proportion, solve for the unknown. Maps, scale drawings, similar figures are proportional."
+  },
+  {
+   "id": "rat.rate.unit",
+   "name": "unit",
+   "region": "ratios-proportions",
+   "prereqs": [
+    "rat.rat.equivalent",
+    "dec.ops.divide"
+   ],
+   "context": "A unit rate has denominator 1. \"60 miles per hour\" = 60 miles per 1 hour. Compute unit rates by dividing. Compare rates: which is the better deal? $3.50 for 4 apples vs $5.00 for 6? Speed, price per unit, miles per gallon."
+  },
+  {
+   "id": "alg.log.basics",
+   "name": "basics",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.exponent_rules"
+   ],
+   "context": "log_b(x) = y means b^y = x. Logarithm is the inverse of exponentiation. \"What power of b gives x?\" log_10 is common log, ln is natural log (base e). Convert between exponential and log form fluently. log_b(b) = 1, log_b(1) = 0. Evaluate simple logs mentally: log_2(8) = 3 because 2^3 = 8."
+  },
+  {
+   "id": "alg.log.change_of_base",
+   "name": "change of base",
+   "region": "algebra",
+   "prereqs": [
+    "alg.log.properties"
+   ],
+   "context": "log_b(x) = log(x) / log(b) = ln(x) / ln(b). Derive it from the definition. Use it to evaluate logs with any base on a calculator (which only has log and ln). Useful for comparing quantities on different logarithmic scales."
+  },
+  {
+   "id": "alg.log.equations",
+   "name": "equations",
+   "region": "algebra",
+   "prereqs": [
+    "alg.log.properties",
+    "alg.eq.multi_step"
+   ],
+   "context": "Solve by converting to exponential form or using log properties to condense. Check for extraneous solutions — argument of log must be positive. Exponential equations: take log of both sides. Applications: compound interest A = P(1+r/n)^(nt), half-life, pH scale, Richter scale, decibels."
+  },
+  {
+   "id": "alg.log.properties",
+   "name": "properties",
+   "region": "algebra",
+   "prereqs": [
+    "alg.log.basics"
+   ],
+   "context": "Product rule: log(ab) = log(a) + log(b). Quotient rule: log(a/b) = log(a) - log(b). Power rule: log(a^n) = n*log(a). These follow directly from exponent rules — derive them, don't just memorize. Expand and condense logarithmic expressions. Use properties to evaluate without a calculator."
+  },
+  {
+   "id": "alg.rat.add_subtract",
+   "name": "add subtract",
+   "region": "algebra",
+   "prereqs": [
+    "alg.rat.simplifying"
+   ],
+   "context": "Find LCD of polynomial denominators by factoring. Build equivalent fractions with the LCD. Combine numerators, simplify. Same logic as numeric fraction addition — LCD, convert, combine. Complex fractions: simplify by multiplying numerator and denominator by LCD."
+  },
+  {
+   "id": "alg.rat.equations",
+   "name": "equations",
+   "region": "algebra",
+   "prereqs": [
+    "alg.rat.add_subtract",
+    "alg.eq.multi_step"
+   ],
+   "context": "Multiply both sides by LCD to clear denominators. Solve the resulting polynomial equation. CHECK for extraneous solutions — values that make the original denominator zero. Rate/work problems: \"Pipe A fills in 3 hours, Pipe B in 5 hours, together?\" Use 1/a + 1/b = 1/t."
+  },
+  {
+   "id": "alg.rat.multiply_divide",
+   "name": "multiply divide",
+   "region": "algebra",
+   "prereqs": [
+    "alg.rat.simplifying"
+   ],
+   "context": "Multiply: factor everything, cancel, then multiply across. Divide: flip the second fraction and multiply. Same rules as numeric fractions but with polynomials. Always state domain restrictions. Factor completely before canceling."
+  },
+  {
+   "id": "alg.rat.simplifying",
+   "name": "simplifying",
+   "region": "algebra",
+   "prereqs": [
+    "alg.quad.factoring_gcf"
+   ],
+   "context": "Factor numerator and denominator, cancel common factors. Domain restrictions: denominator cannot be zero. Simplify before multiplying. Connect to fraction simplification — same principle, polynomial expressions instead of numbers."
+  },
+  {
+   "id": "alg.exp.combining",
+   "name": "combining",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.variables",
+    "alg.exp.integers"
+   ],
+   "context": "Like terms have the same variable part. 3x + 5x = 8x. 2a + 3b + a = 3a + 3b. Use the distributive property to explain: 3x + 5x = (3+5)x = 8x. Simplify expressions by combining. Constants are like terms with each other."
+  },
+  {
+   "id": "alg.exp.distributive",
+   "name": "distributive",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.combining",
+    "ops.mul.2d_by_1d"
+   ],
+   "context": "a(b + c) = ab + ac. Connect to area model from multiplication. Expand: 3(x + 4) = 3x + 12. Factor: 6x + 12 = 6(x + 2). This is the bridge between arithmetic and algebra. Use both directions: expand when solving, factor when simplifying."
+  },
+  {
+   "id": "alg.exp.exponent_rules",
+   "name": "exponent rules",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.exponents_basics",
+    "alg.exp.integers"
+   ],
+   "context": "Product rule: a^m x a^n = a^(m+n). Quotient rule: a^m / a^n = a^(m-n). Power rule: (a^m)^n = a^(mn). Negative exponents: a^(-n) = 1/a^n. Zero exponent: a^0 = 1. Scientific notation as an application: 3.2 x 10^5 = 320,000."
+  },
+  {
+   "id": "alg.exp.exponents_basics",
+   "name": "exponents basics",
+   "region": "algebra",
+   "prereqs": [
+    "ops.mul.facts",
+    "ns.pv.powers_of_10"
+   ],
+   "context": "Exponents as repeated multiplication. 2^3 = 2 x 2 x 2 = 8. Base and exponent. Any number to the 0th power = 1 (explain why). Any number to the 1st power = itself. Square numbers, cube numbers. Evaluate expressions with exponents using order of ops."
+  },
+  {
+   "id": "alg.exp.integers",
+   "name": "integers",
+   "region": "algebra",
+   "prereqs": [
+    "ops.add.multi_digit",
+    "ops.sub.multi_digit"
+   ],
+   "context": "Negative numbers. Number line extends left of zero. Opposite of 5 is -5. Absolute value = distance from zero. Add, subtract integers: same sign = add magnitudes, keep sign. Different signs = subtract magnitudes, keep sign of larger. Temperature, debt, elevation."
+  },
+  {
+   "id": "alg.exp.polynomials",
+   "name": "polynomials",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.combining",
+    "alg.exp.exponent_rules"
+   ],
+   "context": "Polynomials: sums of terms with whole-number exponents. Monomial, binomial, trinomial. Degree of a polynomial. Add and subtract polynomials by combining like terms. Standard form (descending powers). Evaluate polynomials for given values."
+  },
+  {
+   "id": "alg.exp.variables",
+   "name": "variables",
+   "region": "algebra",
+   "prereqs": [
+    "ops.oo.numerical_expressions"
+   ],
+   "context": "Variables represent unknown or changing quantities. Evaluate expressions by substituting values. \"If x = 3, what is 2x + 5?\" Write expressions from words: \"5 more than a number\" = n + 5. Variables aren't scary — they're just blanks to fill in."
+  },
+  {
+   "id": "alg.eq.multi_step",
+   "name": "multi step",
+   "region": "algebra",
+   "prereqs": [
+    "alg.eq.two_step",
+    "alg.exp.distributive"
+   ],
+   "context": "Equations with variables on both sides. Distribute first if needed. Collect variables on one side, constants on the other. 3(x + 2) = 2x + 10. Special cases: no solution (0 = 5) and infinite solutions (0 = 0). Recognize these."
+  },
+  {
+   "id": "alg.eq.one_step",
+   "name": "one step",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.variables",
+    "alg.exp.integers"
+   ],
+   "context": "Solve equations with one operation. x + 5 = 12. 3x = 21. x/4 = 7. Use inverse operations. Balance model: what you do to one side, you must do to the other. Check by substituting back. Write equations from word problems."
+  },
+  {
+   "id": "alg.eq.quadratic_intro",
+   "name": "quadratic intro",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.polynomials",
+    "alg.fn.linear"
+   ],
+   "context": "Quadratic functions: y = ax^2 + bx + c. Parabola shape. Opens up if a > 0, down if a < 0. Vertex is the maximum or minimum. Axis of symmetry. Compare to linear: quadratic has non-constant rate of change (second differences are constant). Graph by plotting points or using vertex."
+  },
+  {
+   "id": "alg.eq.square_roots",
+   "name": "square roots",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.exponents_basics"
+   ],
+   "context": "Square root undoes squaring. sqrt(25) = 5 because 5^2 = 25. Perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100. Irrational numbers: sqrt(2) is not a fraction, it's approximately 1.414. Place irrational numbers on a number line. Simplify: sqrt(50) = 5*sqrt(2). Pythagorean theorem connection."
+  },
+  {
+   "id": "alg.eq.systems_intro",
+   "name": "systems intro",
+   "region": "algebra",
+   "prereqs": [
+    "alg.fn.linear",
+    "alg.eq.multi_step"
+   ],
+   "context": "Two equations, two unknowns. Solution is the point where lines intersect. Solve by graphing (visual), substitution (algebraic), or elimination (algebraic). One solution, no solution (parallel), infinite solutions (same line). Real-world: break-even problems."
+  },
+  {
+   "id": "alg.eq.two_step",
+   "name": "two step",
+   "region": "algebra",
+   "prereqs": [
+    "alg.eq.one_step",
+    "alg.exp.combining"
+   ],
+   "context": "Solve equations requiring two operations. 2x + 5 = 13. Undo addition/subtraction first, then multiplication/division. Include fractions and decimals as coefficients. Variables on one side only (for now). Always check the solution."
+  },
+  {
+   "id": "alg.seq.arithmetic",
+   "name": "arithmetic",
+   "region": "algebra",
+   "prereqs": [
+    "alg.fn.linear",
+    "ns.pat.sequences"
+   ],
+   "context": "Constant common difference d. a_n = a_1 + (n-1)d. An arithmetic sequence IS a linear function (discrete). Given any two terms, find d and a_1. Sum of first n terms: S_n = n(a_1 + a_n)/2. Gauss's trick: pair first and last, second and second-to-last. Real-world: salary increases, stacking objects, seating in rows."
+  },
+  {
+   "id": "alg.seq.geometric",
+   "name": "geometric",
+   "region": "algebra",
+   "prereqs": [
+    "alg.seq.arithmetic",
+    "alg.exp.exponent_rules"
+   ],
+   "context": "Constant common ratio r. a_n = a_1 * r^(n-1). A geometric sequence IS an exponential function (discrete). Given two terms, find r and a_1. Finite sum: S_n = a_1(1 - r^n)/(1 - r). Infinite sum when |r| < 1: S = a_1/(1 - r). Real-world: compound interest, population growth, bouncing ball heights."
+  },
+  {
+   "id": "alg.seq.series",
+   "name": "series",
+   "region": "algebra",
+   "prereqs": [
+    "alg.seq.geometric"
+   ],
+   "context": "A series is the sum of a sequence. Sigma notation: compact way to write sums. Evaluate finite arithmetic and geometric series using formulas. Infinite geometric series converge when |r| < 1. Diverge otherwise. Connect to calculus: series are the bridge. Telescoping series as a special case."
+  },
+  {
+   "id": "alg.fn.exponential",
+   "name": "exponential",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.exponent_rules",
+    "alg.fn.linear"
+   ],
+   "context": "y = a * b^x. Growth (b > 1) and decay (0 < b < 1). Compare to linear: linear adds, exponential multiplies. Population growth, compound interest, radioactive decay. The curve gets steeper (growth) or flatter (decay) — never crosses zero. Recognize from tables: constant ratio between consecutive y-values."
+  },
+  {
+   "id": "alg.fn.intro",
+   "name": "intro",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.variables",
+    "geo.cp.all_quadrants"
+   ],
+   "context": "A function assigns exactly one output to each input. Input-output tables, mappings, graphs. Vertical line test. Function notation: f(x) = 2x + 3 means \"the rule is double and add 3.\" Domain and range as sets of inputs and outputs. Not every graph is a function."
+  },
+  {
+   "id": "alg.fn.linear",
+   "name": "linear",
+   "region": "algebra",
+   "prereqs": [
+    "alg.fn.intro",
+    "rat.rate.unit"
+   ],
+   "context": "Linear functions: y = mx + b. Constant rate of change = slope. m = rise/run = (y2-y1)/(x2-x1). b = y-intercept (where line crosses y-axis). Graph from slope and intercept. Identify linear relationships in tables (constant first differences). Real-world: phone plans, distance over time."
+  },
+  {
+   "id": "alg.fn.quadratic_graphing",
+   "name": "quadratic graphing",
+   "region": "algebra",
+   "prereqs": [
+    "alg.eq.quadratic_intro",
+    "alg.quad.completing_square"
+   ],
+   "context": "Graph quadratics using vertex form, standard form, and intercept form. Find vertex, axis of symmetry, x-intercepts, y-intercept. Transform from parent function y = x^2: shifts, stretches, reflections. Connect algebraic solutions to graphical features."
+  },
+  {
+   "id": "alg.fn.slope",
+   "name": "slope",
+   "region": "algebra",
+   "prereqs": [
+    "alg.fn.linear",
+    "frac.md.divide"
+   ],
+   "context": "Slope = rate of change. Positive slope = increasing, negative = decreasing, zero = horizontal, undefined = vertical. Calculate from two points, from a graph, from an equation, from a table. Parallel lines have equal slopes. Perpendicular lines have negative reciprocal slopes."
+  },
+  {
+   "id": "alg.rad.simplifying",
+   "name": "simplifying",
+   "region": "algebra",
+   "prereqs": [
+    "alg.eq.square_roots",
+    "alg.exp.exponent_rules"
+   ],
+   "context": "Simplify radicals: sqrt(72) = 6*sqrt(2). Product rule: sqrt(ab) = sqrt(a)*sqrt(b). Quotient rule. Rationalize denominators. Add/subtract like radicals: 3*sqrt(5) + 2*sqrt(5) = 5*sqrt(5). Connect to fractional exponents: sqrt(x) = x^(1/2)."
+  },
+  {
+   "id": "alg.quad.completing_square",
+   "name": "completing square",
+   "region": "algebra",
+   "prereqs": [
+    "alg.quad.solve_factoring",
+    "alg.eq.square_roots"
+   ],
+   "context": "Rewrite ax^2 + bx + c in vertex form a(x-h)^2 + k. Take half of b, square it, add and subtract. This reveals the vertex (h,k). Use to solve equations that don't factor nicely. Geometric meaning: literally completing a square with algebra tiles."
+  },
+  {
+   "id": "alg.quad.diff_squares",
+   "name": "diff squares",
+   "region": "algebra",
+   "prereqs": [
+    "alg.quad.factoring_gcf",
+    "alg.exp.polynomials"
+   ],
+   "context": "a^2 - b^2 = (a + b)(a - b). Recognize the pattern: two perfect squares separated by subtraction. 9p^2 - 9 = 9(p^2 - 1) = 9(p+1)(p-1). x^4 - 16 = (x^2+4)(x^2-4) = (x^2+4)(x+2)(x-2). Sum of squares does NOT factor over the reals. Derive from (a+b)(a-b) by FOIL."
+  },
+  {
+   "id": "alg.quad.factoring_completely",
+   "name": "factoring completely",
+   "region": "algebra",
+   "prereqs": [
+    "alg.quad.diff_squares",
+    "alg.quad.factoring_trinomials"
+   ],
+   "context": "Multi-step factoring strategy: (1) GCF first, always. (2) Count terms — 2 terms: check difference of squares. 3 terms: trinomial methods. 4 terms: grouping. (3) Check if any factor can be factored further. Advanced patterns: a^2 + b^2 - 2ab - 25 = (a-b)^2 - 25 = (a-b+5)(a-b-5). Substitution: let u = (expression), factor in u, then substitute back. Factor until every factor is prime."
+  },
+  {
+   "id": "alg.quad.factoring_gcf",
+   "name": "factoring gcf",
+   "region": "algebra",
+   "prereqs": [
+    "alg.exp.distributive",
+    "ops.mul.factors_and_multiples"
+   ],
+   "context": "Factor out the greatest common factor first — always. GCF of coefficients times GCF of variable parts. 6x^2 + 9x = 3x(2x + 3). This is reverse distribution. Every factoring problem starts here. If there's a common factor, pull it out before trying anything else."
+  },
+  {
+   "id": "alg.quad.factoring_trinomials",
+   "name": "factoring trinomials",
+   "region": "algebra",
+   "prereqs": [
+    "alg.quad.factoring_gcf",
+    "alg.exp.polynomials"
+   ],
+   "context": "Factor x^2 + bx + c: find two numbers that multiply to c and add to b. Factor ax^2 + bx + c (a != 1): AC method or grouping. Perfect square trinomials: a^2 + 2ab + b^2 = (a + b)^2. Recognize patterns — is the first term a perfect square? Last term? Middle term = 2 x product of roots? Check by multiplying back (FOIL)."
+  },
+  {
+   "id": "alg.quad.formula",
+   "name": "formula",
+   "region": "algebra",
+   "prereqs": [
+    "alg.quad.completing_square"
+   ],
+   "context": "x = (-b ± sqrt(b^2 - 4ac)) / 2a. Derived by completing the square on ax^2 + bx + c = 0. Works for ANY quadratic. Discriminant b^2 - 4ac tells you how many real solutions: positive = 2, zero = 1, negative = 0 (complex). Student should derive it once, then use it fluently."
+  },
+  {
+   "id": "alg.quad.solve_factoring",
+   "name": "solve factoring",
+   "region": "algebra",
+   "prereqs": [
+    "alg.quad.factoring_completely",
+    "alg.eq.quadratic_intro"
+   ],
+   "context": "Zero product property: if ab = 0, then a = 0 or b = 0. Set quadratic = 0, factor, solve each factor. x^2 - 5x + 6 = 0 → (x-2)(x-3) = 0 → x = 2 or x = 3. Solutions are x-intercepts of the parabola. Some quadratics have 0, 1, or 2 real solutions."
+  },
+  {
+   "id": "alg.ineq.basics",
+   "name": "basics",
+   "region": "algebra",
+   "prereqs": [
+    "alg.eq.two_step"
+   ],
+   "context": "Inequalities: <, >, <=, >=. Solve like equations but flip the sign when multiplying/dividing by a negative. Graph solutions on a number line (open vs closed circle). Write inequalities from context: \"at least 5\" means >= 5."
+  },
+  {
+   "id": "geo.tri.angle_sum",
+   "name": "angle sum",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ang.parallel_lines"
+   ],
+   "context": "Interior angles of a triangle sum to 180 degrees. Prove using parallel lines. Exterior angle = sum of two non-adjacent interior angles. Find missing angles. Extend to polygons: sum of interior angles = (n-2) x 180. Classify triangles by angles."
+  },
+  {
+   "id": "geo.tri.special_right",
+   "name": "special right",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ap.pythagorean",
+    "alg.rad.simplifying"
+   ],
+   "context": "45-45-90 triangle: legs equal, hypotenuse = leg x sqrt(2). 30-60-90 triangle: short leg, long leg = short x sqrt(3), hypotenuse = 2 x short. Derive from equilateral triangle and square diagonal. These ratios appear everywhere in trig and physics. Memorize the patterns, understand where they come from."
+  },
+  {
+   "id": "geo.cong.triangles",
+   "name": "triangles",
+   "region": "geometry",
+   "prereqs": [
+    "geo.tri.angle_sum",
+    "geo.prf.two_column"
+   ],
+   "context": "Congruent triangles: same shape and size. Criteria: SSS, SAS, ASA, AAS (not SSA — ambiguous case). Corresponding parts of congruent triangles are congruent (CPCTC). Use congruence to prove segment or angle relationships. Mark diagrams with tick marks and arcs."
+  },
+  {
+   "id": "geo.circ.properties",
+   "name": "properties",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ap.circles_intro",
+    "geo.ang.parallel_lines"
+   ],
+   "context": "Central angles, inscribed angles, arcs. Inscribed angle = half the central angle (same arc). Tangent is perpendicular to radius at point of tangency. Chord properties: perpendicular from center bisects chord. Secant-tangent relationships. Arc length = (angle/360) x circumference."
+  },
+  {
+   "id": "geo.ap.circles_intro",
+   "name": "circles intro",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ap.triangles_parallelograms",
+    "dec.ops.multiply"
+   ],
+   "context": "Circumference = pi x diameter = 2 x pi x radius. Area = pi x r^2. Pi is the ratio of circumference to diameter — approximately 3.14. Measure circular objects to discover pi empirically. Radius, diameter, chord, arc vocabulary. Use 3.14 or pi button."
+  },
+  {
+   "id": "geo.ap.pythagorean",
+   "name": "pythagorean",
+   "region": "geometry",
+   "prereqs": [
+    "alg.eq.square_roots",
+    "geo.ap.triangles_parallelograms"
+   ],
+   "context": "a^2 + b^2 = c^2 for right triangles. c is the hypotenuse (longest side, opposite right angle). Find missing sides. Determine if a triangle is right. Distance between two points on the coordinate plane. Real-world: ladders against walls, diagonal of a rectangle, shortest distance."
+  },
+  {
+   "id": "geo.ap.rectangle",
+   "name": "rectangle",
+   "region": "geometry",
+   "prereqs": [
+    "ops.mul.facts",
+    "ops.add.within_1000"
+   ],
+   "context": "Perimeter = distance around. Area = space inside. Formulas for rectangles: P = 2l + 2w, A = l x w. Distinguish between the two — perimeter is linear (fence), area is square (carpet). Given area, find possible dimensions. Units matter."
+  },
+  {
+   "id": "geo.ap.surface_area",
+   "name": "surface area",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ap.triangles_parallelograms",
+    "geo.vol.rectangular_prism"
+   ],
+   "context": "Surface area = total area of all faces. Prisms: 2 x base area + lateral area. Cylinders: 2*pi*r^2 + 2*pi*r*h. Unfold 3D shapes into nets to visualize. Wrapping paper, painting walls, covering boxes. Units are squared (cm^2, ft^2)."
+  },
+  {
+   "id": "geo.ap.triangles_parallelograms",
+   "name": "triangles parallelograms",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ap.rectangle",
+    "frac.md.multiply"
+   ],
+   "context": "Area of parallelogram = base x height. Area of triangle = 1/2 x base x height. Derive from rectangles: a parallelogram rearranges into a rectangle, a triangle is half a parallelogram. Height is perpendicular to base — not always a side of the shape."
+  },
+  {
+   "id": "geo.meas.metric_conversion",
+   "name": "metric conversion",
+   "region": "geometry",
+   "prereqs": [
+    "geo.meas.unit_conversion",
+    "dec.ops.multiply"
+   ],
+   "context": "Convert within the metric system using powers of 10 and decimals. km <-> m <-> cm <-> mm. kg <-> g <-> mg. L <-> mL. Moving the decimal point. Multi-step: \"3.5 kg of flour shared into 250g bags — how many bags?\""
+  },
+  {
+   "id": "geo.meas.unit_conversion",
+   "name": "unit conversion",
+   "region": "geometry",
+   "prereqs": [
+    "ops.mul.by_10_100_1000"
+   ],
+   "context": "Convert between units within the same system. Metric: km, m, cm, mm (multiply/divide by 10, 100, 1000). Customary: feet to inches, pounds to ounces, gallons to quarts. Use tables and multiplication."
+  },
+  {
+   "id": "geo.sim.triangles",
+   "name": "triangles",
+   "region": "geometry",
+   "prereqs": [
+    "geo.cong.triangles",
+    "rat.prop.solving"
+   ],
+   "context": "Similar triangles: same shape, different size. Criteria: AA, SAS~, SSS~. Corresponding sides are proportional. Set up and solve proportions to find missing sides. Scale factor. Real-world: shadows, indirect measurement, maps. Similar figures extend beyond triangles."
+  },
+  {
+   "id": "geo.vol.composite",
+   "name": "composite",
+   "region": "geometry",
+   "prereqs": [
+    "geo.vol.rectangular_prism"
+   ],
+   "context": "Find volume of composite 3D figures by decomposing into non-overlapping rectangular prisms. Add the volumes. L-shaped rooms, stacked boxes, buildings with additions. Builds spatial reasoning."
+  },
+  {
+   "id": "geo.vol.cylinders_cones_spheres",
+   "name": "cylinders cones spheres",
+   "region": "geometry",
+   "prereqs": [
+    "geo.vol.rectangular_prism",
+    "geo.ap.circles_intro"
+   ],
+   "context": "Cylinder: V = pi*r^2*h (circular base x height). Cone: V = (1/3)*pi*r^2*h (one-third of cylinder). Sphere: V = (4/3)*pi*r^3. The 1/3 relationship: a cone is 1/3 of its containing cylinder. Real-world: cans, ice cream cones, basketballs. Compare volumes."
+  },
+  {
+   "id": "geo.vol.rectangular_prism",
+   "name": "rectangular prism",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ap.rectangle",
+    "ops.mul.multi_digit"
+   ],
+   "context": "Volume = length x width x height. Count unit cubes to build intuition. V = l x w x h for rectangular prisms. Volume is area of base times height. Cubic units (cubic cm, cubic in). Pack boxes, fill aquariums."
+  },
+  {
+   "id": "geo.xform.dilations",
+   "name": "dilations",
+   "region": "geometry",
+   "prereqs": [
+    "geo.xform.rigid",
+    "rat.prop.solving"
+   ],
+   "context": "Dilation = scaling from a center point. Scale factor k: enlargement if k > 1, reduction if 0 < k < 1. (x,y) → (kx, ky) for center at origin. Preserves shape but not size — creates similar figures. Combine with rigid motions for full similarity transformations."
+  },
+  {
+   "id": "geo.xform.rigid",
+   "name": "rigid",
+   "region": "geometry",
+   "prereqs": [
+    "geo.cp.all_quadrants",
+    "geo.ls.classifying_2d"
+   ],
+   "context": "Rigid motions preserve size and shape: translations (slide), reflections (flip), rotations (turn). Describe using coordinates. Translation: (x,y) → (x+a, y+b). Reflection over x-axis: (x,y) → (x,-y). Rotation 90° CCW: (x,y) → (-y,x). Composition of transformations. Congruent figures are related by rigid motions."
+  },
+  {
+   "id": "geo.ang.basics",
+   "name": "basics",
+   "region": "geometry",
+   "prereqs": [],
+   "context": "Angles as turns. Right angles, acute, obtuse, straight. A quarter turn = 90 degrees. Angles are everywhere — clock hands, doors opening, slopes. Build intuition before measuring."
+  },
+  {
+   "id": "geo.ang.measurement",
+   "name": "measurement",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ang.basics"
+   ],
+   "context": "Measure angles in degrees with a protractor. Draw angles of a given measure. Additive property: two angles sharing a side can be added. Find unknown angles when you know the total and one part."
+  },
+  {
+   "id": "geo.ang.parallel_lines",
+   "name": "parallel lines",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ang.measurement",
+    "geo.ls.lines_and_symmetry"
+   ],
+   "context": "When a transversal crosses parallel lines: corresponding angles are equal, alternate interior angles are equal, alternate exterior angles are equal, co-interior (same-side) angles are supplementary. Use these relationships to find unknown angles. Prove lines are parallel using angle relationships."
+  },
+  {
+   "id": "geo.prf.logic",
+   "name": "logic",
+   "region": "geometry",
+   "prereqs": [
+    "alg.eq.two_step"
+   ],
+   "context": "Conditional statements: if P then Q. Converse, inverse, contrapositive. Counterexamples disprove a statement. Inductive vs deductive reasoning. This is the foundation of mathematical proof — you need to PROVE things, not just observe patterns."
+  },
+  {
+   "id": "geo.prf.two_column",
+   "name": "two column",
+   "region": "geometry",
+   "prereqs": [
+    "geo.prf.logic",
+    "geo.ang.measurement"
+   ],
+   "context": "Two-column proofs: statements on the left, reasons on the right. Reasons are definitions, postulates, or previously proven theorems. Start with given information, end with what you're proving. Each step follows logically from previous steps. Start with simple angle proofs before triangle proofs."
+  },
+  {
+   "id": "geo.cp.all_quadrants",
+   "name": "all quadrants",
+   "region": "geometry",
+   "prereqs": [
+    "geo.cp.first_quadrant",
+    "alg.exp.integers"
+   ],
+   "context": "Extend coordinate plane to all four quadrants. Negative x and y. Plot and read points in any quadrant. Reflect points across axes. Distance between points with same x or same y coordinate (absolute value of difference). Real-world: maps with latitude and longitude."
+  },
+  {
+   "id": "geo.cp.first_quadrant",
+   "name": "first quadrant",
+   "region": "geometry",
+   "prereqs": [
+    "ns.pat.sequences"
+   ],
+   "context": "First quadrant only (positive x and y). Ordered pairs (x, y). x-axis horizontal, y-axis vertical. Plot points, read coordinates. Graph patterns from tables. Describe relationships between coordinates. Bridge to algebra and functions."
+  },
+  {
+   "id": "geo.ls.classifying_2d",
+   "name": "classifying 2d",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ls.lines_and_symmetry"
+   ],
+   "context": "Classify 2D shapes by properties: parallel sides, perpendicular sides, angle types, side lengths. Hierarchy of quadrilaterals: squares are rectangles are parallelograms. Triangles by sides (equilateral, isosceles, scalene) and angles."
+  },
+  {
+   "id": "geo.ls.lines_and_symmetry",
+   "name": "lines and symmetry",
+   "region": "geometry",
+   "prereqs": [
+    "geo.ang.basics"
+   ],
+   "context": "Points, lines, rays, segments. Parallel and perpendicular lines. Lines of symmetry in 2D figures. Classify triangles by angles (right, acute, obtuse). Identify these in the real world."
+  }
+ ]
+}

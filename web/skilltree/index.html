@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>skill tree</title>
+<style>
+  * { margin: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { background: #0b1120; color: #e2e8f0; font-family: system-ui, sans-serif; user-select: none; }
+  header { padding: 1rem 1.2rem 0.4rem; display: flex; align-items: baseline; gap: 0.8rem; }
+  h1 { font-size: 1.4rem; letter-spacing: -0.01em; }
+  #stats { color: #64748b; font-size: 0.9rem; font-weight: 600; }
+  #wrap { position: relative; overflow-x: auto; padding: 0.5rem 1rem 6rem; }
+  svg { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+  .row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: flex-start; margin: 1.1rem 0; position: relative; }
+  .lvl { flex: none; width: 2rem; color: #334155; font-weight: 800; font-size: 0.8rem; padding-top: 0.55rem; }
+  .node {
+    border: 0; border-radius: 0.7rem; padding: 0.45rem 0.7rem; font-weight: 700;
+    font-size: 0.85rem; font-family: inherit; position: relative; z-index: 2;
+  }
+  .owned { background: #10b981; color: #052e16; }
+  .frontier { background: #f1f5f9; color: #0f172a; box-shadow: 0 0 12px 2px rgba(241,245,249,0.25); }
+  .locked { background: #172033; color: #475569; }
+  .node:active { transform: scale(0.95); }
+  #sheet {
+    position: fixed; left: 0; right: 0; bottom: 0; background: #111a2e; z-index: 10;
+    border-radius: 1.2rem 1.2rem 0 0; padding: 1.1rem 1.3rem 2rem; display: none;
+    box-shadow: 0 -8px 30px rgba(0,0,0,0.5); max-height: 45dvh; overflow-y: auto;
+  }
+  #sheet h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+  #sheet .region { color: #64748b; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  #sheet p { color: #94a3b8; line-height: 1.45; margin-top: 0.5rem; font-size: 0.92rem; }
+  #sheet .pre { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  #sheet .pre span { font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; }
+</style>
+</head>
+<body>
+<header><h1 id="title">skill tree</h1><span id="stats"></span></header>
+<div id="wrap"><svg id="edges"></svg><div id="rows"></div></div>
+<div id="sheet"></div>
+<script>
+// Generic skill-tree viewer for an open-mastery graph export.
+//   ?graph=<url of export json>   required
+//   ?progress=<localStorage key>  optional — MasteryState {stats:{id:{streak}}}
+//   ?title=<name>
+// Owned: streak >= 3 on the node id, or on every `members` entry (lets
+// fine-grained learner state satisfy coarse graph nodes). Frontier: all
+// prereqs owned. Tap a node for its story.
+const q = new URLSearchParams(location.search)
+const STREAK = 3
+async function main() {
+  const graph = await (await fetch(q.get('graph'))).json()
+  document.getElementById('title').textContent = q.get('title') || 'skill tree'
+  let stats = {}
+  try { stats = JSON.parse(localStorage.getItem(q.get('progress')))?.stats ?? {} } catch {}
+  const ownedId = (id) => (stats[id]?.streak ?? 0) >= STREAK
+  const nodes = graph.nodes
+  const byId = Object.fromEntries(nodes.map((n) => [n.id, n]))
+  const owned = new Set(nodes.filter((n) =>
+    ownedId(n.id) || (n.members && n.members.every(ownedId))).map((n) => n.id))
+  const frontier = new Set(nodes.filter((n) =>
+    !owned.has(n.id) && n.prereqs.every((p) => owned.has(p))).map((n) => n.id))
+
+  // levels = longest prereq chain
+  const memo = {}
+  const depth = (id) => memo[id] ??
+    (memo[id] = 1 + Math.max(0, ...(byId[id]?.prereqs ?? []).map(depth)))
+  const levels = {}
+  for (const n of nodes) (levels[depth(n.id)] ??= []).push(n)
+
+  const rows = document.getElementById('rows')
+  const el = {}
+  for (const lv of Object.keys(levels).sort((a, b) => a - b)) {
+    const row = document.createElement('div')
+    row.className = 'row'
+    row.innerHTML = `<span class="lvl">L${lv}</span>`
+    levels[lv].sort((a, b) => a.region.localeCompare(b.region) || a.id.localeCompare(b.id))
+    for (const n of levels[lv]) {
+      const b = document.createElement('button')
+      const st = owned.has(n.id) ? 'owned' : frontier.has(n.id) ? 'frontier' : 'locked'
+      b.className = `node ${st}`
+      b.textContent = st === 'locked' ? '?' : n.name
+      b.onclick = () => sheet(n, st)
+      row.appendChild(b)
+      el[n.id] = b
+    }
+    rows.appendChild(row)
+  }
+  document.getElementById('stats').textContent =
+    `${owned.size} owned · ${frontier.size} open · ${nodes.length} total`
+
+  function sheet(n, st) {
+    const s = document.getElementById('sheet')
+    const pres = n.prereqs.map((p) => {
+      const cls = owned.has(p) ? 'owned' : 'locked'
+      const name = owned.has(p) || frontier.has(p) ? (byId[p]?.name ?? p) : '?'
+      return `<span class="${cls}">${name}</span>`
+    }).join('')
+    s.innerHTML = `<div class="region">${n.region || ''} — ${st}</div>
+      <h2>${st === 'locked' ? '???' : n.name}</h2>
+      <p>${st === 'locked' ? 'Own everything it needs and this reveals itself.' : n.context}</p>
+      ${n.prereqs.length ? `<div class="pre">${pres}</div>` : ''}`
+    s.style.display = 'block'
+  }
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#sheet') && !e.target.closest('.node'))
+      document.getElementById('sheet').style.display = 'none'
+  })
+
+  // edges
+  function draw() {
+    const svg = document.getElementById('edges')
+    const wrap = document.getElementById('wrap')
+    svg.setAttribute('width', wrap.scrollWidth)
+    svg.setAttribute('height', wrap.scrollHeight)
+    const wr = wrap.getBoundingClientRect()
+    let html = ''
+    for (const n of nodes) {
+      const to = el[n.id]?.getBoundingClientRect()
+      if (!to) continue
+      for (const p of n.prereqs) {
+        const from = el[p]?.getBoundingClientRect()
+        if (!from) continue
+        const x1 = from.x + from.width / 2 - wr.x + wrap.scrollLeft
+        const y1 = from.y + from.height - wr.y + wrap.scrollTop
+        const x2 = to.x + to.width / 2 - wr.x + wrap.scrollLeft
+        const y2 = to.y - wr.y + wrap.scrollTop
+        const lit = owned.has(p) && (owned.has(n.id) || frontier.has(n.id))
+        html += `<path d="M${x1},${y1} C${x1},${(y1 + y2) / 2} ${x2},${(y1 + y2) / 2} ${x2},${y2}"
+          fill="none" stroke="${lit ? '#10b98188' : '#1e293b'}" stroke-width="1.5"/>`
+      }
+    }
+    svg.innerHTML = html
+  }
+  draw()
+  addEventListener('resize', draw)
+}
+main()
+</script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+{
+ "nodes": [
+  {
+   "id": "jk.kata.dakuten",
+   "name": "dakuten",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.k_row",
+    "jk.kata.s_row",
+    "jk.kata.t_row",
+    "jk.kata.h_row",
+    "jk.kana.dakuten"
+   ],
+   "context": "Dakuten and handakuten transfer to katakana unchanged: カ->ガ, ハ->バ/パ. Same operator, second script — near-free once hiragana marks are owned.",
+   "members": [
+    "カ",
+    "ガ",
+    "ハ",
+    "バ",
+    "パ"
+   ]
+  },
+  {
+   "id": "jk.kata.h_row",
+   "name": "h row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.n_row",
+    "jk.kana.h_row"
+   ],
+   "context": "Katakana ハヒフヘホ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "ハ",
+    "ヒ",
+    "フ",
+    "ヘ",
+    "ホ"
+   ]
+  },
+  {
+   "id": "jk.kata.k_row",
+   "name": "k row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.vowels",
+    "jk.kana.k_row"
+   ],
+   "context": "Katakana カキクケコ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "カ",
+    "キ",
+    "ク",
+    "ケ",
+    "コ"
+   ]
+  },
+  {
+   "id": "jk.kata.m_row",
+   "name": "m row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.h_row",
+    "jk.kana.m_row"
+   ],
+   "context": "Katakana マミムメモ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "マ",
+    "ミ",
+    "ム",
+    "メ",
+    "モ"
+   ]
+  },
+  {
+   "id": "jk.kata.n_row",
+   "name": "n row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.t_row",
+    "jk.kana.n_row"
+   ],
+   "context": "Katakana ナニヌネノ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "ナ",
+    "ニ",
+    "ヌ",
+    "ネ",
+    "ノ"
+   ]
+  },
+  {
+   "id": "jk.kata.r_row",
+   "name": "r row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.y_row",
+    "jk.kana.r_row"
+   ],
+   "context": "Katakana ラリルレロ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "ラ",
+    "リ",
+    "ル",
+    "レ",
+    "ロ"
+   ]
+  },
+  {
+   "id": "jk.kata.s_row",
+   "name": "s row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.k_row",
+    "jk.kana.s_row"
+   ],
+   "context": "Katakana サシスセソ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "サ",
+    "シ",
+    "ス",
+    "セ",
+    "ソ"
+   ]
+  },
+  {
+   "id": "jk.kata.t_row",
+   "name": "t row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.s_row",
+    "jk.kana.t_row"
+   ],
+   "context": "Katakana タチツテト: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "タ",
+    "チ",
+    "ツ",
+    "テ",
+    "ト"
+   ]
+  },
+  {
+   "id": "jk.kata.vowels",
+   "name": "vowels",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kana.vowels"
+   ],
+   "context": "Katakana アイウエオ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "ア",
+    "イ",
+    "ウ",
+    "エ",
+    "オ"
+   ]
+  },
+  {
+   "id": "jk.kata.w_row",
+   "name": "w row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.r_row",
+    "jk.kana.w_row"
+   ],
+   "context": "Katakana ワヲン: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "ワ",
+    "ヲ",
+    "ン"
+   ]
+  },
+  {
+   "id": "jk.kata.y_row",
+   "name": "y row",
+   "region": "katakana",
+   "prereqs": [
+    "jk.kata.m_row",
+    "jk.kana.y_row"
+   ],
+   "context": "Katakana ヤユヨ: the angular twin of the mastered hiragana row — same sounds, second script. Used for foreign loanwords, emphasis, and sound effects. Recall without furigana support.",
+   "members": [
+    "ヤ",
+    "ユ",
+    "ヨ"
+   ]
+  },
+  {
+   "id": "jk.kana.h_row",
+   "name": "h row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.n_row"
+   ],
+   "context": "H-row はひふへほ (fu irregular): recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "は",
+    "ひ",
+    "ふ",
+    "へ",
+    "ほ"
+   ]
+  },
+  {
+   "id": "jk.kana.k_row",
+   "name": "k row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.vowels"
+   ],
+   "context": "K-row かきくけこ: recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "か",
+    "き",
+    "く",
+    "け",
+    "こ"
+   ]
+  },
+  {
+   "id": "jk.kana.m_row",
+   "name": "m row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.h_row"
+   ],
+   "context": "M-row まみむめも: recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "ま",
+    "み",
+    "む",
+    "め",
+    "も"
+   ]
+  },
+  {
+   "id": "jk.kana.n_row",
+   "name": "n row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.t_row"
+   ],
+   "context": "N-row なにぬねの: recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "な",
+    "に",
+    "ぬ",
+    "ね",
+    "の"
+   ]
+  },
+  {
+   "id": "jk.kana.r_row",
+   "name": "r row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.y_row"
+   ],
+   "context": "R-row らりるれろ: recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "ら",
+    "り",
+    "る",
+    "れ",
+    "ろ"
+   ]
+  },
+  {
+   "id": "jk.kana.s_row",
+   "name": "s row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.k_row"
+   ],
+   "context": "S-row さしすせそ (shi irregular romaji): recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "さ",
+    "し",
+    "す",
+    "せ",
+    "そ"
+   ]
+  },
+  {
+   "id": "jk.kana.t_row",
+   "name": "t row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.s_row"
+   ],
+   "context": "T-row たちつてと (chi/tsu irregular): recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "た",
+    "ち",
+    "つ",
+    "て",
+    "と"
+   ]
+  },
+  {
+   "id": "jk.kana.vowels",
+   "name": "vowels",
+   "region": "gojuon",
+   "prereqs": [],
+   "context": "Vowel row あいうえお: recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "あ",
+    "い",
+    "う",
+    "え",
+    "お"
+   ]
+  },
+  {
+   "id": "jk.kana.w_row",
+   "name": "w row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.r_row"
+   ],
+   "context": "W-row + ん (わをん): recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "ん",
+    "わ",
+    "を",
+    "ん"
+   ]
+  },
+  {
+   "id": "jk.kana.y_row",
+   "name": "y row",
+   "region": "gojuon",
+   "prereqs": [
+    "jk.kana.m_row"
+   ],
+   "context": "Y-row やゆよ: recognize each kana from its sound and recall it unprompted. Mastery = sound-to-symbol without romaji support.",
+   "members": [
+    "や",
+    "ゆ",
+    "よ"
+   ]
+  },
+  {
+   "id": "jk.kana.chouon",
+   "name": "chouon",
+   "region": "marks",
+   "prereqs": [
+    "jk.kana.vowels"
+   ],
+   "context": "Long vowels: in hiragana, doubled vowels (おかあさん) with the ou pattern for long o (がっこう); in katakana, the bar ー (ケーキ). A held beat — hear the length, write the length.",
+   "members": [
+    "お",
+    "か",
+    "あ",
+    "さ",
+    "ん"
+   ]
+  },
+  {
+   "id": "jk.kana.dakuten",
+   "name": "dakuten",
+   "region": "marks",
+   "prereqs": [
+    "jk.kana.k_row",
+    "jk.kana.s_row",
+    "jk.kana.t_row",
+    "jk.kana.h_row"
+   ],
+   "context": "Dakuten voicing marks: か->が, さ->ざ, た->だ, は->ば. A transformation on known kana, not new symbols — teach as an operator.",
+   "members": [
+    "か",
+    "が",
+    "さ",
+    "ざ",
+    "た"
+   ]
+  },
+  {
+   "id": "jk.kana.handakuten",
+   "name": "handakuten",
+   "region": "marks",
+   "prereqs": [
+    "jk.kana.h_row"
+   ],
+   "context": "Handakuten: は-row + circle -> pa pi pu pe po."
+  },
+  {
+   "id": "jk.kana.sokuon",
+   "name": "sokuon",
+   "region": "marks",
+   "prereqs": [
+    "jk.kana.t_row"
+   ],
+   "context": "Small っ doubles the following consonant (きって kitte). Heard as a beat of silence."
+  },
+  {
+   "id": "jk.kana.yoon",
+   "name": "yoon",
+   "region": "marks",
+   "prereqs": [
+    "jk.kana.y_row",
+    "jk.kana.dakuten"
+   ],
+   "context": "Contracted sounds: i-column kana + small ゃゅょ (きゃ kya, しゅ shu, ちょ cho). Two symbols, one beat.",
+   "members": [
+    "き",
+    "し",
+    "ち"
+   ]
+  },
+  {
+   "id": "jk.vocab.animals",
+   "name": "animals",
+   "region": "vocab",
+   "prereqs": [
+    "jk.kana.n_row"
+   ],
+   "context": "Animal words from owned kana: ねこ (cat), いぬ (dog), うし (cow), とり (bird), さかな (fish), うま (horse). Concrete, picturable, high- frequency — production from claimed territory."
+  },
+  {
+   "id": "jk.vocab.first_words",
+   "name": "first words",
+   "region": "vocab",
+   "prereqs": [
+    "jk.kana.vowels",
+    "jk.kana.k_row",
+    "jk.kana.s_row"
+   ],
+   "context": "Assemble real words from mastered kana (あお, かお, すし). Production from claimed territory; unlocks progressively as rows are mastered."
+  },
+  {
+   "id": "jk.vocab.food",
+   "name": "food",
+   "region": "vocab",
+   "prereqs": [
+    "jk.kana.t_row"
+   ],
+   "context": "Food words: すし, たこ, おちゃ (tea), ごはん (rice) — plus the sokuon workout きって/きっぷ. Menus become readable; learning leaks into dinner."
+  },
+  {
+   "id": "jk.vocab.greetings",
+   "name": "greetings",
+   "region": "vocab",
+   "prereqs": [
+    "jk.kana.h_row"
+   ],
+   "context": "Greetings: こんにちは, おはよう, ありがとう, さようなら. Immediately usable out loud with family — the words that make the learning social."
+  },
+  {
+   "id": "jk.vocab.katakana_words",
+   "name": "katakana words",
+   "region": "vocab",
+   "prereqs": [
+    "jk.kata.dakuten"
+   ],
+   "context": "Katakana loanwords hiding English inside: テレビ (TV), ゲーム (game), パン (bread, from Portuguese), ロボット (robot). Decoding these is a magic trick — the word was English all along."
+  },
+  {
+   "id": "jk.vocab.numbers",
+   "name": "numbers",
+   "region": "vocab",
+   "prereqs": [
+    "jk.kana.s_row"
+   ],
+   "context": "Numbers one to ten in hiragana: いち, に, さん, し/よん, ご, ろく, しち/なな, はち, きゅう, じゅう. A closed, chantable set — the first complete system owned end to end."
+  }
+ ]
+}

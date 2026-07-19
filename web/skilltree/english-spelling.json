@@ -1,0 +1,798 @@
+{
+ "nodes": [
+  {
+   "id": "sp.phon.blending",
+   "name": "blending",
+   "region": "phonemic",
+   "prereqs": [],
+   "context": "Fuse isolated phonemes into a word: /s/ /t/ /o/ /m/ /p/ -> 'stomp'. Oral only. The decoding-direction twin of segmenting."
+  },
+  {
+   "id": "sp.phon.elision",
+   "name": "elision",
+   "region": "phonemic",
+   "prereqs": [
+    "sp.phon.segmenting"
+   ],
+   "context": "Delete or swap a phoneme and say what remains: 'smile' without /s/ -> 'mile'. The strongest single indicator of phonemic mastery; drill deliberately."
+  },
+  {
+   "id": "sp.phon.segmenting",
+   "name": "segmenting",
+   "region": "phonemic",
+   "prereqs": [],
+   "context": "Break a spoken word into its individual phonemes: 'ship' -> /sh/ /i/ /p/. Oral only, no letters. The substrate skill for all encoding; weakness here surfaces as poor spelling and decoding of novel words."
+  },
+  {
+   "id": "sp.phon.substitution",
+   "name": "substitution",
+   "region": "phonemic",
+   "prereqs": [
+    "sp.phon.elision"
+   ],
+   "context": "Swap one phoneme for another and say the result: change /k/ in 'cat' to /b/ -> 'bat'. Hardest pure-sound skill; fluency here makes novel spellings feel computable."
+  },
+  {
+   "id": "sp.phon.syll_count",
+   "name": "syll count",
+   "region": "phonemic",
+   "prereqs": [],
+   "context": "Count syllables in spoken words by clapping or chin-drops. Aural only. Every syllable has exactly one vowel sound — the bridge from sound to written syllable division."
+  },
+  {
+   "id": "sp.vteam.ai",
+   "name": "ai",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.vteam.ee",
+    "sp.vteam.oa"
+   ],
+   "context": "ai spells /ā/ mid-word (train, paint); ay takes over at word end. Position decides the spelling."
+  },
+  {
+   "id": "sp.vteam.au_aw",
+   "name": "au aw",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "au (mid-word: haunt, sauce) and aw (word end: draw, hawk) spell /aw/. Same position logic as ai/ay, oa/ow."
+  },
+  {
+   "id": "sp.vteam.ay",
+   "name": "ay",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.vteam.ai"
+   ],
+   "context": "ay spells /ā/ at word end (play, stray); ai takes the middle (train). Position decides — assess the ai/ay choice explicitly."
+  },
+  {
+   "id": "sp.vteam.ea",
+   "name": "ea",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.vteam.ee"
+   ],
+   "context": "ea usually spells /ē/ (beach, dream) but sometimes short /e/ (bread, head) — first vowel team with ambiguity; teach as probabilities, not exceptions."
+  },
+  {
+   "id": "sp.vteam.ee",
+   "name": "ee",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "Vowel team ee spells /ē/ (street, speech, sweep)."
+  },
+  {
+   "id": "sp.vteam.ie",
+   "name": "ie",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.vteam.ee"
+   ],
+   "context": "ie spells /ī/ at word end (pie, tie) and often /ē/ mid-word (field, chief). The 'i before e' territory — teach the reliable core, flag the exceptions as loanwords."
+  },
+  {
+   "id": "sp.vteam.igh",
+   "name": "igh",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.rule.silent_e"
+   ],
+   "context": "igh spells /ī/ (light, fright, high). Three letters, one sound — a fossil cluster from Old English where gh was once pronounced."
+  },
+  {
+   "id": "sp.vteam.oa",
+   "name": "oa",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "Vowel team oa spells /ō/ (coach, toast, groan)."
+  },
+  {
+   "id": "sp.vteam.oo",
+   "name": "oo",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.vteam.ee"
+   ],
+   "context": "oo has two sounds: long (moon, scoop) and short (book, stood). First team where the reader must try both — teach as probabilities."
+  },
+  {
+   "id": "sp.vteam.ow_long",
+   "name": "ow long",
+   "region": "vowel-teams",
+   "prereqs": [
+    "sp.vteam.oa"
+   ],
+   "context": "ow spells /ō/ at word end (snow, grow, elbow) while oa takes the middle (coach). Another position pair like ai/ay."
+  },
+  {
+   "id": "sp.short.acronyms",
+   "name": "acronyms",
+   "region": "shorthand",
+   "prereqs": [
+    "sp.morph.compounds"
+   ],
+   "context": "Words with birth certificates: laser (Light Amplification by Stimulated Emission of Radiation), scuba, radar, NASA — acronyms said as words — versus initialisms spelled out (FBI, USA, DVD). Some acronyms became so wordlike we forgot (laser takes -s and lowercase). A word can be BORN as a sentence."
+  },
+  {
+   "id": "sp.short.civic",
+   "name": "civic",
+   "region": "shorthand",
+   "prereqs": [
+    "sp.syll.division"
+   ],
+   "context": "Everyday civic shorthand: Co. (company), Inc., Ltd., St., Ave., Dr., Mr./Mrs. (mister/missus), and the two-letter state codes (CT, NY, CA) — a complete little geography cipher. Reading the world's signage and envelopes."
+  },
+  {
+   "id": "sp.short.compression",
+   "name": "compression",
+   "region": "shorthand",
+   "prereqs": [
+    "sp.short.latin_abbrev",
+    "sp.short.internet"
+   ],
+   "context": "The unifying idea: every medium invents its own shorthand because writing costs something — chisel strokes (SPQR carved in Rome), telegram fees (STOP), thumb-typing (lol). Compression is a constant of language; only the medium changes. Given a shorthand, infer its medium and era. iykyk and i.e. are the same invention, twenty centuries apart."
+  },
+  {
+   "id": "sp.short.internet",
+   "name": "internet",
+   "region": "shorthand",
+   "prereqs": [
+    "sp.short.acronyms"
+   ],
+   "context": "The newest compression layer: lol, brb, fyi, asap, tbh, imo, iykyk ('if you know you know'). Some predate the internet (FYI and ASAP are office memo speak). The real skill is REGISTER: lol belongs in a chat with friends and never in an essay — knowing which language fits which room is a language skill, not a rule of politeness."
+  },
+  {
+   "id": "sp.short.latin_abbrev",
+   "name": "latin abbrev",
+   "region": "shorthand",
+   "prereqs": [
+    "sp.etym.latin_direct"
+   ],
+   "context": "Latin fossils in everyday text: i.e. (id est, 'that is'), e.g. (exempli gratia, 'for example'), etc. (et cetera, 'and the rest'), ergo ('therefore'), vs (versus), AM/PM (ante/post meridiem), AD, and even lb (libra). Knowing the expansion ends the i.e./e.g. confusion forever — they are different Latin sentences."
+  },
+  {
+   "id": "sp.dipth.ew_ue",
+   "name": "ew ue",
+   "region": "diphthongs",
+   "prereqs": [
+    "sp.vteam.oo"
+   ],
+   "context": "ew (chew, threw) and ue (blue, rescue) spell /ū/ or /yū/ at word end. Completes the long-u spelling inventory with u_e and oo."
+  },
+  {
+   "id": "sp.dipth.oi_oy",
+   "name": "oi oy",
+   "region": "diphthongs",
+   "prereqs": [
+    "sp.vteam.ee",
+    "sp.vteam.oa"
+   ],
+   "context": "The /oy/ diphthong: oi mid-word (coin, moist), oy at word end (boy, enjoy). Position pair, fully regular — a rule that never betrays you."
+  },
+  {
+   "id": "sp.dipth.ou_ow",
+   "name": "ou ow",
+   "region": "diphthongs",
+   "prereqs": [
+    "sp.vteam.oo"
+   ],
+   "context": "The /ow/ diphthong: ou mid-word (loud, count), ow at end or before n/l (cow, town, howl). A gliding two-part vowel — the mouth moves during it."
+  },
+  {
+   "id": "sp.syll.closed",
+   "name": "closed",
+   "region": "syllables",
+   "prereqs": [
+    "sp.base.cvc",
+    "sp.rule.short_vowel"
+   ],
+   "context": "A syllable ending in a consonant has a short vowel (rab-bit, nap-kin). First and most common syllable type."
+  },
+  {
+   "id": "sp.syll.cle",
+   "name": "cle",
+   "region": "syllables",
+   "prereqs": [
+    "sp.syll.division"
+   ],
+   "context": "Consonant-le: final syllable like -ble, -dle, -tle (ta-ble, pud-dle, lit-tle). Count back three and divide; a preceding short vowel needs a doubled consonant."
+  },
+  {
+   "id": "sp.syll.division",
+   "name": "division",
+   "region": "syllables",
+   "prereqs": [
+    "sp.syll.closed",
+    "sp.syll.open",
+    "sp.phon.syll_count"
+   ],
+   "context": "Split multisyllable words at the seam (VC/CV: nap-kin; V/CV: ro-bot) and spell each chunk with its own rules. Segmenting at the syllable level — the multiplier skill for long words."
+  },
+  {
+   "id": "sp.syll.open",
+   "name": "open",
+   "region": "syllables",
+   "prereqs": [
+    "sp.syll.closed"
+   ],
+   "context": "A syllable ending in a vowel has a long vowel (mu-sic, ro- bot). Contrast with closed."
+  },
+  {
+   "id": "sp.syll.rctrl",
+   "name": "rctrl",
+   "region": "syllables",
+   "prereqs": [
+    "sp.syll.closed",
+    "sp.rctrl.ar"
+   ],
+   "context": "R-controlled syllables (gar-den, cir-cus): the vowel-r unit stays glued through division. Fifth syllable type."
+  },
+  {
+   "id": "sp.syll.schwa",
+   "name": "schwa",
+   "region": "syllables",
+   "prereqs": [
+    "sp.syll.division"
+   ],
+   "context": "Schwa: the unstressed 'uh' that any vowel letter can make (about, wagon, pencil). Why sounding-out fails in unstressed syllables — spell those by morpheme and by sight instead."
+  },
+  {
+   "id": "sp.rule.silent_e",
+   "name": "silent e",
+   "region": "syllables",
+   "prereqs": [
+    "sp.syll.closed"
+   ],
+   "context": "Vowel-consonant-e makes the vowel long and the e silent (plane, stripe, quote). The e is doing a job, not decoration."
+  },
+  {
+   "id": "sp.syll.vteam",
+   "name": "vteam",
+   "region": "syllables",
+   "prereqs": [
+    "sp.syll.open",
+    "sp.vteam.ee"
+   ],
+   "context": "Vowel-team syllables keep the team together when dividing (rain-bow, foot-ball). Fourth syllable type."
+  },
+  {
+   "id": "sp.rctrl.air_are_ear",
+   "name": "air are ear",
+   "region": "r-controlled",
+   "prereqs": [
+    "sp.rctrl.er_ir_ur"
+   ],
+   "context": "The /air/ family: air (chair), are (share), ear (bear) — and ear's second life as /ear/ (hear). Ambiguity managed by word sets and frequency."
+  },
+  {
+   "id": "sp.rctrl.ar",
+   "name": "ar",
+   "region": "r-controlled",
+   "prereqs": [
+    "sp.rule.short_vowel"
+   ],
+   "context": "Bossy r: ar spells /ar/ (shark, garden). The r captures the vowel — neither long nor short. First r-controlled pattern."
+  },
+  {
+   "id": "sp.rctrl.er_ir_ur",
+   "name": "er ir ur",
+   "region": "r-controlled",
+   "prereqs": [
+    "sp.rctrl.ar"
+   ],
+   "context": "The three spellings of /er/: er (her, fern), ir (bird, first), ur (turn, burst). Sound alone cannot decide — er is the safest guess (most common), ir/ur are learned sets."
+  },
+  {
+   "id": "sp.rctrl.or",
+   "name": "or",
+   "region": "r-controlled",
+   "prereqs": [
+    "sp.rctrl.ar"
+   ],
+   "context": "or spells /or/ (storm, fort); ore and oar variants (shore, roar) join later reading."
+  },
+  {
+   "id": "sp.etym.arabic",
+   "name": "arabic",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "The Arabic layer came through science and trade: algebra (al- jabr, 'the reunion'), algorithm (al-Khwarizmi's name), zero (sifr), plus coffee, cotton, sugar, magazine. The mathematics words are Arabic because the mathematics was — for centuries Baghdad was where math lived."
+  },
+  {
+   "id": "sp.etym.eastern",
+   "name": "eastern",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "Trade-route and empire loans from the East: shampoo, jungle, bungalow, pajamas (Hindi/Urdu), checkmate and bazaar and paradise (Persian), tea and ketchup (Chinese dialects), tsunami, karate, tycoon (Japanese). Every word is a shipping lane."
+  },
+  {
+   "id": "sp.etym.fossils",
+   "name": "fossils",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "Silent-letter fossils: kn (knight), wr (wrench), gn (gnome), mb (thumb) were all once pronounced. The spelling preserved the older word — the silent letters are Old English archaeology."
+  },
+  {
+   "id": "sp.etym.french_ch",
+   "name": "french ch",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.greek_ch"
+   ],
+   "context": "ch = /sh/ marks recent French arrivals (chef, machine, parachute). Completes the ch decision: pick the sound by the word's origin and register."
+  },
+  {
+   "id": "sp.etym.german_modern",
+   "name": "german modern",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.germanic_core"
+   ],
+   "context": "Modern German loans — different from the ancient shared bones: kindergarten ('children's garden'), rucksack, pretzel, hamburger (from Hamburg — no ham involved), wanderlust. Compare with germanic_core to feel the difference between inheritance and borrowing."
+  },
+  {
+   "id": "sp.etym.germanic_core",
+   "name": "germanic core",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "English's bones are Germanic: house/Haus, water/Wasser, bread/Brot, finger/Finger. The 100 most common words are almost all Old English. Cognates with modern German are family resemblance, not borrowing — the two languages are siblings."
+  },
+  {
+   "id": "sp.etym.greek_ch",
+   "name": "greek ch",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "ch = /k/ marks Greek (chorus, echo, chemistry, stomach). The ch trio: /ch/ native, /k/ Greek, /sh/ French — one digraph, three passports."
+  },
+  {
+   "id": "sp.etym.greek_ph",
+   "name": "greek ph",
+   "region": "etymology",
+   "prereqs": [
+    "sp.digraph.ph",
+    "sp.etym.layers"
+   ],
+   "context": "ph = /f/ marks a Greek word (phone, graph, physics). Given a word is Greek, PREDICT the f-sound spelling; given ph, know its passport."
+  },
+  {
+   "id": "sp.etym.italian",
+   "name": "italian",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.latin_direct"
+   ],
+   "context": "The Italian layer is music and food: piano (short for pianoforte, 'soft-loud'), opera, solo, tempo, pizza, spaghetti ('little strings'), broccoli ('little arms'). Music notation is written in Italian worldwide — a whole profession's vocabulary from one country."
+  },
+  {
+   "id": "sp.etym.latin_direct",
+   "name": "latin direct",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.norman_french"
+   ],
+   "context": "Renaissance scholars borrowed straight from Latin, giving English TRIPLES — one idea, three registers by origin: kingly (Old English) / royal (French) / regal (Latin); ask / question / interrogate. Register is etymology you can feel."
+  },
+  {
+   "id": "sp.etym.layers",
+   "name": "layers",
+   "region": "etymology",
+   "prereqs": [
+    "sp.digraph.ch",
+    "sp.vteam.ee"
+   ],
+   "context": "English is a three-layer code: Anglo-Saxon (short, everyday: bread, house), Latin/French (official, layered: nation, court), Greek (science: photo, chorus). The layer explains the spelling — classification, not memorization."
+  },
+  {
+   "id": "sp.etym.loanwords",
+   "name": "loanwords",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "Loanwords keep their passports: checkmate (Persian shah mat, 'the king is dead'), shampoo (Hindi), ketchup (Hokkien), robot (Czech), chocolate (Nahuatl), tsunami (Japanese), safari (Swahili from Arabic). 'Irregular' usually means 'immigrant' — the spelling follows the source language's rules."
+  },
+  {
+   "id": "sp.etym.norman_french",
+   "name": "norman french",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "1066: Norman French becomes the language of power. The class split survives in food — the animal in the field is Anglo- Saxon (cow, pig, sheep — the farmer's words) but the meat on the table is French (beef, pork, mutton — the lord's words). Court, judge, army, royal: the vocabulary of rule is French."
+  },
+  {
+   "id": "sp.etym.norse",
+   "name": "norse",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.germanic_core"
+   ],
+   "context": "The Viking layer: Norse settlers gave English sky, skin, skull, egg, knife, window — and even the pronouns they/them. Many sk- words are Norse. A conquest you can hear a thousand years later."
+  },
+  {
+   "id": "sp.etym.spanish",
+   "name": "spanish",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.layers"
+   ],
+   "context": "The Spanish layer maps the American West: canyon (cañón), rodeo, ranch, mosquito ('little fly'), tornado, patio, vanilla. Spanish also carried Nahuatl words north — chocolate and tomato are Aztec words wearing Spanish passports. Two-hop immigration."
+  },
+  {
+   "id": "sp.etym.timeline",
+   "name": "timeline",
+   "region": "etymology",
+   "prereqs": [
+    "sp.etym.norse",
+    "sp.etym.latin_direct",
+    "sp.etym.eastern"
+   ],
+   "context": "The whole story in order: Germanic bones -> Viking layer -> 1066 French -> Renaissance Latin and Greek -> global trade and empire -> modern borrowings. Given any word's origin, place it on the timeline and the map. English never rejected a word it could use — that is why the code has layers, and why the layers explain the spellings."
+  },
+  {
+   "id": "sp.morph.compounds",
+   "name": "compounds",
+   "region": "morphology",
+   "prereqs": [
+    "sp.syll.division"
+   ],
+   "context": "Compound words: two whole words glued (base+ball, rain-bow, air-port). Each part keeps its spelling — divide between the words, not by syllable mechanics."
+  },
+  {
+   "id": "sp.morph.derive",
+   "name": "derive",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.roots_latin_1",
+    "sp.morph.prefixes_2",
+    "sp.morph.suffixes"
+   ],
+   "context": "The superpower node: given an UNSEEN word, crack meaning and spelling from owned morphemes — contradict = contra (against) + dict (say) = speak against. Assessment is always novel words. This is vocabulary by inference; it never runs out."
+  },
+  {
+   "id": "sp.morph.prefixes",
+   "name": "prefixes",
+   "region": "morphology",
+   "prereqs": [
+    "sp.syll.division"
+   ],
+   "context": "Prefixes are fixed-spelling units glued to a base: un-, re-, pre-, dis-, mis-. Spelling by assembly, not memory — morphology as algebra."
+  },
+  {
+   "id": "sp.morph.prefixes_2",
+   "name": "prefixes 2",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.prefixes"
+   ],
+   "context": "Second prefix set with meanings: sub- (under), inter- (between), trans- (across), non- (not), over-, under-. Prefix meanings are stable cargo — sub+marine, inter+state, trans+port."
+  },
+  {
+   "id": "sp.morph.roots_greek",
+   "name": "roots greek",
+   "region": "morphology",
+   "prereqs": [
+    "sp.etym.greek_ph"
+   ],
+   "context": "Greek combining forms: tele (far), graph (write), meter (measure), phon (sound), photo (light). They combine freely: tele+phone = far sound; photo+graph = light writing. Science vocabulary is Greek Lego."
+  },
+  {
+   "id": "sp.morph.roots_latin_1",
+   "name": "roots latin 1",
+   "region": "morphology",
+   "prereqs": [
+    "sp.etym.layers",
+    "sp.morph.prefixes"
+   ],
+   "context": "First Latin roots with meanings: struct (build), port (carry), dict (say), form (shape). Words become equations: con (with) + struct = build together; ex (out) + port = carry out; pre (before) + dict = say before."
+  },
+  {
+   "id": "sp.morph.roots_latin_2",
+   "name": "roots latin 2",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.roots_latin_1"
+   ],
+   "context": "Second Latin set: tract (pull), spect (look), ject (throw), rupt (break). At-tract = pull toward; in-spect = look into; e-ject = throw out; inter-rupt = break between."
+  },
+  {
+   "id": "sp.morph.suffix_simple",
+   "name": "suffix simple",
+   "region": "morphology",
+   "prereqs": [
+    "sp.syll.division"
+   ],
+   "context": "No-change suffixes: -ly, -ful, -ness, -less, -er, -est attach without altering the base (hope+ful, quick+ly). Meaning is compositional: hopeful = full of hope."
+  },
+  {
+   "id": "sp.morph.suffixes",
+   "name": "suffixes",
+   "region": "morphology",
+   "prereqs": [
+    "sp.rule.e_drop",
+    "sp.rule.doubling",
+    "sp.rule.y_to_i",
+    "sp.morph.suffix_simple"
+   ],
+   "context": "The integration node: vowel vs consonant suffixes and which base-change rule each triggers (hope->hoping, hop->hopping, carry->carried, hope->hopeful). Construction under load — every rule below fires here."
+  },
+  {
+   "id": "sp.morph.tion_sion",
+   "name": "tion sion",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.suffix_simple",
+    "sp.rule.soft_c"
+   ],
+   "context": "-tion/-sion turn verbs into nouns and spell /shun/ (act->action, discuss->discussion). The single most common 'irregular' sound-spelling — regular once you know it's a morpheme."
+  },
+  {
+   "id": "sp.rule.contractions",
+   "name": "contractions",
+   "region": "rules",
+   "prereqs": [
+    "sp.syll.closed"
+   ],
+   "context": "Contractions: the apostrophe marks exactly the deleted letters (do not -> don't, it is -> it's). Surgical, not decorative — and the it's/its distinction falls out for free."
+  },
+  {
+   "id": "sp.rule.doubling",
+   "name": "doubling",
+   "region": "rules",
+   "prereqs": [
+    "sp.syll.closed",
+    "sp.rule.silent_e"
+   ],
+   "context": "The 1-1-1 rule: one syllable, one vowel, one final consonant -> double before a vowel suffix (hop -> hopping vs hope -> hoping). Pure if-then logic; teach it as an algorithm."
+  },
+  {
+   "id": "sp.rule.doubling_2syll",
+   "name": "doubling 2syll",
+   "region": "rules",
+   "prereqs": [
+    "sp.rule.doubling",
+    "sp.syll.division"
+   ],
+   "context": "Doubling in two-syllable words: double only if the FINAL syllable is stressed (begin->beginning, but visit->visiting). The 1-1-1 rule plus stress — an if-then with two conditions."
+  },
+  {
+   "id": "sp.rule.e_drop",
+   "name": "e drop",
+   "region": "rules",
+   "prereqs": [
+    "sp.rule.silent_e"
+   ],
+   "context": "Drop silent e before a vowel suffix (make -> making, hope -> hoping); keep it before a consonant suffix (hopeful)."
+  },
+  {
+   "id": "sp.rule.k_c_ck",
+   "name": "k c ck",
+   "region": "rules",
+   "prereqs": [
+    "sp.digraph.ck",
+    "sp.rule.soft_c"
+   ],
+   "context": "Choosing the /k/ spelling: c before a/o/u or consonants (cab, clip), k before e/i/y (kite, keep), ck only right after a short vowel (duck). Integrates ck + soft c into one decision tree."
+  },
+  {
+   "id": "sp.rule.plural_f",
+   "name": "plural f",
+   "region": "rules",
+   "prereqs": [
+    "sp.rule.plural_s_es"
+   ],
+   "context": "f plurals: many f/fe words voice to ves (leaf->leaves, knife->knives); some don't (roofs, chiefs). A learned set with a strong tendency."
+  },
+  {
+   "id": "sp.rule.plural_s_es",
+   "name": "plural s es",
+   "region": "rules",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "Plurals: add s, but es after s, x, z, ch, sh (boxes, wishes) — you can hear the extra syllable. Sound tells you which."
+  },
+  {
+   "id": "sp.rule.plural_y",
+   "name": "plural y",
+   "region": "rules",
+   "prereqs": [
+    "sp.rule.y_to_i",
+    "sp.rule.plural_s_es"
+   ],
+   "context": "y plurals: vowel+y just adds s (boys); consonant+y changes y to i and adds es (parties). Same y->i machinery as suffixes."
+  },
+  {
+   "id": "sp.rule.soft_c",
+   "name": "soft c",
+   "region": "rules",
+   "prereqs": [
+    "sp.digraph.ck"
+   ],
+   "context": "c says /s/ before e, i, y (city, race, cycle) and /k/ everywhere else (cat, clip). A completely reliable if-then — the letter after c decides."
+  },
+  {
+   "id": "sp.rule.soft_g",
+   "name": "soft g",
+   "region": "rules",
+   "prereqs": [
+    "sp.rule.soft_c"
+   ],
+   "context": "g says /j/ before e, i, y (giant, gem, gym) — usually. Same trigger as soft c but with holdouts (get, give); teach as strong tendency, not law."
+  },
+  {
+   "id": "sp.rule.y_to_i",
+   "name": "y to i",
+   "region": "rules",
+   "prereqs": [
+    "sp.syll.division"
+   ],
+   "context": "Change y to i after a consonant when adding a suffix (carry -> carried) unless the suffix starts with i (carrying)."
+  },
+  {
+   "id": "sp.digraph.ch",
+   "name": "ch",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "ch spells /ch/ at word start or after anything but a short vowel (chess, crunch, punch)."
+  },
+  {
+   "id": "sp.digraph.ck",
+   "name": "ck",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.rule.short_vowel",
+    "sp.base.blends"
+   ],
+   "context": "Positional rule: right after a short vowel, /k/ is spelled ck (block, stick, check). Elsewhere plain k or c."
+  },
+  {
+   "id": "sp.digraph.dge",
+   "name": "dge",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.digraph.tch"
+   ],
+   "context": "Third member of the short-vowel family: right after a short vowel, /j/ is spelled dge (badge, fudge, bridge); elsewhere ge (cage, hinge)."
+  },
+  {
+   "id": "sp.digraph.ph",
+   "name": "ph",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "ph spells /f/ (graph, phone, trophy). A Greek birthmark — every ph word came from Greek, which is why it exists alongside plain f. Links forward to the etymology region."
+  },
+  {
+   "id": "sp.digraph.qu",
+   "name": "qu",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.base.cvc"
+   ],
+   "context": "q never travels alone: qu spells /kw/ (quiz, quest, squint). Treat qu as one tile."
+  },
+  {
+   "id": "sp.digraph.sh",
+   "name": "sh",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "Two letters, one phoneme: sh spells /sh/ anywhere in a word (shift, brush, splash)."
+  },
+  {
+   "id": "sp.digraph.tch",
+   "name": "tch",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.digraph.ch",
+    "sp.digraph.ck"
+   ],
+   "context": "Positional rule paired with ck: right after a short vowel, /ch/ is spelled tch (catch, pitch, stretch); after anything else, ch (bench, coach). Classic confusion point — assess the contrast explicitly."
+  },
+  {
+   "id": "sp.digraph.th",
+   "name": "th",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "th spells both voiced and unvoiced /th/ (think, month, cloth)."
+  },
+  {
+   "id": "sp.digraph.wh",
+   "name": "wh",
+   "region": "digraphs",
+   "prereqs": [
+    "sp.base.blends"
+   ],
+   "context": "wh spells /w/ in question words and a few others (whisk, wheat)."
+  },
+  {
+   "id": "sp.base.blends",
+   "name": "blends",
+   "region": "foundations",
+   "prereqs": [
+    "sp.base.cvc"
+   ],
+   "context": "Encode initial and final consonant clusters (st-, dr-, -mp, -st): every sound still gets its own letter, they just crowd together. Distinct from digraphs, where letters merge into one sound."
+  },
+  {
+   "id": "sp.base.cvc",
+   "name": "cvc",
+   "region": "foundations",
+   "prereqs": [
+    "sp.phon.segmenting",
+    "sp.phon.blending"
+   ],
+   "context": "Encode consonant-vowel-consonant words from speech: map each phoneme to a single letter in order. Short vowels only."
+  },
+  {
+   "id": "sp.base.floss",
+   "name": "floss",
+   "region": "foundations",
+   "prereqs": [
+    "sp.rule.short_vowel"
+   ],
+   "context": "The FLOSS rule: after a short vowel in a one-syllable word, final f, l, s (and z) double — stiff, hill, pass, buzz. First taste of position-driven doubling."
+  },
+  {
+   "id": "sp.base.glued",
+   "name": "glued",
+   "region": "foundations",
+   "prereqs": [
+    "sp.base.cvc"
+   ],
+   "context": "Glued (welded) sounds: -ng and -nk families (ring, thank) and all/am/an. The vowel and consonants fuse; teach as units, not letter-by-letter."
+  },
+  {
+   "id": "sp.rule.short_vowel",
+   "name": "short vowel",
+   "region": "foundations",
+   "prereqs": [
+    "sp.base.cvc"
+   ],
+   "context": "Recognize the five short vowel sounds and that a single vowel followed by a consonant in a closed syllable is short. Gatekeeper concept for ck/tch/dge and doubling rules."
+  }
+ ]
+}

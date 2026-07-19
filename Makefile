@@ -16,7 +16,8 @@ test:
 
 validate:
 	@cd engine && cargo test --quiet 2>&1 && echo "All tests passed." || (echo "Tests failed!" && exit 1)
-	@echo "Graph: $$(find graph/math -name '*.yaml' ! -name '_prompt.yaml' | wc -l) nodes, $$(find graph/math -name '_prompt.yaml' | wc -l) prompts"
+	@echo "Graph (math): $$(find graph/math -name '*.yaml' ! -name '_prompt.yaml' | wc -l) nodes, $$(find graph/math -name '_prompt.yaml' | wc -l) prompts"
+	@echo "Graph (language): $$(find graph/language -name '*.yaml' ! -name '_prompt.yaml' | wc -l) nodes, $$(find graph/language -name '_prompt.yaml' | wc -l) prompts"
 
 run-student: release
 	GRAPH_DIR=./graph/math PROGRESS_DIR=./progress \
