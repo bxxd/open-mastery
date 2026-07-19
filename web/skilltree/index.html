@@ -80,7 +80,7 @@ async function main() {
       const b = document.createElement('button')
       const st = owned.has(n.id) ? 'owned' : frontier.has(n.id) ? 'frontier' : 'locked'
       b.className = `node ${st}`
-      b.textContent = st === 'locked' ? '?' : n.name
+      b.textContent = n.name
       b.onclick = () => sheet(n, st)
       row.appendChild(b)
       el[n.id] = b
@@ -94,12 +94,12 @@ async function main() {
     const s = document.getElementById('sheet')
     const pres = n.prereqs.map((p) => {
       const cls = owned.has(p) ? 'owned' : 'locked'
-      const name = owned.has(p) || frontier.has(p) ? (byId[p]?.name ?? p) : '?'
+      const name = byId[p]?.name ?? p
       return `<span class="${cls}">${name}</span>`
     }).join('')
     s.innerHTML = `<div class="region">${n.region || ''} — ${st}</div>
-      <h2>${st === 'locked' ? '???' : n.name}</h2>
-      <p>${st === 'locked' ? 'Own everything it needs and this reveals itself.' : n.context}</p>
+      <h2>${n.name}</h2>
+      <p>${n.context}</p>
       ${n.prereqs.length ? `<div class="pre">${pres}</div>` : ''}`
     s.style.display = 'block'
   }
