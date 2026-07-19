@@ -1,0 +1,13 @@
+id: jk.kana.s_row
+prereqs:
+  - jk.kana.k_row
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 1
+context: >
+  S-row さしすせそ (shi irregular romaji): recognize each kana from
+  its sound and recall it unprompted. Mastery = sound-to-symbol
+  without romaji support.

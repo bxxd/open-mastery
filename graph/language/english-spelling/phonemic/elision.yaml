@@ -1,0 +1,11 @@
+id: sp.phon.elision
+prereqs:
+  - sp.phon.segmenting
+bloom: apply
+assess:
+  - manipulate
+typical_grade: 2
+context: >
+  Delete or swap a phoneme and say what remains: 'smile' without
+  /s/ -> 'mile'. The strongest single indicator of phonemic
+  mastery; drill deliberately.

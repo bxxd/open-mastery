@@ -1,0 +1,12 @@
+id: sp.digraph.ck
+prereqs:
+  - sp.rule.short_vowel
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  Positional rule: right after a short vowel, /k/ is spelled ck
+  (block, stick, check). Elsewhere plain k or c.

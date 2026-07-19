@@ -1,0 +1,12 @@
+id: sp.phon.segmenting
+prereqs: []
+bloom: apply
+assess:
+  - segment
+  - count_sounds
+typical_grade: 1
+context: >
+  Break a spoken word into its individual phonemes: 'ship' ->
+  /sh/ /i/ /p/. Oral only, no letters. The substrate skill for
+  all encoding; weakness here surfaces as poor spelling and
+  decoding of novel words.

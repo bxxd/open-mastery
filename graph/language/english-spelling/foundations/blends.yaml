@@ -1,0 +1,13 @@
+id: sp.base.blends
+prereqs:
+  - sp.base.cvc
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  Encode initial and final consonant clusters (st-, dr-, -mp,
+  -st): every sound still gets its own letter, they just crowd
+  together. Distinct from digraphs, where letters merge into one
+  sound.

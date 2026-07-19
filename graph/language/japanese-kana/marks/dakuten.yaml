@@ -1,0 +1,15 @@
+id: jk.kana.dakuten
+prereqs:
+  - jk.kana.k_row
+  - jk.kana.s_row
+  - jk.kana.t_row
+  - jk.kana.h_row
+bloom: apply
+assess:
+  - identify
+  - recall
+typical_grade: 2
+context: >
+  Dakuten voicing marks: か->が, さ->ざ, た->だ, は->ば. A
+  transformation on known kana, not new symbols — teach as an
+  operator.

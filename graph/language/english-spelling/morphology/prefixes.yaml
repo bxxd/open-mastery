@@ -1,0 +1,12 @@
+id: sp.morph.prefixes
+prereqs:
+  - sp.syll.division
+bloom: apply
+assess:
+  - build
+  - define
+typical_grade: 4
+context: >
+  Prefixes are fixed-spelling units glued to a base: un-, re-,
+  pre-, dis-, mis-. Spelling by assembly, not memory —
+  morphology as algebra.

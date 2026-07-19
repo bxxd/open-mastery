@@ -1,0 +1,12 @@
+id: jk.kana.yoon
+prereqs:
+  - jk.kana.y_row
+  - jk.kana.dakuten
+bloom: apply
+assess:
+  - identify
+  - produce
+typical_grade: 3
+context: >
+  Contracted sounds: i-column kana + small ゃゅょ (きゃ kya, しゅ shu,
+  ちょ cho). Two symbols, one beat.

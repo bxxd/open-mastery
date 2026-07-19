@@ -1,0 +1,13 @@
+id: sp.rule.doubling
+prereqs:
+  - sp.syll.closed
+  - sp.rule.silent_e
+bloom: apply
+assess:
+  - build
+  - explain
+typical_grade: 3
+context: >
+  The 1-1-1 rule: one syllable, one vowel, one final consonant
+  -> double before a vowel suffix (hop -> hopping vs hope ->
+  hoping). Pure if-then logic; teach it as an algorithm.

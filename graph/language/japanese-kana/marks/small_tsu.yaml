@@ -1,0 +1,11 @@
+id: jk.kana.sokuon
+prereqs:
+  - jk.kana.t_row
+bloom: apply
+assess:
+  - identify
+  - produce
+typical_grade: 2
+context: >
+  Small っ doubles the following consonant (きって kitte). Heard as
+  a beat of silence.

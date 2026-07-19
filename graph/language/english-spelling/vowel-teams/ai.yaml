@@ -1,0 +1,12 @@
+id: sp.vteam.ai
+prereqs:
+  - sp.vteam.ee
+  - sp.vteam.oa
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  ai spells /ā/ mid-word (train, paint); ay takes over at word
+  end. Position decides the spelling.

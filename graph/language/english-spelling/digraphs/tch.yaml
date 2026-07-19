@@ -1,0 +1,15 @@
+id: sp.digraph.tch
+prereqs:
+  - sp.digraph.ch
+  - sp.digraph.ck
+bloom: apply
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 3
+context: >
+  Positional rule paired with ck: right after a short vowel,
+  /ch/ is spelled tch (catch, pitch, stretch); after anything
+  else, ch (bench, coach). Classic confusion point — assess the
+  contrast explicitly.

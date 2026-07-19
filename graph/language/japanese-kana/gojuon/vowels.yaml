@@ -1,0 +1,12 @@
+id: jk.kana.vowels
+prereqs: []
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 1
+context: >
+  Vowel row あいうえお: recognize each kana from its sound and recall
+  it unprompted. Mastery = sound-to-symbol without romaji
+  support.

@@ -1,0 +1,11 @@
+id: sp.digraph.wh
+prereqs:
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  wh spells /w/ in question words and a few others (whisk,
+  wheat).

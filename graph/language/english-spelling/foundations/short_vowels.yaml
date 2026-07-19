@@ -1,0 +1,12 @@
+id: sp.rule.short_vowel
+prereqs:
+  - sp.base.cvc
+bloom: understand
+assess:
+  - identify
+  - sort
+typical_grade: 1
+context: >
+  Recognize the five short vowel sounds and that a single vowel
+  followed by a consonant in a closed syllable is short.
+  Gatekeeper concept for ck/tch/dge and doubling rules.

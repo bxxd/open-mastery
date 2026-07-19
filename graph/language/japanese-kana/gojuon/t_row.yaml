@@ -1,0 +1,13 @@
+id: jk.kana.t_row
+prereqs:
+  - jk.kana.s_row
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 1
+context: >
+  T-row たちつてと (chi/tsu irregular): recognize each kana from its
+  sound and recall it unprompted. Mastery = sound-to-symbol
+  without romaji support.

@@ -1,0 +1,13 @@
+id: sp.syll.division
+prereqs:
+  - sp.syll.closed
+  - sp.syll.open
+bloom: apply
+assess:
+  - segment
+  - build
+typical_grade: 3
+context: >
+  Split multisyllable words at the seam (VC/CV: nap-kin; V/CV:
+  ro-bot) and spell each chunk with its own rules. Segmenting at
+  the syllable level — the multiplier skill for long words.

@@ -1,0 +1,10 @@
+id: sp.vteam.oa
+prereqs:
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  Vowel team oa spells /ō/ (coach, toast, groan).

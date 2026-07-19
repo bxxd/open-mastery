@@ -1,0 +1,9 @@
+id: sp.phon.blending
+prereqs: []
+bloom: apply
+assess:
+  - blend
+typical_grade: 1
+context: >
+  Fuse isolated phonemes into a word: /s/ /t/ /o/ /m/ /p/ ->
+  'stomp'. Oral only. The decoding-direction twin of segmenting.

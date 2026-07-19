@@ -1,0 +1,12 @@
+id: sp.syll.closed
+prereqs:
+  - sp.base.cvc
+  - sp.rule.short_vowel
+bloom: apply
+assess:
+  - identify
+  - segment
+typical_grade: 2
+context: >
+  A syllable ending in a consonant has a short vowel (rab-bit,
+  nap-kin). First and most common syllable type.

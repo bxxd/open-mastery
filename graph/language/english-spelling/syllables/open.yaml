@@ -1,0 +1,11 @@
+id: sp.syll.open
+prereqs:
+  - sp.syll.closed
+bloom: apply
+assess:
+  - identify
+  - segment
+typical_grade: 2
+context: >
+  A syllable ending in a vowel has a long vowel (mu-sic, ro-
+  bot). Contrast with closed.

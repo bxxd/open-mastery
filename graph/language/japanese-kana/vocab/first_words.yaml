@@ -1,0 +1,14 @@
+id: jk.vocab.first_words
+prereqs:
+  - jk.kana.vowels
+  - jk.kana.k_row
+  - jk.kana.s_row
+bloom: apply
+assess:
+  - build
+  - translate
+typical_grade: 1
+context: >
+  Assemble real words from mastered kana (あお, かお, すし).
+  Production from claimed territory; unlocks progressively as
+  rows are mastered.

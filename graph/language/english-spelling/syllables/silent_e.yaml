@@ -1,0 +1,11 @@
+id: sp.rule.silent_e
+prereqs:
+  - sp.syll.closed
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  Vowel-consonant-e makes the vowel long and the e silent
+  (plane, stripe, quote). The e is doing a job, not decoration.

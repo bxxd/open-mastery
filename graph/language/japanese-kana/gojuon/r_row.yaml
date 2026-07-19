@@ -1,0 +1,12 @@
+id: jk.kana.r_row
+prereqs:
+  - jk.kana.y_row
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 2
+context: >
+  R-row らりるれろ: recognize each kana from its sound and recall it
+  unprompted. Mastery = sound-to-symbol without romaji support.

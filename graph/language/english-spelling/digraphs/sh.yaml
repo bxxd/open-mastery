@@ -1,0 +1,11 @@
+id: sp.digraph.sh
+prereqs:
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  Two letters, one phoneme: sh spells /sh/ anywhere in a word
+  (shift, brush, splash).

@@ -1,0 +1,12 @@
+id: jk.kana.k_row
+prereqs:
+  - jk.kana.vowels
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 1
+context: >
+  K-row かきくけこ: recognize each kana from its sound and recall it
+  unprompted. Mastery = sound-to-symbol without romaji support.

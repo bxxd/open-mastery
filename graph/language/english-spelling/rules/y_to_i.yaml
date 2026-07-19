@@ -1,0 +1,11 @@
+id: sp.rule.y_to_i
+prereqs:
+  - sp.syll.division
+bloom: apply
+assess:
+  - build
+  - explain
+typical_grade: 3
+context: >
+  Change y to i after a consonant when adding a suffix (carry ->
+  carried) unless the suffix starts with i (carrying).

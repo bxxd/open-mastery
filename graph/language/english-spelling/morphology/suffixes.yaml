@@ -1,0 +1,14 @@
+id: sp.morph.suffixes
+prereqs:
+  - sp.rule.e_drop
+  - sp.rule.doubling
+  - sp.rule.y_to_i
+bloom: apply
+assess:
+  - build
+  - explain
+typical_grade: 4
+context: >
+  Vowel and consonant suffixes (-ing, -ed, -ful, -ness, -less)
+  and which base-change rule each triggers. The integration
+  node: construction under load.

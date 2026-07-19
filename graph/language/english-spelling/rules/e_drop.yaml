@@ -1,0 +1,11 @@
+id: sp.rule.e_drop
+prereqs:
+  - sp.rule.silent_e
+bloom: apply
+assess:
+  - build
+  - explain
+typical_grade: 3
+context: >
+  Drop silent e before a vowel suffix (make -> making, hope ->
+  hoping); keep it before a consonant suffix (hopeful).

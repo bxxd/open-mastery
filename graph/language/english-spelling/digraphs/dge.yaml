@@ -1,0 +1,13 @@
+id: sp.digraph.dge
+prereqs:
+  - sp.digraph.tch
+bloom: apply
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 3
+context: >
+  Third member of the short-vowel family: right after a short
+  vowel, /j/ is spelled dge (badge, fudge, bridge); elsewhere ge
+  (cage, hinge).

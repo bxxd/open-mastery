@@ -1,0 +1,10 @@
+id: sp.digraph.th
+prereqs:
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  th spells both voiced and unvoiced /th/ (think, month, cloth).

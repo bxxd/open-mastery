@@ -1,0 +1,10 @@
+id: jk.kana.handakuten
+prereqs:
+  - jk.kana.h_row
+bloom: apply
+assess:
+  - identify
+  - recall
+typical_grade: 2
+context: >
+  Handakuten: は-row + circle -> pa pi pu pe po.
