@@ -44,6 +44,8 @@
 //   ?graph=<url of export json>   required
 //   ?progress=<localStorage key>  optional — MasteryState {stats:{id:{streak}}}
 //   ?title=<name>
+//   ?play=<url template with {id}>  optional — owned/frontier nodes get a
+//         "practice" link (the learner picks from the frontier; locked stays locked)
 // Owned: streak >= 3 on the node id, or on every `members` entry (lets
 // fine-grained learner state satisfy coarse graph nodes). Frontier: all
 // prereqs owned. Tap a node for its story.
@@ -97,10 +99,15 @@ async function main() {
       const name = byId[p]?.name ?? p
       return `<span class="${cls}">${name}</span>`
     }).join('')
+    const play = q.get('play')
+    const canPlay = play && st !== 'locked'
     s.innerHTML = `<div class="region">${n.region || ''} — ${st}</div>
       <h2>${n.name}</h2>
       <p>${n.context}</p>
-      ${n.prereqs.length ? `<div class="pre">${pres}</div>` : ''}`
+      ${n.prereqs.length ? `<div class="pre">${pres}</div>` : ''}
+      ${canPlay ? `<a href="${play.replace('{id}', encodeURIComponent(n.id))}"
+        style="display:inline-block;margin-top:0.9rem;background:#10b981;color:#052e16;font-weight:800;
+        padding:0.55rem 1.2rem;border-radius:0.8rem;text-decoration:none">practice ▸</a>` : ''}`
     s.style.display = 'block'
   }
   document.addEventListener('click', (e) => {
