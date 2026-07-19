@@ -1,0 +1,12 @@
+id: sp.base.glued
+prereqs:
+  - sp.base.cvc
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  Glued (welded) sounds: -ng and -nk families (ring, thank) and
+  all/am/an. The vowel and consonants fuse; teach as units, not
+  letter-by-letter.

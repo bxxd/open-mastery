@@ -1,0 +1,12 @@
+id: jk.vocab.greetings
+prereqs:
+  - jk.kana.h_row
+bloom: apply
+assess:
+  - build
+  - recall
+  - use
+typical_grade: 2
+context: >
+  Greetings: こんにちは, おはよう, ありがとう, さようなら. Immediately usable out
+  loud with family — the words that make the learning social.

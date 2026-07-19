@@ -1,0 +1,12 @@
+id: sp.syll.schwa
+prereqs:
+  - sp.syll.division
+bloom: understand
+assess:
+  - identify
+  - explain
+typical_grade: 4
+context: >
+  Schwa: the unstressed 'uh' that any vowel letter can make
+  (about, wagon, pencil). Why sounding-out fails in unstressed
+  syllables — spell those by morpheme and by sight instead.

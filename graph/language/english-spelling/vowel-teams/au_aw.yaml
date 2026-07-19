@@ -1,0 +1,11 @@
+id: sp.vteam.au_aw
+prereqs:
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  au (mid-word: haunt, sauce) and aw (word end: draw, hawk)
+  spell /aw/. Same position logic as ai/ay, oa/ow.

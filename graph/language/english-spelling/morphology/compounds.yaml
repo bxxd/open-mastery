@@ -1,0 +1,12 @@
+id: sp.morph.compounds
+prereqs:
+  - sp.syll.division
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  Compound words: two whole words glued (base+ball, rain-bow,
+  air-port). Each part keeps its spelling — divide between the
+  words, not by syllable mechanics.

@@ -1,0 +1,12 @@
+id: sp.etym.french_ch
+prereqs:
+  - sp.etym.greek_ch
+bloom: analyze
+assess:
+  - classify
+  - predict
+typical_grade: 4
+context: >
+  ch = /sh/ marks recent French arrivals (chef, machine,
+  parachute). Completes the ch decision: pick the sound by the
+  word's origin and register.

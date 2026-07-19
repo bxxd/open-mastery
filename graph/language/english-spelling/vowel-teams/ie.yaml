@@ -1,0 +1,12 @@
+id: sp.vteam.ie
+prereqs:
+  - sp.vteam.ee
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  ie spells /ī/ at word end (pie, tie) and often /ē/ mid-word
+  (field, chief). The 'i before e' territory — teach the
+  reliable core, flag the exceptions as loanwords.

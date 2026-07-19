@@ -1,0 +1,11 @@
+id: sp.rctrl.ar
+prereqs:
+  - sp.rule.short_vowel
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  Bossy r: ar spells /ar/ (shark, garden). The r captures the
+  vowel — neither long nor short. First r-controlled pattern.

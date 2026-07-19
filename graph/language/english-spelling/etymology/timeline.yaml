@@ -1,0 +1,22 @@
+id: sp.etym.timeline
+prereqs:
+  - sp.etym.norse
+  - sp.etym.latin_direct
+  - sp.etym.eastern
+bloom: analyze
+assess:
+  - sequence
+  - explain
+typical_grade: 5
+encompasses:
+  sp.etym.germanic_core: 0.5
+  sp.etym.norman_french: 0.5
+  sp.etym.arabic: 0.4
+  sp.etym.spanish: 0.4
+context: >
+  The whole story in order: Germanic bones -> Viking layer ->
+  1066 French -> Renaissance Latin and Greek -> global trade and
+  empire -> modern borrowings. Given any word's origin, place it
+  on the timeline and the map. English never rejected a word it
+  could use — that is why the code has layers, and why the
+  layers explain the spellings.

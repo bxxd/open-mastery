@@ -1,0 +1,12 @@
+id: sp.vteam.oo
+prereqs:
+  - sp.vteam.ee
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  oo has two sounds: long (moon, scoop) and short (book, stood).
+  First team where the reader must try both — teach as
+  probabilities.

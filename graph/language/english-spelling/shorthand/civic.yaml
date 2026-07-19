@@ -1,0 +1,13 @@
+id: sp.short.civic
+prereqs:
+  - sp.syll.division
+bloom: apply
+assess:
+  - expand
+  - use
+typical_grade: 3
+context: >
+  Everyday civic shorthand: Co. (company), Inc., Ltd., St.,
+  Ave., Dr., Mr./Mrs. (mister/missus), and the two-letter state
+  codes (CT, NY, CA) — a complete little geography cipher.
+  Reading the world's signage and envelopes.

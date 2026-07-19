@@ -1,0 +1,15 @@
+id: sp.etym.arabic
+prereqs:
+  - sp.etym.layers
+bloom: understand
+assess:
+  - classify
+  - locate
+  - explain
+typical_grade: 4
+context: >
+  The Arabic layer came through science and trade: algebra (al-
+  jabr, 'the reunion'), algorithm (al-Khwarizmi's name), zero
+  (sifr), plus coffee, cotton, sugar, magazine. The mathematics
+  words are Arabic because the mathematics was — for centuries
+  Baghdad was where math lived.

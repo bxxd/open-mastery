@@ -1,0 +1,14 @@
+id: sp.etym.layers
+prereqs:
+  - sp.digraph.ch
+  - sp.vteam.ee
+bloom: analyze
+assess:
+  - classify
+  - explain
+typical_grade: 4
+context: >
+  English is a three-layer code: Anglo-Saxon (short, everyday:
+  bread, house), Latin/French (official, layered: nation,
+  court), Greek (science: photo, chorus). The layer explains the
+  spelling — classification, not memorization.

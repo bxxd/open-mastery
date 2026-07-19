@@ -1,0 +1,13 @@
+id: sp.rule.soft_g
+prereqs:
+  - sp.rule.soft_c
+bloom: apply
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 3
+context: >
+  g says /j/ before e, i, y (giant, gem, gym) — usually. Same
+  trigger as soft c but with holdouts (get, give); teach as
+  strong tendency, not law.

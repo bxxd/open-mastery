@@ -1,0 +1,19 @@
+id: sp.morph.derive
+prereqs:
+  - sp.morph.roots_latin_1
+  - sp.morph.prefixes_2
+  - sp.morph.suffixes
+bloom: analyze
+assess:
+  - derive
+  - explain
+typical_grade: 5
+encompasses:
+  sp.morph.roots_latin_1: 0.7
+  sp.morph.prefixes_2: 0.6
+  sp.morph.suffix_simple: 0.5
+context: >
+  The superpower node: given an UNSEEN word, crack meaning and
+  spelling from owned morphemes — contradict = contra (against)
+  + dict (say) = speak against. Assessment is always novel
+  words. This is vocabulary by inference; it never runs out.

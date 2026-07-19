@@ -1,0 +1,14 @@
+id: sp.rule.doubling_2syll
+prereqs:
+  - sp.rule.doubling
+  - sp.syll.division
+bloom: analyze
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 4
+context: >
+  Doubling in two-syllable words: double only if the FINAL
+  syllable is stressed (begin->beginning, but visit->visiting).
+  The 1-1-1 rule plus stress — an if-then with two conditions.

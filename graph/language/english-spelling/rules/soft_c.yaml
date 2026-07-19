@@ -1,0 +1,13 @@
+id: sp.rule.soft_c
+prereqs:
+  - sp.digraph.ck
+bloom: apply
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 3
+context: >
+  c says /s/ before e, i, y (city, race, cycle) and /k/
+  everywhere else (cat, clip). A completely reliable if-then —
+  the letter after c decides.

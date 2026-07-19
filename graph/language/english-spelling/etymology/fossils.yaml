@@ -1,0 +1,13 @@
+id: sp.etym.fossils
+prereqs:
+  - sp.etym.layers
+bloom: understand
+assess:
+  - classify
+  - explain
+typical_grade: 4
+context: >
+  Silent-letter fossils: kn (knight), wr (wrench), gn (gnome),
+  mb (thumb) were all once pronounced. The spelling preserved
+  the older word — the silent letters are Old English
+  archaeology.

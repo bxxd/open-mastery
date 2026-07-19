@@ -1,0 +1,12 @@
+id: sp.rctrl.er_ir_ur
+prereqs:
+  - sp.rctrl.ar
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  The three spellings of /er/: er (her, fern), ir (bird, first),
+  ur (turn, burst). Sound alone cannot decide — er is the safest
+  guess (most common), ir/ur are learned sets.

@@ -1,0 +1,14 @@
+id: jk.kata.y_row
+prereqs:
+  - jk.kata.m_row
+  - jk.kana.y_row
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 3
+context: >
+  Katakana ヤユヨ: the angular twin of the mastered hiragana row —
+  same sounds, second script. Used for foreign loanwords,
+  emphasis, and sound effects. Recall without furigana support.

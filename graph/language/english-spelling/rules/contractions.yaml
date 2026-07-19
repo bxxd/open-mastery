@@ -1,0 +1,12 @@
+id: sp.rule.contractions
+prereqs:
+  - sp.syll.closed
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  Contractions: the apostrophe marks exactly the deleted letters
+  (do not -> don't, it is -> it's). Surgical, not decorative —
+  and the it's/its distinction falls out for free.

@@ -1,0 +1,12 @@
+id: jk.vocab.food
+prereqs:
+  - jk.kana.t_row
+bloom: apply
+assess:
+  - build
+  - translate
+typical_grade: 2
+context: >
+  Food words: すし, たこ, おちゃ (tea), ごはん (rice) — plus the sokuon
+  workout きって/きっぷ. Menus become readable; learning leaks into
+  dinner.

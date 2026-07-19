@@ -1,0 +1,16 @@
+id: jk.kata.dakuten
+prereqs:
+  - jk.kata.k_row
+  - jk.kata.s_row
+  - jk.kata.t_row
+  - jk.kata.h_row
+  - jk.kana.dakuten
+bloom: apply
+assess:
+  - identify
+  - recall
+typical_grade: 3
+context: >
+  Dakuten and handakuten transfer to katakana unchanged: カ->ガ,
+  ハ->バ/パ. Same operator, second script — near-free once hiragana
+  marks are owned.

@@ -1,0 +1,13 @@
+id: sp.etym.italian
+prereqs:
+  - sp.etym.latin_direct
+bloom: understand
+assess:
+  - classify
+typical_grade: 5
+context: >
+  The Italian layer is music and food: piano (short for
+  pianoforte, 'soft-loud'), opera, solo, tempo, pizza, spaghetti
+  ('little strings'), broccoli ('little arms'). Music notation
+  is written in Italian worldwide — a whole profession's
+  vocabulary from one country.

@@ -3,12 +3,18 @@ prereqs:
   - sp.rule.e_drop
   - sp.rule.doubling
   - sp.rule.y_to_i
-bloom: apply
+  - sp.morph.suffix_simple
+bloom: analyze
 assess:
   - build
   - explain
 typical_grade: 4
+encompasses:
+  sp.rule.e_drop: 0.6
+  sp.rule.doubling: 0.6
+  sp.rule.y_to_i: 0.5
 context: >
-  Vowel and consonant suffixes (-ing, -ed, -ful, -ness, -less)
-  and which base-change rule each triggers. The integration
-  node: construction under load.
+  The integration node: vowel vs consonant suffixes and which
+  base-change rule each triggers (hope->hoping, hop->hopping,
+  carry->carried, hope->hopeful). Construction under load —
+  every rule below fires here.

@@ -1,0 +1,12 @@
+id: sp.syll.vteam
+prereqs:
+  - sp.syll.open
+  - sp.vteam.ee
+bloom: apply
+assess:
+  - identify
+  - segment
+typical_grade: 3
+context: >
+  Vowel-team syllables keep the team together when dividing
+  (rain-bow, foot-ball). Fourth syllable type.

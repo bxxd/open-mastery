@@ -1,0 +1,11 @@
+id: sp.vteam.ow_long
+prereqs:
+  - sp.vteam.oa
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  ow spells /ō/ at word end (snow, grow, elbow) while oa takes
+  the middle (coach). Another position pair like ai/ay.

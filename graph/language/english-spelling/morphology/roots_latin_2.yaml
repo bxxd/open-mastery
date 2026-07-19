@@ -1,0 +1,13 @@
+id: sp.morph.roots_latin_2
+prereqs:
+  - sp.morph.roots_latin_1
+bloom: analyze
+assess:
+  - build
+  - define
+  - derive
+typical_grade: 5
+context: >
+  Second Latin set: tract (pull), spect (look), ject (throw),
+  rupt (break). At-tract = pull toward; in-spect = look into;
+  e-ject = throw out; inter-rupt = break between.

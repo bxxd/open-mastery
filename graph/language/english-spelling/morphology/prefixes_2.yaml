@@ -1,0 +1,13 @@
+id: sp.morph.prefixes_2
+prereqs:
+  - sp.morph.prefixes
+bloom: apply
+assess:
+  - build
+  - define
+typical_grade: 4
+context: >
+  Second prefix set with meanings: sub- (under), inter-
+  (between), trans- (across), non- (not), over-, under-. Prefix
+  meanings are stable cargo — sub+marine, inter+state,
+  trans+port.

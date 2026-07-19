@@ -1,0 +1,12 @@
+id: sp.base.floss
+prereqs:
+  - sp.rule.short_vowel
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  The FLOSS rule: after a short vowel in a one-syllable word,
+  final f, l, s (and z) double — stiff, hill, pass, buzz. First
+  taste of position-driven doubling.

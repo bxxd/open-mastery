@@ -1,0 +1,14 @@
+id: sp.morph.tion_sion
+prereqs:
+  - sp.morph.suffix_simple
+  - sp.rule.soft_c
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 4
+context: >
+  -tion/-sion turn verbs into nouns and spell /shun/
+  (act->action, discuss->discussion). The single most common
+  'irregular' sound-spelling — regular once you know it's a
+  morpheme.

@@ -1,0 +1,13 @@
+id: sp.etym.germanic_core
+prereqs:
+  - sp.etym.layers
+bloom: understand
+assess:
+  - classify
+  - explain
+typical_grade: 4
+context: >
+  English's bones are Germanic: house/Haus, water/Wasser,
+  bread/Brot, finger/Finger. The 100 most common words are
+  almost all Old English. Cognates with modern German are family
+  resemblance, not borrowing — the two languages are siblings.

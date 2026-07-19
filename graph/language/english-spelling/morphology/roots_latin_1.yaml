@@ -1,0 +1,15 @@
+id: sp.morph.roots_latin_1
+prereqs:
+  - sp.etym.layers
+  - sp.morph.prefixes
+bloom: analyze
+assess:
+  - build
+  - define
+  - derive
+typical_grade: 4
+context: >
+  First Latin roots with meanings: struct (build), port (carry),
+  dict (say), form (shape). Words become equations: con (with) +
+  struct = build together; ex (out) + port = carry out; pre
+  (before) + dict = say before.

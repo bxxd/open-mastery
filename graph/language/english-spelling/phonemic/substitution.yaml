@@ -1,0 +1,11 @@
+id: sp.phon.substitution
+prereqs:
+  - sp.phon.elision
+bloom: apply
+assess:
+  - manipulate
+typical_grade: 2
+context: >
+  Swap one phoneme for another and say the result: change /k/ in
+  'cat' to /b/ -> 'bat'. Hardest pure-sound skill; fluency here
+  makes novel spellings feel computable.

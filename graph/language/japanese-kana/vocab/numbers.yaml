@@ -1,0 +1,13 @@
+id: jk.vocab.numbers
+prereqs:
+  - jk.kana.s_row
+bloom: apply
+assess:
+  - build
+  - translate
+  - recall
+typical_grade: 2
+context: >
+  Numbers one to ten in hiragana: いち, に, さん, し/よん, ご, ろく, しち/なな,
+  はち, きゅう, じゅう. A closed, chantable set — the first complete
+  system owned end to end.

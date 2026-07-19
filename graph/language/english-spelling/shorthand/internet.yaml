@@ -1,0 +1,16 @@
+id: sp.short.internet
+prereqs:
+  - sp.short.acronyms
+bloom: analyze
+assess:
+  - expand
+  - use
+  - classify
+typical_grade: 4
+context: >
+  The newest compression layer: lol, brb, fyi, asap, tbh, imo,
+  iykyk ('if you know you know'). Some predate the internet (FYI
+  and ASAP are office memo speak). The real skill is REGISTER:
+  lol belongs in a chat with friends and never in an essay —
+  knowing which language fits which room is a language skill,
+  not a rule of politeness.

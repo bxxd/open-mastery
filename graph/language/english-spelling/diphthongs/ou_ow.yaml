@@ -1,0 +1,12 @@
+id: sp.dipth.ou_ow
+prereqs:
+  - sp.vteam.oo
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  The /ow/ diphthong: ou mid-word (loud, count), ow at end or
+  before n/l (cow, town, howl). A gliding two-part vowel — the
+  mouth moves during it.

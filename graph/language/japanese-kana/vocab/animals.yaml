@@ -1,0 +1,12 @@
+id: jk.vocab.animals
+prereqs:
+  - jk.kana.n_row
+bloom: apply
+assess:
+  - build
+  - translate
+typical_grade: 2
+context: >
+  Animal words from owned kana: ねこ (cat), いぬ (dog), うし (cow), とり
+  (bird), さかな (fish), うま (horse). Concrete, picturable, high-
+  frequency — production from claimed territory.

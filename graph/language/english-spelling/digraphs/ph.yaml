@@ -1,0 +1,12 @@
+id: sp.digraph.ph
+prereqs:
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  ph spells /f/ (graph, phone, trophy). A Greek birthmark —
+  every ph word came from Greek, which is why it exists
+  alongside plain f. Links forward to the etymology region.

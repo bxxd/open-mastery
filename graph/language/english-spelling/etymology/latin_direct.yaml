@@ -1,0 +1,13 @@
+id: sp.etym.latin_direct
+prereqs:
+  - sp.etym.norman_french
+bloom: analyze
+assess:
+  - classify
+  - explain
+typical_grade: 5
+context: >
+  Renaissance scholars borrowed straight from Latin, giving
+  English TRIPLES — one idea, three registers by origin: kingly
+  (Old English) / royal (French) / regal (Latin); ask / question
+  / interrogate. Register is etymology you can feel.

@@ -1,0 +1,16 @@
+id: sp.short.latin_abbrev
+prereqs:
+  - sp.etym.latin_direct
+bloom: apply
+assess:
+  - expand
+  - use
+  - classify
+typical_grade: 5
+context: >
+  Latin fossils in everyday text: i.e. (id est, 'that is'), e.g.
+  (exempli gratia, 'for example'), etc. (et cetera, 'and the
+  rest'), ergo ('therefore'), vs (versus), AM/PM (ante/post
+  meridiem), AD, and even lb (libra). Knowing the expansion ends
+  the i.e./e.g. confusion forever — they are different Latin
+  sentences.

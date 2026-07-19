@@ -1,0 +1,13 @@
+id: sp.morph.suffix_simple
+prereqs:
+  - sp.syll.division
+bloom: apply
+assess:
+  - build
+  - dictation
+  - define
+typical_grade: 3
+context: >
+  No-change suffixes: -ly, -ful, -ness, -less, -er, -est attach
+  without altering the base (hope+ful, quick+ly). Meaning is
+  compositional: hopeful = full of hope.

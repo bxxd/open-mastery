@@ -1,0 +1,14 @@
+id: sp.etym.loanwords
+prereqs:
+  - sp.etym.layers
+bloom: understand
+assess:
+  - classify
+  - locate
+typical_grade: 4
+context: >
+  Loanwords keep their passports: checkmate (Persian shah mat,
+  'the king is dead'), shampoo (Hindi), ketchup (Hokkien), robot
+  (Czech), chocolate (Nahuatl), tsunami (Japanese), safari
+  (Swahili from Arabic). 'Irregular' usually means 'immigrant' —
+  the spelling follows the source language's rules.

@@ -1,0 +1,13 @@
+id: sp.etym.german_modern
+prereqs:
+  - sp.etym.germanic_core
+bloom: understand
+assess:
+  - classify
+typical_grade: 4
+context: >
+  Modern German loans — different from the ancient shared bones:
+  kindergarten ('children's garden'), rucksack, pretzel,
+  hamburger (from Hamburg — no ham involved), wanderlust.
+  Compare with germanic_core to feel the difference between
+  inheritance and borrowing.

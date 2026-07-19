@@ -1,0 +1,12 @@
+id: sp.rule.plural_s_es
+prereqs:
+  - sp.base.blends
+bloom: apply
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 2
+context: >
+  Plurals: add s, but es after s, x, z, ch, sh (boxes, wishes) —
+  you can hear the extra syllable. Sound tells you which.

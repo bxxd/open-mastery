@@ -1,0 +1,11 @@
+id: sp.rctrl.or
+prereqs:
+  - sp.rctrl.ar
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 2
+context: >
+  or spells /or/ (storm, fort); ore and oar variants (shore,
+  roar) join later reading.

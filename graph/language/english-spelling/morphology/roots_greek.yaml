@@ -1,0 +1,14 @@
+id: sp.morph.roots_greek
+prereqs:
+  - sp.etym.greek_ph
+bloom: analyze
+assess:
+  - build
+  - define
+  - derive
+typical_grade: 5
+context: >
+  Greek combining forms: tele (far), graph (write), meter
+  (measure), phon (sound), photo (light). They combine freely:
+  tele+phone = far sound; photo+graph = light writing. Science
+  vocabulary is Greek Lego.

@@ -1,0 +1,12 @@
+id: jk.vocab.katakana_words
+prereqs:
+  - jk.kata.dakuten
+bloom: apply
+assess:
+  - build
+  - translate
+typical_grade: 3
+context: >
+  Katakana loanwords hiding English inside: テレビ (TV), ゲーム
+  (game), パン (bread, from Portuguese), ロボット (robot). Decoding
+  these is a magic trick — the word was English all along.

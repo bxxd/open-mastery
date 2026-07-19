@@ -1,0 +1,12 @@
+id: sp.dipth.ew_ue
+prereqs:
+  - sp.vteam.oo
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  ew (chew, threw) and ue (blue, rescue) spell /ū/ or /yū/ at
+  word end. Completes the long-u spelling inventory with u_e and
+  oo.

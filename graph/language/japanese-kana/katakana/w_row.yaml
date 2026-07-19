@@ -1,0 +1,14 @@
+id: jk.kata.w_row
+prereqs:
+  - jk.kata.r_row
+  - jk.kana.w_row
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 3
+context: >
+  Katakana ワヲン: the angular twin of the mastered hiragana row —
+  same sounds, second script. Used for foreign loanwords,
+  emphasis, and sound effects. Recall without furigana support.

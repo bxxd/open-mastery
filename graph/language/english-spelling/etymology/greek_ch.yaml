@@ -1,0 +1,12 @@
+id: sp.etym.greek_ch
+prereqs:
+  - sp.etym.layers
+bloom: analyze
+assess:
+  - classify
+  - predict
+typical_grade: 4
+context: >
+  ch = /k/ marks Greek (chorus, echo, chemistry, stomach). The
+  ch trio: /ch/ native, /k/ Greek, /sh/ French — one digraph,
+  three passports.

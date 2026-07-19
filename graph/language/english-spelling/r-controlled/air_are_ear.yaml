@@ -1,0 +1,12 @@
+id: sp.rctrl.air_are_ear
+prereqs:
+  - sp.rctrl.er_ir_ur
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  The /air/ family: air (chair), are (share), ear (bear) — and
+  ear's second life as /ear/ (hear). Ambiguity managed by word
+  sets and frequency.

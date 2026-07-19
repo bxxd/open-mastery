@@ -1,0 +1,12 @@
+id: sp.rule.plural_y
+prereqs:
+  - sp.rule.y_to_i
+  - sp.rule.plural_s_es
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  y plurals: vowel+y just adds s (boys); consonant+y changes y
+  to i and adds es (parties). Same y->i machinery as suffixes.

@@ -1,0 +1,12 @@
+id: jk.kana.chouon
+prereqs:
+  - jk.kana.vowels
+bloom: apply
+assess:
+  - identify
+  - produce
+typical_grade: 2
+context: >
+  Long vowels: in hiragana, doubled vowels (おかあさん) with the ou
+  pattern for long o (がっこう); in katakana, the bar ー (ケーキ). A
+  held beat — hear the length, write the length.

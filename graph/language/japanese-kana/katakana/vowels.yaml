@@ -1,0 +1,13 @@
+id: jk.kata.vowels
+prereqs:
+  - jk.kana.vowels
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 2
+context: >
+  Katakana アイウエオ: the angular twin of the mastered hiragana row
+  — same sounds, second script. Used for foreign loanwords,
+  emphasis, and sound effects. Recall without furigana support.

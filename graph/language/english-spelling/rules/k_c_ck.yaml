@@ -1,0 +1,15 @@
+id: sp.rule.k_c_ck
+prereqs:
+  - sp.digraph.ck
+  - sp.rule.soft_c
+bloom: analyze
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 3
+context: >
+  Choosing the /k/ spelling: c before a/o/u or consonants (cab,
+  clip), k before e/i/y (kite, keep), ck only right after a
+  short vowel (duck). Integrates ck + soft c into one decision
+  tree.

@@ -1,0 +1,14 @@
+id: sp.etym.norman_french
+prereqs:
+  - sp.etym.layers
+bloom: analyze
+assess:
+  - classify
+  - explain
+typical_grade: 4
+context: >
+  1066: Norman French becomes the language of power. The class
+  split survives in food — the animal in the field is Anglo-
+  Saxon (cow, pig, sheep — the farmer's words) but the meat on
+  the table is French (beef, pork, mutton — the lord's words).
+  Court, judge, army, royal: the vocabulary of rule is French.

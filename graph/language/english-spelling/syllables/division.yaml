@@ -2,11 +2,15 @@ id: sp.syll.division
 prereqs:
   - sp.syll.closed
   - sp.syll.open
+  - sp.phon.syll_count
 bloom: apply
 assess:
   - segment
   - build
 typical_grade: 3
+encompasses:
+  sp.syll.closed: 0.5
+  sp.syll.open: 0.5
 context: >
   Split multisyllable words at the seam (VC/CV: nap-kin; V/CV:
   ro-bot) and spell each chunk with its own rules. Segmenting at

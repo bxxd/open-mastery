@@ -1,0 +1,11 @@
+id: sp.phon.syll_count
+prereqs: []
+bloom: apply
+assess:
+  - count
+  - clap
+typical_grade: 1
+context: >
+  Count syllables in spoken words by clapping or chin-drops.
+  Aural only. Every syllable has exactly one vowel sound — the
+  bridge from sound to written syllable division.

@@ -1,0 +1,12 @@
+id: sp.rule.plural_f
+prereqs:
+  - sp.rule.plural_s_es
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  f plurals: many f/fe words voice to ves (leaf->leaves,
+  knife->knives); some don't (roofs, chiefs). A learned set with
+  a strong tendency.

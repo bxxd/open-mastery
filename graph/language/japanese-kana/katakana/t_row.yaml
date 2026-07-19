@@ -1,0 +1,14 @@
+id: jk.kata.t_row
+prereqs:
+  - jk.kata.s_row
+  - jk.kana.t_row
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 2
+context: >
+  Katakana タチツテト: the angular twin of the mastered hiragana row
+  — same sounds, second script. Used for foreign loanwords,
+  emphasis, and sound effects. Recall without furigana support.

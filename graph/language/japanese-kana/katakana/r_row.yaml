@@ -1,0 +1,14 @@
+id: jk.kata.r_row
+prereqs:
+  - jk.kata.y_row
+  - jk.kana.r_row
+bloom: apply
+assess:
+  - identify
+  - recall
+  - produce
+typical_grade: 3
+context: >
+  Katakana ラリルレロ: the angular twin of the mastered hiragana row
+  — same sounds, second script. Used for foreign loanwords,
+  emphasis, and sound effects. Recall without furigana support.

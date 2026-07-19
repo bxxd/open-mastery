@@ -1,0 +1,13 @@
+id: sp.dipth.oi_oy
+prereqs:
+  - sp.vteam.ee
+  - sp.vteam.oa
+bloom: apply
+assess:
+  - build
+  - dictation
+typical_grade: 3
+context: >
+  The /oy/ diphthong: oi mid-word (coin, moist), oy at word end
+  (boy, enjoy). Position pair, fully regular — a rule that never
+  betrays you.

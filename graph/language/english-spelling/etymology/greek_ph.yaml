@@ -1,0 +1,14 @@
+id: sp.etym.greek_ph
+prereqs:
+  - sp.digraph.ph
+  - sp.etym.layers
+bloom: analyze
+assess:
+  - classify
+  - predict
+  - build
+typical_grade: 4
+context: >
+  ph = /f/ marks a Greek word (phone, graph, physics). Given a
+  word is Greek, PREDICT the f-sound spelling; given ph, know
+  its passport.

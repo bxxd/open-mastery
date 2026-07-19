@@ -1,0 +1,13 @@
+id: sp.syll.cle
+prereqs:
+  - sp.syll.division
+bloom: apply
+assess:
+  - identify
+  - segment
+  - build
+typical_grade: 3
+context: >
+  Consonant-le: final syllable like -ble, -dle, -tle (ta-ble,
+  pud-dle, lit-tle). Count back three and divide; a preceding
+  short vowel needs a doubled consonant.

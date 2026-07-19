@@ -1,0 +1,19 @@
+id: sp.short.compression
+prereqs:
+  - sp.short.latin_abbrev
+  - sp.short.internet
+bloom: analyze
+assess:
+  - explain
+  - sequence
+typical_grade: 5
+encompasses:
+  sp.short.latin_abbrev: 0.5
+  sp.short.internet: 0.5
+context: >
+  The unifying idea: every medium invents its own shorthand
+  because writing costs something — chisel strokes (SPQR carved
+  in Rome), telegram fees (STOP), thumb-typing (lol).
+  Compression is a constant of language; only the medium
+  changes. Given a shorthand, infer its medium and era. iykyk
+  and i.e. are the same invention, twenty centuries apart.

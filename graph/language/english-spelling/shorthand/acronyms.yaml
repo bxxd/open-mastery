@@ -1,0 +1,14 @@
+id: sp.short.acronyms
+prereqs:
+  - sp.morph.compounds
+bloom: analyze
+assess:
+  - expand
+  - classify
+typical_grade: 4
+context: >
+  Words with birth certificates: laser (Light Amplification by
+  Stimulated Emission of Radiation), scuba, radar, NASA —
+  acronyms said as words — versus initialisms spelled out (FBI,
+  USA, DVD). Some acronyms became so wordlike we forgot (laser
+  takes -s and lowercase). A word can be BORN as a sentence.
