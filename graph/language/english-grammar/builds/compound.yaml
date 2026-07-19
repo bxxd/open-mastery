@@ -1,0 +1,13 @@
+id: gr.build.compound
+prereqs:
+  - gr.clause.independent
+  - gr.pos.conjunction
+bloom: apply
+assess:
+  - combine
+  - build
+typical_grade: 3
+context: >
+  Compound sentence: two independent clauses hinged with a
+  conjunction (and, but, so) or a semicolon. Two complete
+  thoughts, one sentence, equal partners.

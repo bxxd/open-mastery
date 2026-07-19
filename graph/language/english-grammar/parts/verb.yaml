@@ -1,0 +1,12 @@
+id: gr.pos.verb
+prereqs: []
+bloom: apply
+assess:
+  - identify
+  - sort
+  - generate
+typical_grade: 1
+context: >
+  Verbs are the engine: actions (run, build) and states (is,
+  seems). No verb, no sentence — the one part of speech a
+  sentence cannot live without.

@@ -1,0 +1,12 @@
+id: gr.pos.noun
+prereqs: []
+bloom: apply
+assess:
+  - identify
+  - sort
+  - generate
+typical_grade: 1
+context: >
+  Nouns name things: people, places, objects, ideas. The first
+  sorting job — everything a sentence talks ABOUT is a noun or
+  acts like one.

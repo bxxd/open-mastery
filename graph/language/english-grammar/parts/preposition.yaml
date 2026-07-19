@@ -1,0 +1,12 @@
+id: gr.pos.preposition
+prereqs:
+  - gr.pos.noun
+bloom: apply
+assess:
+  - identify
+  - generate
+typical_grade: 2
+context: >
+  Prepositions place things in space and time: under the board,
+  before the storm, across town. They start little location-
+  phrases that glue onto sentences.

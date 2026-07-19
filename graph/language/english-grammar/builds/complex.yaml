@@ -1,0 +1,12 @@
+id: gr.build.complex
+prereqs:
+  - gr.clause.dependent
+bloom: apply
+assess:
+  - combine
+  - build
+typical_grade: 4
+context: >
+  Complex sentence: an independent clause plus one or more
+  dependent ones. Where writing stops sounding like a list and
+  starts sounding like thinking.

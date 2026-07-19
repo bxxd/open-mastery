@@ -1,0 +1,13 @@
+id: gr.sent.subject
+prereqs:
+  - gr.pos.noun
+  - gr.pos.verb
+bloom: apply
+assess:
+  - identify
+  - generate
+typical_grade: 2
+context: >
+  The subject is WHO or WHAT the sentence is about — find the
+  verb, ask who is doing it. In 'the knight took the rook', the
+  subject is the knight.

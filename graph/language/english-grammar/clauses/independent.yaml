@@ -1,0 +1,10 @@
+id: gr.clause.independent
+prereqs:
+  - gr.sent.complete
+bloom: apply
+assess:
+  - identify
+typical_grade: 3
+context: >
+  An independent clause is a complete sentence living inside a
+  bigger one — it could stand alone if you cut it free.

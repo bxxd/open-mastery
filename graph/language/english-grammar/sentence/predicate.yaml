@@ -1,0 +1,15 @@
+id: gr.sent.predicate
+prereqs:
+  - gr.sent.subject
+bloom: apply
+assess:
+  - identify
+  - split
+  - generate
+typical_grade: 2
+context: >
+  The predicate is everything the sentence SAYS about the
+  subject — the verb plus its cargo. From Latin prae + dicare,
+  'to proclaim': what is proclaimed about the subject. 'The
+  knight | took the rook': subject, then predicate. Every
+  complete sentence splits into these two pieces.

@@ -1,0 +1,12 @@
+id: gr.sent.object
+prereqs:
+  - gr.sent.predicate
+bloom: apply
+assess:
+  - identify
+typical_grade: 3
+context: >
+  The object receives the action: the knight took THE ROOK. Ask
+  the verb 'what?' — the answer is the object. Subject-verb-
+  object is English's default word order; scrambling it is what
+  other languages (and bad sentences) do.

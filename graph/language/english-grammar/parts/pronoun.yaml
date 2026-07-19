@@ -1,0 +1,12 @@
+id: gr.pos.pronoun
+prereqs:
+  - gr.pos.noun
+bloom: apply
+assess:
+  - identify
+  - substitute
+typical_grade: 2
+context: >
+  Pronouns stand in for nouns: he, she, it, they. Each points
+  back at something — a broken pointer (unclear antecedent) is
+  the classic bug.

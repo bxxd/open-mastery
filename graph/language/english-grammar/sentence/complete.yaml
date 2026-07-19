@@ -1,0 +1,13 @@
+id: gr.sent.complete
+prereqs:
+  - gr.sent.predicate
+bloom: analyze
+assess:
+  - classify
+  - repair
+typical_grade: 3
+context: >
+  Complete sentence = subject + predicate that can stand alone.
+  Fragments are missing a piece ('because the storm came'); run-
+  ons are two sentences taped together without a hinge.
+  Diagnosis and repair — the editor's first skill.

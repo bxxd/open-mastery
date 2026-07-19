@@ -1,0 +1,138 @@
+{
+ "nodes": [
+  {
+   "id": "gr.pos.adjective",
+   "name": "adjective",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.noun"
+   ],
+   "context": "Adjectives tune nouns: the swift knight, a circumspect player. Precision instruments, not decoration."
+  },
+  {
+   "id": "gr.pos.adverb",
+   "name": "adverb",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.verb"
+   ],
+   "context": "Adverbs tune verbs (and adjectives): moved carefully, extremely sharp. Many wear the -ly badge; the sneaky ones (very, quite, never) do not."
+  },
+  {
+   "id": "gr.pos.conjunction",
+   "name": "conjunction",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.verb"
+   ],
+   "context": "Conjunctions join: and, but, or, because, although. The hinges every compound and complex sentence swings on."
+  },
+  {
+   "id": "gr.pos.noun",
+   "name": "noun",
+   "region": "parts",
+   "prereqs": [],
+   "context": "Nouns name things: people, places, objects, ideas. The first sorting job — everything a sentence talks ABOUT is a noun or acts like one."
+  },
+  {
+   "id": "gr.pos.preposition",
+   "name": "preposition",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.noun"
+   ],
+   "context": "Prepositions place things in space and time: under the board, before the storm, across town. They start little location- phrases that glue onto sentences."
+  },
+  {
+   "id": "gr.pos.pronoun",
+   "name": "pronoun",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.noun"
+   ],
+   "context": "Pronouns stand in for nouns: he, she, it, they. Each points back at something — a broken pointer (unclear antecedent) is the classic bug."
+  },
+  {
+   "id": "gr.pos.verb",
+   "name": "verb",
+   "region": "parts",
+   "prereqs": [],
+   "context": "Verbs are the engine: actions (run, build) and states (is, seems). No verb, no sentence — the one part of speech a sentence cannot live without."
+  },
+  {
+   "id": "gr.sent.complete",
+   "name": "complete",
+   "region": "sentence",
+   "prereqs": [
+    "gr.sent.predicate"
+   ],
+   "context": "Complete sentence = subject + predicate that can stand alone. Fragments are missing a piece ('because the storm came'); run- ons are two sentences taped together without a hinge. Diagnosis and repair — the editor's first skill."
+  },
+  {
+   "id": "gr.sent.object",
+   "name": "object",
+   "region": "sentence",
+   "prereqs": [
+    "gr.sent.predicate"
+   ],
+   "context": "The object receives the action: the knight took THE ROOK. Ask the verb 'what?' — the answer is the object. Subject-verb- object is English's default word order; scrambling it is what other languages (and bad sentences) do."
+  },
+  {
+   "id": "gr.sent.predicate",
+   "name": "predicate",
+   "region": "sentence",
+   "prereqs": [
+    "gr.sent.subject"
+   ],
+   "context": "The predicate is everything the sentence SAYS about the subject — the verb plus its cargo. From Latin prae + dicare, 'to proclaim': what is proclaimed about the subject. 'The knight | took the rook': subject, then predicate. Every complete sentence splits into these two pieces."
+  },
+  {
+   "id": "gr.sent.subject",
+   "name": "subject",
+   "region": "sentence",
+   "prereqs": [
+    "gr.pos.noun",
+    "gr.pos.verb"
+   ],
+   "context": "The subject is WHO or WHAT the sentence is about — find the verb, ask who is doing it. In 'the knight took the rook', the subject is the knight."
+  },
+  {
+   "id": "gr.build.complex",
+   "name": "complex",
+   "region": "builds",
+   "prereqs": [
+    "gr.clause.dependent"
+   ],
+   "context": "Complex sentence: an independent clause plus one or more dependent ones. Where writing stops sounding like a list and starts sounding like thinking."
+  },
+  {
+   "id": "gr.build.compound",
+   "name": "compound",
+   "region": "builds",
+   "prereqs": [
+    "gr.clause.independent",
+    "gr.pos.conjunction"
+   ],
+   "context": "Compound sentence: two independent clauses hinged with a conjunction (and, but, so) or a semicolon. Two complete thoughts, one sentence, equal partners."
+  },
+  {
+   "id": "gr.clause.dependent",
+   "name": "dependent",
+   "region": "clauses",
+   "prereqs": [
+    "gr.clause.independent",
+    "gr.pos.conjunction"
+   ],
+   "context": "A dependent clause has a subject and verb but leans on the main sentence ('although he was winning, ...'). The leaning word (although, because, when) is what makes it lean."
+  },
+  {
+   "id": "gr.clause.independent",
+   "name": "independent",
+   "region": "clauses",
+   "prereqs": [
+    "gr.sent.complete"
+   ],
+   "context": "An independent clause is a complete sentence living inside a bigger one — it could stand alone if you cut it free."
+  }
+ ]
+}

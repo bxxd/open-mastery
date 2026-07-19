@@ -1,0 +1,12 @@
+id: gr.pos.adverb
+prereqs:
+  - gr.pos.verb
+bloom: apply
+assess:
+  - identify
+  - generate
+typical_grade: 2
+context: >
+  Adverbs tune verbs (and adjectives): moved carefully,
+  extremely sharp. Many wear the -ly badge; the sneaky ones
+  (very, quite, never) do not.

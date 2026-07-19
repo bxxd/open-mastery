@@ -1,0 +1,13 @@
+id: gr.clause.dependent
+prereqs:
+  - gr.clause.independent
+  - gr.pos.conjunction
+bloom: apply
+assess:
+  - identify
+  - attach
+typical_grade: 4
+context: >
+  A dependent clause has a subject and verb but leans on the
+  main sentence ('although he was winning, ...'). The leaning
+  word (although, because, when) is what makes it lean.

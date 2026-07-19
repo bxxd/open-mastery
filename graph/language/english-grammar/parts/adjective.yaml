@@ -1,0 +1,11 @@
+id: gr.pos.adjective
+prereqs:
+  - gr.pos.noun
+bloom: apply
+assess:
+  - identify
+  - generate
+typical_grade: 2
+context: >
+  Adjectives tune nouns: the swift knight, a circumspect player.
+  Precision instruments, not decoration.

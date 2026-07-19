@@ -1,0 +1,11 @@
+id: gr.pos.conjunction
+prereqs:
+  - gr.pos.verb
+bloom: apply
+assess:
+  - identify
+  - combine
+typical_grade: 2
+context: >
+  Conjunctions join: and, but, or, because, although. The hinges
+  every compound and complex sentence swings on.
