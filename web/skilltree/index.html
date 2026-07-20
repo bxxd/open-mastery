@@ -4,44 +4,94 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>skill tree</title>
+<title>levels</title>
 <style>
   * { margin: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { background: #0b1120; color: #e2e8f0; font-family: system-ui, sans-serif; user-select: none; }
-  /* host bar (when ?home= present) — matches the learn shell chrome */
-  #bar {
-    position: sticky; top: 0; z-index: 5; height: 44px; display: none; align-items: center;
-    gap: 0.5rem; padding: 0 0.75rem; background: #0f172a; color: #94a3b8;
-    border-bottom: 1px solid #1e293b;
-  }
-  #bar a { color: #e2e8f0; text-decoration: none; font-weight: 800; font-size: 0.95rem;
-    padding: 0.3rem 0.6rem; border-radius: 0.5rem; }
-  #bar a:active { background: #1e293b; }
-  #bar .crumbs { flex: 1; font-size: 0.9rem; font-weight: 600; white-space: nowrap;
-    overflow: hidden; text-overflow: ellipsis; }
-  #bar .stats { color: #64748b; font-size: 0.85rem; font-weight: 700; }
-  /* standalone fallback header */
+  /* the bar itself comes from ../bar.js (the one renderer for every page);
+     this page only keeps what is page-layout: sticky under scroll, hidden
+     until the module mounts it */
+  #bar { position: sticky; top: 0; z-index: 6; display: none; }
   #fallback { padding: 1rem 1.2rem 0.4rem; display: none; align-items: baseline; gap: 0.8rem; }
   #fallback h1 { font-size: 1.4rem; letter-spacing: -0.01em; }
   #fallback .stats { color: #64748b; font-size: 0.9rem; font-weight: 600; }
   #fallback button { border: 0; background: #172033; color: #94a3b8; border-radius: 0.6rem;
     padding: 0.3rem 0.7rem; font-weight: 800; font-size: 0.9rem; font-family: inherit; }
-  /* one section per region — read top to bottom; no edge spaghetti */
-  #secs { padding: 0.6rem 1rem 6rem; max-width: 40rem; margin: 0 auto; }
-  .sec { margin-top: 1.1rem; }
-  .sec h2 { display: flex; align-items: baseline; gap: 0.6rem; color: #64748b;
-    font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
-  .sec h2 .ct { color: #475569; font-size: 0.75rem; font-weight: 700; }
-  .sec h2 .ct.done { color: #10b981; }
-  .row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.55rem; }
+
+  /* the legend — four honest states, said out loud once */
+  /* LEVEL LANDING (?level=N) — a level is a real place in the hierarchy, not
+     a caption: ⌂ › spelling › level 1 › phonemes. It gets a name, a reason,
+     and its lessons as cards you tap straight into ("each level can have it's
+     own landing page, onboarding, whatever" — owner 2026-07-20). */
+  #land { max-width: 34rem; margin: 0 auto; padding: 1.2rem 1rem 3rem; display: none; }
+  #land.on { display: block; }
+  #land .lv { color: #10b981; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.12em;
+    text-transform: uppercase; }
+  #land h1 { font-size: 1.9rem; letter-spacing: -0.01em; margin-top: 0.15rem; }
+  #land .why { color: #94a3b8; font-size: 1rem; line-height: 1.45; margin-top: 0.5rem; }
+  #land .count { color: #64748b; font-size: 0.8rem; font-weight: 800; margin-top: 0.9rem; }
+  #land .card { display: flex; align-items: center; gap: 0.75rem; width: 100%; text-align: left;
+    border: 0; background: #172033; color: #e2e8f0; font: inherit; border-radius: 0.9rem;
+    padding: 0.9rem 1rem; margin-top: 0.55rem; text-decoration: none; }
+  #land .card:active { background: #1e293b; }
+  #land .card.owned { background: #064e3b; }
+  #land .card.open { box-shadow: inset 0 0 0 1.5px #10b981; }
+  #land .card.locked { background: #101828; color: #475569; }
+  #land .card .b { flex: none; font-size: 1.2rem; width: 1.7rem; text-align: center; }
+  #land .card .n { font-weight: 900; font-size: 1.05rem; }
+  #land .card .s { display: block; color: #64748b; font-size: 0.75rem; font-weight: 700; }
+  #land .card .go { margin-left: auto; color: #10b981; font-weight: 900; }
+  #land .steps { display: flex; gap: 0.4rem; margin-top: 1.4rem; flex-wrap: wrap; }
+  #land .steps a { color: #94a3b8; background: #172033; border-radius: 0.5rem;
+    padding: 0.4rem 0.7rem; text-decoration: none; font-size: 0.8rem; font-weight: 800; }
+  #land .steps a.here { background: #10b981; color: #052e16; }
+  #legend { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; justify-content: center;
+    padding: 0.7rem 1rem 0.2rem; color: #64748b; font-size: 0.72rem; font-weight: 700; }
+  #legend span { display: flex; align-items: center; gap: 0.3rem; }
+  #legend i { width: 0.7rem; height: 0.7rem; border-radius: 0.25rem; display: inline-block; }
+
+  /* The two top-level sections as TABS. The graph has no edge between spelling
+     and grammar, so showing one at a time hides no structure — it just gives
+     the whole width to the section you are in, instead of two narrow columns.
+     Within a strand nothing is hidden: every node, every level, always. */
+  #tabs { display: flex; gap: 0.3rem; padding: 0.5rem 0.75rem 0; max-width: 62rem; margin: 0 auto; }
+  #tabs button { flex: 1; border: 0; font-family: inherit; font-weight: 800; font-size: 0.95rem;
+    padding: 0.5rem 0.4rem; border-radius: 0.6rem; background: #111a2e; color: #64748b; }
+  #tabs button .sub { display: block; font-size: 0.62rem; font-weight: 700; opacity: 0.75;
+    letter-spacing: 0.04em; text-transform: uppercase; margin-top: 0.1rem; }
+  #tabs button.on { background: #1e293b; color: #e2e8f0; }
+  .strand.off { display: none; }
+
+  /* strands: the graph has no edge between them, so the view must not imply
+     one — a tab switches sections, it never stacks one after the other. */
+  #tree { position: relative; display: flex; flex-wrap: wrap; gap: 1.6rem;
+    align-items: flex-start; justify-content: center; padding: 0.6rem 1rem 7rem;
+    max-width: 62rem; margin: 0 auto; }
+  #edges { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .strand { flex: 1 1 20rem; min-width: 17rem; position: relative; z-index: 1; }
+  .strand > h2 { color: #cbd5e1; font-size: 0.95rem; font-weight: 900; letter-spacing: 0.02em;
+    padding-bottom: 0.15rem; }
+  .strand > h2 .sub { display: block; color: #475569; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase; margin-top: 0.15rem; }
+  .lvl { margin-top: 0.75rem; }
+  .lvl > .cap { color: #334155; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; }
+  .row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
   .node {
-    border: 0; border-radius: 0.7rem; padding: 0.45rem 0.7rem; font-weight: 700;
-    font-size: 0.85rem; font-family: inherit;
+    border: 0; border-radius: 0.7rem; padding: 0.4rem 0.65rem; font-weight: 700;
+    font-size: 0.82rem; font-family: inherit; text-align: left; line-height: 1.15;
   }
-  .owned { background: #10b981; color: #052e16; }
-  .frontier { background: #f1f5f9; color: #0f172a; box-shadow: 0 0 12px 2px rgba(241,245,249,0.25); }
-  .locked { background: #172033; color: #475569; }
+  .node .rg { display: block; font-size: 0.6rem; font-weight: 700; opacity: 0.6; margin-top: 0.1rem; }
   .node:active { transform: scale(0.95); }
+  /* claimed */
+  .owned { background: #10b981; color: #052e16; }
+  /* open: built, prereqs met — the invitation */
+  .open { background: #f1f5f9; color: #0f172a; box-shadow: 0 0 12px 2px rgba(241,245,249,0.25); }
+  /* locked: built, but not unlocked yet — dim, and it names what gates it */
+  .locked { background: #172033; color: #64748b; }
+  /* unbuilt: WE haven't made it yet — grey and dashed, never a play link */
+  .unbuilt { background: transparent; color: #3f4a5f; border: 1.5px dashed #263149; }
+
   #sheet {
     position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
     width: min(92vw, 26rem); background: #111a2e; z-index: 10; border-radius: 1.2rem;
@@ -56,7 +106,8 @@
   #sheet p { color: #94a3b8; line-height: 1.45; margin-top: 0.5rem; font-size: 0.92rem; }
   #sheet .pre { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
   #sheet .pre span { font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; }
-  /* back into the game — names the destination, always visible */
+  #sheet a.play { display: inline-block; margin-top: 0.5rem; background: #10b981; color: #052e16;
+    font-weight: 800; padding: 0.55rem 1.2rem; border-radius: 0.8rem; text-decoration: none; }
   #go {
     position: fixed; right: 0.9rem; bottom: calc(0.9rem + env(safe-area-inset-bottom));
     z-index: 5; background: #10b981; color: #052e16; text-decoration: none;
@@ -68,49 +119,95 @@
 <body>
 <div id="bar"></div>
 <header id="fallback"><button onclick="history.back()">‹</button><h1></h1><span class="stats"></span></header>
-<div id="secs"></div>
+<div id="tabs"></div>
+<div id="legend"></div>
+<div id="land"></div>
+<div id="tree"><svg id="edges"></svg></div>
 <div id="sheet"></div>
+<script src="../bar.js"></script>
 <script>
-// Generic skill-tree viewer for an open-mastery graph export.
+// The ONE view of a skill graph (task 011). The map and this page used to be
+// two projections of the same DAG; this is the survivor.
 //   ?graph=<url of export json>   required
 //   ?progress=<localStorage key>  optional — MasteryState {stats:{id:{streak}}}
-//   ?title=<name>
-//   ?play=<url template with {id}>  optional — owned/frontier nodes get a
-//         "practice" link (the learner picks from the frontier; locked stays locked)
-//   ?home=<url>  optional — render the host shell bar (⌂ + crumbs + stats)
-//         instead of the standalone header
-//   ?map=<url>   optional — bar link back to the host's world map
-// Layout: one section per region, regions ordered by their shallowest node,
-// nodes within a region in depth order. Dependencies live in the tap-sheet
-// (prereq chips), not as drawn edges — flat sections are the point: readable,
-// scannable, navigable. Owned: streak >= 3 on the node id, or on every
-// `members` entry. Frontier: all prereqs owned. Tap a node for its story.
+//   ?title=<game slug> ?home=<url>   (where a node PLAYS comes from packs.json)
+//
+// Layout is DERIVED, never drawn: the vertical axis is depth (longest prereq
+// chain), and independent strands render SIDE BY SIDE because the graph has no
+// edge between them. Collapsing both onto one axis is what used to print
+// "sentence" above "digraphs" when nothing in the data said so.
+//
+// Four honest states. Grey/dashed means WE haven't built it; dim means the
+// player hasn't unlocked it. Nothing unbuilt ever offers a play link — a
+// focus= id the game doesn't know silently plays something else instead.
 const q = new URLSearchParams(location.search)
 const STREAK = 3
+// debug mode (ported from the retired map): ?debug=1 on, sticky; ?debug=0 off.
+// Claim or reset any node and reset the world — how you set up a state to test
+// the progression without grinding to it.
+if (q.get('debug') === '1') localStorage.setItem('learn.debug', '1')
+if (q.get('debug') === '0') localStorage.removeItem('learn.debug')
+const DEBUG = localStorage.getItem('learn.debug') === '1'
+const STRANDS = {
+  sp: { name: 'spelling', sub: 'sound → letter' },
+  gr: { name: 'grammar', sub: 'word → sentence' },
+  jk: { name: 'kana', sub: 'sound → character' },
+}
+
 async function main() {
-  const graph = await (await fetch(q.get('graph'))).json()
-  const title = q.get('title') || 'skill tree'
+  const graphUrl = q.get('graph')
+  const [graph, packsAll] = await Promise.all([
+    fetch(graphUrl).then((r) => r.json()),
+    fetch('../packs.json').then((r) => r.json()),
+  ])
+  const packs = packsAll[graphUrl.split('/').pop()] ?? {}
+  const title = q.get('title') || 'levels'
   let stats = {}
   try { stats = JSON.parse(localStorage.getItem(q.get('progress')))?.stats ?? {} } catch {}
-  const ownedId = (id) => (stats[id]?.streak ?? 0) >= STREAK
+
   const nodes = graph.nodes
   const byId = Object.fromEntries(nodes.map((n) => [n.id, n]))
+  const ownedId = (id) => (stats[id]?.streak ?? 0) >= STREAK
+  // kana rows are credited per-character, so `members` satisfies a row node
   const owned = new Set(nodes.filter((n) =>
     ownedId(n.id) || (n.members && n.members.every(ownedId))).map((n) => n.id))
-  const frontier = new Set(nodes.filter((n) =>
-    !owned.has(n.id) && n.prereqs.every((p) => owned.has(p))).map((n) => n.id))
-  const statsText = `${owned.size} owned · ${frontier.size} open · ${nodes.length} total`
+  const built = (id) => id in packs
+  // playable projection (009): a prereq nobody can play yet cannot gate anything —
+  // this is exactly the rule the games play by, and keeping it here is what makes
+  // view-truth equal game-truth. `sound it out` sits behind an unbuilt `cvc` in the
+  // graph; without this projection a fresh player would open the levels view and
+  // find nothing open at all.
+  const gates = (n) => n.prereqs.filter(built)
+  const unlocked = (n) => gates(n).every((p) => owned.has(p))
+  const state = (n) => owned.has(n.id) ? 'owned'
+    : !built(n.id) ? 'unbuilt'
+    : unlocked(n) ? 'open' : 'locked'
+
+  const nBuilt = nodes.filter((n) => built(n.id)).length
+  const nOpen = nodes.filter((n) => state(n) === 'open').length
+  const statsText = `${owned.size} claimed · ${nOpen} open · ${nBuilt} of ${nodes.length} built`
 
   const home = q.get('home')
-  const play = q.get('play')
-  const gameBase = play ? play.split('?')[0] : null
-  if (home) {
-    const bar = document.getElementById('bar')
-    bar.style.display = 'flex'
-    bar.innerHTML = `<a href="${home}">⌂ learn</a>
-      <span class="crumbs">${gameBase ? `<a href="${gameBase}">${title}</a>` : title} › levels</span>
-      <span class="stats">${statsText}</span>
-      ${q.get('map') ? `<a href="${q.get('map')}">map</a>` : ''}`
+  // Where a node is played is the PACK's business, not the caller's: packs.json
+  // says which game owns each node, so a grammar node always opens the grammar
+  // game even when you arrived from babel. A single `play=` template baked one
+  // game into every link and silently handed babel ids it doesn't have.
+  // a pack entry is "game" or {game, name} — the optional name is the
+  // lesson's own, so a card and its lesson never show two different names
+  const gameOf = (id) => (typeof packs[id] === 'string' ? packs[id] : packs[id]?.game)
+  const nameOf = (n) => (typeof packs[n.id] === 'object' && packs[n.id].name) || n.name
+  const playUrl = (id) => `../${gameOf(id)}/?focus=${encodeURIComponent(id)}`
+  // The crumb bar is the HOST's furniture, not this view's: a deployment that
+  // mounts the skilltree under its own shell ships ../bar.js defining
+  // learnBar()/learnStrandName(), and the trail is set further down once we
+  // know whether this is the whole map or a level page. Standalone (no host
+  // bar, or no ?home=), the plain header below serves. This view keeps NO
+  // bar rendering of its own — the inline copy it used to carry drifted from
+  // the host's within a day.
+  const hostBar = typeof learnBar === 'function' ? learnBar : null
+  let bar = null
+  if (home && hostBar) {
+    bar = hostBar(document.getElementById('bar'), { home })
   } else {
     const f = document.getElementById('fallback')
     f.style.display = 'flex'
@@ -118,69 +215,304 @@ async function main() {
     f.querySelector('.stats').textContent = statsText
   }
 
-  // depth = longest prereq chain; regions ordered by their shallowest node
+  document.getElementById('legend').innerHTML = [
+    ['#10b981', 'claimed'], ['#f1f5f9', 'open now'],
+    ['#172033', 'locked — earn it'], ['transparent', 'not built yet'],
+  ].map(([c, t]) => `<span><i style="background:${c};${c === 'transparent'
+    ? 'border:1.5px dashed #263149' : ''}"></i>${t}</span>`).join('')
+    + (DEBUG ? `<span id="dbg">debug · <button data-t="reset-all" onclick="window.__resetAll()"
+        style="border:0;background:#3b1d1d;color:#fca5a5;font-weight:800;font-family:inherit;
+        border-radius:0.5rem;padding:0.15rem 0.5rem">reset the world</button></span>` : '')
+
+  // depth = longest prereq chain (edges inside this graph only)
   const memo = {}
   const depth = (id) => memo[id] ??
     (memo[id] = 1 + Math.max(0, ...(byId[id]?.prereqs ?? []).map(depth)))
   for (const n of nodes) depth(n.id)
-  const minDepth = {}
-  for (const n of nodes) {
-    const r = n.region
-    minDepth[r] = Math.min(minDepth[r] ?? Infinity, memo[n.id])
-  }
-  const regions = [...new Set(nodes.map((n) => n.region))]
-    .sort((a, b) => minDepth[a] - minDepth[b] || a.localeCompare(b))
 
-  const secs = document.getElementById('secs')
-  for (const r of regions) {
-    const ns = nodes.filter((n) => n.region === r)
-      .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))
-    const own = ns.filter((n) => owned.has(n.id)).length
-    const sec = document.createElement('section')
-    sec.className = 'sec'
-    sec.innerHTML = `<h2>${r || 'core'} <span class="ct ${own === ns.length ? 'done' : ''}">${own} / ${ns.length}</span></h2>`
-    const row = document.createElement('div')
-    row.className = 'row'
-    for (const n of ns) {
-      const b = document.createElement('button')
-      const st = owned.has(n.id) ? 'owned' : frontier.has(n.id) ? 'frontier' : 'locked'
-      b.className = `node ${st}`
-      b.textContent = n.name
-      b.onclick = () => sheet(n, st)
-      row.appendChild(b)
+  // ------------------------------------------------------------------ LEVEL
+  // ?level=N renders ONE level as a landing page instead of the whole strand.
+  // Same graph, same packs, same progress — a projection, never a second copy.
+  // Why a level deserves a page: the crumb says ⌂ › spelling › level 1 › …,
+  // and every segment of a trail has to be somewhere you can actually stand.
+  const LEVEL_COPY = {
+    'sp:1': { name: 'sounds inside words',
+      why: 'Before any spelling rule, the ear. Break words into beats and sounds, and weld sounds back into words — the code you are about to crack is made of these.' },
+    'gr:1': { name: 'the parts of a sentence',
+      why: 'What a sentence is made of, and which piece does which job.' },
+    'jk:1': { name: 'the first kana',
+      why: 'The vowels and the k row — the rest of the syllabary is built on them.' },
+  }
+  const wantLevel = Number(q.get('level')) || null
+  const wantStrand = q.get('strand')
+
+  // A level lives INSIDE a strand — "spelling › level 1" is spelling's level
+  // 1, not everything at depth 1. The strands have no edges between them, so
+  // pooling them here would invent structure the graph does not have.
+  function renderLanding(lv) {
+    const land = document.getElementById('land')
+    const strand = wantStrand || nodes.find((n) => memo[n.id] === lv && built(n.id))?.id.split('.')[0]
+    const mine = nodes.filter(
+      (n) => memo[n.id] === lv && built(n.id) && n.id.startsWith(strand + '.'),
+    )
+    if (!mine.length) return false
+    const copy = LEVEL_COPY[strand + ':' + lv] ?? { name: '', why: '' }
+    const own = mine.filter((n) => owned.has(n.id)).length
+    const levelsHere = [...new Set(nodes
+      .filter((n) => built(n.id) && n.id.startsWith(strand + '.'))
+      .map((n) => memo[n.id]))].sort((a, b) => a - b)
+
+    const cards = mine.map((n) => {
+      const st = state(n)
+      const badge = st === 'owned' ? '✓' : st === 'open' ? '●' : '🔒'
+      const sub = st === 'owned' ? 'yours' : st === 'open' ? 'ready' : 'finish the ones above first'
+      // tapping a lesson IS playing it — no landing pad, no "play" button
+      const href = st === 'locked' ? null : playUrl(n.id)
+      const tag = href ? 'a' : 'button'
+      return `<${tag} class="card ${st}" data-t="lesson" data-id="${n.id}"${href ? ` href="${href}"` : ' disabled'}>
+        <span class="b">${badge}</span>
+        <span><span class="n">${nameOf(n)}</span><span class="s">${sub}</span></span>
+        ${href ? '<span class="go">▸</span>' : ''}
+      </${tag}>`
+    }).join('')
+
+    const steps = levelsHere.map((n) =>
+      `<a href="?${new URLSearchParams({ ...Object.fromEntries(q), level: n, strand })}" class="${n === lv ? 'here' : ''}">level ${n}</a>`
+    ).join('') + `<a href="?${new URLSearchParams({ ...Object.fromEntries(q), level: '', strand: '' })}">the whole map ▸</a>`
+
+    land.innerHTML = `<div class="lv">level ${lv}</div>
+      <h1>${copy.name || 'level ' + lv}</h1>
+      ${copy.why ? `<p class="why">${copy.why}</p>` : ''}
+      <p class="count">${own} of ${mine.length} yours</p>
+      ${cards}
+      <div class="steps">${steps}</div>`
+    land.classList.add('on')
+    document.getElementById('tree').style.display = 'none'
+    document.getElementById('legend').style.display = 'none'
+    document.getElementById('tabs').style.display = 'none'
+    return strand
+  }
+
+  const tree = document.getElementById('tree')
+  const el = {}
+  const strandKeys = [...new Set(nodes.map((n) => n.id.split('.')[0]))]
+    .sort((a, b) => nodes.filter((n) => n.id.startsWith(b + '.')).length
+                  - nodes.filter((n) => n.id.startsWith(a + '.')).length)
+
+  for (const key of strandKeys) {
+    const mine = nodes.filter((n) => n.id.startsWith(key + '.'))
+    const col = document.createElement('section')
+    col.className = 'strand'
+    col.dataset.strand = key
+    // the strand's name and count live on its tab now, not in a heading
+    const levels = [...new Set(mine.map((n) => memo[n.id]))].sort((a, b) => a - b)
+    for (const d of levels) {
+      const lv = document.createElement('div')
+      lv.className = 'lvl'
+      lv.innerHTML = `<div class="cap">level ${d}</div>`
+      const row = document.createElement('div')
+      row.className = 'row'
+      for (const n of mine.filter((x) => memo[x.id] === d)
+        .sort((a, b) => (a.region || '').localeCompare(b.region || '') || a.id.localeCompare(b.id))) {
+        const st = state(n)
+        const b = document.createElement('button')
+        b.className = `node ${st}`
+        b.dataset.t = 'node'
+        b.dataset.id = n.id
+        b.innerHTML = `${nameOf(n)}<span class="rg">${n.region || ''}</span>`
+        b.onclick = () => sheet(n, st)
+        row.appendChild(b)
+        el[n.id] = b
+      }
+      lv.appendChild(row)
+      col.appendChild(lv)
     }
-    sec.appendChild(row)
-    secs.appendChild(sec)
+    tree.appendChild(col)
   }
 
-  // the way back in: play the shallowest open node
-  if (play) {
-    const cand = nodes.filter((n) => frontier.has(n.id))
-      .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))[0]
+  // edges: real prereq structure, lit when the prereq is claimed
+  const svg = document.getElementById('edges')
+  function drawEdges() {
+    // Zero the canvas BEFORE measuring: #edges is absolutely positioned inside
+    // a positioned #tree, so its own height counts toward tree.scrollHeight.
+    // Measuring while last draw's height is still applied means a tall strand
+    // pins the page tall forever — switch to the short tab and you inherit the
+    // other one's dead space.
+    svg.setAttribute('height', 0)
+    const box = tree.getBoundingClientRect()
+    const w = tree.clientWidth, h = tree.scrollHeight
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`)
+    svg.setAttribute('width', w)
+    svg.setAttribute('height', h)
+    let d = ''
+    // only between nodes actually on screen — a hidden strand's buttons have
+    // no box, and drawing to them lands every edge at the origin
+    const shown = (b) => b && b.offsetParent !== null
+    for (const n of nodes) {
+      const to = el[n.id]
+      if (!shown(to)) continue
+      const t = to.getBoundingClientRect()
+      for (const p of n.prereqs) {
+        const from = el[p]
+        if (!shown(from)) continue
+        const f = from.getBoundingClientRect()
+        const x1 = f.left - box.left + f.width / 2, y1 = f.bottom - box.top
+        const x2 = t.left - box.left + t.width / 2, y2 = t.top - box.top
+        d += `<path d="M${x1},${y1} C${x1},${(y1 + y2) / 2} ${x2},${(y1 + y2) / 2} ${x2},${y2}"
+          fill="none" stroke="${owned.has(p) ? '#10b98155' : '#1e293b'}" stroke-width="1.5"/>`
+      }
+    }
+    svg.innerHTML = d
+  }
+  drawEdges()
+  addEventListener('resize', drawEdges)
+
+  // a level page replaces the strand view entirely (renderLanding hands back
+  // the strand it landed in, so the trail can name it)
+  const landed = wantLevel ? renderLanding(wantLevel) : false
+
+  // The trail, from the one renderer: the whole map is where you stand
+  // (⌂ › map); a level page stands inside its strand — ⌂ › spelling ›
+  // level 1 — and the strand crumb taps back out to the whole map.
+  if (bar) {
+    if (landed) {
+      const whole = '?' + new URLSearchParams({ ...Object.fromEntries(q), level: '', strand: '' })
+      bar.trail([
+        { label: learnStrandName(landed) ?? title, href: whole },
+        { label: 'level ' + wantLevel },
+      ])
+    } else {
+      bar.trail([{ label: 'map' }])
+      // whole-graph stats belong to the whole map only — a level page states
+      // its own count in content, and on a phone the trail needs the width
+      const st = document.createElement('span')
+      st.className = 'stats'
+      st.textContent = statsText
+      bar.right.append(st)
+    }
+  }
+
+  // ---- the two top-level sections, as tabs.
+  // Which one opens: a real attempt wins — that is resume, and it is evidence.
+  // On a cold start, open the strand of the GAME you arrived from. Picking the
+  // shallowest open node alone would land a babel player in GRAMMAR, because
+  // gr.pos.verb is a root at level 1 while spelling's first playable node sits
+  // deeper. Same preference the play CTA below already uses.
+  const tabsEl = document.getElementById('tabs')
+  let events = []
+  try {
+    events = JSON.parse(localStorage.getItem((q.get('progress') ?? '').replace(/\.state$/, '.events'))) ?? []
+  } catch { /* no events yet — cold start */ }
+  const strandOf = (id) => id.split('.')[0]
+  const openNodes = nodes.filter((n) => state(n) === 'open')
+    .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))
+  const preferred = openNodes.find((n) => gameOf(n.id) === q.get('title')) ?? openNodes[0]
+  // the strand the arriving GAME belongs to, whether or not anything in it is
+  // still open: claiming every spelling pack must not bounce a babel player
+  // into grammar — an all-green section is a true and satisfying answer.
+  const gameStrand = strandOf(nodes.find((n) => gameOf(n.id) === q.get('title'))?.id ?? 'x.y')
+  const lastEv = [...events].reverse().find((e) => byId[e.nodeId])
+
+  // A tab click is INTENT; an attempt is EVIDENCE. Whichever happened LAST is
+  // what you meant, so the click is stored with its time and compared against
+  // the newest attempt. Without this the derivation re-ran on every load and
+  // silently overrode the tab you just chose — pick spelling, refresh, and you
+  // were back in grammar. Timestamping is what keeps it from going stale the
+  // other way: play spelling tomorrow and the evidence is newer than the click.
+  const TABKEY = 'learn.levels.tab:' + graphUrl.split('/').pop()
+  let picked = null
+  try { picked = JSON.parse(localStorage.getItem(TABKEY)) } catch { /* never chose one */ }
+  const pickWins = picked && strandKeys.includes(picked.strand)
+    && (!lastEv || (picked.t ?? 0) > (lastEv.t ?? 0))
+  const wanted = pickWins ? picked.strand
+    : [lastEv && strandOf(lastEv.nodeId), gameStrand, preferred && strandOf(preferred.id)]
+      .find((k) => strandKeys.includes(k)) ?? strandKeys[0]
+
+  function showTab(k) {
+    for (const col of tree.querySelectorAll('.strand'))
+      col.classList.toggle('off', col.dataset.strand !== k)
+    for (const b of tabsEl.querySelectorAll('button'))
+      b.classList.toggle('on', b.dataset.strand === k)
+    requestAnimationFrame(drawEdges)
+  }
+  for (const key of strandKeys) {
+    const mine = nodes.filter((n) => n.id.startsWith(key + '.'))
+    const own = mine.filter((n) => owned.has(n.id)).length
+    const meta = STRANDS[key] ?? { name: key, sub: '' }
+    const b = document.createElement('button')
+    b.dataset.t = 'tab'
+    b.dataset.strand = key
+    b.innerHTML = `${meta.name}<span class="sub">${own} / ${mine.length} claimed${
+      meta.sub ? ' · ' + meta.sub : ''}</span>`
+    b.onclick = () => {
+      try { localStorage.setItem(TABKEY, JSON.stringify({ strand: key, t: Date.now() })) }
+      catch (e) { console.error('[levels] could not remember the tab:', e) }
+      showTab(key)
+    }
+    tabsEl.appendChild(b)
+  }
+  showTab(wanted)
+
+  // the way back in: shallowest open node, preferring THIS game's own nodes so
+  // arriving from babel never launches you into the grammar game
+  // On a LEVEL page the cards are the call to action — a floating button over
+  // them is noise, and "play" names nothing anyway; the lesson name does.
+  if (!landed) {
+    const open = nodes.filter((n) => state(n) === 'open')
+      .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))
+    const cand = open.find((n) => gameOf(n.id) === q.get('title')) ?? open[0]
     if (cand) {
       const go = document.createElement('a')
       go.id = 'go'
-      go.href = play.replace('{id}', encodeURIComponent(cand.id))
-      go.textContent = `play ▸ ${cand.name}`
+      go.href = playUrl(cand.id)
+      go.textContent = `next ▸ ${nameOf(cand)}`
       document.body.appendChild(go)
     }
   }
 
+  const KEY = q.get('progress')
+  window.__claim = (id) => {
+    const st = stats[id] ?? { seen: 0, correct: 0, streak: 0 }
+    stats[id] = { seen: st.seen + 1, correct: st.correct + 1, streak: STREAK }
+    localStorage.setItem(KEY, JSON.stringify({ schema: 1, appId: 'english', stats }))
+    location.reload()
+  }
+  window.__reset = (id) => {
+    delete stats[id]
+    localStorage.setItem(KEY, JSON.stringify({ schema: 1, appId: 'english', stats }))
+    location.reload()
+  }
+  window.__resetAll = () => {
+    localStorage.removeItem(KEY)
+    localStorage.removeItem(KEY.replace(/\.state$/, '.events'))
+    location.reload()
+  }
+
   function sheet(n, st) {
     const s = document.getElementById('sheet')
-    const pres = n.prereqs.map((p) => {
-      const cls = owned.has(p) ? 'owned' : 'locked'
-      const name = byId[p]?.name ?? p
-      return `<span class="${cls}">${name}</span>`
-    }).join('')
-    const play = q.get('play')
-    const canPlay = play && st !== 'locked'
+    const pres = n.prereqs.map((p) =>
+      `<span class="${owned.has(p) ? 'owned' : 'locked'}">${byId[p]?.name ?? p}</span>`).join('')
+    const label = { owned: 'claimed', open: 'open now',
+      locked: 'locked — earn it', unbuilt: 'not built yet' }[st]
+    const need = gates(n).filter((p) => !owned.has(p)).map((p) => byId[p]?.name ?? p)
     s.innerHTML = `<button class="x" aria-label="close" onclick="this.parentNode.style.display='none'">✕</button>
-      <div class="region">${n.region || ''} — ${st}</div>
+      <div class="region">${n.region || ''} — ${label}</div>
       <h2>${n.name}</h2>
-      ${canPlay ? `<a href="${play.replace('{id}', encodeURIComponent(n.id))}"
-        style="display:inline-block;margin-top:0.4rem;background:#10b981;color:#052e16;font-weight:800;
-        padding:0.55rem 1.2rem;border-radius:0.8rem;text-decoration:none">practice ▸</a>` : ''}
+      ${st === 'owned' || st === 'open'
+        ? `<a class="play" data-t="practice" href="${playUrl(n.id)}">${
+            st === 'owned' ? 'practice ▸' : 'play ▸'} ${gameOf(n.id)}</a>` : ''}
+      ${DEBUG ? (owned.has(n.id)
+        ? `<button class="play" data-t="reset" style="background:#3b1d1d;color:#fca5a5;border:0;
+             font-family:inherit;font-size:1rem;margin-left:0.4rem"
+             onclick="window.__reset('${n.id}')">✗ reset</button>`
+        : `<button class="play" data-t="claim" style="background:#1e293b;color:#fde68a;border:0;
+             font-family:inherit;font-size:1rem;margin-left:0.4rem"
+             onclick="window.__claim('${n.id}')">✓ claim</button>`) : ''}
+      ${st === 'unbuilt'
+        ? `<p style="color:#64748b">No pack yet — this one is on us, not on you.
+           It lights up the day its content ships.</p>` : ''}
+      ${st === 'locked' && need.length
+        ? `<p style="color:#64748b">First: ${need.join(', ')}.</p>` : ''}
       <p>${n.context}</p>
       ${n.prereqs.length ? `<div class="pre">${pres}</div>` : ''}`
     s.style.display = 'block'
