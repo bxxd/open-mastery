@@ -1,0 +1,16 @@
+id: sp.morph.families
+prereqs:
+  - sp.morph.suffixes
+  - sp.syll.schwa
+bloom: analyze
+assess:
+  - derive
+  - explain
+typical_grade: 4
+context: >
+  Word families: respond -> response -> responsible ->
+  responsibility. One base, many suits — spelling travels through
+  the family. This is the anti-schwa move: when an unstressed
+  vowel is murky, walk to a relative that says it clearly
+  (defin-ite leans on fin-ite; compos-i-tion on compos-ite).
+  Assessment: given one member, produce and spell the relatives.

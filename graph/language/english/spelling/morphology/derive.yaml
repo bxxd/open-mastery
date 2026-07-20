@@ -3,6 +3,8 @@ prereqs:
   - sp.morph.roots_latin_1
   - sp.morph.prefixes_2
   - sp.morph.suffixes
+  - sp.morph.segment
+  - sp.morph.families
 bloom: analyze
 assess:
   - derive

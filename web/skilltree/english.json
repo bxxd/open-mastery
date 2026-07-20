@@ -602,6 +602,16 @@
    "context": "The whole story in order: Germanic bones -> Viking layer -> 1066 French -> Renaissance Latin and Greek -> global trade and empire -> modern borrowings. Given any word's origin, place it on the timeline and the map. English never rejected a word it could use — that is why the code has layers, and why the layers explain the spellings."
   },
   {
+   "id": "sp.morph.able_ible",
+   "name": "able ible",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.suffixes",
+    "sp.morph.roots_latin_1"
+   ],
+   "context": "-able and -ible both say 'can be'; the base picks the vowel. A word that stands alone usually takes -able (accept-able, remark-able); a bound Latin stem takes -ible (poss-ible, vis-ible, respons-ible). The family is the tiebreak: responsible -> responsibility, never responsability. The most misspelled suffix pair in English — regular once it's a morpheme decision instead of a sound decision."
+  },
+  {
    "id": "sp.morph.compounds",
    "name": "compounds",
    "region": "morphology",
@@ -617,9 +627,21 @@
    "prereqs": [
     "sp.morph.roots_latin_1",
     "sp.morph.prefixes_2",
-    "sp.morph.suffixes"
+    "sp.morph.suffixes",
+    "sp.morph.segment",
+    "sp.morph.families"
    ],
    "context": "The superpower node: given an UNSEEN word, crack meaning and spelling from owned morphemes — contradict = contra (against) + dict (say) = speak against. Assessment is always novel words. This is vocabulary by inference; it never runs out."
+  },
+  {
+   "id": "sp.morph.families",
+   "name": "families",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.suffixes",
+    "sp.syll.schwa"
+   ],
+   "context": "Word families: respond -> response -> responsible -> responsibility. One base, many suits — spelling travels through the family. This is the anti-schwa move: when an unstressed vowel is murky, walk to a relative that says it clearly (defin-ite leans on fin-ite; compos-i-tion on compos-ite). Assessment: given one member, produce and spell the relatives."
   },
   {
    "id": "sp.morph.prefixes",
@@ -666,6 +688,16 @@
     "sp.morph.roots_latin_1"
    ],
    "context": "Second Latin set: tract (pull), spect (look), ject (throw), rupt (break). At-tract = pull toward; in-spect = look into; e-ject = throw out; inter-rupt = break between; circum-spect = looking around = careful."
+  },
+  {
+   "id": "sp.morph.segment",
+   "name": "segment",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.prefixes",
+    "sp.morph.suffix_simple"
+   ],
+   "context": "Take whole words APART: pre|cognition, respond|er, un|help|ful. The analysis mirror of building — the same segmenting instinct as the sound layer, one level up. Cut at morpheme seams, not syllable beats (re|sponse, never res|ponse); every piece must mean something, and the learner says what each piece means."
   },
   {
    "id": "sp.morph.suffix_simple",

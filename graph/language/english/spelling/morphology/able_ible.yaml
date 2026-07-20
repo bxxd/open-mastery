@@ -1,0 +1,18 @@
+id: sp.morph.able_ible
+prereqs:
+  - sp.morph.suffixes
+  - sp.morph.roots_latin_1
+bloom: analyze
+assess:
+  - build
+  - dictation
+  - explain
+typical_grade: 5
+context: >
+  -able and -ible both say 'can be'; the base picks the vowel.
+  A word that stands alone usually takes -able (accept-able,
+  remark-able); a bound Latin stem takes -ible (poss-ible,
+  vis-ible, respons-ible). The family is the tiebreak:
+  responsible -> responsibility, never responsability. The most
+  misspelled suffix pair in English — regular once it's a
+  morpheme decision instead of a sound decision.
