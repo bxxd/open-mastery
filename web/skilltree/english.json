@@ -215,7 +215,8 @@
    "name": "ee",
    "region": "vowel-teams",
    "prereqs": [
-    "sp.base.blends"
+    "sp.digraph.sh",
+    "sp.digraph.th"
    ],
    "context": "Vowel team ee spells /ē/ (street, speech, sweep)."
   },
@@ -242,7 +243,8 @@
    "name": "oa",
    "region": "vowel-teams",
    "prereqs": [
-    "sp.base.blends"
+    "sp.digraph.sh",
+    "sp.digraph.th"
    ],
    "context": "Vowel team oa spells /ō/ (coach, toast, groan)."
   },
@@ -814,7 +816,8 @@
    "region": "digraphs",
    "prereqs": [
     "sp.rule.short_vowel",
-    "sp.base.blends"
+    "sp.digraph.sh",
+    "sp.digraph.ch"
    ],
    "context": "Positional rule: right after a short vowel, /k/ is spelled ck (block, stick, check). Elsewhere plain k or c."
   },
