@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export a graph directory to skill-tree JSON: python3 export.py graph/language/english-spelling > out.json
+"""Export a graph directory to skill-tree JSON: python3 export.py graph/language/english > out.json
 Adds `members` for nodes whose context lists kana characters (so per-character
 learner stats can satisfy row-level nodes)."""
 import json, os, re, sys
@@ -15,7 +15,9 @@ for dp, _, fs in os.walk(root):
         pre = re.findall(r'^  - (.+)$', s.split('bloom:')[0], re.M)
         ctx = re.search(r'^context: >\n((?:  .*\n?)+)', s, re.M)
         context = ' '.join(l.strip() for l in ctx.group(1).splitlines()) if ctx else ''
-        region = os.path.relpath(dp, root).split(os.sep)[0]
+        # innermost dir = region, so nested subjects (english/spelling/digraphs)
+        # keep the same granularity as flat ones (japanese-kana/gojuon)
+        region = os.path.relpath(dp, root).split(os.sep)[-1]
         if region == '.': region = ''
         node = {'id': nid, 'name': nid.split('.')[-1].replace('_', ' '), 'region': region,
                 'prereqs': pre, 'context': context}
