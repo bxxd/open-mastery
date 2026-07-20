@@ -234,7 +234,7 @@
    "name": "igh",
    "region": "vowel-teams",
    "prereqs": [
-    "sp.rule.silent_e"
+    "sp.vteam.ie"
    ],
    "context": "igh spells /ī/ (light, fright, high). Three letters, one sound — a fossil cluster from Old English where gh was once pronounced."
   },

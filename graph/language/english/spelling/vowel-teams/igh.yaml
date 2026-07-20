@@ -1,6 +1,6 @@
 id: sp.vteam.igh
 prereqs:
-  - sp.rule.silent_e
+  - sp.vteam.ie
 bloom: apply
 assess:
   - build
