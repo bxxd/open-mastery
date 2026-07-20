@@ -56,6 +56,13 @@
   #sheet p { color: #94a3b8; line-height: 1.45; margin-top: 0.5rem; font-size: 0.92rem; }
   #sheet .pre { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
   #sheet .pre span { font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; }
+  /* back into the game — names the destination, always visible */
+  #go {
+    position: fixed; right: 0.9rem; bottom: calc(0.9rem + env(safe-area-inset-bottom));
+    z-index: 5; background: #10b981; color: #052e16; text-decoration: none;
+    font-weight: 800; font-size: 1.05rem; padding: 0.75rem 1.3rem; border-radius: 1.1rem;
+    box-shadow: 0 8px 24px rgba(16,185,129,0.4);
+  }
 </style>
 </head>
 <body>
@@ -95,11 +102,13 @@ async function main() {
   const statsText = `${owned.size} owned · ${frontier.size} open · ${nodes.length} total`
 
   const home = q.get('home')
+  const play = q.get('play')
+  const gameBase = play ? play.split('?')[0] : null
   if (home) {
     const bar = document.getElementById('bar')
     bar.style.display = 'flex'
     bar.innerHTML = `<a href="${home}">⌂ learn</a>
-      <span class="crumbs">${title} › levels</span>
+      <span class="crumbs">${gameBase ? `<a href="${gameBase}">${title}</a>` : title} › levels</span>
       <span class="stats">${statsText}</span>
       ${q.get('map') ? `<a href="${q.get('map')}">map</a>` : ''}`
   } else {
@@ -142,6 +151,19 @@ async function main() {
     }
     sec.appendChild(row)
     secs.appendChild(sec)
+  }
+
+  // the way back in: play the shallowest open node
+  if (play) {
+    const cand = nodes.filter((n) => frontier.has(n.id))
+      .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))[0]
+    if (cand) {
+      const go = document.createElement('a')
+      go.id = 'go'
+      go.href = play.replace('{id}', encodeURIComponent(cand.id))
+      go.textContent = `play ▸ ${cand.name}`
+      document.body.appendChild(go)
+    }
   }
 
   function sheet(n, st) {
