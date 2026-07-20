@@ -1,6 +1,7 @@
 id: sp.vteam.ee
 prereqs:
-  - sp.base.blends
+  - sp.digraph.sh
+  - sp.digraph.th
 bloom: apply
 assess:
   - build

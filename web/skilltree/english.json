@@ -1,6 +1,140 @@
 {
  "nodes": [
   {
+   "id": "gr.pos.adjective",
+   "name": "adjective",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.noun"
+   ],
+   "context": "Adjectives tune nouns: the swift knight, a circumspect player. Precision instruments, not decoration."
+  },
+  {
+   "id": "gr.pos.adverb",
+   "name": "adverb",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.verb"
+   ],
+   "context": "Adverbs tune verbs (and adjectives): moved carefully, extremely sharp. Many wear the -ly badge; the sneaky ones (very, quite, never) do not."
+  },
+  {
+   "id": "gr.pos.conjunction",
+   "name": "conjunction",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.verb"
+   ],
+   "context": "Conjunctions join: and, but, or, because, although. The hinges every compound and complex sentence swings on."
+  },
+  {
+   "id": "gr.pos.noun",
+   "name": "noun",
+   "region": "parts",
+   "prereqs": [],
+   "context": "Nouns name things: people, places, objects, ideas. The first sorting job — everything a sentence talks ABOUT is a noun or acts like one."
+  },
+  {
+   "id": "gr.pos.preposition",
+   "name": "preposition",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.noun"
+   ],
+   "context": "Prepositions place things in space and time: under the board, before the storm, across town. They start little location- phrases that glue onto sentences."
+  },
+  {
+   "id": "gr.pos.pronoun",
+   "name": "pronoun",
+   "region": "parts",
+   "prereqs": [
+    "gr.pos.noun"
+   ],
+   "context": "Pronouns stand in for nouns: he, she, it, they. Each points back at something — a broken pointer (unclear antecedent) is the classic bug."
+  },
+  {
+   "id": "gr.pos.verb",
+   "name": "verb",
+   "region": "parts",
+   "prereqs": [],
+   "context": "Verbs are the engine: actions (run, build) and states (is, seems). No verb, no sentence — the one part of speech a sentence cannot live without."
+  },
+  {
+   "id": "gr.sent.complete",
+   "name": "complete",
+   "region": "sentence",
+   "prereqs": [
+    "gr.sent.predicate"
+   ],
+   "context": "Complete sentence = subject + predicate that can stand alone. Fragments are missing a piece ('because the storm came'); run- ons are two sentences taped together without a hinge. Diagnosis and repair — the editor's first skill."
+  },
+  {
+   "id": "gr.sent.object",
+   "name": "object",
+   "region": "sentence",
+   "prereqs": [
+    "gr.sent.predicate"
+   ],
+   "context": "The object receives the action: the knight took THE ROOK. Ask the verb 'what?' — the answer is the object. Subject-verb- object is English's default word order; scrambling it is what other languages (and bad sentences) do."
+  },
+  {
+   "id": "gr.sent.predicate",
+   "name": "predicate",
+   "region": "sentence",
+   "prereqs": [
+    "gr.sent.subject"
+   ],
+   "context": "The predicate is everything the sentence SAYS about the subject — the verb plus its cargo. From Latin prae + dicare, 'to proclaim': what is proclaimed about the subject. 'The knight | took the rook': subject, then predicate. Every complete sentence splits into these two pieces."
+  },
+  {
+   "id": "gr.sent.subject",
+   "name": "subject",
+   "region": "sentence",
+   "prereqs": [
+    "gr.pos.noun",
+    "gr.pos.verb"
+   ],
+   "context": "The subject is WHO or WHAT the sentence is about — find the verb, ask who is doing it. In 'the knight took the rook', the subject is the knight."
+  },
+  {
+   "id": "gr.build.complex",
+   "name": "complex",
+   "region": "builds",
+   "prereqs": [
+    "gr.clause.dependent"
+   ],
+   "context": "Complex sentence: an independent clause plus one or more dependent ones. Where writing stops sounding like a list and starts sounding like thinking."
+  },
+  {
+   "id": "gr.build.compound",
+   "name": "compound",
+   "region": "builds",
+   "prereqs": [
+    "gr.clause.independent",
+    "gr.pos.conjunction"
+   ],
+   "context": "Compound sentence: two independent clauses hinged with a conjunction (and, but, so) or a semicolon. Two complete thoughts, one sentence, equal partners."
+  },
+  {
+   "id": "gr.clause.dependent",
+   "name": "dependent",
+   "region": "clauses",
+   "prereqs": [
+    "gr.clause.independent",
+    "gr.pos.conjunction"
+   ],
+   "context": "A dependent clause has a subject and verb but leans on the main sentence ('although he was winning, ...'). The leaning word (although, because, when) is what makes it lean."
+  },
+  {
+   "id": "gr.clause.independent",
+   "name": "independent",
+   "region": "clauses",
+   "prereqs": [
+    "gr.sent.complete"
+   ],
+   "context": "An independent clause is a complete sentence living inside a bigger one — it could stand alone if you cut it free."
+  },
+  {
    "id": "sp.phon.blending",
    "name": "blending",
    "region": "phonemic",
@@ -81,7 +215,8 @@
    "name": "ee",
    "region": "vowel-teams",
    "prereqs": [
-    "sp.base.blends"
+    "sp.digraph.sh",
+    "sp.digraph.th"
    ],
    "context": "Vowel team ee spells /ē/ (street, speech, sweep)."
   },
@@ -108,7 +243,8 @@
    "name": "oa",
    "region": "vowel-teams",
    "prereqs": [
-    "sp.base.blends"
+    "sp.digraph.sh",
+    "sp.digraph.th"
    ],
    "context": "Vowel team oa spells /ō/ (coach, toast, groan)."
   },
@@ -466,6 +602,16 @@
    "context": "The whole story in order: Germanic bones -> Viking layer -> 1066 French -> Renaissance Latin and Greek -> global trade and empire -> modern borrowings. Given any word's origin, place it on the timeline and the map. English never rejected a word it could use — that is why the code has layers, and why the layers explain the spellings."
   },
   {
+   "id": "sp.morph.able_ible",
+   "name": "able ible",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.suffixes",
+    "sp.morph.roots_latin_1"
+   ],
+   "context": "-able and -ible both say 'can be'; the base picks the vowel. A word that stands alone usually takes -able (accept-able, remark-able); a bound Latin stem takes -ible (poss-ible, vis-ible, respons-ible). The family is the tiebreak: responsible -> responsibility, never responsability. The most misspelled suffix pair in English — regular once it's a morpheme decision instead of a sound decision."
+  },
+  {
    "id": "sp.morph.compounds",
    "name": "compounds",
    "region": "morphology",
@@ -481,9 +627,21 @@
    "prereqs": [
     "sp.morph.roots_latin_1",
     "sp.morph.prefixes_2",
-    "sp.morph.suffixes"
+    "sp.morph.suffixes",
+    "sp.morph.segment",
+    "sp.morph.families"
    ],
    "context": "The superpower node: given an UNSEEN word, crack meaning and spelling from owned morphemes — contradict = contra (against) + dict (say) = speak against. Assessment is always novel words. This is vocabulary by inference; it never runs out."
+  },
+  {
+   "id": "sp.morph.families",
+   "name": "families",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.suffixes",
+    "sp.syll.schwa"
+   ],
+   "context": "Word families: respond -> response -> responsible -> responsibility. One base, many suits — spelling travels through the family. This is the anti-schwa move: when an unstressed vowel is murky, walk to a relative that says it clearly (defin-ite leans on fin-ite; compos-i-tion on compos-ite). Assessment: given one member, produce and spell the relatives."
   },
   {
    "id": "sp.morph.prefixes",
@@ -529,7 +687,17 @@
    "prereqs": [
     "sp.morph.roots_latin_1"
    ],
-   "context": "Second Latin set: tract (pull), spect (look), ject (throw), rupt (break). At-tract = pull toward; in-spect = look into; e-ject = throw out; inter-rupt = break between."
+   "context": "Second Latin set: tract (pull), spect (look), ject (throw), rupt (break). At-tract = pull toward; in-spect = look into; e-ject = throw out; inter-rupt = break between; circum-spect = looking around = careful."
+  },
+  {
+   "id": "sp.morph.segment",
+   "name": "segment",
+   "region": "morphology",
+   "prereqs": [
+    "sp.morph.prefixes",
+    "sp.morph.suffix_simple"
+   ],
+   "context": "Take whole words APART: pre|cognition, respond|er, un|help|ful. The analysis mirror of building — the same segmenting instinct as the sound layer, one level up. Cut at morpheme seams, not syllable beats (re|sponse, never res|ponse); every piece must mean something, and the learner says what each piece means."
   },
   {
    "id": "sp.morph.suffix_simple",
@@ -680,7 +848,8 @@
    "region": "digraphs",
    "prereqs": [
     "sp.rule.short_vowel",
-    "sp.base.blends"
+    "sp.digraph.sh",
+    "sp.digraph.ch"
    ],
    "context": "Positional rule: right after a short vowel, /k/ is spelled ck (block, stick, check). Elsewhere plain k or c."
   },

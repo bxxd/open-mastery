@@ -1,0 +1,15 @@
+id: sp.morph.segment
+prereqs:
+  - sp.morph.prefixes
+  - sp.morph.suffix_simple
+bloom: analyze
+assess:
+  - segment
+  - explain
+typical_grade: 4
+context: >
+  Take whole words APART: pre|cognition, respond|er, un|help|ful.
+  The analysis mirror of building — the same segmenting instinct
+  as the sound layer, one level up. Cut at morpheme seams, not
+  syllable beats (re|sponse, never res|ponse); every piece must
+  mean something, and the learner says what each piece means.

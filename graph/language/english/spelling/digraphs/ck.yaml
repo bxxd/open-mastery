@@ -1,7 +1,8 @@
 id: sp.digraph.ck
 prereqs:
   - sp.rule.short_vowel
-  - sp.base.blends
+  - sp.digraph.sh
+  - sp.digraph.ch
 bloom: apply
 assess:
   - build

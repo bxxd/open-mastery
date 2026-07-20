@@ -3,7 +3,7 @@
   {
    "id": "trig.rat.basics",
    "name": "basics",
-   "region": "trigonometry",
+   "region": "ratios",
    "prereqs": [
     "geo.tri.special_right",
     "frac.md.divide"
@@ -13,7 +13,7 @@
   {
    "id": "trig.rat.inverse",
    "name": "inverse",
-   "region": "trigonometry",
+   "region": "ratios",
    "prereqs": [
     "trig.rat.solving"
    ],
@@ -22,7 +22,7 @@
   {
    "id": "trig.rat.solving",
    "name": "solving",
-   "region": "trigonometry",
+   "region": "ratios",
    "prereqs": [
     "trig.rat.basics",
     "alg.eq.multi_step"
@@ -32,7 +32,7 @@
   {
    "id": "trig.uc.radians",
    "name": "radians",
-   "region": "trigonometry",
+   "region": "unit-circle",
    "prereqs": [
     "trig.uc.unit_circle",
     "rat.prop.solving"
@@ -42,7 +42,7 @@
   {
    "id": "trig.uc.unit_circle",
    "name": "unit circle",
-   "region": "trigonometry",
+   "region": "unit-circle",
    "prereqs": [
     "trig.rat.basics",
     "geo.circ.properties"
@@ -52,7 +52,7 @@
   {
    "id": "trig.gr.sinusoidal",
    "name": "sinusoidal",
-   "region": "trigonometry",
+   "region": "graphing",
    "prereqs": [
     "trig.uc.radians",
     "alg.fn.linear"
@@ -62,7 +62,7 @@
   {
    "id": "trig.id.pythagorean",
    "name": "pythagorean",
-   "region": "trigonometry",
+   "region": "identities",
    "prereqs": [
     "trig.uc.unit_circle",
     "geo.ap.pythagorean"
@@ -72,7 +72,7 @@
   {
    "id": "trig.id.sum_difference",
    "name": "sum difference",
-   "region": "trigonometry",
+   "region": "identities",
    "prereqs": [
     "trig.id.pythagorean"
    ],
@@ -81,7 +81,7 @@
   {
    "id": "ns.round.decimals",
    "name": "decimals",
-   "region": "number-sense",
+   "region": "rounding",
    "prereqs": [
     "ns.pv.decimals_to_thousandths",
     "ns.round.whole_numbers"
@@ -91,7 +91,7 @@
   {
    "id": "ns.round.whole_numbers",
    "name": "whole numbers",
-   "region": "number-sense",
+   "region": "rounding",
    "prereqs": [
     "ns.pv.millions"
    ],
@@ -100,7 +100,7 @@
   {
    "id": "ns.pv.decimals_to_thousandths",
    "name": "decimals to thousandths",
-   "region": "number-sense",
+   "region": "place-value",
    "prereqs": [
     "dec.pv.tenths_hundredths"
    ],
@@ -109,7 +109,7 @@
   {
    "id": "ns.pv.millions",
    "name": "millions",
-   "region": "number-sense",
+   "region": "place-value",
    "prereqs": [
     "ns.pv.thousands"
    ],
@@ -118,7 +118,7 @@
   {
    "id": "ns.pv.powers_of_10",
    "name": "powers of 10",
-   "region": "number-sense",
+   "region": "place-value",
    "prereqs": [
     "ops.mul.by_10_100_1000",
     "ns.pv.decimals_to_thousandths"
@@ -128,14 +128,14 @@
   {
    "id": "ns.pv.thousands",
    "name": "thousands",
-   "region": "number-sense",
+   "region": "place-value",
    "prereqs": [],
    "context": "Ones, tens, hundreds, thousands. Read and write numbers to 9,999. Identify the value of each digit by its position. Compare numbers using place value reasoning."
   },
   {
    "id": "ns.pat.sequences",
    "name": "sequences",
-   "region": "number-sense",
+   "region": "patterns",
    "prereqs": [
     "ops.mul.facts"
    ],
@@ -144,7 +144,7 @@
   {
    "id": "ops.oo.basics",
    "name": "basics",
-   "region": "operations",
+   "region": "order-of-operations",
    "prereqs": [
     "ops.sub.within_1000",
     "ops.div.facts"
@@ -154,7 +154,7 @@
   {
    "id": "ops.oo.numerical_expressions",
    "name": "numerical expressions",
-   "region": "operations",
+   "region": "order-of-operations",
    "prereqs": [
     "ops.oo.basics"
    ],
@@ -163,7 +163,7 @@
   {
    "id": "ops.add.multi_digit",
    "name": "multi digit",
-   "region": "operations",
+   "region": "addition",
    "prereqs": [
     "ops.add.within_1000",
     "ns.pv.millions"
@@ -173,7 +173,7 @@
   {
    "id": "ops.add.within_1000",
    "name": "within 1000",
-   "region": "operations",
+   "region": "addition",
    "prereqs": [
     "ns.pv.thousands"
    ],
@@ -182,7 +182,7 @@
   {
    "id": "ops.wp.multi_step",
    "name": "multi step",
-   "region": "operations",
+   "region": "word-problems",
    "prereqs": [
     "ops.add.multi_digit",
     "ops.sub.multi_digit",
@@ -194,7 +194,7 @@
   {
    "id": "ops.sub.multi_digit",
    "name": "multi digit",
-   "region": "operations",
+   "region": "subtraction",
    "prereqs": [
     "ops.sub.within_1000",
     "ns.pv.millions"
@@ -204,7 +204,7 @@
   {
    "id": "ops.sub.within_1000",
    "name": "within 1000",
-   "region": "operations",
+   "region": "subtraction",
    "prereqs": [
     "ns.pv.thousands"
    ],
@@ -213,7 +213,7 @@
   {
    "id": "ops.mul.2d_by_1d",
    "name": "2d by 1d",
-   "region": "operations",
+   "region": "multiplication",
    "prereqs": [
     "ops.mul.facts"
    ],
@@ -222,7 +222,7 @@
   {
    "id": "ops.mul.2d_by_2d",
    "name": "2d by 2d",
-   "region": "operations",
+   "region": "multiplication",
    "prereqs": [
     "ops.mul.2d_by_1d",
     "ops.add.multi_digit"
@@ -232,7 +232,7 @@
   {
    "id": "ops.mul.by_10_100_1000",
    "name": "by 10 100 1000",
-   "region": "operations",
+   "region": "multiplication",
    "prereqs": [
     "ops.mul.facts",
     "ns.pv.millions"
@@ -242,7 +242,7 @@
   {
    "id": "ops.mul.factors_and_multiples",
    "name": "factors and multiples",
-   "region": "operations",
+   "region": "multiplication",
    "prereqs": [
     "ops.div.facts"
    ],
@@ -251,7 +251,7 @@
   {
    "id": "ops.mul.facts",
    "name": "facts",
-   "region": "operations",
+   "region": "multiplication",
    "prereqs": [
     "ops.add.within_1000"
    ],
@@ -260,7 +260,7 @@
   {
    "id": "ops.mul.multi_digit",
    "name": "multi digit",
-   "region": "operations",
+   "region": "multiplication",
    "prereqs": [
     "ops.mul.2d_by_2d"
    ],
@@ -269,7 +269,7 @@
   {
    "id": "ops.div.facts",
    "name": "facts",
-   "region": "operations",
+   "region": "division",
    "prereqs": [
     "ops.mul.facts"
    ],
@@ -278,7 +278,7 @@
   {
    "id": "ops.div.integers",
    "name": "integers",
-   "region": "operations",
+   "region": "division",
    "prereqs": [
     "ops.div.long_2digit",
     "alg.exp.integers"
@@ -288,7 +288,7 @@
   {
    "id": "ops.div.long_1digit",
    "name": "long 1digit",
-   "region": "operations",
+   "region": "division",
    "prereqs": [
     "ops.div.facts",
     "ops.sub.multi_digit"
@@ -298,7 +298,7 @@
   {
    "id": "ops.div.long_2digit",
    "name": "long 2digit",
-   "region": "operations",
+   "region": "division",
    "prereqs": [
     "ops.div.long_1digit",
     "ops.mul.multi_digit"
@@ -308,7 +308,7 @@
   {
    "id": "dec.pv.tenths_hundredths",
    "name": "tenths hundredths",
-   "region": "decimals",
+   "region": "place-value",
    "prereqs": [
     "frac.con.basics",
     "ns.pv.millions"
@@ -318,7 +318,7 @@
   {
    "id": "dec.conv.fraction_decimal",
    "name": "fraction decimal",
-   "region": "decimals",
+   "region": "conversion",
    "prereqs": [
     "ns.pv.decimals_to_thousandths",
     "frac.con.as_division"
@@ -328,7 +328,7 @@
   {
    "id": "dec.ops.add_subtract",
    "name": "add subtract",
-   "region": "decimals",
+   "region": "operations",
    "prereqs": [
     "ns.pv.decimals_to_thousandths",
     "ops.add.multi_digit",
@@ -339,7 +339,7 @@
   {
    "id": "dec.ops.divide",
    "name": "divide",
-   "region": "decimals",
+   "region": "operations",
    "prereqs": [
     "dec.ops.multiply",
     "ops.div.long_2digit"
@@ -349,7 +349,7 @@
   {
    "id": "dec.ops.multiply",
    "name": "multiply",
-   "region": "decimals",
+   "region": "operations",
    "prereqs": [
     "dec.ops.add_subtract",
     "ops.mul.multi_digit",
@@ -360,7 +360,7 @@
   {
    "id": "frac.as.like_add",
    "name": "like add",
-   "region": "fractions",
+   "region": "add-subtract",
    "prereqs": [
     "frac.con.basics"
    ],
@@ -369,7 +369,7 @@
   {
    "id": "frac.as.like_sub",
    "name": "like sub",
-   "region": "fractions",
+   "region": "add-subtract",
    "prereqs": [
     "frac.con.basics"
    ],
@@ -378,7 +378,7 @@
   {
    "id": "frac.as.unlike_add",
    "name": "unlike add",
-   "region": "fractions",
+   "region": "add-subtract",
    "prereqs": [
     "frac.as.like_add",
     "frac.eq.equivalent"
@@ -388,7 +388,7 @@
   {
    "id": "frac.as.unlike_sub",
    "name": "unlike sub",
-   "region": "fractions",
+   "region": "add-subtract",
    "prereqs": [
     "frac.as.like_sub",
     "frac.eq.equivalent"
@@ -398,7 +398,7 @@
   {
    "id": "frac.md.divide",
    "name": "divide",
-   "region": "fractions",
+   "region": "multiply-divide",
    "prereqs": [
     "frac.md.multiply"
    ],
@@ -407,7 +407,7 @@
   {
    "id": "frac.md.fraction_times_whole",
    "name": "fraction times whole",
-   "region": "fractions",
+   "region": "multiply-divide",
    "prereqs": [
     "frac.con.basics",
     "ops.mul.facts"
@@ -417,7 +417,7 @@
   {
    "id": "frac.md.multiply",
    "name": "multiply",
-   "region": "fractions",
+   "region": "multiply-divide",
    "prereqs": [
     "frac.md.fraction_times_whole",
     "frac.eq.equivalent"
@@ -427,7 +427,7 @@
   {
    "id": "frac.eq.comparing",
    "name": "comparing",
-   "region": "fractions",
+   "region": "equivalence",
    "prereqs": [
     "frac.eq.equivalent"
    ],
@@ -436,7 +436,7 @@
   {
    "id": "frac.eq.equivalent",
    "name": "equivalent",
-   "region": "fractions",
+   "region": "equivalence",
    "prereqs": [
     "frac.con.basics",
     "ops.mul.factors_and_multiples"
@@ -446,7 +446,7 @@
   {
    "id": "frac.con.as_division",
    "name": "as division",
-   "region": "fractions",
+   "region": "concepts",
    "prereqs": [
     "frac.con.basics",
     "ops.div.long_1digit"
@@ -456,7 +456,7 @@
   {
    "id": "frac.con.basics",
    "name": "basics",
-   "region": "fractions",
+   "region": "concepts",
    "prereqs": [
     "ops.div.facts"
    ],
@@ -465,7 +465,7 @@
   {
    "id": "frac.mx.conversion",
    "name": "conversion",
-   "region": "fractions",
+   "region": "mixed-numbers",
    "prereqs": [
     "frac.as.like_add",
     "frac.eq.equivalent"
@@ -475,7 +475,7 @@
   {
    "id": "stat.inf.normal",
    "name": "normal",
-   "region": "statistics",
+   "region": "inference",
    "prereqs": [
     "stat.dd.box_plots",
     "alg.fn.intro"
@@ -485,7 +485,7 @@
   {
    "id": "stat.inf.regression",
    "name": "regression",
-   "region": "statistics",
+   "region": "inference",
    "prereqs": [
     "stat.dd.scatter_plots",
     "alg.fn.linear"
@@ -495,7 +495,7 @@
   {
    "id": "stat.inf.sampling",
    "name": "sampling",
-   "region": "statistics",
+   "region": "inference",
    "prereqs": [
     "stat.meas.center_spread"
    ],
@@ -504,7 +504,7 @@
   {
    "id": "stat.dd.bar_line_graphs",
    "name": "bar line graphs",
-   "region": "statistics",
+   "region": "data-display",
    "prereqs": [
     "ops.add.within_1000"
    ],
@@ -513,7 +513,7 @@
   {
    "id": "stat.dd.box_plots",
    "name": "box plots",
-   "region": "statistics",
+   "region": "data-display",
    "prereqs": [
     "stat.meas.center_spread"
    ],
@@ -522,7 +522,7 @@
   {
    "id": "stat.dd.dot_plots_histograms",
    "name": "dot plots histograms",
-   "region": "statistics",
+   "region": "data-display",
    "prereqs": [
     "ops.add.multi_digit"
    ],
@@ -531,7 +531,7 @@
   {
    "id": "stat.dd.scatter_plots",
    "name": "scatter plots",
-   "region": "statistics",
+   "region": "data-display",
    "prereqs": [
     "geo.cp.first_quadrant",
     "stat.dd.dot_plots_histograms"
@@ -541,7 +541,7 @@
   {
    "id": "stat.meas.center_spread",
    "name": "center spread",
-   "region": "statistics",
+   "region": "measures",
    "prereqs": [
     "stat.dd.dot_plots_histograms",
     "dec.ops.add_subtract",
@@ -552,7 +552,7 @@
   {
    "id": "stat.prob.basic",
    "name": "basic",
-   "region": "statistics",
+   "region": "probability",
    "prereqs": [
     "frac.con.basics",
     "rat.rat.understanding"
@@ -562,7 +562,7 @@
   {
    "id": "stat.prob.compound",
    "name": "compound",
-   "region": "statistics",
+   "region": "probability",
    "prereqs": [
     "stat.prob.basic",
     "frac.md.multiply"
@@ -572,7 +572,7 @@
   {
    "id": "stat.prob.conditional",
    "name": "conditional",
-   "region": "statistics",
+   "region": "probability",
    "prereqs": [
     "stat.prob.compound"
    ],
@@ -581,7 +581,7 @@
   {
    "id": "stat.prob.counting",
    "name": "counting",
-   "region": "statistics",
+   "region": "probability",
    "prereqs": [
     "stat.prob.compound",
     "ops.mul.facts"
@@ -591,7 +591,7 @@
   {
    "id": "rat.rat.equivalent",
    "name": "equivalent",
-   "region": "ratios-proportions",
+   "region": "ratios",
    "prereqs": [
     "rat.rat.understanding"
    ],
@@ -600,7 +600,7 @@
   {
    "id": "rat.rat.understanding",
    "name": "understanding",
-   "region": "ratios-proportions",
+   "region": "ratios",
    "prereqs": [
     "frac.eq.equivalent",
     "ops.mul.facts"
@@ -610,7 +610,7 @@
   {
    "id": "rat.pct.basics",
    "name": "basics",
-   "region": "ratios-proportions",
+   "region": "percent",
    "prereqs": [
     "rat.rat.equivalent",
     "dec.conv.fraction_decimal"
@@ -620,7 +620,7 @@
   {
    "id": "rat.pct.increase_decrease",
    "name": "increase decrease",
-   "region": "ratios-proportions",
+   "region": "percent",
    "prereqs": [
     "rat.prop.solving"
    ],
@@ -629,7 +629,7 @@
   {
    "id": "rat.prop.solving",
    "name": "solving",
-   "region": "ratios-proportions",
+   "region": "proportions",
    "prereqs": [
     "rat.rate.unit",
     "rat.pct.basics"
@@ -639,7 +639,7 @@
   {
    "id": "rat.rate.unit",
    "name": "unit",
-   "region": "ratios-proportions",
+   "region": "rates",
    "prereqs": [
     "rat.rat.equivalent",
     "dec.ops.divide"
@@ -649,7 +649,7 @@
   {
    "id": "alg.log.basics",
    "name": "basics",
-   "region": "algebra",
+   "region": "logarithms",
    "prereqs": [
     "alg.exp.exponent_rules"
    ],
@@ -658,7 +658,7 @@
   {
    "id": "alg.log.change_of_base",
    "name": "change of base",
-   "region": "algebra",
+   "region": "logarithms",
    "prereqs": [
     "alg.log.properties"
    ],
@@ -667,7 +667,7 @@
   {
    "id": "alg.log.equations",
    "name": "equations",
-   "region": "algebra",
+   "region": "logarithms",
    "prereqs": [
     "alg.log.properties",
     "alg.eq.multi_step"
@@ -677,7 +677,7 @@
   {
    "id": "alg.log.properties",
    "name": "properties",
-   "region": "algebra",
+   "region": "logarithms",
    "prereqs": [
     "alg.log.basics"
    ],
@@ -686,7 +686,7 @@
   {
    "id": "alg.rat.add_subtract",
    "name": "add subtract",
-   "region": "algebra",
+   "region": "rational-expressions",
    "prereqs": [
     "alg.rat.simplifying"
    ],
@@ -695,7 +695,7 @@
   {
    "id": "alg.rat.equations",
    "name": "equations",
-   "region": "algebra",
+   "region": "rational-expressions",
    "prereqs": [
     "alg.rat.add_subtract",
     "alg.eq.multi_step"
@@ -705,7 +705,7 @@
   {
    "id": "alg.rat.multiply_divide",
    "name": "multiply divide",
-   "region": "algebra",
+   "region": "rational-expressions",
    "prereqs": [
     "alg.rat.simplifying"
    ],
@@ -714,7 +714,7 @@
   {
    "id": "alg.rat.simplifying",
    "name": "simplifying",
-   "region": "algebra",
+   "region": "rational-expressions",
    "prereqs": [
     "alg.quad.factoring_gcf"
    ],
@@ -723,7 +723,7 @@
   {
    "id": "alg.exp.combining",
    "name": "combining",
-   "region": "algebra",
+   "region": "expressions",
    "prereqs": [
     "alg.exp.variables",
     "alg.exp.integers"
@@ -733,7 +733,7 @@
   {
    "id": "alg.exp.distributive",
    "name": "distributive",
-   "region": "algebra",
+   "region": "expressions",
    "prereqs": [
     "alg.exp.combining",
     "ops.mul.2d_by_1d"
@@ -743,7 +743,7 @@
   {
    "id": "alg.exp.exponent_rules",
    "name": "exponent rules",
-   "region": "algebra",
+   "region": "expressions",
    "prereqs": [
     "alg.exp.exponents_basics",
     "alg.exp.integers"
@@ -753,7 +753,7 @@
   {
    "id": "alg.exp.exponents_basics",
    "name": "exponents basics",
-   "region": "algebra",
+   "region": "expressions",
    "prereqs": [
     "ops.mul.facts",
     "ns.pv.powers_of_10"
@@ -763,7 +763,7 @@
   {
    "id": "alg.exp.integers",
    "name": "integers",
-   "region": "algebra",
+   "region": "expressions",
    "prereqs": [
     "ops.add.multi_digit",
     "ops.sub.multi_digit"
@@ -773,7 +773,7 @@
   {
    "id": "alg.exp.polynomials",
    "name": "polynomials",
-   "region": "algebra",
+   "region": "expressions",
    "prereqs": [
     "alg.exp.combining",
     "alg.exp.exponent_rules"
@@ -783,7 +783,7 @@
   {
    "id": "alg.exp.variables",
    "name": "variables",
-   "region": "algebra",
+   "region": "expressions",
    "prereqs": [
     "ops.oo.numerical_expressions"
    ],
@@ -792,7 +792,7 @@
   {
    "id": "alg.eq.multi_step",
    "name": "multi step",
-   "region": "algebra",
+   "region": "equations",
    "prereqs": [
     "alg.eq.two_step",
     "alg.exp.distributive"
@@ -802,7 +802,7 @@
   {
    "id": "alg.eq.one_step",
    "name": "one step",
-   "region": "algebra",
+   "region": "equations",
    "prereqs": [
     "alg.exp.variables",
     "alg.exp.integers"
@@ -812,7 +812,7 @@
   {
    "id": "alg.eq.quadratic_intro",
    "name": "quadratic intro",
-   "region": "algebra",
+   "region": "equations",
    "prereqs": [
     "alg.exp.polynomials",
     "alg.fn.linear"
@@ -822,7 +822,7 @@
   {
    "id": "alg.eq.square_roots",
    "name": "square roots",
-   "region": "algebra",
+   "region": "equations",
    "prereqs": [
     "alg.exp.exponents_basics"
    ],
@@ -831,7 +831,7 @@
   {
    "id": "alg.eq.systems_intro",
    "name": "systems intro",
-   "region": "algebra",
+   "region": "equations",
    "prereqs": [
     "alg.fn.linear",
     "alg.eq.multi_step"
@@ -841,7 +841,7 @@
   {
    "id": "alg.eq.two_step",
    "name": "two step",
-   "region": "algebra",
+   "region": "equations",
    "prereqs": [
     "alg.eq.one_step",
     "alg.exp.combining"
@@ -851,7 +851,7 @@
   {
    "id": "alg.seq.arithmetic",
    "name": "arithmetic",
-   "region": "algebra",
+   "region": "sequences",
    "prereqs": [
     "alg.fn.linear",
     "ns.pat.sequences"
@@ -861,7 +861,7 @@
   {
    "id": "alg.seq.geometric",
    "name": "geometric",
-   "region": "algebra",
+   "region": "sequences",
    "prereqs": [
     "alg.seq.arithmetic",
     "alg.exp.exponent_rules"
@@ -871,7 +871,7 @@
   {
    "id": "alg.seq.series",
    "name": "series",
-   "region": "algebra",
+   "region": "sequences",
    "prereqs": [
     "alg.seq.geometric"
    ],
@@ -880,7 +880,7 @@
   {
    "id": "alg.fn.exponential",
    "name": "exponential",
-   "region": "algebra",
+   "region": "functions",
    "prereqs": [
     "alg.exp.exponent_rules",
     "alg.fn.linear"
@@ -890,7 +890,7 @@
   {
    "id": "alg.fn.intro",
    "name": "intro",
-   "region": "algebra",
+   "region": "functions",
    "prereqs": [
     "alg.exp.variables",
     "geo.cp.all_quadrants"
@@ -900,7 +900,7 @@
   {
    "id": "alg.fn.linear",
    "name": "linear",
-   "region": "algebra",
+   "region": "functions",
    "prereqs": [
     "alg.fn.intro",
     "rat.rate.unit"
@@ -910,7 +910,7 @@
   {
    "id": "alg.fn.quadratic_graphing",
    "name": "quadratic graphing",
-   "region": "algebra",
+   "region": "functions",
    "prereqs": [
     "alg.eq.quadratic_intro",
     "alg.quad.completing_square"
@@ -920,7 +920,7 @@
   {
    "id": "alg.fn.slope",
    "name": "slope",
-   "region": "algebra",
+   "region": "functions",
    "prereqs": [
     "alg.fn.linear",
     "frac.md.divide"
@@ -930,7 +930,7 @@
   {
    "id": "alg.rad.simplifying",
    "name": "simplifying",
-   "region": "algebra",
+   "region": "radicals",
    "prereqs": [
     "alg.eq.square_roots",
     "alg.exp.exponent_rules"
@@ -940,7 +940,7 @@
   {
    "id": "alg.quad.completing_square",
    "name": "completing square",
-   "region": "algebra",
+   "region": "quadratics",
    "prereqs": [
     "alg.quad.solve_factoring",
     "alg.eq.square_roots"
@@ -950,7 +950,7 @@
   {
    "id": "alg.quad.diff_squares",
    "name": "diff squares",
-   "region": "algebra",
+   "region": "quadratics",
    "prereqs": [
     "alg.quad.factoring_gcf",
     "alg.exp.polynomials"
@@ -960,7 +960,7 @@
   {
    "id": "alg.quad.factoring_completely",
    "name": "factoring completely",
-   "region": "algebra",
+   "region": "quadratics",
    "prereqs": [
     "alg.quad.diff_squares",
     "alg.quad.factoring_trinomials"
@@ -970,7 +970,7 @@
   {
    "id": "alg.quad.factoring_gcf",
    "name": "factoring gcf",
-   "region": "algebra",
+   "region": "quadratics",
    "prereqs": [
     "alg.exp.distributive",
     "ops.mul.factors_and_multiples"
@@ -980,7 +980,7 @@
   {
    "id": "alg.quad.factoring_trinomials",
    "name": "factoring trinomials",
-   "region": "algebra",
+   "region": "quadratics",
    "prereqs": [
     "alg.quad.factoring_gcf",
     "alg.exp.polynomials"
@@ -990,7 +990,7 @@
   {
    "id": "alg.quad.formula",
    "name": "formula",
-   "region": "algebra",
+   "region": "quadratics",
    "prereqs": [
     "alg.quad.completing_square"
    ],
@@ -999,7 +999,7 @@
   {
    "id": "alg.quad.solve_factoring",
    "name": "solve factoring",
-   "region": "algebra",
+   "region": "quadratics",
    "prereqs": [
     "alg.quad.factoring_completely",
     "alg.eq.quadratic_intro"
@@ -1009,7 +1009,7 @@
   {
    "id": "alg.ineq.basics",
    "name": "basics",
-   "region": "algebra",
+   "region": "inequalities",
    "prereqs": [
     "alg.eq.two_step"
    ],
@@ -1018,7 +1018,7 @@
   {
    "id": "geo.tri.angle_sum",
    "name": "angle sum",
-   "region": "geometry",
+   "region": "triangles",
    "prereqs": [
     "geo.ang.parallel_lines"
    ],
@@ -1027,7 +1027,7 @@
   {
    "id": "geo.tri.special_right",
    "name": "special right",
-   "region": "geometry",
+   "region": "triangles",
    "prereqs": [
     "geo.ap.pythagorean",
     "alg.rad.simplifying"
@@ -1037,7 +1037,7 @@
   {
    "id": "geo.cong.triangles",
    "name": "triangles",
-   "region": "geometry",
+   "region": "congruence",
    "prereqs": [
     "geo.tri.angle_sum",
     "geo.prf.two_column"
@@ -1047,7 +1047,7 @@
   {
    "id": "geo.circ.properties",
    "name": "properties",
-   "region": "geometry",
+   "region": "circles",
    "prereqs": [
     "geo.ap.circles_intro",
     "geo.ang.parallel_lines"
@@ -1057,7 +1057,7 @@
   {
    "id": "geo.ap.circles_intro",
    "name": "circles intro",
-   "region": "geometry",
+   "region": "area-perimeter",
    "prereqs": [
     "geo.ap.triangles_parallelograms",
     "dec.ops.multiply"
@@ -1067,7 +1067,7 @@
   {
    "id": "geo.ap.pythagorean",
    "name": "pythagorean",
-   "region": "geometry",
+   "region": "area-perimeter",
    "prereqs": [
     "alg.eq.square_roots",
     "geo.ap.triangles_parallelograms"
@@ -1077,7 +1077,7 @@
   {
    "id": "geo.ap.rectangle",
    "name": "rectangle",
-   "region": "geometry",
+   "region": "area-perimeter",
    "prereqs": [
     "ops.mul.facts",
     "ops.add.within_1000"
@@ -1087,7 +1087,7 @@
   {
    "id": "geo.ap.surface_area",
    "name": "surface area",
-   "region": "geometry",
+   "region": "area-perimeter",
    "prereqs": [
     "geo.ap.triangles_parallelograms",
     "geo.vol.rectangular_prism"
@@ -1097,7 +1097,7 @@
   {
    "id": "geo.ap.triangles_parallelograms",
    "name": "triangles parallelograms",
-   "region": "geometry",
+   "region": "area-perimeter",
    "prereqs": [
     "geo.ap.rectangle",
     "frac.md.multiply"
@@ -1107,7 +1107,7 @@
   {
    "id": "geo.meas.metric_conversion",
    "name": "metric conversion",
-   "region": "geometry",
+   "region": "measurement",
    "prereqs": [
     "geo.meas.unit_conversion",
     "dec.ops.multiply"
@@ -1117,7 +1117,7 @@
   {
    "id": "geo.meas.unit_conversion",
    "name": "unit conversion",
-   "region": "geometry",
+   "region": "measurement",
    "prereqs": [
     "ops.mul.by_10_100_1000"
    ],
@@ -1126,7 +1126,7 @@
   {
    "id": "geo.sim.triangles",
    "name": "triangles",
-   "region": "geometry",
+   "region": "similarity",
    "prereqs": [
     "geo.cong.triangles",
     "rat.prop.solving"
@@ -1136,7 +1136,7 @@
   {
    "id": "geo.vol.composite",
    "name": "composite",
-   "region": "geometry",
+   "region": "volume",
    "prereqs": [
     "geo.vol.rectangular_prism"
    ],
@@ -1145,7 +1145,7 @@
   {
    "id": "geo.vol.cylinders_cones_spheres",
    "name": "cylinders cones spheres",
-   "region": "geometry",
+   "region": "volume",
    "prereqs": [
     "geo.vol.rectangular_prism",
     "geo.ap.circles_intro"
@@ -1155,7 +1155,7 @@
   {
    "id": "geo.vol.rectangular_prism",
    "name": "rectangular prism",
-   "region": "geometry",
+   "region": "volume",
    "prereqs": [
     "geo.ap.rectangle",
     "ops.mul.multi_digit"
@@ -1165,7 +1165,7 @@
   {
    "id": "geo.xform.dilations",
    "name": "dilations",
-   "region": "geometry",
+   "region": "transformations",
    "prereqs": [
     "geo.xform.rigid",
     "rat.prop.solving"
@@ -1175,7 +1175,7 @@
   {
    "id": "geo.xform.rigid",
    "name": "rigid",
-   "region": "geometry",
+   "region": "transformations",
    "prereqs": [
     "geo.cp.all_quadrants",
     "geo.ls.classifying_2d"
@@ -1185,14 +1185,14 @@
   {
    "id": "geo.ang.basics",
    "name": "basics",
-   "region": "geometry",
+   "region": "angles",
    "prereqs": [],
    "context": "Angles as turns. Right angles, acute, obtuse, straight. A quarter turn = 90 degrees. Angles are everywhere — clock hands, doors opening, slopes. Build intuition before measuring."
   },
   {
    "id": "geo.ang.measurement",
    "name": "measurement",
-   "region": "geometry",
+   "region": "angles",
    "prereqs": [
     "geo.ang.basics"
    ],
@@ -1201,7 +1201,7 @@
   {
    "id": "geo.ang.parallel_lines",
    "name": "parallel lines",
-   "region": "geometry",
+   "region": "angles",
    "prereqs": [
     "geo.ang.measurement",
     "geo.ls.lines_and_symmetry"
@@ -1211,7 +1211,7 @@
   {
    "id": "geo.prf.logic",
    "name": "logic",
-   "region": "geometry",
+   "region": "proofs",
    "prereqs": [
     "alg.eq.two_step"
    ],
@@ -1220,7 +1220,7 @@
   {
    "id": "geo.prf.two_column",
    "name": "two column",
-   "region": "geometry",
+   "region": "proofs",
    "prereqs": [
     "geo.prf.logic",
     "geo.ang.measurement"
@@ -1230,7 +1230,7 @@
   {
    "id": "geo.cp.all_quadrants",
    "name": "all quadrants",
-   "region": "geometry",
+   "region": "coordinate-plane",
    "prereqs": [
     "geo.cp.first_quadrant",
     "alg.exp.integers"
@@ -1240,7 +1240,7 @@
   {
    "id": "geo.cp.first_quadrant",
    "name": "first quadrant",
-   "region": "geometry",
+   "region": "coordinate-plane",
    "prereqs": [
     "ns.pat.sequences"
    ],
@@ -1249,7 +1249,7 @@
   {
    "id": "geo.ls.classifying_2d",
    "name": "classifying 2d",
-   "region": "geometry",
+   "region": "lines-shapes",
    "prereqs": [
     "geo.ls.lines_and_symmetry"
    ],
@@ -1258,7 +1258,7 @@
   {
    "id": "geo.ls.lines_and_symmetry",
    "name": "lines and symmetry",
-   "region": "geometry",
+   "region": "lines-shapes",
    "prereqs": [
     "geo.ang.basics"
    ],
