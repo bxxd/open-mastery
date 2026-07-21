@@ -23,7 +23,8 @@
      a caption: ⌂ › spelling › level 1 › phonemes. It gets a name, a reason,
      and its lessons as cards you tap straight into ("each level can have it's
      own landing page, onboarding, whatever" — owner 2026-07-20). */
-  #land { max-width: 34rem; margin: 0 auto; padding: 1.2rem 1rem 3rem; display: none; }
+  /* bottom padding clears the floating next ▸ so it never covers the steps row */
+  #land { max-width: 34rem; margin: 0 auto; padding: 1.2rem 1rem 7rem; display: none; }
   #land.on { display: block; }
   #land .lv { color: #10b981; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.12em;
     text-transform: uppercase; }
@@ -111,7 +112,7 @@
   #go {
     position: fixed; right: 0.9rem; bottom: calc(0.9rem + env(safe-area-inset-bottom));
     z-index: 5; background: #10b981; color: #052e16; text-decoration: none;
-    font-weight: 800; font-size: 1.05rem; padding: 0.75rem 1.3rem; border-radius: 1.1rem;
+    font-weight: 800; font-size: 1.2rem; padding: 0.9rem 1.5rem; border-radius: 1.2rem;
     box-shadow: 0 8px 24px rgba(16,185,129,0.4);
   }
 </style>
@@ -448,12 +449,17 @@ async function main() {
   // 2026-07-21). It used to prefer the arriving GAME's nodes, which skipped
   // a babel player past level 1: level 1 belongs to the sounds game, and
   // game ≠ strand — the strand is what must match.
-  // On a LEVEL page the cards are the call to action — a floating button over
-  // them is noise, and "play" names nothing anyway; the lesson name does.
+  // LEVEL pages get the button too. The cards were supposed to be the call to
+  // action, but an open card's ring + "ready" wasn't findable in practice
+  // ("it's not super obvious where to click to do next so put a big next
+  // button" — owner, 2026-07-21). Same button, same rule: the strand's
+  // shallowest open node, which on the level you were sent to is exactly its
+  // next card — and once a level is all yours it points into the next one.
   const goEl = document.createElement('a')
   goEl.id = 'go'
   function setGo(k) {
-    if (landed) return
+    // a level page has no tabs on screen — its strand is the one it landed in
+    if (landed) k = landed
     const cand = openNodes.find((n) => strandOf(n.id) === k)
     if (!cand) { goEl.remove(); return }
     goEl.href = playUrl(cand.id)
