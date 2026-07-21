@@ -230,6 +230,47 @@ async function main() {
     (memo[id] = 1 + Math.max(0, ...(byId[id]?.prereqs ?? []).map(depth)))
   for (const n of nodes) depth(n.id)
 
+  // ---- which strand you are IN — shared by the tabs, the level=auto
+  // landing, and the next ▸ CTA.
+  // A real attempt wins — that is resume, and it is evidence. On a cold
+  // start, it is the strand of the GAME you arrived from. Picking the
+  // shallowest open node alone would land a babel player in GRAMMAR, because
+  // gr.pos.verb is a root at level 1 while spelling's first playable node
+  // sits deeper.
+  const strandKeys = [...new Set(nodes.map((n) => n.id.split('.')[0]))]
+    .sort((a, b) => nodes.filter((n) => n.id.startsWith(b + '.')).length
+                  - nodes.filter((n) => n.id.startsWith(a + '.')).length)
+  const strandOf = (id) => id.split('.')[0]
+  let events = []
+  try {
+    events = JSON.parse(localStorage.getItem((q.get('progress') ?? '').replace(/\.state$/, '.events'))) ?? []
+  } catch { /* no events yet — cold start */ }
+  // shallowest first; within a strand this is also the card order of its
+  // lowest open level (nodes arrive sorted by id, and so do a level's cards)
+  const openNodes = nodes.filter((n) => state(n) === 'open')
+    .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))
+  const preferred = openNodes.find((n) => gameOf(n.id) === q.get('title')) ?? openNodes[0]
+  // the strand the arriving GAME belongs to, whether or not anything in it is
+  // still open: claiming every spelling pack must not bounce a babel player
+  // into grammar — an all-green section is a true and satisfying answer.
+  const gameStrand = strandOf(nodes.find((n) => gameOf(n.id) === q.get('title'))?.id ?? 'x.y')
+  const lastEv = [...events].reverse().find((e) => byId[e.nodeId])
+
+  // A tab click is INTENT; an attempt is EVIDENCE. Whichever happened LAST is
+  // what you meant, so the click is stored with its time and compared against
+  // the newest attempt. Without this the derivation re-ran on every load and
+  // silently overrode the tab you just chose — pick spelling, refresh, and you
+  // were back in grammar. Timestamping is what keeps it from going stale the
+  // other way: play spelling tomorrow and the evidence is newer than the click.
+  const TABKEY = 'learn.levels.tab:' + graphUrl.split('/').pop()
+  let picked = null
+  try { picked = JSON.parse(localStorage.getItem(TABKEY)) } catch { /* never chose one */ }
+  const pickWins = picked && strandKeys.includes(picked.strand)
+    && (!lastEv || (picked.t ?? 0) > (lastEv.t ?? 0))
+  const wanted = pickWins ? picked.strand
+    : [lastEv && strandOf(lastEv.nodeId), gameStrand, preferred && strandOf(preferred.id)]
+      .find((k) => strandKeys.includes(k)) ?? strandKeys[0]
+
   // ------------------------------------------------------------------ LEVEL
   // ?level=N renders ONE level as a landing page instead of the whole strand.
   // Same graph, same packs, same progress — a projection, never a second copy.
@@ -243,8 +284,21 @@ async function main() {
     'jk:1': { name: 'the first kana',
       why: 'The vowels and the k row — the rest of the syllabary is built on them.' },
   }
-  const wantLevel = Number(q.get('level')) || null
-  const wantStrand = q.get('strand')
+  let wantLevel = Number(q.get('level')) || null
+  let wantStrand = q.get('strand')
+  // ?level=auto — the doorway's resume: entering a world lands on the LOWEST
+  // level with something left to finish, never on the whole map ("it should
+  // take you to the lowest level that you haven't completed. not to the map"
+  // — owner, 2026-07-21). Your strand first, the others as fallback; every
+  // built node owned resolves to the whole map — all green is the honest
+  // and satisfying answer.
+  if (q.get('level') === 'auto') {
+    for (const s of [wanted, ...strandKeys.filter((k) => k !== wanted)]) {
+      const lv = Math.min(...nodes.filter((n) =>
+        built(n.id) && !owned.has(n.id) && n.id.startsWith(s + '.')).map((n) => memo[n.id]))
+      if (lv < Infinity) { wantLevel = lv; wantStrand = s; break }
+    }
+  }
 
   // A level lives INSIDE a strand — "spelling › level 1" is spelling's level
   // 1, not everything at depth 1. The strands have no edges between them, so
@@ -295,10 +349,6 @@ async function main() {
 
   const tree = document.getElementById('tree')
   const el = {}
-  const strandKeys = [...new Set(nodes.map((n) => n.id.split('.')[0]))]
-    .sort((a, b) => nodes.filter((n) => n.id.startsWith(b + '.')).length
-                  - nodes.filter((n) => n.id.startsWith(a + '.')).length)
-
   for (const key of strandKeys) {
     const mine = nodes.filter((n) => n.id.startsWith(key + '.'))
     const col = document.createElement('section')
@@ -392,47 +442,34 @@ async function main() {
     }
   }
 
-  // ---- the two top-level sections, as tabs.
-  // Which one opens: a real attempt wins — that is resume, and it is evidence.
-  // On a cold start, open the strand of the GAME you arrived from. Picking the
-  // shallowest open node alone would land a babel player in GRAMMAR, because
-  // gr.pos.verb is a root at level 1 while spelling's first playable node sits
-  // deeper. Same preference the play CTA below already uses.
+  // the way back in: the next item in the LOWEST open level of the strand on
+  // screen — next ▸ is the strand's shallowest open node and follows the
+  // shown tab ("the next ▸ should be the next item in lowest level" — owner,
+  // 2026-07-21). It used to prefer the arriving GAME's nodes, which skipped
+  // a babel player past level 1: level 1 belongs to the sounds game, and
+  // game ≠ strand — the strand is what must match.
+  // On a LEVEL page the cards are the call to action — a floating button over
+  // them is noise, and "play" names nothing anyway; the lesson name does.
+  const goEl = document.createElement('a')
+  goEl.id = 'go'
+  function setGo(k) {
+    if (landed) return
+    const cand = openNodes.find((n) => strandOf(n.id) === k)
+    if (!cand) { goEl.remove(); return }
+    goEl.href = playUrl(cand.id)
+    goEl.textContent = `next ▸ ${nameOf(cand)}`
+    document.body.appendChild(goEl)
+  }
+
+  // ---- the two top-level sections, as tabs. Which one opens: `wanted`,
+  // derived above from intent, evidence, and the arriving game's strand.
   const tabsEl = document.getElementById('tabs')
-  let events = []
-  try {
-    events = JSON.parse(localStorage.getItem((q.get('progress') ?? '').replace(/\.state$/, '.events'))) ?? []
-  } catch { /* no events yet — cold start */ }
-  const strandOf = (id) => id.split('.')[0]
-  const openNodes = nodes.filter((n) => state(n) === 'open')
-    .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))
-  const preferred = openNodes.find((n) => gameOf(n.id) === q.get('title')) ?? openNodes[0]
-  // the strand the arriving GAME belongs to, whether or not anything in it is
-  // still open: claiming every spelling pack must not bounce a babel player
-  // into grammar — an all-green section is a true and satisfying answer.
-  const gameStrand = strandOf(nodes.find((n) => gameOf(n.id) === q.get('title'))?.id ?? 'x.y')
-  const lastEv = [...events].reverse().find((e) => byId[e.nodeId])
-
-  // A tab click is INTENT; an attempt is EVIDENCE. Whichever happened LAST is
-  // what you meant, so the click is stored with its time and compared against
-  // the newest attempt. Without this the derivation re-ran on every load and
-  // silently overrode the tab you just chose — pick spelling, refresh, and you
-  // were back in grammar. Timestamping is what keeps it from going stale the
-  // other way: play spelling tomorrow and the evidence is newer than the click.
-  const TABKEY = 'learn.levels.tab:' + graphUrl.split('/').pop()
-  let picked = null
-  try { picked = JSON.parse(localStorage.getItem(TABKEY)) } catch { /* never chose one */ }
-  const pickWins = picked && strandKeys.includes(picked.strand)
-    && (!lastEv || (picked.t ?? 0) > (lastEv.t ?? 0))
-  const wanted = pickWins ? picked.strand
-    : [lastEv && strandOf(lastEv.nodeId), gameStrand, preferred && strandOf(preferred.id)]
-      .find((k) => strandKeys.includes(k)) ?? strandKeys[0]
-
   function showTab(k) {
     for (const col of tree.querySelectorAll('.strand'))
       col.classList.toggle('off', col.dataset.strand !== k)
     for (const b of tabsEl.querySelectorAll('button'))
       b.classList.toggle('on', b.dataset.strand === k)
+    setGo(k)
     requestAnimationFrame(drawEdges)
   }
   for (const key of strandKeys) {
@@ -452,23 +489,6 @@ async function main() {
     tabsEl.appendChild(b)
   }
   showTab(wanted)
-
-  // the way back in: shallowest open node, preferring THIS game's own nodes so
-  // arriving from babel never launches you into the grammar game
-  // On a LEVEL page the cards are the call to action — a floating button over
-  // them is noise, and "play" names nothing anyway; the lesson name does.
-  if (!landed) {
-    const open = nodes.filter((n) => state(n) === 'open')
-      .sort((a, b) => memo[a.id] - memo[b.id] || a.id.localeCompare(b.id))
-    const cand = open.find((n) => gameOf(n.id) === q.get('title')) ?? open[0]
-    if (cand) {
-      const go = document.createElement('a')
-      go.id = 'go'
-      go.href = playUrl(cand.id)
-      go.textContent = `next ▸ ${nameOf(cand)}`
-      document.body.appendChild(go)
-    }
-  }
 
   const KEY = q.get('progress')
   window.__claim = (id) => {
