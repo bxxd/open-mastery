@@ -23,8 +23,7 @@
      a caption: ⌂ › spelling › level 1 › phonemes. It gets a name, a reason,
      and its lessons as cards you tap straight into ("each level can have it's
      own landing page, onboarding, whatever" — owner 2026-07-20). */
-  /* bottom padding clears the floating next ▸ so it never covers the steps row */
-  #land { max-width: 34rem; margin: 0 auto; padding: 1.2rem 1rem 7rem; display: none; }
+  #land { max-width: 34rem; margin: 0 auto; padding: 1.2rem 1rem 3rem; display: none; }
   #land.on { display: block; }
   #land .lv { color: #10b981; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.12em;
     text-transform: uppercase; }
@@ -46,6 +45,14 @@
   #land .steps a { color: #94a3b8; background: #172033; border-radius: 0.5rem;
     padding: 0.4rem 0.7rem; text-decoration: none; font-size: 0.8rem; font-weight: 800; }
   #land .steps a.here { background: #10b981; color: #052e16; }
+  /* the one big NEXT, under the level steps. Plain "next" — the page already
+     names the place, the button just goes ("[ next ] without the
+     next: phonemes thing" — owner, 2026-07-21) */
+  #land #next { display: block; margin-top: 1.1rem; background: #10b981; color: #052e16;
+    text-align: center; font-weight: 900; font-size: 1.35rem; padding: 0.95rem;
+    border-radius: 1rem; text-decoration: none;
+    box-shadow: 0 8px 24px rgba(16,185,129,0.35); }
+  #land #next:active { transform: scale(0.98); }
   #legend { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; justify-content: center;
     padding: 0.7rem 1rem 0.2rem; color: #64748b; font-size: 0.72rem; font-weight: 700; }
   #legend span { display: flex; align-items: center; gap: 0.3rem; }
@@ -335,12 +342,19 @@ async function main() {
       `<a href="?${new URLSearchParams({ ...Object.fromEntries(q), level: n, strand })}" class="${n === lv ? 'here' : ''}">level ${n}</a>`
     ).join('') + `<a href="?${new URLSearchParams({ ...Object.fromEntries(q), level: '', strand: '' })}">the whole map ▸</a>`
 
+    // the big NEXT under the steps ("put the next underneath the
+    // [level xyz] ... and [ next ]" — owner, 2026-07-21): the strand's
+    // shallowest open node — on this level that is its next card, and a
+    // finished level points into the next one
+    const cand = openNodes.find((n) => strandOf(n.id) === strand)
+
     land.innerHTML = `<div class="lv">level ${lv}</div>
       <h1>${copy.name || 'level ' + lv}</h1>
       ${copy.why ? `<p class="why">${copy.why}</p>` : ''}
       <p class="count">${own} of ${mine.length} yours</p>
       ${cards}
-      <div class="steps">${steps}</div>`
+      <div class="steps">${steps}</div>
+      ${cand ? `<a id="next" data-t="next" href="${playUrl(cand.id)}">next ▸</a>` : ''}`
     land.classList.add('on')
     document.getElementById('tree').style.display = 'none'
     document.getElementById('legend').style.display = 'none'
@@ -449,17 +463,13 @@ async function main() {
   // 2026-07-21). It used to prefer the arriving GAME's nodes, which skipped
   // a babel player past level 1: level 1 belongs to the sounds game, and
   // game ≠ strand — the strand is what must match.
-  // LEVEL pages get the button too. The cards were supposed to be the call to
-  // action, but an open card's ring + "ready" wasn't findable in practice
-  // ("it's not super obvious where to click to do next so put a big next
-  // button" — owner, 2026-07-21). Same button, same rule: the strand's
-  // shallowest open node, which on the level you were sent to is exactly its
-  // next card — and once a level is all yours it points into the next one.
+  // A LEVEL page carries its own big [ next ▸ ] inline under the level steps
+  // (renderLanding) — the floating pill stays a map-only thing ("put the next
+  // underneath the [level xyz] ... and [ next ]" — owner, 2026-07-21).
   const goEl = document.createElement('a')
   goEl.id = 'go'
   function setGo(k) {
-    // a level page has no tabs on screen — its strand is the one it landed in
-    if (landed) k = landed
+    if (landed) return
     const cand = openNodes.find((n) => strandOf(n.id) === k)
     if (!cand) { goEl.remove(); return }
     goEl.href = playUrl(cand.id)
